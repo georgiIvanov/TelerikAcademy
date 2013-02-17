@@ -1,0 +1,36 @@
+/* line 1, ../sass/task2.scss */
+body, ul, li, img {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 16, ../sass/task2.scss */
+ul li {
+  display: inline-block;
+}
+
+/* line 21, ../sass/task2.scss */
+.gallery {
+  position: relative;
+  width: 500px;
+  height: 627.5px;
+  margin: 10px auto 0;
+}
+
+/* line 33, ../sass/task2.scss */
+.gallery-item:target .gallery-photo {
+  opacity: 1;
+}
+
+/* line 40, ../sass/task2.scss */
+.gallery-thumbnail {
+  padding-right: 21px;
+}
+
+/* line 46, ../sass/task2.scss */
+.gallery-photo {
+  position: absolute;
+  top: 127.5px;
+  left: 0;
+  opacity: 0;
+}

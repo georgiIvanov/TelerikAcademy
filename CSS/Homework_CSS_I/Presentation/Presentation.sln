@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E51E8B80-F9FC-4C5F-817C-CECAFD9AB294}"
+	ProjectSection(SolutionItems) = preProject
+		1.ColoredText.css = 1.ColoredText.css
+		1.ColoredText.htm = 1.ColoredText.htm
+		2.FrontPageDesign.css = 2.FrontPageDesign.css
+		2.FrontPageDesign.htm = 2.FrontPageDesign.htm
+		3.NestedDivs.css = 3.NestedDivs.css
+		3.NestedDivs.htm = 3.NestedDivs.htm
+		4.Calculator.css = 4.Calculator.css
+		4.Calculator.htm = 4.Calculator.htm
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

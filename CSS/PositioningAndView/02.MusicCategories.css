@@ -1,0 +1,115 @@
+﻿body
+{
+    font: 14px/1.2 Verdana, sans-serif;
+}
+
+.musicCategories
+{
+    background-color:#eeeeee;
+    width: 490px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+.musicCategories h1
+{
+    padding: 0 0 0 10px;
+    font-size:large;
+}
+
+.category
+{
+    padding:15px 15px 15px 15px;
+    overflow:hidden;
+    position:relative;
+    display:inline-block;  
+    margin: 0 10px 0 10px;
+    background-color:#ffffff; 
+    border: 1px solid #a5a3a0;
+    position:relative;
+    font-size:small;
+    margin-bottom: 15px;
+}
+
+
+.category img
+{
+    border: 1px solid #a5a3a0;
+    position:relative;
+    display:inline-block; 
+    float:left; 
+}
+
+.category p
+{
+    text-align:left;
+    margin: 0 0 0 150px;
+    padding: 0 40px 0 0;
+    position:relative;
+    
+}
+
+.action
+{
+    float:right;
+    position:absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0 20px 13px 0;
+}
+
+.listen
+{
+    background: url('images/listen.png');
+    height: 25px;
+    width: 73px;
+    border-bottom: 2px solid #800;
+    border-right: 2px solid #800;
+    border-top: 2px solid #e17877;
+    border-left: 2px solid #e17877;
+    color: white;
+    padding-left: 16px;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+.listen a
+{
+    text-decoration:none;
+    color:White;
+}
+
+.listen:hover 
+{
+    cursor: pointer;
+    text-decoration:underline;
+}
+
+.add
+{
+   background: url('images/add.png');
+    height: 25px;
+    width: 56px;
+    border-bottom: 2px solid #800;
+    border-right: 2px solid #800;
+    border-top: 2px solid #e17877;
+    border-left: 2px solid #e17877;
+    color: white;
+    padding-left: 16px;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+.add:hover
+{
+    text-decoration:underline;
+    cursor: pointer;
+}
+
+.add a
+{
+    text-decoration:none;
+    color:White;
+}
+
+

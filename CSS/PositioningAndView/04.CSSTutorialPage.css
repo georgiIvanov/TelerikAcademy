@@ -1,0 +1,183 @@
+﻿*
+{
+    margin: 0;
+    padding: 0;
+}
+
+body 
+{
+    background: #F1F1F1;
+    font: 12px/1.2 Verdana, sans-serif;
+}
+
+h1, h2, p 
+{
+    margin-bottom: 10px; 
+}
+
+h2 
+{
+    padding: 3px;
+    background: #808080;
+    color: #fff;
+    font-size: 100%;
+}
+
+a 
+{
+    color: #c50100; 
+}
+
+.row 
+{
+    overflow: hidden;
+    margin-left: -10px
+}
+[class ^= "span"], [class *= " span"]  
+{
+    float: left;
+    margin-left: 2px;
+}
+
+.span1 
+{
+    width: 150px; 
+}
+
+.span3 
+{
+    width: 450px; 
+}
+
+.container 
+{
+    margin: 10px;
+    padding: 0 3px 0 10px;
+    width: 746px;
+    border: 1px solid #000;
+}
+
+.pull-left 
+{
+    float: left;
+    margin-right: 10px;
+}
+
+.search input[type = "search"] 
+{
+    width: 90px; 
+}
+
+
+.icon-home 
+{
+    display: inline-block;
+    width: 18px;
+    height: 20px;
+    vertical-align: text-bottom;
+    background: url(images/home.png);
+}
+
+.unstyled 
+{
+    list-style: none; 
+}
+
+.inline li 
+{ 
+    display: inline-block; 
+}
+
+.styled dt 
+{
+    font-weight: bold; 
+}
+
+.styled dd a 
+{
+    color: #000; 
+}
+
+.styled a 
+{
+    text-decoration: none; 
+}
+
+.styled a:hover 
+{ 
+    text-decoration: underline; 
+}
+
+.pagination a 
+{
+    display: block;
+    padding: 3px;
+    width: 100px;
+    border: 1px solid #2A2A2A;
+    color: #0F0F0F;
+    text-align: center;
+    text-decoration: none;
+}
+.pagination li 
+{
+    position: relative; 
+}
+.prev, .next
+{
+    margin: 5px 0 5px 0;   
+}
+.prev::after, .next::after 
+{
+    position: absolute;
+    top: 3px;
+}
+.prev::after 
+{
+    left: 3px;
+    content: "◄";
+}
+.next::after 
+{
+    right: 3px;
+    content: "►";
+}
+
+.box 
+{
+    margin-bottom: 2px;
+    padding: 2px;
+    border: 1px solid #8A8A8A;
+    background: #fff;
+}
+.box h2 
+{
+    margin: -2px -2px 0 -2px; 
+}
+
+.nav, .aside 
+{
+    padding-top: 10px;
+}
+
+.nav .styled 
+{
+    margin-bottom: 10px; 
+}
+
+.content 
+{
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #A1A1A1;
+    background: #fff;
+}
+
+.aside 
+{
+    text-align: center; 
+}
+.aside h2 
+{   
+    margin-bottom: 2px;
+    text-transform: uppercase;
+}

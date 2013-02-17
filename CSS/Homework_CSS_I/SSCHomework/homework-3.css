@@ -1,0 +1,59 @@
+﻿body
+{
+    background-color: rgb(168, 168, 168);
+}
+
+h1:first-child
+{
+    color:White;
+    text-align:center;
+}
+
+h1:last-child
+{
+    color:White;
+    text-align:left;
+}
+
+nav ul
+{
+    list-style-type:none;
+    text-align:center;
+}
+
+nav ul a
+{
+    color:White;   
+    text-decoration:none;
+}
+
+nav ul li:last-child
+{
+    text-decoration:underline;   
+}
+
+nav ul li:nth-child(2)
+{
+    position:relative;
+    width:56px;
+    margin: 0 0 0 4px;
+    left:48%;
+    background-color: rgb(215, 215, 215); 
+    
+}
+
+a
+{
+    text-decoration:none;
+    color:inherit;   
+}
+
+footer
+{
+    text-align:center;   
+}
+
+footer p
+{
+    text-align:left;   
+}

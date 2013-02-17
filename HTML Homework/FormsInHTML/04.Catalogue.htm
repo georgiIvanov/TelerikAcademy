@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Untitled Page</title>
+
+    <style>
+        .Computers
+        {
+            border: 1px solid black;
+            
+        }    
+        .Manufacturers
+        {
+            font-size:large;
+            font-weight:bold;
+            text-align:center;
+               
+        }
+        a
+        {
+            text-decoration:none;
+            color:#46c5f4;
+        }
+        .Hard
+        {
+            position:relative;
+            top: 15px;  
+            text-align:right; 
+        }
+        .SSD
+        {
+            position:relative;
+            top:-30px;  
+            text-align:right; 
+        }
+        .Price
+        {
+            text-align:center;   
+        }
+        .CPU
+        {
+            position:relative;
+            left:33px;   
+        }
+        .bar
+        {
+            padding-top:25px;   
+            padding-left: 30px;
+        }
+    </style>
+</head>
+<body>
+    <table class="catalogue">
+    <tr>
+        <td class="Manufacturers" colspan="2">
+            <a href="#">Apple</a>
+            <a href="#">Toshiba</a>
+            <a href="#">Lenovo</a>
+            <a href="#">Dell</a>
+            <a href="#">Asus</a>
+            <a href="#">Acer</a>
+            <a href="#">HP</a>
+            <hr />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table class="Computers">
+            <tr>
+                <td>
+                    <fieldset><legend>Apple MacBook Air</legend>
+                        <img src="laptop.png" alt="laptop" />
+                        <span class="SSD">
+                            64GB SSD
+                            <div class="Hard">2GB DDR</div>
+                        </span>
+                        <div class="Price">1300 USD <span class="CPU">Intel Core i5</span></div>
+                    </fieldset>
+                </td>
+                <td>
+                    <fieldset><legend>Apple MacBook Air</legend>
+                    <img src="laptop.png" alt="laptop" />
+                    <span class="SSD">
+                            64GB SSD
+                            <div class="Hard">2GB DDR</div>
+                        </span>
+                        <div class="Price">1300 USD <span class="CPU">Intel Core i5</span></div>
+                    </fieldset>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <fieldset><legend>Apple MacBook Air</legend>
+                    <img src="laptop.png" alt="laptop" />
+                    <span class="SSD">
+                            64GB SSD
+                            <div class="Hard">2GB DDR</div>
+                        </span>
+                        <div class="Price">1300 USD <span class="CPU">Intel Core i5</span></div>
+                    </fieldset>
+                </td>
+                <td>
+                    <fieldset><legend>Apple MacBook Air</legend>
+                    <img src="laptop.png" alt="laptop" />
+                    <span class="SSD">
+                            64GB SSD
+                            <div class="Hard">2GB DDR</div>
+                        </span>
+                        <div class="Price">1300 USD <span class="CPU">Intel Core i5</span></div>
+                    </fieldset>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <fieldset><legend>Apple MacBook Air</legend>
+                    <img src="laptop.png" alt="laptop" />
+                    <span class="SSD">
+                            64GB SSD
+                            <div class="Hard">2GB DDR</div>
+                        </span>
+                        <div class="Price">1300 USD <span class="CPU">Intel Core i5</span></div>
+                    </fieldset>
+                </td>
+                <td>
+                    <fieldset><legend>Apple MacBook Air</legend>
+                    <img src="laptop.png" alt="laptop" />
+                    <span class="SSD">
+                            64GB SSD
+                            <div class="Hard">2GB DDR</div>
+                        </span>
+                        <div class="Price">1300 USD <span class="CPU">Intel Core i5</span></div>
+                    </fieldset>
+                </td>
+            </tr>
+            </table>
+        </td>
+    
+        <td>
+            <div class="bars">
+                <div class="bar">
+                    Min price: 500 USD
+                    <br />
+                    <input type="range"  min="0" max="100" />
+                </div>
+                <div class="bar">
+                    Max price: 1500 USD
+                    <br />
+                    <input type="range"  min="0" max="100" />
+                </div>
+                <div class="bar">
+                    Min RAM: 4 GB
+                    <br />
+                    <input type="range"  min="0" max="100" />
+                </div>
+                <div class="bar">
+                    Max RAM: 16 GB
+                    <br />
+                    <input type="range"  min="0" max="100" />
+                </div>
+        
+            </div>
+        </td>
+    </tr>
+    
+    </table>
+
+
+</body>
+</html>

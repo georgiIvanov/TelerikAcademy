@@ -1,0 +1,86 @@
+﻿body, div, img, ul {
+    margin:0;
+    padding:0;
+}
+
+
+.popup-content{
+    display:inline-block;
+    position:absolute;
+    margin:-24px 22px;
+    padding:0;
+}
+
+.popup-content div fieldset{
+    border: 1px solid black;
+    text-align:left;
+    width:185px;
+
+}
+
+.btn-popup-close{
+    position:relative;
+    top:36px;
+    left: 173px;
+    border:1px solid black;
+    border-radius: 4px;
+    padding: 0px 5px;
+
+}
+
+.popup-content div fieldset button{
+    border-radius:20px;
+    border:none;
+    background-color: #c6c6c6;
+    box-shadow:none;
+    padding: 4px 10px;
+    color:rgb(72, 72, 72);
+}
+
+.popup-content div fieldset button:hover {
+    background: -webkit-linear-gradient(top, #c6c6c6 1%,#6c6c6c 100%);
+}
+.popup-content div fieldset legend{
+    font-size: 1.2em;
+    font-weight: bold;
+    color:rgb(72, 72, 72);
+}
+
+.popup-content div fieldset:last-of-type textarea {
+    display:inline-block;
+}
+
+ul li:first-child{
+    border-top:1px solid black;
+}
+
+ul{
+    margin: 15px 15px;
+}
+
+ul li{
+    list-style-type:none;
+    border-bottom: 1px solid black;
+    width:100px;
+    padding: 6px 5px;
+    
+}
+
+ul li a{
+    text-decoration:none;
+    color:black;
+}
+
+img{
+    width:25px;
+    height:25px;
+}
+
+
+.invisible{
+    display:none;
+}
+
+.current{
+    font-weight:bold;
+}

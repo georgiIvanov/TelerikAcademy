@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Untitled Page</title>
+
+    <style>
+        .products
+        {
+            
+            border-spacing: 0px;
+            
+        }    
+        .criteria
+        {
+            padding-left:4px;
+            padding-right: 70px;
+            background-color:#e7e9eb;
+            
+        }
+        .prodname
+        {
+            padding-left:4px;
+            padding-right: 120px;
+            background-color:#e7e9eb;
+        }
+        .prodID
+        {
+            padding-left:7px;
+            padding-right: 7px;
+            background-color:#e7e9eb;
+        }
+        .discProd
+        {
+            padding-left:7px;
+            padding-right: 7px;
+            background-color:#e7e9eb;
+        }
+        .button
+        {
+            position:relative;
+            top:5px;
+            left: 3px;   
+        }
+        .buttonDisc
+        {
+            position:relative;
+            top:3px;
+            left: 3px; 
+        }
+        .numberItemsFoot
+        {
+            position:relative;
+            left:300px;
+             
+        }
+        .navButtons
+        {
+            position:relative;
+            top: 5px;   
+        }
+    </style>
+</head>
+<body>
+
+    <table class="products" border = "1">
+        <tr>
+            <td class="prodID" colspan="6">Drag a column header and drop it here to group by that column</td>
+        </tr>
+        <tr>
+            <td class="prodID">ProductID</td>
+            <td class="prodname">Product name</td>
+            <td class="criteria">Unit price</td>
+            <td class="criteria">Quantity per unit</td>
+            <td class="criteria">Units in stock</td>
+            <td class="discProd">Discontinued</td>
+        </tr>
+        <tr class="criteria">
+            <td><input size="1"/></td>
+            <td><input size="20"/></td>
+            <td><input size="4"/><input class="button" type="image" src="button.png"/></td>
+            <td><input size="6"/></td>
+            <td><input size="5"/><input class="button" type="image" src="button.png"/></td>
+            <td><input type="checkbox"/><input class="buttonDisc" type="image" src="button.png"/></td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Chai</td>
+            <td>18$</td>
+            <td>10 boxes x 20 bags</td>
+            <td>39</td>
+            <td><input type="checkbox" /></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Chang</td>
+            <td>19$</td>
+            <td>24 - 12 oz bottles</td>
+            <td>17</td>
+            <td><input type="checkbox" /></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Aniseed Syrup</td>
+            <td>10$</td>
+            <td>12 - 550 ml bottles</td>
+            <td>13</td>
+            <td><input type="checkbox" /></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Chef Anton's Cajun Seasoning</td>
+            <td>22$</td>
+            <td>48 - 6 oz jars</td>
+            <td>53</td>
+            <td><input type="checkbox" /></td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Chef Anton's Gumbo Mix</td>
+            <td>21.35$</td>
+            <td>36 boxes</td>
+            <td>0</td>
+            <td><input type="checkbox" /></td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Grandma's Boysenberry Spread</td>
+            <td>25$</td>
+            <td>12 - 8 oz jars</td>
+            <td>120</td>
+            <td><input type="checkbox" /></td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>Uncle Bob's Organic Dried Pears</td>
+            <td>30.00$</td>
+            <td>12 - 1 lb packs</td>
+            <td>15</td>
+            <td><input type="checkbox" /></td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>Northwoods Cranberry Sauce</td>
+            <td>40.00$</td>
+            <td>12 - 12 oz jars</td>
+            <td>6</td>
+            <td><input type="checkbox" /></td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>Mishi Kobe Niku</td>
+            <td>97.00$</td>
+            <td>18 - 500g pkgs.</td>
+            <td>29</td>
+            <td><input type="checkbox" /></td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>Ikura</td>
+            <td>31.00$</td>
+            <td>10 boxes x 20 bags</td>
+            <td>31</td>
+            <td><input type="checkbox" /></td>
+        </tr>
+        <tr>
+            <td class="prodID" colspan="6">
+            <span >
+                <input class="navButtons" type="image" src="leftEnd.png"/>
+                <input class="navButtons" type="image" src="left.png" />
+                <a href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">6</a>
+                <a href="#">7</a>
+                <a href="#">8</a>
+                <a href="#">9</a>
+                <a href="#">10</a>
+                <input class="navButtons" type="image" src="right.png" />
+                <input class="navButtons" type="image" src="rightEnd.png" />
+            </span>
+            <span>
+                Page size: 
+                <select>
+                    <option>10</option>
+                    <option>3423</option>
+                </select>
+            </span>
+            <span class="numberItemsFoot">
+                335104 items in 33511 pages
+            </span>
+            </td>
+        </tr>
+    
+    </table>
+
+</body>
+</html>

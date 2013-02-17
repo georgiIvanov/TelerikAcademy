@@ -1,0 +1,105 @@
+﻿html, p, ul, li 
+{
+    margin: 0;
+    padding: 0;
+}
+body 
+{
+    background-color: #FFF;
+    color: #000;
+    font-family: Corbel,sans-serif;
+    font-size: 20px;
+}
+
+#wrapper 
+{
+    margin: 0 auto;
+    width: 1000px;
+}
+
+img
+{
+    position:relative;
+    display:inline-block;
+}
+
+header 
+{
+    padding: 0 20px;
+}
+
+nav 
+{
+    border-bottom: 3px solid #000;
+}
+
+ul 
+{
+    font-size: 0;
+    list-style-type: none;
+    padding: 10px 0;
+    text-align: center;
+}
+
+li 
+{
+    display: inline;
+    padding-right: 6px;
+}
+
+li a 
+{
+    color: #02AFF0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#content 
+{
+    border: 2px solid #000;
+    float: left;
+    margin: 15px 0;
+    padding: 5px;
+    width: 630px;
+}
+
+.article-item 
+{
+    float: left;
+    width: 50%;
+}
+
+p.item-details 
+{
+    float: left;
+    padding: 5px 0;
+    width: 50%;
+}
+
+p.item-details:first-of-type 
+{
+    padding-top: 20px;
+}
+
+aside 
+{
+    float: left;
+    margin: 15px 0;
+    padding: 55px 8px 0;
+    text-align: center;
+    width: 270px;
+}
+
+.slider-wrapper 
+{
+    padding: 4px 0;
+}
+
+p.slider-details 
+{
+    padding: 15px;
+}
+input[type="range"] 
+{
+    width: 200px;
+}

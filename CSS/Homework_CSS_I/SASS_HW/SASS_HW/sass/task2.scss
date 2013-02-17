@@ -1,0 +1,51 @@
+﻿body, ul, li, img {
+  margin: 0;
+  padding: 0;
+}
+
+$items: 4;
+$width: 500px;
+$gridGutter: 10px;
+
+$thumbnailWidth: ($width - ($items - 1) * $gridGutter) / $items;
+$thumbnailHeight: $thumbnailWidth;
+$photoWidth: $width;
+$photoHeight: $width;
+
+ul li
+{
+	display:inline-block;
+}
+
+.gallery
+{
+position: relative;
+width: $width;
+height: $thumbnailHeight + $gridGutter + $photoHeight;
+margin: $gridGutter auto 0;
+}
+
+.gallery-item
+{
+	&:target
+	{
+		.gallery-photo
+		{
+			opacity: 1;
+		}
+	}
+}
+
+.gallery-thumbnail
+{
+	padding-right: $width - ($items * $thumbnailWidth) - 9;
+
+}
+
+.gallery-photo
+{
+	position:absolute;
+	top: $thumbnailHeight + $gridGutter;
+	left:0;
+	opacity: 0;
+}

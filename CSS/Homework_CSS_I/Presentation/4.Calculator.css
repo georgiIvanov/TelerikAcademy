@@ -1,0 +1,358 @@
+﻿body
+{
+}
+
+
+#calculatorOut
+{
+    border-color:Black;
+    background-color: #555759;
+    border: 1px solid black;
+    height: 388px;
+    width: 423px;
+    border-radius: 7px;   
+    background: -webkit-linear-gradient(top, rgba(127,127,127,1) 14%,rgba(204,204,204,1) 33%,rgba(51,51,51,1) 41%);
+}
+
+#wndProperties
+{
+    background: -webkit-linear-gradient(left, rgba(127,127,127,1) 0%,rgba(51,51,51,1) 38%,rgba(51,51,51,1) 64%,rgba(127,127,127,1) 100%);
+}
+
+#calcIco 
+{
+    padding: 5px 0 5px 8px;
+    margin: 0 0 0 0;
+    position:relative;
+    display:inline-block;
+}
+
+
+#calcIco p
+{
+    cursor:default;
+    -webkit-user-select: none;
+    font-family: Segoe UI;
+    font-size:small;
+    position:relative;
+    display:inline-block;
+    padding: 0 0 0 2px;
+    margin: 0 0 0 0;
+    top:-3px;
+    text-shadow: 0px 0px 8px #b4b4b4;
+    
+    
+}
+
+#winButtonsContainer
+{
+    position:relative;
+    display:inline-block;
+    float:right;
+    border: 1px solid #353537;
+    
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;      
+    margin: 0 5px 0 0;
+    height:18px;
+    top: -1px;
+    background: -webkit-linear-gradient(top, #bebebf 0%,#57585b 56%);
+    box-shadow: 1px 1px 1px 0px #d2d2d3;
+    
+}
+
+.winButtons
+{
+    position:relative;
+    display:inline-block;
+    
+}
+
+#minimize
+{
+    padding: 9px 8px 7px 10px;
+    margin: 6px 0 -10px 0;
+    height:2px;
+    top:-7px;
+    left:-1px;
+    border: 1px solid #353537;
+    border-bottom-left-radius: 5px;   
+    box-shadow: -1px 1px 1px 0px #d2d2d3;
+     
+}
+
+#minimize:hover
+{
+    background: -webkit-linear-gradient(top, #b8e6fc 14%,#10679d 57%);
+    box-shadow: 0px 1px 3px 2px rgb(98,194,234);
+}
+
+#maximize
+{
+    padding: 4px 0px 12px 5px;
+    margin: 0px 0 -5px 0;
+    height:2px;
+    top:-2px;
+    left:-6px;
+    border-left: 1px solid #353537;   
+    border-top-color: White;
+     
+}
+
+#maximize img
+{
+    position:relative;
+    left:3px;
+    top:-1px
+}
+
+#close
+{
+    background: -webkit-linear-gradient(top, #e39f93 0%,#a63524 50%);
+    padding: 4px 13px 12px 18px;
+    margin: 0px 0 -5px 0;
+    height:2px;
+    width:15px;
+    
+    
+    top:-3px;
+    left:0px;
+    border-left: 1px solid #353537;   
+    border-top-color: White;
+    border-bottom-right-radius: 4px;
+}
+
+#close:hover
+{
+    background: -webkit-linear-gradient(top, #efc9c9 9%,#b01c05 58%); 
+    box-shadow: 0px 1px 3px 2px #AF7269; 
+}
+
+#interfaceContainer
+{
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    position:relative;
+    background-color:#d9e4f1;
+    border-radius:2px;
+    height: 353px;
+    width: 411px;
+    left:5px;
+    top:-4px;
+    border:1px solid black;
+}
+
+#menuBar
+{
+    background: -webkit-linear-gradient(top, #e8ecf6 27%,#d4dbed 37%); 
+    border-bottom: 1px solid #b6bccc;
+    height: 18px;
+}
+
+.menuButtons
+{
+    margin: 1px 0px 0 0px;
+    padding: 0 4px 1px 4px;
+    position:relative;
+    display:inline-block;
+    top:-1px;
+}
+
+.menuButtons:hover
+{
+    border: 1px solid #aaafbc;
+    margin: 0 0px 0 0px;
+    padding: 0 3px 1px 3px;
+    border-radius: 3px;
+}
+
+.menuButtons p
+{
+    cursor:default;
+    font-family:Segoe UI;
+    font-size:12px;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    -webkit-user-select: none;
+}
+
+.menuButtons p:first-letter
+{
+    text-decoration:underline;   
+}
+
+.menuButtons:first-child
+{
+    margin-left:1px;
+}
+
+#btnAndDispContainer
+{
+    font-family:Consolas;
+    position:relative;
+    height: 315px;
+    width: 391px;
+    left:10px;
+    top:10px;
+}
+
+#calcDisplay
+{
+    border: 1px solid #8e9cad;
+    border-radius: 2px;  
+    direction:rtl; 
+    height: 47px;
+    background: -webkit-linear-gradient(top, #f2f2f2 0%,#edf2f9 24%,#ffffff 88%)
+}
+
+#calcDisplay p
+{
+    font-size:23px;
+    font-weight:500;
+    margin: 0 0 0 0;
+    padding: 16px 5px 0 0;
+    direction:rtl; 
+}
+
+#binaryDisplay
+{
+    border: 1px solid #8e9cad;
+    border-radius: 2px;  
+    
+    height: 57px;
+    margin-top: 5px;
+    color:#1e395b;
+    cursor:default;
+    -webkit-user-select: none;
+}
+
+
+.bits p
+{
+    margin: -5px 0 0 0;
+    padding: 0 8px 0 0;   
+}
+
+.bits td:first-child
+{
+    padding:0 0px 0 5px;
+}
+
+
+.bitPositions p
+{
+    margin: -9px 0 -3px 0;
+    padding: 0 7px 0 0;   
+    color:#666666;
+}
+
+.bitPositions td:first-child
+{
+    padding:0 0px 0 5px;
+}
+
+.bitPositions td:last-child
+{
+    padding:0 2px 0 0px;
+    position:relative;
+    float:right;
+}
+
+#buttons
+{
+    font-size:small;   
+    color: #1e395b;
+    font-family:Segoe UI;
+    cursor:default;
+    -webkit-user-select: none;
+}
+
+#buttons p
+{
+     margin: 0 0 0 0;
+     padding: 0 0 0 0;
+     text-align:center;
+}
+
+#buttons td
+{
+    padding: 4px 5px 3px 5px;
+}
+
+#buttons table
+{
+    position:relative;
+    width:400px;
+    border-spacing: 5px;
+    left:-5px;
+}
+.choice
+{
+    border: 1px solid #8797aa;
+    border-radius: 2px;    
+}
+
+#buttons td.enableBtn{
+    height:10px;
+}
+
+.enabledBtn
+{
+    text-align:center;
+    height: 20px;
+    width:20px;
+    border: 1px solid #8797aa;
+    border-radius: 2px;
+    background: -webkit-linear-gradient(top, #f6fafe 30%,#d7e2ef 72%);
+       
+}
+
+.enabledBtn:hover
+{
+    background: -webkit-linear-gradient(top, rgba(255,248,242,1) 39%,rgba(255,217,142,1) 61%,rgba(255,208,109,1) 98%,rgba(255,255,255,1) 99%);
+    box-shadow: 0px 0px 1px 2px #d2d2d3;
+    border: 1px solid #ffdb00;
+}
+
+.disabledBtn
+{
+    text-align:center;
+    height: 20px;
+    width:20px;
+     border: 1px solid #b4c2d1;
+    border-radius: 2px;
+    
+}
+
+.numpadBtn
+{
+    text-align:center;
+    height: 20px;
+    width:20px;
+    border: 1px solid #8797aa;
+    border-radius: 2px;
+    background: -webkit-linear-gradient(top, #f7fbff 30%,#eff7fc 72%);
+}
+
+.numpadBtn:hover
+{
+    background: -webkit-linear-gradient(top, rgba(255,248,242,1) 39%,rgba(255,217,142,1) 61%,rgba(255,208,109,1) 98%,rgba(255,255,255,1) 99%);
+    box-shadow: 0px 0px 1px 2px #d2d2d3;
+    border: 1px solid #ffdb00;
+}
+
+.memoryBtn
+{
+    text-align:center;
+    height: 20px;
+    width:20px;
+     border: 1px solid #b4c2d1;
+    border-radius: 2px;
+}
+
+.memoryBtn:hover
+{
+    background: -webkit-linear-gradient(top, rgba(255,206,104,1) 56%,rgba(255,228,175,1) 92%);
+    box-shadow: 0px 0px 1px 2px #d2d2d3;
+    border: 1px solid #ffdb00;
+}

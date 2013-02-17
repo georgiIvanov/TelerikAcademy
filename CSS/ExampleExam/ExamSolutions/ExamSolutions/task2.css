@@ -1,0 +1,95 @@
+﻿html,
+body, div, form, input,button,a{
+    margin:0;
+    padding:0;
+}
+
+body {
+    color: #000000;
+    font-size: 16px;
+    font-family: Verdana, Geneva, 'DejaVu Sans', sans-serif;
+}
+
+div#wrapper{
+    width:960px;
+    margin-left:50px;
+}
+
+a.btn-login-form{
+    text-decoration:none;
+    color:black;
+    font-size: 1.2em;
+}
+
+div#wrapper a.btn-login-form:hover{
+    color:#666;
+}
+
+div#wrapper form{
+    background:#555555;
+    width:450px;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(10%, #ffffff), color-stop(100%, #555555));
+}
+
+form fieldset{
+    padding-right: 75px;
+    text-align:right;
+    display:block;
+    margin: 0 auto;
+    border: 5px solid black;
+    border-radius:5px;
+}
+
+div#wrapper form fieldset legend{
+    padding: 0px 10px;
+    font-size:1.7em;
+    font-weight: bold;
+    font-style:italic;
+}
+
+div#wrapper form fieldset label{
+    display: inline-block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+form fieldset input{
+    padding: 10px 15px;
+    border:none;
+    border-radius: 15px;
+    color:white;
+    background: #cccccc;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #000000), color-stop(100%, #cccccc));
+
+}
+
+form fieldset input:last-of-type{
+    margin-bottom:10px;
+}
+
+form fieldset button{
+    padding: 5px 10px;
+    font-size: 1.2em;
+    background:#ffffff;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #000000), color-stop(100%, #ffffff));
+    border: 2px solid black;
+    border-radius: 15px;
+}
+
+form fieldset button:hover{
+    background: #cccccc;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #000000), color-stop(100%, #cccccc));
+
+
+
+}
+
+a.current
+{
+    font-weight:bold;
+}
+
+.invisible
+{
+    display:none;
+}

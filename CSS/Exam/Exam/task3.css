@@ -1,0 +1,153 @@
+﻿* {
+    margin:0;
+    padding:0;
+}
+
+#wrapper{
+    width:960px;
+    display:table;
+    position:relative;
+    overflow:hidden;
+    margin:20px;
+    font-family:Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+
+}
+
+#wrapper > div{
+    border-top: 2px solid rgb(211,215,218);
+    border-bottom: 2px solid rgb(211,215,218);
+    border-left: 2px solid rgb(211,215,218);
+    
+    width:138px;
+    display:inline-block;
+    vertical-align:top;
+    height:auto;
+    
+}
+
+#wrapper div p{
+    vertical-align:top;
+}
+
+h3{
+    font-size:16px;
+    position:relative;
+    left:39px;
+    top:-27px;
+}
+
+h2{
+    font-size:16px;
+    position:relative;
+    left:39px;
+    top:-27px;
+}
+
+#wrapper:nth-child(1) div:nth-child(1) {
+    background: transparent url(imgs/install.png) no-repeat;
+    background-position-y:14px;
+    background-position-x:4px;
+}
+
+#wrapper:nth-child(1) div:nth-child(2) {
+    background: transparent url(imgs/tuneUp.png) no-repeat;
+    background-position-y:14px;
+    background-position-x:4px;
+}
+
+#wrapper div:nth-of-type(3) hgroup h3:before
+{
+    position:absolute;
+    left:-40px;
+    top: 4px;
+    content:  url(imgs/manage.png);
+
+}
+
+#wrapper div:nth-of-type(4) hgroup h2
+{
+    top:-7px;
+}
+#wrapper div:nth-of-type(5) hgroup h2
+{
+    top:-7px;
+}
+
+#wrapper div:nth-of-type(6) hgroup h2
+{
+    top:-7px;
+}
+#wrapper div:nth-of-type(4) hgroup h2:before
+{
+    position:absolute;
+    left:-40px;
+    top: -16px;
+    content:  url(imgs/openSource.png);
+
+}
+
+#wrapper div:nth-of-type(5) hgroup h2:before
+{
+    position:absolute;
+    left:-40px;
+    top: -16px;
+    content:  url(imgs/twitter.png);
+
+}
+
+#wrapper div:nth-of-type(6) hgroup h2:before
+{
+    position:absolute;
+    left:-40px;
+    top: -16px;
+    content:  url(imgs/about.png);
+
+}
+
+#wrapper > div:last-child{
+    border-right: 2px solid rgb(211,215,218);
+}
+
+hgroup{
+    /*text-align:right;*/
+    
+}
+
+.yellowBox a{
+    display:inline-block !important;
+    
+}
+
+.yellowBox{
+    border:1px solid rgb(255, 255, 0);
+    text-align:left;
+    margin-bottom:30px;
+    line-height:1.1em;
+
+}
+
+.yellowBox *{
+    line-height:1em;
+    text-align:left;
+}
+
+#wrapper div div a{
+    color: rgb(199, 45, 47);
+    text-decoration:none;
+    display:block;
+}
+
+#wrapper div{
+    padding: 0 5px;
+    padding-top:37px;
+    
+
+}
+
+#wrapper div div{
+    padding-top:0;
+}
+
+div a span{
+    text-transform:uppercase;
+}

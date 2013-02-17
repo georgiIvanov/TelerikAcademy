@@ -1,0 +1,52 @@
+﻿body, div, h1,p {
+    padding:0;
+    margin:0;
+}
+
+
+#wrapper div{
+    background: -webkit-linear-gradient(top, #de28ff 1%,#f9dbff 100%);
+    width:930px;
+    border-radius:15px;
+    border:1px solid black;
+    margin:25px 25px;
+    font-family:Constantina, Georgia, 'Nimbus Roman No9 L', serif;
+}
+
+#wrapper div h1{
+    padding: 0 35px;
+    padding-top:15px;
+    font-size:28px;
+    font-weight:900;
+}
+
+div p{
+    font-size:16px;
+    
+}
+
+.postedby{
+    border-top:1px solid black;
+    border-bottom:1px solid black;
+    width:390px;
+    text-align:center;
+    padding:5px 0;
+    margin:0px -15px;
+    display:inline-block;
+}
+
+.info{
+    padding: 20px 35px;
+    text-align:justify;
+    padding-bottom:35px;
+}
+
+.right-arrow{
+    left:865px;
+}
+
+.right-arrow, .left-arrow{
+    position:relative;
+    top:40px;
+
+}

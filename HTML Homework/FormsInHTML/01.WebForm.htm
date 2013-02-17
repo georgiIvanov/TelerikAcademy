@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Untitled Page</title>
+
+    <style>
+        .table1
+        {
+            border:2px solid black;
+            border-spacing: 2px;
+            
+        }
+    
+    </style>
+</head>
+<body>
+    <table class="table1" border="1">
+        <tr>
+            <td align="right">Last Name</td><td><input type="text" value="Nakov"/></td>
+        </tr>
+        <tr>
+            <td align="right">First Name</td><td><input type="text" value="Svetlin"/></td>
+        </tr>
+        <tr>
+            <td align="right">Address</td><td><textarea cols="45" rows="7">17 Hristo Botev Str. floor 3, apt. 12</textarea></td>
+        </tr>
+        <tr>
+            <td align="right">City</td>
+            <td>
+                <table class="table2">
+                <tr>
+                    <td><input type="text" value="Kaspichan" id="city" size="43"/></td><td>State</td>
+                    <td><input type="text" size="1"/></td>
+                </tr>
+                    
+                </table>
+            
+            </td>
+        </tr>
+        <tr>
+            <td align="right">Zip/Postal Code</td><td><input type="number" value="9325" /></td>
+        </tr>
+        <tr>
+            <td align="right">Country</td>
+            <td>
+                <select name="Country">
+                    <option>Bulgaria</option>
+                    <option>Lala</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">Phone(country code, <br />area code, number)</td>
+            <td>(+<input type="text" value="359" size="5"/>)<input type="text" value="88" size="5"/>
+                -<input type="text"  value="999999" />   
+            </td>
+        </tr>
+        <tr>
+            <td align="right">E-mail</td>
+            <td><input type="text" size="50" value="nakov@kaspichan.org" /></td>
+        </tr>
+        <tr>
+            <td align="right">Birth date</td>
+            <td>Month <input type="text" size="1" value="06"/> Day <input type="text" size="1" value="14"/>
+                Year (4 digit) <input type="text" value = "1996" />
+            </td>
+        </tr>
+        <tr>
+            <td align="right">Gender</td>
+            <td>
+                <select name="Gender">
+                    <option>Male</option>
+                    <option>Female</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                Starting date
+            </td>
+            <td>
+                <input type="radio" id="spring" name="st" /><label for="spring">Spring 2006</label>
+			    <input type="radio" id="summer" name="st" /><label for="summer">Summer 2006</label>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                Comments/Questions
+            </td>
+            <td>
+                <textarea cols="45" rows="3 ">Lala </textarea>
+            </td>
+        </tr>
+        <tfoot>
+            <tr>
+                <td colspan="2" align="center" style="background:#AFEEEE">
+                    <button>Submit</button>
+                    <button>Cancel</button>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+
+
+</body>
+</html>

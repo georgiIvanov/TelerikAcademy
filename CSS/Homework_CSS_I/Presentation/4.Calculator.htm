@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Calculator</title>
+    <link rel="Stylesheet" href="4.Calculator.css" />
+</head>
+<body>
+    <div id="calculatorOut">
+        <div id="wndProperties">
+            <div id="calcIco">
+                <div>
+                    <img src="calcIco.png" alt="calcIco"/> <p>Calculator</p>
+                </div>
+            </div>
+
+            <div id="winButtonsContainer">
+                <div class="winButtons" id="minimize"><img src="calcUnderscore.png" alt="min"/></div>
+                <div class="winButtons" id="maximize"><img src="calcMaximize.png" alt="max"/></div>
+                <div class="winButtons" id="close"><img src="calcClose.png" alt="close"/></div>
+            </div>
+        </div>
+
+        <div id="interfaceContainer">
+            <div id="menuBar">
+                 <div class="menuButtons"><p>View</p></div>
+                 <div class="menuButtons"><p>Edit</p></div>
+                 <div class="menuButtons"><p>Help</p></div>
+            </div>
+
+            <div id="btnAndDispContainer">
+
+                <div id="calcDisplay">
+                    <p>8854455</p>
+                </div>
+
+                <div id="binaryDisplay">
+                    <table>
+                        <tr class="bits"><td><p>0000</p></td><td><p>0000</p></td><td><p>0000</p></td><td><p>0000</p></td><td><p>0000</p></td><td><p>0000</p></td><td><p>0000</p></td><td><p>0000</p></td></tr>
+                        <tr class="bitPositions"><td  colspan="4"><p>63</p></td><td colspan="3"><p>47</p></td><td><p>32</p></td></tr>
+                        <tr class="bits"><td><p>0000</p></td><td><p>1000</p></td><td><p>1000</p></td><td><p>0101</p></td><td><p>0100</p></td><td><p>0100</p></td><td><p>0101</p></td><td><p>0101</p></td></tr>
+                        <tr class="bitPositions"><td  colspan="4"><p>31</p></td><td colspan="3"><p>15</p></td><td><p>0</p></td></tr>
+                    </table>
+                </div>
+
+                <div id="buttons">
+                    <table>
+                        <tr>
+                            <td colspan="2" rowspan="3" class="choice">
+                            <input type="radio" id="Hex" name="first"/>
+                            <label for="Hex">Hex</label>
+                            <br />
+                            <input type="radio" id="Dec" name="first" checked="checked"/>
+                            <label for="Dec">Dec</label>
+                            <br />
+                            <input type="radio" id="Oct" name="first"/>
+                            <label for="Oct">Oct</label>
+                            <br />
+                            <input type="radio" id="Bin" name="first"/>
+                            <label for="Bin">Bin</label>
+                            </td>
+                            <td class="disabledBtn"><p></p></td>
+                            <td class="enabledBtn"><p>Mod</p></td>
+                            <td class="enabledBtn"><p>A</p></td>
+                            <td class="memoryBtn"><p>MC</p></td>
+                            <td class="memoryBtn"><p>MR</p></td>
+                            <td class="memoryBtn"><p>MS</p></td>
+                            <td class="memoryBtn"><p>M+</p></td>
+                            <td class="memoryBtn"><p>M-</p></td>
+                        </tr>
+                        <tr>
+                            <td class="enabledBtn"><p>(</p></td>
+                            <td class="enabledBtn"><p>)</p></td>
+                            <td class="enabledBtn"><p>B</p></td>
+                            <td class="enabledBtn">&#8592;</td>
+                            <td class="enabledBtn"><p>CE</p></td>
+                            <td class="enabledBtn"><p>C</p></td>
+                            <td class="enabledBtn">&#177;</td>
+                            <td class="disabledBtn">&#8730;</td>
+                        </tr>
+                        <tr>
+                            <td class="enabledBtn"><p>RoL</p></td>
+                            <td class="enabledBtn"><p>RoR</p></td>
+                            <td class="enabledBtn"><p>C</p></td>
+                            <td class="numpadBtn"><p>7</p></td>
+                            <td class="numpadBtn"><p>8</p></td>
+                            <td class="numpadBtn"><p>9</p></td>
+                            <td class="enabledBtn"><p>/</p></td>
+                            <td class="disabledBtn"><p>%</p></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" rowspan="3" class="choice">
+                             <input type="radio" id="Qword" name="second" checked="checked"/>
+                             <label for="Qword">Qword</label>
+                             <br />
+                             <input type="radio" id="Dword" name="second"/>
+                             <label for="Dword">Dword</label>
+                             <br />
+                             <input type="radio" id="Word" name="second"/>
+                             <label for="Word">Word</label>
+                             <br />
+                             <input type="radio" id="Byte" name="second"/>
+                             <label for="Byte">Byte</label>
+                            </td>
+                            <td class="enabledBtn"><p>Or</p></td>
+                            <td class="enabledBtn"><p>Xor</p></td>
+                            <td class="enabledBtn"><p>D</p></td>
+                            <td class="numpadBtn"><p>4</p></td>
+                            <td class="numpadBtn"><p>5</p></td>
+                            <td class="numpadBtn"><p>6</p></td>
+                            <td class="enabledBtn"><p>*</p></td>
+                            <td class="disabledBtn">1/x</td>
+                        </tr>
+                        <tr>
+                            <td class="enabledBtn"><p>Lsh</p></td>
+                            <td class="enabledBtn"><p>Rsh</p></td>
+                            <td class="enabledBtn"><p>E</p></td>
+                            <td class="numpadBtn"><p>1</p></td>
+                            <td class="numpadBtn"><p>2</p></td>
+                            <td class="numpadBtn"><p>3</p></td>
+                            <td class="enabledBtn"><p>-</p></td>
+                            <td rowspan="2" class="enabledBtn"><p>=</p></td>
+                        </tr>
+                        <tr>
+                            <td class="enabledBtn"><p>Not</p></td>
+                            <td class="enabledBtn"><p>And</p></td>
+                            <td class="enabledBtn"><p>F</p></td>
+                            <td colspan="2" class="numpadBtn"><p>0</p></td>
+                            <td class="disabledBtn"><p>,</p></td>
+                            <td class="enabledBtn"><p>+</p></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+    
+    </div>
+
+
+
+</body>
+</html>

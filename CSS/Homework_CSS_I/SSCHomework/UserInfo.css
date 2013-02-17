@@ -1,0 +1,89 @@
+﻿body
+{
+    background-color: #999999;
+}
+
+dt 
+{
+    float: left;
+    width: 150px;
+    color: rgb(255, 241, 218);
+    text-align:left;
+    font-style:italic;
+}
+
+dt:after 
+{
+    content: ":";
+}
+dd
+{
+    margin: 0 0 0 120px;
+    padding: 0 0 1em 0;
+}
+
+.UserInformation
+{
+    position:relative;
+    top:30%;
+    left:40%;
+    width: 350px;
+    background-color: #898989;
+    color:White;
+    font-family:Sans-Serif;
+    
+}
+
+.UserInformation a
+{
+    text-decoration: none;
+    color: White;
+}
+
+.UserInformation dl dt:first-of-type, .UserInformation dl dd:first-of-type
+{
+    padding: 0.3em 0 0.6em 0;
+    margin: 0 0 10px 0;
+    text-align:left;
+    color: rgb(189, 182, 161);
+}
+
+.UserInformation dl dt:first-of-type
+{
+    padding: 0.3em 0.3em 0 0;
+    margin: 0 0 0 10px;
+    font-style:normal;
+    width:70px;
+}
+
+.UserInformation dd:nth-child(8), .UserInformation dd:nth-child(10)
+{
+    color:rgb(150, 210, 220);
+}
+
+.UserInformation dd:last-child
+{
+    color:Orange;
+    font-weight:bold;   
+}
+
+#circle {
+	width: 10px;
+	height: 10px;
+	background: rgb(113, 180, 122);
+	-webkit-border-radius: 50px;
+	display:inline-block;
+	margin:0 3px 0 0;
+}
+
+#noSupport
+{
+    color:Red;
+    font-weight:bold;
+}
+
+#LinkToPubPost
+{ 
+    margin: 0 0 0 120px;
+    padding: 0 0 0.9em 1.9em;
+}

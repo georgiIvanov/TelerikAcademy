@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{89C7D573-223B-4F43-A8CB-CB9C50CDF81F}</ProjectGuid>
+    <ProjectGuid>{4948B3B9-A1CC-4D6F-ADA8-3B3245AA3FF3}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_03.AddEnumeration</RootNamespace>
-    <AssemblyName>03.AddEnumeration</AssemblyName>
+    <RootNamespace>_06.AddStaticProperty</RootNamespace>
+    <AssemblyName>06.AddStaticProperty</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddEnumeration.cs" />
+    <Compile Include="AddStaticProperty.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

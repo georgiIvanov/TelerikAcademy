@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{89C7D573-223B-4F43-A8CB-CB9C50CDF81F}</ProjectGuid>
+    <ProjectGuid>{E34AAEB5-EFA5-41D0-8F3C-BF80B82A70DF}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_03.AddEnumeration</RootNamespace>
-    <AssemblyName>03.AddEnumeration</AssemblyName>
+    <RootNamespace>_05.Encapsulation</RootNamespace>
+    <AssemblyName>05.Encapsulation</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddEnumeration.cs" />
+    <Compile Include="Encapsulation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

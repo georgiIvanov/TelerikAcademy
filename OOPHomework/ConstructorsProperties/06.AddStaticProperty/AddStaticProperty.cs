@@ -4,20 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _02.DifferentConstructors
+namespace _01.MobilePhoneClass
 {
-    class DifferentConstructors
+    class AddStaticProperty
     {
         static void Main(string[] args)
         {
-            GSM phone = new GSM("lala", "sumsAng");
-            Console.WriteLine(phone.ToString());
-            phone = new GSM("lala", "sumsAng", "batman");
-            Console.WriteLine(phone.ToString());
-            phone = new GSM("lol", "krusha", "suparMan", 9999, new Battery("tuhla", 2, 1));
-            Console.WriteLine(phone.ToString());
-            phone = new GSM("lol", "krusha", "suparMan", 9999, new Display(5.5, 3));
-            Console.WriteLine(phone.ToString());
+            Console.WriteLine(GSM.iPhone4SInfo);
         }
     }
 
@@ -26,26 +19,12 @@ namespace _02.DifferentConstructors
         public Battery battery { get; set; }
         public Display display { get; set; }
 
+        public static string iPhone4SInfo = "iPhone information \nManufacturer: Apple\nDisplay: Bad\nBattery: 3 hrs in standby\nUtility: Useless";
+
         public string model { get; set; }
         public string manufacturer { get; set; }
         public string owner { get; set; }
         public double? price { get; set; }
-
-        public GSM(string model, string manuf)
-        {
-            this.model = model;
-            this.manufacturer = manuf;
-            this.owner = null;
-            this.price = null;
-        }
-
-        public GSM(string model, string manuf, string owner)
-        {
-            this.model = model;
-            this.manufacturer = manuf;
-            this.owner = owner;
-            this.price = null;
-        }
 
         public GSM(string model, string manuf, string owner, double price)
         {
@@ -65,33 +44,16 @@ namespace _02.DifferentConstructors
             this.display = display;
         }
 
-        public GSM(string model, string manuf, string owner, double price, Battery battery)
-        {
-            this.model = model;
-            this.manufacturer = manuf;
-            this.owner = owner;
-            this.price = price;
-            this.battery = battery;
-        }
-
-        public GSM(string model, string manuf, string owner, double price, Display display)
-        {
-            this.model = model;
-            this.manufacturer = manuf;
-            this.owner = owner;
-            this.price = price;
-            this.display = display;
-        }
-
-        
-
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendFormat("Model: {0}\n", model);
             sb.AppendFormat("Manufacturer: {0}\n", manufacturer);
-            sb.AppendFormat("Owner: {0}\n", owner);
-            sb.AppendFormat("Price: {0}\n", price);
+
+            if (owner != null)
+                sb.AppendFormat("Owner: {0}\n", owner);
+            if (price != null)
+                sb.AppendFormat("Price: {0}\n", price);
 
             if (battery != null)
             {

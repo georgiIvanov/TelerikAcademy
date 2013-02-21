@@ -12,11 +12,11 @@ namespace _02.DifferentConstructors
     {
         static void Main(string[] args)
         {
-            GSM phone = new GSM("lala", "sumsAng");
-            phone = new GSM("lol", "krusha", "suparMan", 9999, new Battery(Battery.batteryModel.LiIon, 2, 1));
-            Console.WriteLine(phone.ToString());
-            phone = new GSM("ROFL", "kazanlak ltd", "batMan", 9999, new Battery(Battery.batteryModel.NiCd, 999, 9999));
-            Console.WriteLine(phone.ToString());
+            GSM phone1 = new GSM("lala", "sumsAng");
+            phone1 = new GSM("lol", "krusha", "suparMan", 9999, new Battery(Battery.batteryModel.LiIon, 2, 1));
+            Console.WriteLine(phone1.ToString());
+            phone1 = new GSM("ROFL", "kazanlak ltd", "batMan", 9999, new Battery(Battery.batteryModel.NiCd, 999, 9999));
+            Console.WriteLine(phone1.ToString());
         }
     }
 

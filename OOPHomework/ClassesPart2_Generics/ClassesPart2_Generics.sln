@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.Point3D", "01.Point3D\01.Point3D.csproj", "{4C0712E3-E3FD-42A5-A40D-1B4F91334B04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.AddStaticReadonly", "02.AddStaticReadonly\02.AddStaticReadonly.csproj", "{628DB2BB-3514-4F66-A482-D191C039BBD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.CalcDistance", "03.CalcDistance\03.CalcDistance.csproj", "{EE9DA361-D21C-4DF1-A5D3-165169E6625E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.SaveLoadPaths", "04.SaveLoadPaths\04.SaveLoadPaths.csproj", "{A19B72CB-D4A7-4166-9252-2097E2EA3986}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4C0712E3-E3FD-42A5-A40D-1B4F91334B04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C0712E3-E3FD-42A5-A40D-1B4F91334B04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C0712E3-E3FD-42A5-A40D-1B4F91334B04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C0712E3-E3FD-42A5-A40D-1B4F91334B04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{628DB2BB-3514-4F66-A482-D191C039BBD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{628DB2BB-3514-4F66-A482-D191C039BBD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{628DB2BB-3514-4F66-A482-D191C039BBD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{628DB2BB-3514-4F66-A482-D191C039BBD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE9DA361-D21C-4DF1-A5D3-165169E6625E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE9DA361-D21C-4DF1-A5D3-165169E6625E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE9DA361-D21C-4DF1-A5D3-165169E6625E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE9DA361-D21C-4DF1-A5D3-165169E6625E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A19B72CB-D4A7-4166-9252-2097E2EA3986}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A19B72CB-D4A7-4166-9252-2097E2EA3986}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A19B72CB-D4A7-4166-9252-2097E2EA3986}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A19B72CB-D4A7-4166-9252-2097E2EA3986}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

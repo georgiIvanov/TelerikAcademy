@@ -15,6 +15,8 @@ class AddCallHistory
         phone.MakeCall(DateTime.Now.AddDays(99), "0889666999", 9.44);
         phone.MakeCall(DateTime.Now.AddDays(5).AddHours(10), "0009666999", 9.44);
 
+
+
         Console.WriteLine("Calls ordered by date: ");
         foreach (DateTime timeOfCall in phone.GetCallsByDate())
         {

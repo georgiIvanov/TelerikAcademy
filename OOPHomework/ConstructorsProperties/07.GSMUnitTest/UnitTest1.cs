@@ -8,7 +8,7 @@ namespace _07.GSMUnitTest
     public class ValidateGSMClass
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestInformation()
         {
             GSM[] phones = new GSM[3];
             phones[0] = new GSM("tuhla", "paragvai", "spongeBob", 1000, new Battery("lol", 1, 23141), new Display(4.5, 5));

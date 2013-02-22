@@ -4,27 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MobilePhoneClass
+namespace GSMTask11
 {
-    public class GSMTest
+    class CalcTotalPrice
     {
         static void Main(string[] args)
         {
-            //-------------------------------------------------------
-            //-------Test GSM class with the unit test 07.GSMUnitTest
-            //-------------------------------------------------------
+            GSM phone = new GSM("lala", "sumsAng", "batman", 10000.99);
 
+            phone.MakeCall(DateTime.Now, "0899999999", 3.44);
+            phone.MakeCall(DateTime.Now.AddHours(3), "0899999999", 3.44);
+            phone.MakeCall(DateTime.Now.AddDays(99), "0889666999", 9.44);
+            phone.MakeCall(DateTime.Now.AddDays(5).AddHours(10), "0009666999", 9.44);
 
-            GSM[] phones = new GSM[3];
-            phones[0] = new GSM("tuhla", "paragvai", "spongeBob", 1000, new Battery("lol", 1, 23141), new Display(4.5, 5));
-            phones[1] = new GSM("Kroasan5000", "4i4o Mitko", "apatrahil", 600, new Battery("ROFLCOPTER", 312, 22), new Display(2, 34));
-            phones[2] = new GSM("Fafla", "francuzite", "jan-mishel-jar", 3, new Battery("GTFO", 1, 1), new Display(3213, 234533));
+            Console.Write(phone.ToString());
+            phone.setCallRate = 0.37;
 
-            foreach (var item in phones)
-            {
-                Console.WriteLine(item.ToString());
-            }
-            Console.WriteLine(GSM.iPhone4SInfo);
+            Console.WriteLine("{0:F2}", phone.CalculateTotalPriceOfCalls());
         }
     }
 
@@ -32,13 +28,13 @@ namespace MobilePhoneClass
     {
         public Battery battery { get; set; }
         public Display display { get; set; }
-
-        public static string iPhone4SInfo = "iPhone information \nManufacturer: Apple\nDisplay: Bad\nBattery: 3 hrs in standby\nUtility: Useless";
+        private List<Call> phoneCalls = new List<Call>();
 
         public string model { get; set; }
         public string manufacturer { get; set; }
         public string owner { get; set; }
         public double? price { get; set; }
+        public double setCallRate { get; set; }
 
         public GSM(string model, string manuf, string owner, double price)
         {
@@ -56,6 +52,53 @@ namespace MobilePhoneClass
             this.price = price;
             this.battery = battery;
             this.display = display;
+        }
+
+        public void MakeCall(DateTime dateCallIsMade, string dialedNumber, double duration)
+        {
+            if (dialedNumber.Length < 10)
+            {
+                throw new ArgumentException("dialed number is wrong");
+            }
+
+            phoneCalls.Add(new Call(dateCallIsMade, dialedNumber, duration));
+        }
+
+        public IEnumerable<DateTime> GetCallsByDate()
+        {
+            var calls = phoneCalls.Select(call => new
+            {
+                call.date
+            })
+            .OrderByDescending(call => call.date)
+            .Select(call => call.date);
+
+            return calls;
+        }
+
+        public void ClearCallHistory()
+        {
+            phoneCalls.Clear();
+        }
+
+        /// <summary>
+        /// Enter zero based position of the call you want to delete
+        /// </summary>
+        /// <param name="number">index of call to be deleted</param>
+        public void DeleteCall(int number)
+        {
+            phoneCalls.Remove(phoneCalls[number]);
+        }
+
+        public double CalculateTotalPriceOfCalls()
+        {
+            double totalLength = 0;
+            foreach (var item in phoneCalls)
+            {
+                totalLength += item.duration;
+            }
+
+            return totalLength * setCallRate;
         }
 
         public override string ToString()
@@ -80,6 +123,29 @@ namespace MobilePhoneClass
             return sb.ToString();
         }
 
+    }
+
+    class Call
+    {
+        public DateTime date;
+        string dialedPhone;
+        public double duration;
+
+        public Call(DateTime dateCallIsMade, string dialedNumber, double duration)
+        {
+            this.date = dateCallIsMade;
+            this.dialedPhone = dialedNumber;
+            this.duration = duration;
+        }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendFormat("Date: {0}\n", date.Date);
+            sb.AppendFormat("Time: {0}\n", date.TimeOfDay);
+            sb.AppendFormat("Duration: {0}\n", duration);
+            return sb.ToString();
+        }
     }
 
     public class Battery

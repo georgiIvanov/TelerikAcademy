@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07.GSMUnitTest", "07.GSMUni
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.AddDeleteHistory", "10.AddDeleteHistory\10.AddDeleteHistory.csproj", "{4AD9D120-770C-4CCA-835D-5C867C3B568E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11.CalcTotalPrice", "11.CalcTotalPrice\11.CalcTotalPrice.csproj", "{C0C1F2C4-59C6-4A8B-9AD8-1B8A4B068D8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12.GSMCallHistoryTest", "12.GSMCallHistoryTest\12.GSMCallHistoryTest.csproj", "{A22BB0EF-D742-467C-8303-B8476B83854D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +77,14 @@ Global
 		{4AD9D120-770C-4CCA-835D-5C867C3B568E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4AD9D120-770C-4CCA-835D-5C867C3B568E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4AD9D120-770C-4CCA-835D-5C867C3B568E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0C1F2C4-59C6-4A8B-9AD8-1B8A4B068D8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0C1F2C4-59C6-4A8B-9AD8-1B8A4B068D8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0C1F2C4-59C6-4A8B-9AD8-1B8A4B068D8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0C1F2C4-59C6-4A8B-9AD8-1B8A4B068D8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A22BB0EF-D742-467C-8303-B8476B83854D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A22BB0EF-D742-467C-8303-B8476B83854D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A22BB0EF-D742-467C-8303-B8476B83854D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A22BB0EF-D742-467C-8303-B8476B83854D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

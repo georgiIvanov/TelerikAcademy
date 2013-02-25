@@ -120,20 +120,6 @@ namespace _08.GenericMatrix
             matrixDimension = dimensions;
         }
 
-        Matrix(int dimensions, Matrix<T> newM)
-        {
-            matrix = new T[dimensions, dimensions];
-            matrixDimension = dimensions;
-
-            for (int i = 0; i < dimensions; i++)
-            {
-                for (int j = 0; j < dimensions; j++)
-                {
-                    matrix[i, j] = newM[i, j];
-                }
-            }
-        }
-
         public T this[int i, int j]
         {
             get { return matrix[i, j]; }
@@ -142,12 +128,12 @@ namespace _08.GenericMatrix
 
         public static Matrix<T> operator +(Matrix<T> m1, Matrix<T> m2)
         {
-            Matrix<T> mNew = m1.matrixDimension > m2.matrixDimension ? m1 : m2;
-            mNew = new Matrix<T>(mNew.matrixDimension, mNew);
+            if (m1.matrixDimension != m2.matrixDimension) throw new ArgumentException("matrices have different sizes");
+            Matrix<T> mNew = new Matrix<T>(m1.matrixDimension);
 
-            for (int i = 0; i < m1.matrixDimension && i < m2.matrixDimension; i++)
+            for (int i = 0; i < m1.matrixDimension; i++)
             {
-                for (int j = 0; j < m1.matrixDimension && j < m2.matrixDimension; j++)
+                for (int j = 0; j < m1.matrixDimension; j++)
                 {
                     dynamic a = m1[i, j];
                     dynamic b = m2[i, j];
@@ -160,33 +146,19 @@ namespace _08.GenericMatrix
 
         public static Matrix<T> operator -(Matrix<T> m1, Matrix<T> m2)
         {
-            Matrix<T> mNew = m1.matrixDimension > m2.matrixDimension ? m1 : m2;
-            mNew = new Matrix<T>(mNew.matrixDimension, mNew);
+            if (m1.matrixDimension != m2.matrixDimension) throw new ArgumentException("matrices have different sizes");
+            Matrix<T> mNew = new Matrix<T>(m1.matrixDimension);
 
-            if (m1.matrixDimension > m2.matrixDimension)
+            for (int i = 0; i < m1.matrixDimension; i++)
             {
-                for (int i = 0; i < m1.matrixDimension && i < m2.matrixDimension; i++)
+                for (int j = 0; j < m1.matrixDimension; j++)
                 {
-                    for (int j = 0; j < m1.matrixDimension && j < m2.matrixDimension; j++)
-                    {
-                        dynamic a = m1[i, j];
-                        dynamic b = m2[i, j];
-                        mNew[i, j] = a - b;
-                    }
+                    dynamic a = m1[i, j];
+                    dynamic b = m2[i, j];
+                    mNew[i, j] = a - b;
                 }
             }
-            else
-            {
-                for (int i = 0; i < m1.matrixDimension && i < m2.matrixDimension; i++)
-                {
-                    for (int j = 0; j < m1.matrixDimension && j < m2.matrixDimension; j++)
-                    {
-                        dynamic a = m1[i, j];
-                        dynamic b = m2[i, j];
-                        mNew[i, j] = b - a;
-                    }
-                }
-            }
+            
             return mNew;
         }
 

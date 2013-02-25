@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09.AddIndexer", "09.AddInde
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.MatrixOperations", "10.MatrixOperations\10.MatrixOperations.csproj", "{0A8C8A74-20EB-4179-817D-5CE742D7DB34}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11.Attributes", "11.Attributes\11.Attributes.csproj", "{102415B7-1E25-48C5-888D-91E2BA73D337}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,10 @@ Global
 		{0A8C8A74-20EB-4179-817D-5CE742D7DB34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A8C8A74-20EB-4179-817D-5CE742D7DB34}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A8C8A74-20EB-4179-817D-5CE742D7DB34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{102415B7-1E25-48C5-888D-91E2BA73D337}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{102415B7-1E25-48C5-888D-91E2BA73D337}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{102415B7-1E25-48C5-888D-91E2BA73D337}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{102415B7-1E25-48C5-888D-91E2BA73D337}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

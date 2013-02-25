@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _08.GenericMatrix
 {
@@ -57,7 +52,6 @@ namespace _08.GenericMatrix
             Console.WriteLine();
 
             newMatrix = matrix1 + matrix2;
-
             for (int i = 0; i < newMatrix.matrixDimension; i++)
             {
                 for (int j = 0; j < newMatrix.matrixDimension; j++)
@@ -68,8 +62,9 @@ namespace _08.GenericMatrix
             }
             Console.WriteLine();
             Console.WriteLine();
+
+
             newMatrix = matrix1 - matrix2;
-
             for (int i = 0; i < newMatrix.matrixDimension; i++)
             {
                 for (int j = 0; j < newMatrix.matrixDimension; j++)
@@ -78,11 +73,11 @@ namespace _08.GenericMatrix
                 }
                 Console.WriteLine();
             }
+            Console.WriteLine();
+            Console.WriteLine();
 
-            Console.WriteLine();
-            Console.WriteLine();
+
             newMatrix = matrix1 * matrix2;
-
             for (int i = 0; i < newMatrix.matrixDimension; i++)
             {
                 for (int j = 0; j < newMatrix.matrixDimension; j++)
@@ -105,7 +100,7 @@ namespace _08.GenericMatrix
         }
     }
 
-    class Matrix<T> where T : IComparable
+    class Matrix<T>
     {
         private T[,] matrix;
         public int matrixDimension
@@ -166,7 +161,7 @@ namespace _08.GenericMatrix
         {
             if (m1.matrixDimension != m2.matrixDimension)
             {
-                throw new ArithmeticException("Matrices cant be multiplicated");
+                throw new ArithmeticException("Matrices cant be multiplied");
             }
 
             Matrix<T> mNew = new Matrix<T>(m1.matrixDimension);
@@ -181,7 +176,6 @@ namespace _08.GenericMatrix
                             dynamic a = m1[h, j];
                             dynamic b = m2[j, i];
                             sum += a * b;
-                            //mNew[i, j] = a * b;
                         }
                         mNew[h, i] = sum;
                     }

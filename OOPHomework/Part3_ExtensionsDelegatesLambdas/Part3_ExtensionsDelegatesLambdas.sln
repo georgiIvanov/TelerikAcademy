@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.SubstringExtension", "01.SubstringExtension\01.SubstringExtension.csproj", "{CAA1040C-313B-4A41-BEC2-E0E31502192C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.IEnumerableExtensions", "02.IEnumerableExtensions\02.IEnumerableExtensions.csproj", "{563549F0-8D60-4417-BA0B-0DC134B43B5E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CAA1040C-313B-4A41-BEC2-E0E31502192C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAA1040C-313B-4A41-BEC2-E0E31502192C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAA1040C-313B-4A41-BEC2-E0E31502192C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAA1040C-313B-4A41-BEC2-E0E31502192C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{563549F0-8D60-4417-BA0B-0DC134B43B5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{563549F0-8D60-4417-BA0B-0DC134B43B5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{563549F0-8D60-4417-BA0B-0DC134B43B5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{563549F0-8D60-4417-BA0B-0DC134B43B5E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

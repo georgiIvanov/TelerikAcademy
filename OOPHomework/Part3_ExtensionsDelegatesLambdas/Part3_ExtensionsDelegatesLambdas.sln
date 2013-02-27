@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.AgeQuery", "04.AgeQuery\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05.SortByNames", "05.SortByNames\05.SortByNames.csproj", "{1E75903A-C953-4CAF-82B6-74CC7924B1AA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06.DivisibleBy7And3", "06.DivisibleBy7And3\06.DivisibleBy7And3.csproj", "{CDDF819C-28D9-41AE-8A3A-612B35484C8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07.Timer", "07.Timer\07.Timer.csproj", "{17638EAD-6721-4B28-A005-EBFCF3172437}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +41,14 @@ Global
 		{1E75903A-C953-4CAF-82B6-74CC7924B1AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E75903A-C953-4CAF-82B6-74CC7924B1AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E75903A-C953-4CAF-82B6-74CC7924B1AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDDF819C-28D9-41AE-8A3A-612B35484C8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDDF819C-28D9-41AE-8A3A-612B35484C8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDDF819C-28D9-41AE-8A3A-612B35484C8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDDF819C-28D9-41AE-8A3A-612B35484C8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17638EAD-6721-4B28-A005-EBFCF3172437}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17638EAD-6721-4B28-A005-EBFCF3172437}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17638EAD-6721-4B28-A005-EBFCF3172437}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17638EAD-6721-4B28-A005-EBFCF3172437}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

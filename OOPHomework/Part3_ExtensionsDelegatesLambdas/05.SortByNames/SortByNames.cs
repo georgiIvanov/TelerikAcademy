@@ -20,23 +20,12 @@ namespace _05.SortByNames
             students.Add(new Student("A", "B", 18));
 
             var sorted = students.OrderByDescending(x => x.firstName).ThenByDescending(x => x.lastName);
-                       
-            foreach (var item in sorted)
-            {
-                Console.WriteLine("{0} {1}", item.firstName, item.lastName);
-            }
-            Console.WriteLine();
-
-
-            var sorted2 = from stud in students
-                          orderby stud.firstName, stud.lastName descending
-                          select stud;
+                                 
 
             foreach (var item in sorted)
             {
-                Console.WriteLine("{0} {1}", item.firstName, item.lastName);
+                Console.WriteLine("{0} {1}",item.firstName, item.lastName);
             }
-            
         }
     }
 

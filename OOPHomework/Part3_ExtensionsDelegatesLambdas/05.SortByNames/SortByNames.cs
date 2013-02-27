@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace _05.SortByNames
 {
-    class Program
+    class SortByNames
     {
         static void Main(string[] args)
         {
             List<Student> students = new List<Student>();
 
             students.Add(new Student("Ku", "-Ku", 20));
-            students.Add(new Student("Shu", "Shuu", 90));
+            students.Add(new Student("Super", "Man", 90));
             students.Add(new Student("A", "Z", 20));
             students.Add(new Student("Bruce", "Wayne", 24));
             students.Add(new Student("Ala", "Bala", 25));
-            students.Add(new Student("Foo", "Foo", 18));
+            students.Add(new Student("A", "B", 18));
 
             var sorted = students.OrderByDescending(x => x.firstName).ThenByDescending(x => x.lastName);
                                  

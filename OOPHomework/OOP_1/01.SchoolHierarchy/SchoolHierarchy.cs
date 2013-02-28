@@ -61,6 +61,9 @@ namespace SchoolHierarchy
             Console.WriteLine("\nAdded a student to a class -\nclass: {0} \nstudents: {1}", getClass.GetUTID, getClass.GetNumberOfStudents);
             getClass.RemoveStudent(allStudents[0]);
             Console.WriteLine("\nRemoved a student -\nclass: {0} \nstudents: {1}", getClass.GetUTID, getClass.GetNumberOfStudents);
+            getClass.Comment = "avoid eye contact";
+            Console.WriteLine("\nRemoved a student -\nclass: {0} \nstudents: {1}\nComment: {2}", getClass.GetUTID, getClass.GetNumberOfStudents, getClass.Comment);
+
         }
     }
 
@@ -124,27 +127,50 @@ namespace SchoolHierarchy
     class Student : Person
     {
         int ucn; //unique class number
+        string commentOnStudent;
 
         public Student(string firstName, string lastName, int ucn)
             : base(firstName, lastName)
         {
             this.ucn = ucn;
+            commentOnStudent = string.Empty;
+        }
+
+        public Student(string firstName, string lastName, int ucn, string comment)
+            : base(firstName, lastName)
+        {
+            this.ucn = ucn;
+            commentOnStudent = comment;
         }
 
         public int GetUCN
         {
             get { return this.ucn; }
         }
+        public string Comment
+        {
+            get { return this.commentOnStudent; }
+            set { this.commentOnStudent = value; }
+        }
     }
 
     class Teacher : Person
     {
         List<Discipline> disciplines;
+        string commentOnTeacher;
 
         public Teacher(string firstName, string secondName) 
             : base(firstName, secondName)
         {
             disciplines = new List<Discipline>();
+            commentOnTeacher = string.Empty;
+        }
+
+        public Teacher(string firstName, string secondName, string comment)
+            : base(firstName, secondName)
+        {
+            disciplines = new List<Discipline>();
+            commentOnTeacher = comment;
         }
 
         public Teacher(string firstName, string secondName, Discipline disc) 
@@ -152,6 +178,14 @@ namespace SchoolHierarchy
         {
             disciplines = new List<Discipline>();
             disciplines.Add(disc);
+        }
+
+        public Teacher(string firstName, string secondName, Discipline disc, string comment)
+            : base(firstName, secondName)
+        {
+            disciplines = new List<Discipline>();
+            disciplines.Add(disc);
+            commentOnTeacher = comment;
         }
 
         public void AddDiscipline(Discipline disc)
@@ -168,11 +202,17 @@ namespace SchoolHierarchy
                                         select disc).ToList();
             return alldisc;
         }
+
+        public string Comment
+        {
+            get { return this.commentOnTeacher; }
+            set { this.commentOnTeacher = value; }
+        }
     }
 
     class Discipline
     {
-        string name;
+        string name, commentOnDiscipline;
         int lecturesCount, exercisesCount;
 
         public Discipline(string name, int lecturesCount, int exercisesCount)
@@ -180,12 +220,28 @@ namespace SchoolHierarchy
             this.name = name;
             this.lecturesCount = lecturesCount;
             this.exercisesCount = exercisesCount;
+            commentOnDiscipline = string.Empty;
+        }
+
+        public Discipline(string name, int lecturesCount, int exercisesCount, string comment)
+        {
+            this.name = name;
+            this.lecturesCount = lecturesCount;
+            this.exercisesCount = exercisesCount;
+            commentOnDiscipline = comment;
+        }
+
+        public string Comment
+        {
+            get { return this.commentOnDiscipline; }
+            set { this.commentOnDiscipline = value; }
         }
     }
 
     class Class
     {
         string utid; //unique text identifier
+        string commentOnClass;
         List<Teacher> setOfTeachers;
         List<Student> setOfStudents;
 
@@ -194,6 +250,7 @@ namespace SchoolHierarchy
             this.utid = uniqueClassID;
             setOfTeachers = new List<Teacher>();
             setOfStudents = new List<Student>();
+            commentOnClass = string.Empty;
         }
 
         public Class(string uniqueClassID, Teacher[] teachers, Student[] students)
@@ -209,11 +266,35 @@ namespace SchoolHierarchy
             {
                 this.AddStudent(item);
             }
+
+        }
+
+        public Class(string uniqueClassID, Teacher[] teachers, Student[] students, string comment)
+        {
+            this.utid = uniqueClassID;
+            this.commentOnClass = comment;
+            setOfTeachers = new List<Teacher>();
+            setOfStudents = new List<Student>();
+            foreach (var item in teachers)
+            {
+                this.AddTeacher(item);
+            }
+            foreach (var item in students)
+            {
+                this.AddStudent(item);
+            }
+
         }
 
         public string GetUTID
         {
             get { return this.utid; }
+        }
+
+        public string Comment
+        {
+            get { return this.commentOnClass; }
+            set { this.commentOnClass = value; }
         }
 
         public void AddTeacher(Teacher teacher)

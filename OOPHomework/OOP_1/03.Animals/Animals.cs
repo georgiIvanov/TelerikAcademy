@@ -35,7 +35,32 @@ namespace _03.Animals
             Console.WriteLine(regularCat.ProduceSound());
             Console.WriteLine(kitten.ProduceSound());
             Console.WriteLine(tomcat.ProduceSound());
+            Console.WriteLine();
+
+            List<Dog> dogs = new List<Dog>();
+            dogs.Add(dog);
+            dogs.Add(new Dog("me4o", AnimalSex.female, 69));
+            dogs.Add(new Dog("FU", AnimalSex.female, 96));
+            double averageAge = dogs.Average((x) => x.Age);
+            Console.WriteLine("Dogs average age: {0}", averageAge);
+
+            List<Frog> frogs = new List<Frog>();
+            frogs.Add(frog);
+            frogs.Add(new Frog("Big Toad", AnimalSex.male, 2));
+            frogs.Add(new Frog("Lesser Toad", AnimalSex.female, 2));
+            averageAge = frogs.Average((x) => x.Age);
+            Console.WriteLine("Frogs average age: {0}", averageAge);
+
+            List<Kitten> kittens = new List<Kitten>();
+            kittens.Add(kitten);
+            kittens.Add(new Kitten("little kittenn", AnimalSex.female, 2));
+            kittens.Add(new Kitten("big kitten", AnimalSex.female, 2));
+            averageAge = kittens.Average((x) => x.Age);
+            Console.WriteLine("Kittens average age: {0}", averageAge);
+
         }
+
+        
     }
 
     interface ISound
@@ -60,6 +85,11 @@ namespace _03.Animals
             this.name = name;
             this.sex = sex;
             this.age = age;
+        }
+
+        public int Age
+        {
+            get { return age; }
         }
 
         public override string ToString()

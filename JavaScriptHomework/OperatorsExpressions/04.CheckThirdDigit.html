@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        var number = 321735;
+
+        for (var i = 0; i < 2; i++)
+        {
+            if(number != 0)
+            {
+                number = parseInt(number / 10);
+            }
+        }
+        if (number != 0)
+        {
+            number %= 10;
+        }
+        if(number == 7)
+        {
+            alert("third digit is 7");
+        }
+        else
+        {
+            alert("third digit isn't 7");
+        }
+    </script>
+</body>
+</html>

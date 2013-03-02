@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        var number = 11;
+
+        var sqrtOfNumber = parseInt(Math.sqrt(number));
+        var isPrime = true;
+
+        for (var i = 2; i <= sqrtOfNumber; i++) {
+            if (number % i == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+
+        if (isPrime) {
+            alert(number + " is prime");
+        }
+        else {
+            alert(number + " is not prime");
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <input type="number" id="a" />
+    <input type="number" id="b"/>
+    <input type="number" id="c"/>
+    <button onclick="Calculate()">Submit</button>
+
+    <script>
+        function Calculate() {
+           
+            var a = document.getElementById("a").value;
+            var b = document.getElementById("b").value;
+            var c = document.getElementById("c").value;
+            
+
+            var d = b * b - 4 * a * c;
+
+            if(d > 0)
+            {
+                var x1 = -b * (-Math.sqrt(d)) / 2 * a;
+                var x2 = -b * Math.sqrt(d) / 2 * a;
+                alert("x1 is " + x1 + "\nx2 is " + x2);
+            }
+            else if(d == 0)
+            {
+                var x = -b / 2 * a;
+                alert("double root: +-" + x);
+            }
+            else
+            {
+                alert("No real roots");
+            }
+        }
+    </script>
+</body>
+</html>

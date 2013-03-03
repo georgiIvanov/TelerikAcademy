@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <input type="number" id="a" /> <br />
+    <input type="number" id="b"/> <br />
+    <input type="number" id="c"/> <br />
+    <input type="number" id="d"/> <br />
+    <input type="number" id="e"/> <br />
+    <button onclick="Evaluate()">Submit</button>
+
+    <script>
+        function Evaluate() {
+
+            var numbers = new Array(5);
+            var id = 97;
+            for (var i = 0; i < numbers.length; i++) {
+                numbers[i] = parseInt(document.getElementById(String.fromCharCode(id)).value);
+                id += 1;
+            }
+
+            var biggest = numbers[0];
+            for (var i = 0; i < numbers.length; i++) {
+                if(biggest < numbers[i])
+                {
+                    biggest = numbers[i];
+                }
+            }
+
+            alert("biggest number is " + biggest);
+        }
+    </script>
+</body>
+</html>

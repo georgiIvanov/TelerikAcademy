@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <script>
+
+        var numbers = new Array(2, 0, 1);
+
+        numbers.sort(function (a, b) { return b - a });
+        
+        var sorted = "Sorted numbers: ";
+        for (var i = 0; i < numbers.length; i++) {
+            sorted += numbers[i] + " ";
+        }
+
+        alert(sorted);
+    </script>
+
+</body>
+</html>

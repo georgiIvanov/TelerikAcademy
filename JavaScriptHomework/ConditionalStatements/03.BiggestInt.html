@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <script>
+        var numbers = new Array(1, -2, 3, 6, 2, 5, -1);
+
+        var biggestNum = numbers[0];
+        for (var i = 0; i < numbers.length; i++) {
+            if(biggestNum < numbers[i])
+            {
+                biggestNum = numbers[i];
+            }
+        }
+
+        alert("Biggest: " + biggestNum);
+
+    </script>
+
+</body>
+</html>

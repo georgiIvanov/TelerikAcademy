@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <script>
+        var number = parseInt(prompt("Enter number between 0 and 999: "));
+
+        var digits = new Array("zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine");
+        var special = new Array("ten", "eleven", "twelve", "thirdtheen", "fourthen", "fiftheen", "sixtheen", "seventheen", "eightheen", "ninetheen");
+        var tens = new Array("", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety");
+
+        var output = "";
+
+        var firstDigit = parseInt(number % 10);
+        var secondDigit = parseInt((number / 10) % 10);
+        var thirdDigit = parseInt((number / 100) % 10);
+
+        if(thirdDigit != 0)
+        {
+            output = digits[thirdDigit] + " hundred ";
+            if(secondDigit != 0 && secondDigit != 1 && number >= 20)
+            {
+                output += "and " + tens[secondDigit] + " ";
+                if(firstDigit != 0)
+                {
+                    output += digits[firstDigit];
+                }
+            }
+            else if(secondDigit == 1)
+            {
+                output += "and " + special[firstDigit];
+            }
+            else
+            {
+                if(firstDigit != 0)
+                {
+                    output += "and " + digits[firstDigit];
+                }
+            }
+        }
+        else
+        {
+            if(secondDigit != 0 && secondDigit != 1 && number >= 20)
+            {
+                output += tens[secondDigit] + " ";
+                output += digits[firstDigit];
+            }
+            else if(secondDigit == 1)
+            {
+                output = special[firstDigit];
+            }
+            else
+            {
+                output = digits[firstDigit];
+            }
+        }
+
+        alert("The number is: " + output);
+
+    </script>
+
+</body>
+</html>

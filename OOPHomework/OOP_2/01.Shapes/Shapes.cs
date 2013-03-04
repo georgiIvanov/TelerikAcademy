@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _01.Shapes
+namespace Shapes
 {
     class Program
     {
@@ -20,14 +20,14 @@ namespace _01.Shapes
         }
     }
 
-    abstract class Shape
+    public abstract class Shape
     {
         protected double width, height;
 
         public abstract double CalculateSurface();
     }
 
-    class Triangle : Shape
+    public class Triangle : Shape
     {
 
         public Triangle(double width, double height)
@@ -42,7 +42,7 @@ namespace _01.Shapes
         }
     }
 
-    class Rectangle : Shape
+    public class Rectangle : Shape
     {
         public Rectangle(double width, double height)
         {
@@ -56,7 +56,7 @@ namespace _01.Shapes
         }
     }
 
-    class Circle : Shape
+    public class Circle : Shape
     {
         public Circle(double radius)
         {

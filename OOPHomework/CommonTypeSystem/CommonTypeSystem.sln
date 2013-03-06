@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.Student", "01.Student\01.Student.csproj", "{5783AE57-272A-4EDD-8ECA-09B08932C176}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.AddClonableInterface", "02.AddClonableInterface\02.AddClonableInterface.csproj", "{9DAB2E15-6802-46F5-85DE-8C771247F982}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.AddIComparable", "03.AddIComparable\03.AddIComparable.csproj", "{470EA890-123B-4047-9D7A-11AD7E6E7338}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5783AE57-272A-4EDD-8ECA-09B08932C176}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5783AE57-272A-4EDD-8ECA-09B08932C176}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5783AE57-272A-4EDD-8ECA-09B08932C176}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5783AE57-272A-4EDD-8ECA-09B08932C176}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DAB2E15-6802-46F5-85DE-8C771247F982}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DAB2E15-6802-46F5-85DE-8C771247F982}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DAB2E15-6802-46F5-85DE-8C771247F982}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DAB2E15-6802-46F5-85DE-8C771247F982}.Release|Any CPU.Build.0 = Release|Any CPU
+		{470EA890-123B-4047-9D7A-11AD7E6E7338}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{470EA890-123B-4047-9D7A-11AD7E6E7338}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{470EA890-123B-4047-9D7A-11AD7E6E7338}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{470EA890-123B-4047-9D7A-11AD7E6E7338}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

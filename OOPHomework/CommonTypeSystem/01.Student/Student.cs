@@ -116,6 +116,7 @@ namespace _01.Student
                 hash = hash * 23 + firstName.GetHashCode();
                 hash = hash * 23 + secondName.GetHashCode();
                 hash = hash * 23 + lastName.GetHashCode();
+                hash = hash * 19 + SSN.GetHashCode();
                 return hash;
             }
         }

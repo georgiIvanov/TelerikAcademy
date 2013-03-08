@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <p></p>
+    <script>
+        var p = document.querySelector("p");
+        var sequence = new Array(1, 2, -2, -3, 5, 232, -22, 3, 42);
+        var min, max;
+        min = sequence[0];
+        max = sequence[0];
+
+        for (var i = 0; i < sequence.length; i++) {
+            if(sequence[i] > max)
+            {
+                max = sequence[i];
+            }
+            else if(sequence[i] < min)
+            {
+                min = sequence[i];
+            }
+        }
+        p.innerHTML = "Max element: " + max + "<br/>Min element: " +min;
+
+    </script>
+
+</body>
+</html>

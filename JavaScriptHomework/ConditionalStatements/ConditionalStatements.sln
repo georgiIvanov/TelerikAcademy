@@ -1,6 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E0BA65B5-2E68-40C9-99F1-E0906F9CC422}"
+	ProjectSection(SolutionItems) = preProject
+		01.SwitchValues.html = 01.SwitchValues.html
+		02.SingOfProduct.html = 02.SingOfProduct.html
+		03.BiggestInt.html = 03.BiggestInt.html
+		04.SortInDescending.html = 04.SortInDescending.html
+		05.NameOfDigit.html = 05.NameOfDigit.html
+		06.QuadraticEquation.html = 06.QuadraticEquation.html
+		07.GreatestVar.html = 07.GreatestVar.html
+		08.NumbersInWrittenForm.html = 08.NumbersInWrittenForm.html
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

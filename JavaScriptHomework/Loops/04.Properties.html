@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+    <p></p>
+<body>
+
+    <script>
+
+        var properties = new Array();
+        var p = document.querySelector("p");
+
+        for(var prop in document)
+        {
+            properties.push(prop);
+        }
+
+        properties.sort();
+        p.innerHTML = "Document: <br/> smallest - " + properties[0] +
+            "<br/>biggest - " + properties[properties.length - 1];
+
+        properties = new Array();
+
+        for(prop in window)
+        {
+            properties.push(prop);
+        }
+
+        properties.sort();
+        p.innerHTML += "<br/>Window: <br/> smallest - " + properties[0] +
+            "<br/>biggest - " + properties[properties.length - 1];
+
+        properties = new Array();
+
+        for (prop in navigator) {
+            properties.push(prop);
+        }
+
+        properties.sort();
+        p.innerHTML += "<br/>Navigator: <br/> smallest - " + properties[0] +
+            "<br/>biggest - " + properties[properties.length - 1];
+
+    </script>
+
+</body>
+</html>

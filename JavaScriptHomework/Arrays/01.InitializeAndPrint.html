@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="js-console.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div id="js-console">
+
+    </div>
+
+    <script src="js-console.js"></script>
+    <script>
+        var arr = new Array();
+        for (var i = 0; i < 20; i++) {
+            arr[i] = i * 5;
+        }
+
+        for (var i = 0; i < 20; i++) {
+            jsConsole.writeLine(arr[i]);
+        }
+    </script>
+
+</body>
+</html>

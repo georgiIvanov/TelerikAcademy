@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="js-console.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div id="js-console">
+
+    </div>
+
+    <script src="js-console.js"></script>
+    <script>
+        var firstArr = ['a', 'b', 'c', 'd', 'e'];
+        var secondArr = ['a', 'b', 'c', 'd', 'a'];
+
+        var firstArrIsSmaller = true;
+
+        for (var i = 0; i < firstArr.length; i++) {
+            if(firstArr[i] > secondArr[i] )
+            {
+                firstArrIsSmaller = false;
+            }
+        }
+
+        if(firstArrIsSmaller == true)
+        {
+            jsConsole.writeLine("first is smaller");
+        }
+        else
+        {
+            jsConsole.writeLine("second is smaller");
+        }
+    </script>
+
+</body>
+</html>

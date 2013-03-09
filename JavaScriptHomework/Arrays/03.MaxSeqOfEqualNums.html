@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="js-console.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div id="js-console">
+
+    </div>
+
+    <script src="js-console.js"></script>
+    <script>
+        var arr = [2, 1, 1, 2, 3, 3, 2, 2, 2, 1];
+
+        var current = arr[0];
+        var seqCount = 0,maxSeqCount = 0, number;
+
+        for (var i = 0; i < arr.length; i++) {
+
+            if (current == arr[i])
+            {
+                seqCount++;
+                if (seqCount > maxSeqCount) {
+                    maxSeqCount = seqCount;
+                    number = arr[i];
+                }
+            }
+            else
+            {
+                
+                current = arr[i];
+                seqCount = 1;
+            }
+        }
+
+        for (var i = 0; i < arr.length; i++) {
+            jsConsole.write(arr[i] + " ");
+        }
+
+        jsConsole.writeLine("<br/>Max length of sequence is " + maxSeqCount);
+        jsConsole.writeLine("Of number " + number);
+    </script>
+
+</body>
+</html>

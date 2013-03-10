@@ -165,7 +165,7 @@ namespace _05.BitArray64
             {
                 try
                 {
-                    return (int)values[position];
+                    return values[position];
                 }
                 catch (IndexOutOfRangeException)
                 {

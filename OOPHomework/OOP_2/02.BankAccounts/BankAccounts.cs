@@ -10,6 +10,7 @@ namespace _02.BankAccounts
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Loan account: ");
             LoanAccount loanAcc = new LoanAccount(13.23m, 4.2m, Customer.personal, new DateTime(2013, 2, 1));
             Console.WriteLine(loanAcc.InterestOverMonths(2));
             Console.WriteLine(loanAcc.GetBalance);
@@ -21,7 +22,7 @@ namespace _02.BankAccounts
             Console.WriteLine(mortAcc.InterestOverMonths(8));
             Console.WriteLine(mortAcc.GetBalance);
             mortAcc.Deposit(55.3m);
-            Console.WriteLine(mortAcc.InterestOverMonths(8));
+            Console.WriteLine(mortAcc.GetBalance);
 
             Console.WriteLine("\n\nDeposit account: ");
             DepositAccount deposAcc = new DepositAccount(1200m, 3.2m, Customer.company, new DateTime(2012, 3, 5));
@@ -29,7 +30,8 @@ namespace _02.BankAccounts
             Console.WriteLine(deposAcc.GetBalance);
             deposAcc.Deposit(200m);
             Console.WriteLine(deposAcc.GetBalance);
-
+            deposAcc.WithdrawSum(55.35m);
+            Console.WriteLine("Balance after withdrawal: {0}", deposAcc.GetBalance);
         }
     }
 
@@ -205,6 +207,15 @@ namespace _02.BankAccounts
             {
                 return 0;
             }
+        }
+
+        public decimal WithdrawSum(decimal amount)
+        {
+            if (balance >= amount)
+            {
+                balance -= amount;
+            }
+            return amount;
         }
     }
 }

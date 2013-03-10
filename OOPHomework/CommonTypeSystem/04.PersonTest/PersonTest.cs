@@ -14,7 +14,7 @@ namespace Person
             peopleToTest.Add(new Person("lala", null));
             peopleToTest.Add(new Person("lala1", null));
             peopleToTest.Add(new Person("fafa", 333));
-            peopleToTest.Add(new Person("fafa", null));
+            peopleToTest.Add(new Person("fafa"));
 
             Assert.AreEqual("lala age not specified", peopleToTest[0].ToString());
             Assert.AreEqual("lala1 age not specified", peopleToTest[1].ToString());

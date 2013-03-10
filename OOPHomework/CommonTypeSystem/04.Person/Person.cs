@@ -12,8 +12,10 @@ namespace Person
         {
             Person per = new Person("lala", 36);
             Person per1 = new Person("lala", null);
+            Person per2 = new Person("fafa");
             Console.WriteLine(per);
             Console.WriteLine(per1);
+            Console.WriteLine(per2);
 
         }
     }
@@ -23,7 +25,7 @@ namespace Person
         string name;
         int? age;
 
-        public Person(string name, int? age)
+        public Person(string name, int? age = null)
         {
             this.name = name;
             this.age = age;

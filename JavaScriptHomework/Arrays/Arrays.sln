@@ -1,6 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{ADB52EBF-585B-480F-A21A-428724C06E08}"
+	ProjectSection(SolutionItems) = preProject
+		01.InitializeAndPrint.html = 01.InitializeAndPrint.html
+		02.CharArrayCompare.html = 02.CharArrayCompare.html
+		03.MaxSeqOfEqualNums.html = 03.MaxSeqOfEqualNums.html
+		04.MaxIncreasingSeq.html = 04.MaxIncreasingSeq.html
+		05.SelectionSort.html = 05.SelectionSort.html
+		06.MostFrequentNumber.html = 06.MostFrequentNumber.html
+		07.BinarySearch.html = 07.BinarySearch.html
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

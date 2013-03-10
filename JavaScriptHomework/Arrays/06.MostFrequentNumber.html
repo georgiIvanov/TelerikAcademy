@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="js-console.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div id="js-console">
+
+    </div>
+
+    <script src="js-console.js"></script>
+    <script>
+        //var arr = [3, 2, 3, 4, 2, 2, 4, -19, -5, 1, 2, 0, 4, 5];
+        var arr = [4, 1, 1, 4, 2, 3, 4, 4, 1, 2, 4, 9, 3];
+        var numbersCount = 0;
+        var mostFreqNum;
+
+        for (var i = 0; i < arr.length; i++) {
+            var currentCount = 0;
+
+            for (var j = 0; j < arr.length; j++) {
+                if(arr[i] == arr[j])
+                {
+                    currentCount++;
+                }
+            }
+
+            if (numbersCount < currentCount)
+            {
+                mostFreqNum = arr[i];
+                numbersCount = currentCount;
+            }
+        }
+
+        jsConsole.writeLine("Most frequent number is: " + mostFreqNum);
+        jsConsole.writeLine("Count: " + numbersCount);
+    </script>
+
+</body>
+</html>

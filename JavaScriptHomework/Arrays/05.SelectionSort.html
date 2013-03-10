@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="js-console.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div id="js-console">
+
+    </div>
+
+    <script src="js-console.js"></script>
+    <script>
+        var arr = [3, 2, 3, 4, 2, 2, 4, -19, -5, 1, 2, 0, 4, 5];
+        var sortedArr = new Array();
+
+        var numbers = arr.length;
+        minNumber = arr[0];
+        var smallest = arr[0], biggest = arr[0];
+
+        for (var i = 0; i < arr.length; i++) {
+            if(smallest > arr[i])
+            {
+                smallest = arr[i];
+            }
+            if(biggest < arr[i])
+            {
+                biggest = arr[i];
+            }
+        }
+
+        for (var num = smallest; num <= biggest; num++) {
+            for (var i = 0; i < arr.length; i++) {
+                if(num == arr[i])
+                {
+                    sortedArr.push(num);
+                }
+            }
+
+        }
+
+        for (var i = 0; i < sortedArr.length; i++) {
+            jsConsole.writeLine(sortedArr[i]);
+        }
+       
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="js-console.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div id="js-console">
+    </div>
+
+    <script src="js-console.js"></script>
+    <script>
+        function sortNumbers(a,b)
+        {
+            return a - b;
+        }
+
+        function midPoint(min, max)
+        {
+            return parseInt( min + max / 2);
+        }
+        //var arr = [3, 2, 3, 4, 2, 2, 4, -19, -5, 1, 2, 0, 4, 5];
+        //var arr = [-100, -50, -20, -11, -10, -9, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 22, 33, 44, 100, 1000];
+        var arr = [-5, -2, 0, 1, 2];
+        arr.sort(sortNumbers);
+        for (var i = 0; i < arr.length; i++) {
+            jsConsole.write(arr[i] + " ");
+        }
+
+        var element = parseInt(prompt("Enter element: "));
+        if (element > arr[arr.length - 1] || element < arr[0]) {
+            jsConsole.writeLine("<br/>No such element");
+        }
+        else {
+            var index;
+            var max = arr.length, min = 0;
+            while (min <= max) {
+                index = midPoint(min, max);
+
+                if (arr[index] > element) {
+                    max = index;
+                }
+                else if (arr[index] < element) {
+                    min = index;
+                }
+                else {
+                    jsConsole.write("<br/>Index of element is: " + index);
+                    break;
+                }
+            }
+        }
+
+    </script>
+
+</body>
+</html>

@@ -12,7 +12,7 @@ namespace _05.BitArray64
         static void Main(string[] args)
         {
             BitArray64 arr = new BitArray64(5);
-            arr.Add(20494202);
+            arr.Add(18446744073709551615);
             arr.Add(204203);
             arr.Add(30494202);
             arr.Add(40494202);

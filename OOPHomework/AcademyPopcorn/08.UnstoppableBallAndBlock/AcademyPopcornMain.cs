@@ -25,9 +25,10 @@ namespace AcademyPopcorn
 
             CreateFieldBorders(engine, startRow, startCol, endCol);
 
-            Ball meteoriteBall = new MeteoriteBall(new MatrixCoords(WorldRows / 2, 2), new MatrixCoords(-1, 1));
+            Ball theBall = new Ball(new MatrixCoords(WorldRows / 2, 2),
+                new MatrixCoords(-1, 1));
 
-            engine.AddObject(meteoriteBall);
+            engine.AddObject(theBall);
 
             Racket theRacket = new Racket(new MatrixCoords(WorldRows - 1, WorldCols / 2), RacketLength);
 

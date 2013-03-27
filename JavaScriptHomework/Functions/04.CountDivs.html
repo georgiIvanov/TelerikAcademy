@@ -1,0 +1,31 @@
+﻿
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Functions - Overview</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="LOL"></div>  
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>		 
+    <div id="Lala"></div>  
+	<script>
+
+	    CountDivs();
+	    
+	    
+	    function CountDivs()
+	    {
+	        var array = new Array();
+	        array = document.getElementsByTagName("div");
+	        for (var i = 0; i < array.length; i++) {
+	            jsConsole.writeLine(array[i].id);
+	        }
+	    }
+	</script>
+
+    
+
+</body>
+</html>

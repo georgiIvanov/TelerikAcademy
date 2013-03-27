@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D652E9CD-B61F-453E-AB89-CF5CC2830EF9}"
+	ProjectSection(SolutionItems) = preProject
+		01.LastDigit.html = 01.LastDigit.html
+		02.ReverseDigits.html = 02.ReverseDigits.html
+		03.WordInText.html = 03.WordInText.html
+		04.CountDivs.html = 04.CountDivs.html
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

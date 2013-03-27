@@ -1,0 +1,34 @@
+﻿
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Functions - Overview</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>		   
+	<script>
+	    jsConsole.writeLine(getWordsOfLastDigit(-213));
+
+	    function getWordsOfLastDigit(number)
+	    {
+	        number = Math.abs(number);
+	        number %= 10;
+	        switch (number) {
+	            case 1: return "One"; break;
+	            case 2: return "Two"; break;
+	            case 3: return "Three"; break;
+	            case 4: return "Four"; break;
+	            case 5: return "Five"; break;
+	            case 6: return "Six"; break;
+	            case 7: return "Seven"; break;
+	            case 8: return "Eight"; break;
+	            case 9: return "Nine"; break;
+	            case 0: return "Zero"; break;
+	            default: return "error"; 
+	        }
+	    }
+	</script>
+</body>
+</html>

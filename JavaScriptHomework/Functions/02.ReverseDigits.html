@@ -1,0 +1,26 @@
+﻿
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Functions - Overview</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>		   
+	<script>
+	    var number = 213;
+	    jsConsole.writeLine(ReverseDigits(number));
+
+	    function ReverseDigits(number)
+	    {
+	        var reversed = "";
+	        var str = number.toLocaleString();
+	        for (var i = str.length - 1; i >= 0 ; i--){
+	            reversed += str[i];
+	        }
+	        return reversed;
+	    }
+	</script>
+</body>
+</html>

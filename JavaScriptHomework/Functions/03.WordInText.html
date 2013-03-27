@@ -1,0 +1,50 @@
+﻿
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Functions - Overview</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>		   
+	<script>
+	    var text = "Write a function that finds all the occurrences of word in a text The search can case sensitive or CasE insensitive Use function overloading";
+	            
+        //try searching for "case" and "CasE"
+	    SearchWord("case", text);
+
+
+	    function SearchWord(word, text, caseSensitive)
+	    {
+	        switch(arguments.length)
+	        {
+	            case 2:
+	                {
+	                    var arr = new Array();
+	                    arr = text.split(" ", text.length);
+	                    for (var i = 0; i < arr.length; i++) {
+	                        if(arr[i].toLowerCase() == word)
+	                        {
+	                            jsConsole.writeLine("Word found at index " + i + " " + arr[i]);
+	                        }
+	                    }
+                        
+                    }
+	                break;
+	            default:
+	                {
+	                    var arr = new Array();
+	                    arr = text.split(" ", text.length);
+	                    for (var i = 0; i < arr.length; i++) {
+	                        if (arr[i] == word) {
+	                            jsConsole.writeLine("Word found at index " + i + " " + arr[i]);
+	                        }
+	                    }
+
+	                }break;
+	        }
+	    }
+	</script>
+</body>
+</html>

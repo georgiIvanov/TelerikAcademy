@@ -1,0 +1,38 @@
+﻿
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Functions - Overview</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>		
+
+	<script>
+	    var numArr = new Array(1, 2, 3, 4, 4, 4, 5, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 14);
+	    var numForSearch = 5;
+
+	    jsConsole.writeLine("Searched number is: " + numForSearch);
+	    jsConsole.writeLine("It appears: " + NumberCount(numForSearch, numArr));
+
+	    function NumberCount(number, numbers)
+	    {
+	        var count = 0;
+	        for (var i = 0; i < numbers.length; i++)
+	        {
+	            if(numbers[i] == number)
+	            {
+	                count++;
+	            }
+	        }
+	        return count;
+	    }
+	</script>
+
+
+
+    
+
+</body>
+</html>

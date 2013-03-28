@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Functions - Overview</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+
+    <script>
+        var numArr = new Array(1, 2, 3, 4, 4, 4, 5, 5, 6, 70, 8, 9, 10, 11, 12, 13, 14, 14);
+        for (var indexForSearch = 0; indexForSearch < numArr.length; indexForSearch++)
+        {
+            jsConsole.write("Searched index is: " + indexForSearch);
+            if(ElementCompare(indexForSearch, numArr) != -1)
+            {
+                jsConsole.writeLine(" --Number at index is bigger than its neighbours " +  numArr[indexForSearch]);
+                break;
+            }
+            else
+            {
+                jsConsole.writeLine(" --Number at index is smaller or equal than any of its neighbours");
+            }
+        }
+
+        function ElementCompare(index, numbers) {
+            if (indexForSearch < 0 || indexForSearch >= numbers.length || numbers.length == 0) return -1;
+            var bigger = true;
+
+            if (index - 1 >= 0) {
+                if (numbers[index - 1] >= numbers[index]) bigger = false;
+            }
+
+            if (index + 1 <= numbers.length - 1 && bigger) {
+                if (numbers[index + 1] >= numbers[index]) bigger = false;
+            }
+
+            if (bigger) {
+                return index;
+            }
+            else {
+                return -1;
+            }
+        }
+    </script>
+
+
+
+
+
+</body>
+</html>

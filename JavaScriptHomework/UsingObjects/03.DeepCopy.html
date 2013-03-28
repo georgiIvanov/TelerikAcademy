@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console">
+        <script src="scripts/js-console.js"> </script>
+        <script>
+            function Student(name, age) {
+                return {
+                    Name: name,
+                    Age: age,
+                    toString: function () {
+                        return this.Name + ", " + this.Age;
+                    }
+                };
+            }
+
+            function Clone(object) {
+                if (object instanceof Array) {
+                    var arrayCopy = [];
+                    for (var i = 0 ; i < object.length; i++) {
+                        arrayCopy[i] = Clone(object[i]);
+                    }
+                    return arrayCopy;
+                }
+
+                if (object instanceof Object) {
+                    var objectClone = {};
+                    for (var property in object) {
+                        if (object.hasOwnProperty(property)) {
+                            objectClone[property] = Clone(object[property]);
+                        }
+                    }
+                    return objectClone;
+                }
+                if (object == null) {
+                    return object;
+                }
+            }
+
+            var gosho = Student("Georgi", 21);
+            var miro = Clone(gosho);
+            miro.Name = "Miroslav";
+            jsConsole.writeLine(gosho.Name)
+            jsConsole.writeLine(miro.Name);
+
+        </script>
+    </div>
+</body>
+</html>

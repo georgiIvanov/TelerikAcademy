@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+        <script>
+            var arr = [1, 2, 3, 4, 5, -10, -9, -5, 21];
+            Array.prototype.remove = function (number) {
+                var newArr = [];
+                for (var i = 0; i < arr.length; i++) {
+                    if (arr[i] !== number) {
+                        newArr.push(arr[i]);
+                    }
+                }
+                return newArr;
+            }
+
+            var result = arr.remove(3);
+            jsConsole.writeLine(result.join(", "));
+
+       </script>
+    </div>
+</body>
+</html>

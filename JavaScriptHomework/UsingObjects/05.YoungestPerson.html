@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>5. HasProperty function</title>
+<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console">
+	    <script src="scripts/js-console.js"> </script>
+        <script>
+
+            function Person(firstName, lastName, age) {
+                return {
+                    FirstName: firstName,
+                    LastName: lastName,
+                    Age: age,
+                    toString: function Output() {
+                        return this.FirstName + " " + this.LastName;
+                    }
+                };
+            }
+
+            function GetYoungest(arr) {
+                if (arr.length == 0) return;
+
+                var youngest = arr[0].Age;
+                var youngestPosition = 0;
+                for (var i = 0; i < arr.length; i++) {
+                    if (arr[i].Age < youngest) {
+                        youngest = arr[i].Age;
+                        youngestPosition = i;
+                    }
+                }
+                return arr[youngestPosition];
+            }
+
+            var people = [
+                Person("FAFA", "FAFA", 33),
+                Person("lala", "lala", 11),
+                Person("rara", "rara", 44),
+            ];
+
+            jsConsole.writeLine("Youngest person: " + GetYoungest(people));
+           
+       </script>
+    </div>
+</body>
+</html>

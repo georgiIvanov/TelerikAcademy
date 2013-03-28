@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        var point1 = Point(1, 1);
+        var point2 = Point(2, 2);
+        jsConsole.writeLine(point1);
+
+        var line = Line(point1, point2);
+        var line2 = Line(Point(1, 1), Point(3, 3));
+        var line3 = Line(Point(2, 2), Point(5, 5));
+        jsConsole.writeLine(line);
+
+        jsConsole.writeLine(DistanceBetweenPoints(point1, point2).toString());
+
+        jsConsole.writeLine("Lines can form triangle: " + CanFormTriangle(line, line3, line2));
+
+        function Point(x, y) {
+            return {
+                x: x,
+                y: y,
+                toString: function () { return "x: " + x + " y: " + y }
+            };
+        }
+
+        function Line(p1, p2) {
+            return {
+                start: p1,
+                end: p2,
+                toString: function () {return "start -> " + p1 + "<br>end -> " + p2}
+            };
+        }
+
+        function DistanceBetweenPoints(p1, p2) {
+            return Math.sqrt((p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y));
+        }
+
+        function CanFormTriangle(line1, line2, line3) {
+            var result = new Array(3);
+            for (var i = 0; i < result.length; i++) {
+                result[i] = DistanceBetweenPoints(arguments[i].start, arguments[i].end);
+            }
+            //sort array
+            result = result.sort(function (a, b) { return a - b; });
+            if (result[2] < result[1] + result[0])
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        
+
+    </script>
+</body>
+</html>

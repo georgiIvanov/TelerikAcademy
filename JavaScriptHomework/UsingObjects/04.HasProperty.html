@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+<link href="styles/js-console.css" rel="stylesheet" />
+    <link href="Styles.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console">
+	    <script src="scripts/js-console.js"> </script>
+        <script>
+            var Student =
+            {
+                    Name: "GGG",
+                    Age: 33
+            }
+            
+            function HasProperty(object, propertyName) {
+                for (var property in object) {
+                    if (property == propertyName) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+            var result = HasProperty(Student, "Age");
+            jsConsole.writeLine(result);
+       </script>
+    </div>
+</body>
+</html>

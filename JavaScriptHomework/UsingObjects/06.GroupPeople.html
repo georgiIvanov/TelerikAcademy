@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        var people = [
+        { firstname: "Lala", lastname: "Lala", age: 20 },
+        { firstname: "Fafa", lastname: "Fafa", age: 18 },
+        { firstname: "Rara", lastname: "Rara", age: 21 },
+        { firstname: "Tata", lastname: "Tata", age: 80 },
+        { firstname: "Vava", lastname: "Vava", age: 25 },
+        { firstname: "Caca", lastname: "Caca", age: 999}];
+
+        
+        jsConsole.writeLine("Group by age: ");
+
+        var groupedByAge = group(people, "age");
+
+        for (var i in groupedByAge) {
+            jsConsole.writeLine(groupedByAge[i].Key);
+        }
+
+        jsConsole.writeLine("Group by first name: ");
+
+        var groupedByFirstName = group(people, "firstname");
+
+        for (var i in groupedByFirstName) {
+            jsConsole.writeLine(groupedByFirstName[i].Key);
+        }
+
+        function group(array, property) {
+
+            var groupedArr = [];
+
+            var finalArray = [];
+
+            if (property == "age") {
+
+                var uniqueElements = [];
+
+                for (var i = 0; i < array.length; i++) {
+
+                    var repeat = false;
+
+                    for (var j = 0; j < i; j++) {
+                        if (array[i].age == array[j].age) {
+                            repeat = true;
+                            break;
+                        }
+                    }
+
+                    if (repeat == false) {
+                        uniqueElements.push(array[i]);
+                    }
+                }
+
+                for (var i = 0; i < uniqueElements.length; i++) {
+                    var tempArr = [];
+
+                    for (var j = 0; j < array.length; j++) {
+                        if (uniqueElements[i].age == array[j].age) {
+                            tempArr.push(array[j]);
+                        }
+                    }
+                    groupedArr.push(tempArr);
+                }
+
+                for (var i = 0; i < groupedArr.length; i++) {
+                    finalArray.push({ Key: groupedArr[i][0].age, Value: groupedArr[i] });
+                }
+
+            }
+            else 
+            {
+                var uniqueElements = []; 
+
+                for (var i = 0; i < array.length; i++) {
+
+                    var repeat = false; 
+
+                    for (var j = 0; j < i; j++) {
+                        if (array[i].firstname == array[j].firstname) {
+                            repeat = true;
+                            break; 
+                        }
+                    }
+
+                    if (repeat == false) {
+                        uniqueElements.push(array[i]);
+                    }
+                }
+
+                for (var i = 0; i < uniqueElements.length; i++) {
+                    var tempArr = [];
+
+                    for (var j = 0; j < array.length; j++) {
+                        if (uniqueElements[i].firstname == array[j].firstname) {
+                            tempArr.push(array[j]);
+                        }
+                    }
+                    groupedArr.push(tempArr);
+                }
+
+                for (var i = 0; i < groupedArr.length; i++) {
+                    finalArray.push({ Key: groupedArr[i][0].firstname, Value: groupedArr[i] });
+                }
+            }
+
+            return finalArray;
+        }
+
+    </script>
+</body>
+</html>

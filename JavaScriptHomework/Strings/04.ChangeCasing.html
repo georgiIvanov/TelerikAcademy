@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <script src="StringBuilder.js"></script>
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        var text = "We are <mixcase>living</mixcase> in a <upcase>yellow submarine</upcase>. We <mixcase>don't</mixcase> have <lowcase>anything</lowcase> else." +
+            "Inside <upcase>the submarine <lowcase>is very</lowcase> tight</upcase>. <mixcase>So we are <upcase>drinking</upcase> all the day.</mixcase> We will move out of it in 5 days."
+
+        //var mixedcase = ["<mixcase>", "</mixcase>"];
+        //var upcase = ["<upcase>", "</upcase>"];
+        //var lowcase = ["<lowcase>", "</lowcase>"];
+
+        var tagStack = TagStack();
+        var stringBuilder = buildStringBuilder();
+
+        for (var i = 0; i < text.length; i++) {
+            if(text[i] == "<")
+            {
+                var closing = "", len = 0;
+                while (closing != ">")
+                {
+                    len++;
+                    closing = text[i + len];
+                }
+                tagStack.add(text.substr(i + 1, len - 1));
+                i += len;
+            }
+            else
+            {
+                switch(tagStack.peek().toString())
+                {
+                    case "upcase": stringBuilder.append(text[i].toUpperCase()); break;
+                    case "lowcase": stringBuilder.append(text[i].toLowerCase()); break;
+                    case "mixcase":
+                        {
+                            if ((i & 1) == 0) stringBuilder.append(text[i].toUpperCase());
+                            else stringBuilder.append(text[i].toLowerCase());
+                        }
+                        break;
+                    case "none": stringBuilder.append(text[i]); break;
+                }
+            }
+
+
+        }
+
+        jsConsole.writeLine(stringBuilder.toString());
+
+        function TagStack() {
+            return {
+                stack: new Array(),
+                len: 0,
+                add: function (tag) {
+                    tag = new String(tag);
+                    if (this.isOpening(tag)) {
+                        this.stack.push(tag);
+                        this.len++;
+                    }
+                    else
+                    {
+                        var madeOpening = tag.substr(1, tag.length - 1);
+                        if(this.peek() == madeOpening)
+                        {
+                            this.stack.pop();
+                            this.len--;
+                        }
+                    }
+                },
+                isOpening: function (tag) {
+                    tag = new String(tag);
+                    if (tag[0] == "/")
+                        return false;
+                    else
+                        return true;
+                },
+                peek: function () {
+                    if(this.len == 0) return "none";
+                    return this.stack[this.len - 1];
+                }
+            }
+        }
+
+
+    </script>
+</body>
+</html>

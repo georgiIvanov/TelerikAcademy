@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <script src="StringBuilder.js"></script>
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        var input = "<html><head><title>Sample site</title></head><body><div>text<div>more text</div>and more...</div>in body</body></html>"
+
+        
+        jsConsole.writeLine(ExtractText(input));
+
+        function ExtractText(text)
+        {
+            var extractedText = buildStringBuilder();
+            var inTag = false;
+            for (var i = 0; i < text.length; i++) {
+                if (text[i] == "<")
+                    inTag = !inTag;
+                else if(text[i] == ">")
+                {
+                    inTag = !inTag;
+                }
+                else if(!inTag)
+                {
+                    extractedText.append(text[i]);
+                }
+            }
+
+            return extractedText.toString();
+            
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <script src="StringBuilder.js"></script>
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        var input = '<p>Please visit <a href="http://academy.telerik. com">our site</a> to choose a training course. Also visit <a href="www.devbg.org">our forum</a> to discuss the courses.</p>';
+        
+        var position = input.indexOf('<a href=', 0);
+        while (position != -1) {
+            
+            input = input.replace('<a href="', '[URL=');
+            position = input.indexOf('<a href=', position);
+        }
+
+        var position = input.indexOf('">', 0);
+        while (position != -1) {
+
+            input = input.replace('">', ']');
+            position = input.indexOf('">', position);
+        }
+
+        var position = input.indexOf('</a>', 0);
+        while (position != -1) {
+
+            input = input.replace('</a>', '[/URL]');
+            position = input.indexOf('</a>', position);
+        }
+
+        jsConsole.writeLine(input);
+
+    </script>
+</body>
+</html>

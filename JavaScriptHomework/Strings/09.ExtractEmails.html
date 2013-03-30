@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <script src="StringBuilder.js"></script>
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        var text = "Here are some emails asen.asenov@abv.bg and may be some more mails anreiKirev@gmail.bg";
+
+        var emails = extractEmails(text);
+        jsConsole.write(emails.join('</br>'));
+        
+
+        function extractEmails(text) {
+            return text.match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/gi);
+        } 
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        var expression = "(((5+2)))/(( - 22*(5-1) / 2) * 8392)";
+        var numBrackets = parseInt(0);
+
+        for (var i = 0; i < expression.length; i++) {
+            var char = expression[i];
+            if (char == "(")
+            {
+                numBrackets++;
+            }
+            else if(char == ")")
+            {
+                numBrackets--;
+            }
+
+        }
+
+        if(numBrackets == 0 && expression[0] != ")")
+        {
+            jsConsole.writeLine("Expression is correct");
+        }
+        else
+        {
+            jsConsole.writeLine("Expression is wrong");
+        }
+
+    </script>
+</body>
+</html>

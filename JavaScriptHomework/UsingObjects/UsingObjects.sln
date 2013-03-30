@@ -1,6 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C4B2B41E-8330-44B3-9F54-6CF5AD3B621B}"
+	ProjectSection(SolutionItems) = preProject
+		01.Shapes.html = 01.Shapes.html
+		02.RemoveElement.html = 02.RemoveElement.html
+		03.DeepCopy.html = 03.DeepCopy.html
+		04.HasProperty.html = 04.HasProperty.html
+		05.YoungestPerson.html = 05.YoungestPerson.html
+		06.GroupPeople.html = 06.GroupPeople.html
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

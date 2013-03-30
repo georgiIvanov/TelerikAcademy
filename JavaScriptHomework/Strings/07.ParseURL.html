@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <script src="StringBuilder.js"></script>
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+
+        var input = "http://www.youtube.com/user/TelerikAcademy?feature=g-high-u";
+        var jsonUrl = URLtoJSON(input);
+
+        jsConsole.writeLine(jsonUrl.protocol);
+        jsConsole.writeLine(jsonUrl.server);
+        jsConsole.writeLine(jsonUrl.resource);
+
+        function URLtoJSON(url) {
+            var index = 0;
+            var stringBuilder = buildStringBuilder();
+            var protocol, server, resource;
+
+            while (url[index] != ":") {
+                stringBuilder.append(url[index]);
+                index++;
+            }
+            protocol = stringBuilder.toString();
+            stringBuilder.Clear();
+
+            index += 3;
+            while (url[index] != "/")
+            {
+                stringBuilder.append(url[index]);
+                index++;
+            }
+            server = stringBuilder.toString();
+            stringBuilder.Clear();
+
+            while(url[index] != undefined)
+            {
+                stringBuilder.append(url[index]);
+                index++;
+            }
+            resource = stringBuilder.toString();
+            
+            return {
+                protocol: protocol,
+                server: server,
+                resource: resource
+            }
+        }
+        
+    </script>
+</body>
+</html>

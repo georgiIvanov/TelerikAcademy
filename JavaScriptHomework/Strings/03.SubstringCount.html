@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        var text = "We are living in an yellow submarine. We don't have anything else. Inside the submarine is very tight. So we are drinking all the day. We will move out of it in 5 days.";
+
+        var searchedSubstring = "we";
+        var strFoundCount = 0;
+        for (var i = 0; i < text.length - 1 - searchedSubstring.length; i++) {
+            if(text.substr(i, searchedSubstring.length).toLowerCase() == searchedSubstring)
+            {
+                strFoundCount++;
+            }
+        }
+
+        jsConsole.writeLine(strFoundCount);
+    </script>
+</body>
+</html>

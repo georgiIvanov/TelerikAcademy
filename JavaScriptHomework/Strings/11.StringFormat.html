@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <script src="StringBuilder.js"></script>
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        var str = stringFormat("Hello {0}!", "Peter");
+        jsConsole.writeLine(str);
+
+        var format = "{0}, {1}, {0} text {2}";
+        var str = stringFormat(format, 1, "Pesho", "Gosho");
+        jsConsole.writeLine(str);
+
+        function stringFormat()
+        {
+            var input = arguments[0];
+
+            for (var i = 1; i < arguments.length; i++) {
+                var formatIndex = "{" + (i - 1) + "}";
+                while(input.indexOf(formatIndex) != -1)
+                {
+                    input = input.replace(formatIndex, arguments[i]);
+                }
+            }
+
+            return input;
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <script src="StringBuilder.js"></script>
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        var text = "This is a great text, mhm. Boohoo ooo PpP dwad832 32323 odwajdwkl KKK oidowaidja Op1z1pO";
+
+        var words = getWords(text);
+        for (var i in words) {
+            if(checkIfPalindrome(words[i]))
+            {
+                jsConsole.writeLine(words[i]);
+            }
+        }
+
+        function getWords(text) {
+            return text.match(/([a-zA-Z0-9]+)/gi);
+        }
+
+        function checkIfPalindrome(word) {
+            for (var i = 0; i < word.length; i++) {
+                if (word[i] != word[word.length - 1 - i]) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

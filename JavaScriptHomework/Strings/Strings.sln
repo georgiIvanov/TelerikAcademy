@@ -4,6 +4,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{ECAF44C4-DC51-42D2-9120-2447A2824145}"
 	ProjectSection(SolutionItems) = preProject
 		01.ReverseString.html = 01.ReverseString.html
+		02.CorrectBrackets.html = 02.CorrectBrackets.html
+		03.SubstringCount.html = 03.SubstringCount.html
+		04.ChangeCasing.html = 04.ChangeCasing.html
+		05.WhiteSpaces.html = 05.WhiteSpaces.html
+		06.ExtractText.html = 06.ExtractText.html
+		07.ParseURL.html = 07.ParseURL.html
+		08.ReplaceTags.html = 08.ReplaceTags.html
+		09.ExtractEmails.html = 09.ExtractEmails.html
+		10.ExtractPalindromes.html = 10.ExtractPalindromes.html
+		11.StringFormat.html = 11.StringFormat.html
+		12.ULParse.html = 12.ULParse.html
+		StringBuilder.js = StringBuilder.js
 	EndProjectSection
 EndProject
 Global

@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        input{
+            position:relative;
+            top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div>Background: <input type="color" id="backgroundColorSet" title="Background" 
+                     onchange="setBackgroundColor()" /></div>
+
+    <div>Font: <input type="color" id="fontColorSet"
+                onchange="setFontColor()" /></div>
+
+    <textarea id="textArea">
+
+    </textarea>
+
+    <script>
+        var textarea = document.getElementById("textArea");
+
+        function setBackgroundColor()
+        {
+            return textarea.style.background = document.getElementById("backgroundColorSet").value;
+        }
+
+        function setFontColor()
+        {
+            return textarea.style.color = document.getElementById("fontColorSet").value;
+        }
+
+    </script>
+</body>
+</html>

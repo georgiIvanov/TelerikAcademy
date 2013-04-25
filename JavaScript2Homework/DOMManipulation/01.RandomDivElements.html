@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <script>
+        var numberDivs = Math.floor((Math.random() * 100) + 1);
+        var dFrag = document.createDocumentFragment();
+
+        for (var i = 0; i < numberDivs; i++) {
+
+            var newDiv = document.createElement("div");
+
+            newDiv.style.background = GetRandomColor();
+
+            newDiv.style.width = GetRandomPixels();
+            newDiv.style.height = GetRandomPixels();
+            newDiv.style.position = "absolute";
+            newDiv.style.left = GetRandomPositionPx();
+            newDiv.style.top = GetRandomPositionPx();
+
+            newDiv.style.textAlign = "center";
+
+            newDiv.style.borderWidth = GetRandomPixels();
+            newDiv.style.border = GetRandomBorder();
+            
+            newDiv.style.borderRadius = GetRandomPixels();
+
+            var strong = document.createElement("strong");
+            strong.innerHTML = "div";
+            strong.style.color = GetRandomColor();
+            newDiv.appendChild(strong);
+
+            dFrag.appendChild(newDiv);
+
+        }
+
+        document.body.appendChild(dFrag);
+
+        function GetRandomColor() {
+            return '#' + (0x1000000 + (Math.random()) * 0xffffff).toString(16).substr(1, 6);
+        }
+
+        function GetRandomPositionPx() {
+            return Math.floor((Math.random() * 1000) + 1).toString() + "px";
+        }
+
+        function GetRandomPixels() {
+            return Math.floor((Math.random() * 300) + 1).toString() + "px";
+        }
+
+        function GetRandomBorder() {
+            return Math.floor((Math.random() * 20) + 1) + "px solid " + GetRandomColor();
+        }
+
+    </script>
+</body>
+</html>

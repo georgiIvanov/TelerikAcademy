@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        ul li{
+            background-image: url(smallArrow.gif);
+            background-repeat: no-repeat;
+            background-position: 0px 2px; 
+            padding-left: 14px; 
+        }
+        ul{
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+
+    <ul>
+        <li>list1
+            <ul>
+                <li>list2
+                    <ul>
+                        <li>list3</li>
+                        <li>list3</li>
+                        <li>list3</li>
+                        <li>list3</li>
+                        <li>list3</li>
+                    </ul>       
+                </li>           
+                <li>list2      
+                    <ul>        
+                        <li>list3</li>
+                        <li>list3</li>
+                        <li>list3</li>
+                        <li>list3</li>
+                        <li>list3</li>
+                    </ul>
+                </li>
+                <li>list2</li>
+                <li>list2</li>
+                <li>list2</li>
+            </ul>
+        </li>
+        <li>list1
+            <ul>
+                <li>list2</li>
+                <li>list2</li>
+                <li>list2</li>
+                <li>list2</li>
+                <li>list2</li>
+            </ul>
+        </li>
+        <li>list1
+            <ul>
+                <li>list2</li>
+                <li>list2</li>
+                <li>list2</li>
+                <li>list2</li>
+                <li >list2</li>
+            </ul>
+        </li>
+    </ul>
+
+    <script>
+
+        var liTags = document.getElementsByTagName('li');
+        for (var i = 0; i < liTags.length; i++) {
+            liTags[i].addEventListener('click', revealSubList);
+        }
+
+        var firstUl = document.getElementsByTagName("ul");
+        for (var i = 0; i < firstUl.length; i++) {
+            firstUl[i].style.display = "block";
+        }
+
+        function revealSubList(clickedUl) {
+            if (typeof(this.getElementsByTagName("ul")[0]) == "undefined") return 0;
+
+            if (this == clickedUl.target && this.getElementsByTagName("ul")[0].style.display == "block") {
+                this.getElementsByTagName("ul")[0].style.display = "none";
+            }
+            else {
+                this.getElementsByTagName("ul")[0].style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

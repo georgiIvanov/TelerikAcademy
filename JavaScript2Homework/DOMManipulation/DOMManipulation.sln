@@ -1,0 +1,18 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{67194ECB-7551-4697-98A8-144600FAD941}"
+	ProjectSection(SolutionItems) = preProject
+		01.RandomDivElements.html = 01.RandomDivElements.html
+		02.Move5Divs.html = 02.Move5Divs.html
+		03.ShimQuerySelector.html = 03.ShimQuerySelector.html
+		04.ColorInput.html = 04.ColorInput.html
+		05.TagCloud.html = 05.TagCloud.html
+		06.TreeView.html = 06.TreeView.html
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

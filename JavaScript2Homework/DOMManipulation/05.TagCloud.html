@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #tagCloud{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="tagCloud"></div>
+    <script>
+        var tags = ["cms", "javascript", "javascript", "javascript",
+            "javascript", "javascript", "javascript", "javascript", "js",
+            "ASP.NET MVC", ".net", ".net", "css", "wordpress", "xaml", "js",
+            "http", "web", "asp.net", "asp.net MVC", "ASP.NET MVC", "wp",
+            "javascript", "js", "cms", "html", "javascript", "http", "http", "CMS"];
+
+        var tagCloud = document.getElementById("tagCloud");
+        tagCloud.appendChild(createTagCloud(tags, 20, 42));
+
+        function createTagCloud(tags, minFontSize, maxFontSize) {
+            var wordsCounter = [];
+
+            for (var i = 0; i < tags.length; i++) {
+                var count = 0;
+
+                for (var j = i+1; j < tags.length; j++) {
+                    if (tags[i].toLowerCase() == tags[j].toLowerCase()) {
+                        count++;
+                        tags.splice(j, 1);
+                        j--;
+                    }
+                }
+                wordsCounter.push(count);
+            }
+
+            var dFrag = document.createDocumentFragment();
+
+            for (var i = 0; i < tags.length; i++) {
+                var tagWord = document.createElement("span");
+
+                if (wordsCounter[i] == 0) {
+                    tagWord.style.fontSize = minFontSize;
+                } else if (wordsCounter[i] >= maxFontSize) {
+                    tagWord.style.fontSize = maxFontSize;
+                }
+                else{
+                    tagWord.style.fontSize = minFontSize + wordsCounter[i] + "px";
+                }
+
+                tagWord.appendChild(document.createTextNode(tags[i] + " "));
+                dFrag.appendChild(tagWord);
+            }
+
+            return dFrag;
+        }
+
+    </script>
+</body>
+</html>

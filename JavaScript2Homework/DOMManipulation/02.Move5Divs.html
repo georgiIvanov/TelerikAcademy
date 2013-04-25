@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        function CreateDiv() {
+
+            var newDiv = document.createElement("div");
+
+            newDiv.style.background = GetRandomColor();
+
+            newDiv.style.width = "80px";
+            newDiv.style.height = "80px";
+            newDiv.style.position = "absolute";
+
+            newDiv.style.textAlign = "center";
+
+            newDiv.style.border = GetRandomBorder();
+            newDiv.style.borderRadius = GetRandomPixels();
+
+            var strong = document.createElement("strong");
+            strong.innerHTML = "div";
+            strong.style.color = GetRandomColor();
+            newDiv.appendChild(strong);
+
+            return newDiv;
+        }
+
+        function Circle(x, y, r) {
+            this.x = x;
+            this.y = y;
+            this.radius = r;
+
+            this.innerDiv = document.createElement("div");
+
+            this.RotateDegrees = function RotateDegrees(innerDiv, degrees) {
+                var x = this.x + this.radius * Math.cos(degrees * Math.PI / 180),
+                y = this.y + this.radius * Math.sin(degrees * Math.PI / 180);
+
+                innerDiv.style.left = x - parseInt(innerDiv.style.width, 10) / 2 + "px";
+                innerDiv.style.top = y - parseInt(innerDiv.style.height, 10) / 2 + "px";
+            }
+
+        }
+
+        var circlesContainer = document.createDocumentFragment(),
+            circleArr = [],
+            circleCount = 5,
+            circle = new Circle(300, 220, 200);
+
+        for (var i = 0; i < circleCount; i++) {
+            var div = CreateDiv();
+            circlesContainer.appendChild(div);
+            circleArr.push(div);
+            var degrees = i * 360 / circleCount;
+            div.setAttribute("rotation-degrees", degrees);
+            circle.RotateDegrees(div, degrees);
+        }
+
+        document.body.appendChild(circlesContainer);
+
+        setInterval(function () {
+            for (var i = 0; i < circleCount; i++) {
+                div = circleArr[i];
+                degrees = (parseFloat(div.getAttribute("rotation-degrees")) + 1) % 360;
+                div.setAttribute("rotation-degrees", degrees);
+                circle.RotateDegrees(div, degrees);
+            }
+        }, 100);
+
+        function GetRandomColor() {
+            return '#' + (0x1000000 + (Math.random()) * 0xffffff).toString(16).substr(1, 6);
+        }
+
+        function GetRandomBorder() {
+            return Math.floor((Math.random() * 10) + 1) + "px "+ GetRandomBorderStyle() + GetRandomColor();
+        }
+
+        function GetRandomPixels() {
+            return Math.floor((Math.random() * 100) + 1).toString() + "px";
+        }
+
+        function GetRandomBorderStyle() {
+            var borders = ["dotted", "dashed", "solid", "double", "groove", "ridge", "inset", "outset"];
+            return borders[Math.floor(Math.random() * 8)];
+        }
+        
+
+    </script>
+
+
+</body>
+</html>

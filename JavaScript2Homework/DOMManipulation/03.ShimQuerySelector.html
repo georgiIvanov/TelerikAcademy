@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <div></div>
+    <div></div>
+    <div></div>
+    <span></span>
+    <span></span>
+
+    <script>
+        "use strict";
+
+        function querySelectorAll(selector) {
+            if (/^[\w-]+$/.test(selector)) {
+                return toArray(document.getElementsByTagName(selector));
+            } else if (/^#[\w-]+$/.test(selector)) {
+                var everythingElse = toArray(document.getElementsByTagName("*")),
+                    className = selector.slice(1),
+                    pattern = new RegExp("\\b" + className + "\\b");
+
+                return everythingElse.filter(function (item) {
+                    return pattern.test(item.className);
+                });
+            }
+        }
+
+        if (typeof document.querySelectorAll !== "function") {
+            document.querySelectorAll = querySelectorAll;
+        }
+
+        if (typeof document.querySelector !== "function") {
+            document.querySelectorShim = querySelector;
+        }
+
+        document.querySelectorAllShim = querySelectorAll;
+        document.querySelectorShim = querySelector;
+
+        function querySelector(selector) {
+            return querySelectorAll(selector)[0];
+        }
+
+        
+
+        
+
+        var tags = ["div", "span"];
+
+        //Run in IE6 and behold
+        for (var i = 0; i < tags.length; i++) {
+            var matches = document.querySelectorAllShim(tags[i]);
+            var string = "";
+            for (var j in matches) {
+                string += matches[i].tagName + " ";
+            }
+            console.log(string.toString());
+
+
+            matches = document.querySelectorShim(tags[i]);
+            console.log(matches.tagName);
+            
+
+        }
+
+
+        function toArray(list) {
+            var array = [];
+            for (var i = 0; i < list.length; i++) {
+                array.push(list[i]);
+            }
+            return array;
+        }
+    </script>
+
+</body>
+</html>

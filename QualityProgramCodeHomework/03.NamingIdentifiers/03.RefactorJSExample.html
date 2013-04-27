@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <button>Click here</button>
+
+    <script>
+        function Button_Click(sender, args) {
+            var browserWindow = window;
+            
+            var browserName = browserWindow.navigator.appCodeName;
+            var isNamedMozilla = browserName == "Mozilla";
+
+            if (isNamedMozilla) {
+                alert("Yes");
+            }
+            else {
+                alert("No");
+            }
+        }
+
+        var button = document.getElementsByTagName("button");
+        button[0].addEventListener("click", Button_Click);
+
+    </script>
+
+</body>
+</html>

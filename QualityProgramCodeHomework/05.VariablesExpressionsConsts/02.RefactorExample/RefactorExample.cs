@@ -44,7 +44,7 @@ namespace _02.RefactorExample
 
             average /= range;
 
-            PrintAvg(average);
+            PrintAverage(average);
         }
     }
 }

@@ -16,7 +16,7 @@ namespace _01.RefactorExample
 
     class ConsoleOutput
     {
-        const int MAX_COUNT = 6;
+        int MaxCount = 6;
 
         class WriteConsoleOutput
         {

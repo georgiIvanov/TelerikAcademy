@@ -27,12 +27,12 @@ namespace Minesweeper
 			{
 				if (newGame)
 				{
-					Console.WriteLine(GameMessages.INITIAL_MESSAGE);
+					Console.WriteLine(GameMessages.InitialMessage);
 					DrawMineField(playField);
 					newGame = false;
 				}
 
-				Console.Write(GameMessages.ENTER_ROW_COLUMN);
+				Console.Write(GameMessages.EnterRowColumn);
 				command = Console.ReadLine().Trim();
 
 				if (command.Length >= 3)
@@ -53,7 +53,7 @@ namespace Minesweeper
 						newGame = false;
 						break;
 					case "exit":
-						Console.WriteLine(GameMessages.BYE_MESSAGE);
+						Console.WriteLine(GameMessages.ByeMessage);
 						break;
 					case "turn":
 						if (mineField[row, col] != '*')
@@ -78,13 +78,13 @@ namespace Minesweeper
 						}
 						break;
 					default:
-						Console.WriteLine(GameMessages.INVALID_COMMAND);
+						Console.WriteLine(GameMessages.InvalidCommand);
 						break;
 				}
 				if (openedMine)
 				{
 					DrawMineField(mineField);
-                    Console.Write(string.Format(GameMessages.ON_DEATH, counter));
+                    Console.Write(string.Format(GameMessages.OnDeath, counter));
 					string playerName = Console.ReadLine();
 
                     SaveScore(highScores, counter, playerName);
@@ -94,9 +94,9 @@ namespace Minesweeper
 				}
 				if (gameWon)
 				{
-                    Console.WriteLine(string.Format(GameMessages.ON_WIN_CONGRATULATIONS, squaresToOpen));
+                    Console.WriteLine(string.Format(GameMessages.OnWinCongratulations, squaresToOpen));
 					DrawMineField(mineField);
-					Console.WriteLine(GameMessages.ON_WIN_ENTERNAME);
+					Console.WriteLine(GameMessages.OnWinEnterName);
 
 					string playerName = Console.ReadLine();
                     SaveScore(highScores, counter, playerName);
@@ -107,7 +107,7 @@ namespace Minesweeper
 			}
 			while (command != "exit");
 
-			Console.WriteLine(GameMessages.EXIT_MESSAGE);
+			Console.WriteLine(GameMessages.ExitMessage);
 			Console.Read();
 		}
 
@@ -165,19 +165,19 @@ namespace Minesweeper
 
 		private static void ShowHighScores(List<ScoreEntry> highScores)
 		{
-			Console.WriteLine(GameMessages.SCORE_OPEN);
+			Console.WriteLine(GameMessages.ScoreOpen);
 			if (highScores.Count > 0)
 			{
 				for (int i = 0; i < highScores.Count; i++)
 				{
-					Console.WriteLine(string.Format(GameMessages.SCORE_ENTRY,
+					Console.WriteLine(string.Format(GameMessages.ScoreEntry,
                         i + 1, highScores[i].GetName, highScores[i].GetScorePoints));
 				}
 				Console.WriteLine();
 			}
 			else
 			{
-				Console.WriteLine(GameMessages.SCORE_EMPTY);
+				Console.WriteLine(GameMessages.ScoreEmpty);
 			}
 		}
 

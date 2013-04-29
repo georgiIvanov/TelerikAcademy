@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="console">
+
+    </div>
+
+    <script>
+        var Console = CreateConsoleModule();
+
+        var testObj = {
+            number: 3,
+            toString: function () {
+                return this.number.toString();
+            }
+        }
+
+        Console.WriteLine(testObj);
+        Console.WriteLine("Message: {0}", "Lalala");
+
+        Console.WriteError("error");
+        Console.WriteError("Error: {0}", "big error");
+
+        Console.WriteWarning("warning");
+        Console.WriteWarning("Warning: {0}", "banana peel approaching");
+
+        function CreateConsoleModule() {
+
+            function createMessageDiv() {
+                var newDiv = document.createElement("div");
+                newDiv.style.color = "#3333FF";
+                newDiv.style.fontFamily = "Consolas";
+                return newDiv;
+            }
+
+            function createErrorDiv() {
+                var newDiv = document.createElement("div");
+                newDiv.style.color = "#CC0000"
+                newDiv.style.fontFamily = "Consolas";
+                return newDiv;
+            }
+
+            function createWarningDiv() {
+                var newDiv = document.createElement("div");
+                newDiv.style.color = "#FFCC00"
+                newDiv.style.fontFamily = "Consolas";
+                return newDiv;
+            }
+
+            function _WriteLine(input) {
+                var messageDiv = createMessageDiv();
+                messageDiv.innerHTML = input;
+
+                var console = document.querySelector("#console");
+                console.appendChild(messageDiv);
+            }
+
+            function _WriteLineFormat(input, formatMessage) {
+                var messageDiv = createMessageDiv();
+                messageDiv.innerHTML = input.replace(/\{(\d+)\}/g, formatMessage);
+                var console = document.querySelector("#console");
+                console.appendChild(messageDiv);
+            }
+
+            function _WriteError(input) {
+                var messageDiv = createErrorDiv();
+                messageDiv.innerHTML = input;
+                var console = document.querySelector("#console");
+                console.appendChild(messageDiv);
+            }
+
+            function _WriteError(input, formatMessage) {
+                var messageDiv = createErrorDiv();
+                messageDiv.innerHTML = input.replace(/\{(\d+)\}/g, formatMessage);
+                var console = document.querySelector("#console");
+                console.appendChild(messageDiv);
+            }
+
+            function _WriteWarning(input) {
+                var messageDiv = createWarningDiv();
+                messageDiv.innerHTML = input;
+                var console = document.querySelector("#console");
+                console.appendChild(messageDiv);
+            }
+
+            function _WriteWarning(input, formatMessage) {
+                var messageDiv = createWarningDiv();
+                messageDiv.innerHTML = input.replace(/\{(\d+)\}/g, formatMessage);
+                var console = document.querySelector("#console");
+                console.appendChild(messageDiv);
+            }
+
+            function WriteLine(input, formatMessage) {
+                switch (arguments.length) {
+                    case 1: _WriteLine(input); break;
+                    case 2: _WriteLineFormat(input, formatMessage); break;
+                }
+            }
+
+            function WriteError(input, formatMessage) {
+                switch (arguments.length) {
+                    case 1: _WriteError(input); break;
+                    case 2: _WriteError(input, formatMessage); break;
+                }
+            }
+
+            function WriteWarning(input, formatMessage) {
+                switch (arguments.length) {
+                    case 1: _WriteWarning(input); break;
+                    case 2: _WriteWarning(input, formatMessage); break;
+                }
+            }
+
+            return {
+                WriteLine: WriteLine,
+                WriteError: WriteError,
+                WriteWarning: WriteWarning
+            };
+        }
+
+    </script>
+</body>
+</html>

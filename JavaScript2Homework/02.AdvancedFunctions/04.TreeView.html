@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        ul li {
+            background-image: url(smallArrow.gif);
+            background-repeat: no-repeat;
+            background-position: 0px 2px;
+            padding-left: 14px;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+    <ul id="courses">
+    </ul>
+
+    <script>
+
+
+        var controls = createUlTreeView();
+        var treeView = controls.setRoot("#courses");
+        var jsNode = treeView.addNode();
+        jsNode.content("JavaScript");
+
+        var js1SubNode = jsNode.addNode();
+        js1SubNode.content("JavaScript - part 1");
+        var js2SubNode = jsNode.addNode();
+        js2SubNode.content("JavaScript - part 2");
+        var jslibssubnode = jsNode.addNode();
+        jslibssubnode.content("JS Libraries");
+        var jsframeworksnode = jsNode.addNode();
+        jsframeworksnode.content("JS Frameworks and UI");
+
+
+        var webNode = treeView.addNode();
+        webNode.content("Web");
+        var web1SubNode = webNode.addNode();
+        web1SubNode.content("Web 1");
+        var web2SubNode = webNode.addNode();
+        web2SubNode.content("Web 2");
+
+
+
+        makeUlCollapsable();
+        function createUlTreeView() {
+            var root;
+            var parent;
+
+            function setRoot(id) {
+                root = document.querySelector(id);
+                parent = undefined;
+                return _createUlTreeView(root);
+            }
+
+            function _createUlTreeView(_root) {
+                return {
+                    addNode: addNode,
+                }
+            }
+
+            function addNode() {
+                var li = document.createElement("li");
+                var node;
+                if (this.parent == undefined) {
+                    root.appendChild(li);
+                    node = { li: li, root: root, parent: root, addNode: addNode, content: content };
+                }
+                else {
+                    var childNode = this.parent.childNodes[this.parent.childNodes.length - 1];
+                    var uls = childNode.getElementsByTagName("ul");
+                    if (uls.length == 0) {
+                        var newUl = document.createElement("ul");
+                        this.parent.lastElementChild.appendChild(newUl);
+                        newUl.appendChild(li);
+                        node = { li: li, root: root, parent: undefined, addNode: addNode, content: content };
+                    }
+                    else {
+                        uls[0].appendChild(li);
+                        node = { li: li, root: root, parent: parent, addNode: addNode, content: content };
+                    }
+                    
+                }
+                return node;
+            }
+
+            function content(text) {
+                text = '<a href="#">' + text + '</a>';
+                this.li.innerHTML = text;
+            }
+            return {
+                setRoot: setRoot,
+                addNode: addNode,
+            };
+        }
+
+
+
+        function makeUlCollapsable() {
+            var liTags = document.getElementsByTagName('li');
+            for (var i = 0; i < liTags.length; i++) {
+                liTags[i].addEventListener('click', revealSubList);
+            }
+
+            var firstUl = document.getElementsByTagName("ul");
+            for (var i = 0; i < firstUl.length; i++) {
+                firstUl[i].style.display = "block";
+            }
+
+            function revealSubList(clickedUl) {
+                if (typeof (this.getElementsByTagName("ul")[0]) == "undefined") return 0;
+
+                if (this == clickedUl.target && this.getElementsByTagName("ul")[0].style.display == "block") {
+                    this.getElementsByTagName("ul")[0].style.display = "none";
+                }
+                else {
+                    this.getElementsByTagName("ul")[0].style.display = "block";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

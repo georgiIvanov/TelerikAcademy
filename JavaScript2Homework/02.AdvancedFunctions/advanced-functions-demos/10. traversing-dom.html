@@ -1,0 +1,72 @@
+<html>
+<head>
+    <title>
+        Traversing DOM
+    </title>
+    <script type="text/javascript" src="scripts/traversing-dom.js">
+                                        
+    </script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>
+                <a href="#">Header</a>
+            </h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#">Nav item</a>
+                    </li>
+                    <li>
+                        <a href="#">Nav item</a>
+                    </li>
+                    <li>
+                        <a href="#">Nav item</a>
+                    </li>
+                    <li>
+                        <a href="#">Nav item</a>
+                    </li>
+                    <li>
+                        <a href="#">Nav item</a>
+                    </li>
+                    <li>
+                        <a href="#">Nav item</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <section>
+            <article>
+                <header>
+                    <h1>
+                        Article header
+                    </h1>
+                </header>
+                <div>
+                    content
+                </div>
+                <footer>
+                    <p>
+                        Article footer
+                    </p>
+                </footer>
+            </article>
+        </section>
+        <footer>
+            <h2>
+                Site footer
+            </h2>
+        </footer>
+    </div>
+    <script type="text/javascript">
+			traverse(document.getElementsByTagName("section")[0]);
+        	console.log("--------------------------------");
+        	traverse(document.body);
+        	console.log("--------------------------------");
+        	traverse(document.documentElement);
+    </script>
+</body>
+
+</html>

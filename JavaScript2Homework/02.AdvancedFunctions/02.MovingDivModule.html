@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        div {
+            width: 40px;
+            height: 40px;
+            position:absolute;
+        }
+    </style>
+</head>
+<body>
+    <button id="rectangle">rectanle</button>
+    <button id="circle">circle</button>
+
+    <script>
+        var movingDivModule = MovingDivModule();
+        
+        var element = document.querySelector("#circle");
+        element.onclick = movingDivModule.addNewCircleDiv;
+        element = document.querySelector("#rectangle");
+        element.onclick = movingDivModule.addNewRectangleDiv;
+
+        movingDivModule.startMoving(30);
+
+
+        function MovingDivModule() {
+
+            var circleDivs, rectangleDivs;
+            var circleX, circleY, radius,
+                rectangleX, rectangleY, endX, endY,
+                rectDirectionHelper;
+
+            function startMoving(timeInterval) {
+
+                circleX = 600;
+                circleY = 100;
+                radius = 100;
+                circleDivs = document.getElementsByClassName("circle");
+
+                rectangleDivs = document.getElementsByClassName("rectangle");
+
+                rectangleX = 200;
+                rectangleY = 200;
+                endX = 350;
+                endY = 50;
+                rectDirectionHelper = 5;
+
+                setInterval(moveShapes, timeInterval);
+            }
+
+            function moveShapes() {
+                moveCircle();
+                moveRectangle();
+            }
+
+            function moveCircle() {
+                for (var i = 0; i < circleDivs.length; i++) {
+                    var div = circleDivs[i];
+                    var angleInRadians = (div.getAttribute("angleAttr")) * (Math.PI / 50);
+                    var left = radius * Math.cos(angleInRadians) + circleX;
+                    var top = radius * Math.sin(angleInRadians) + circleY;
+
+                    div.style.left = left + "px";
+                    div.style.top = top + "px";
+                    div.attributes.angleAttr.nodeValue++;
+                }
+            }
+
+            function moveRectangle() {
+
+                for (var i = 0; i < rectangleDivs.length; i++) {
+                    var x;
+                    var y;
+                    var div = rectangleDivs[i];
+                    var direction = div.getAttribute("direction");
+
+                    if (direction == "right") {
+                        y = rectangleY;
+                        div.style.top = y + "px";
+                        div.style.left = parseInt(div.style.left) + rectDirectionHelper + "px";
+
+                        if (parseInt(div.style.left) == endX) {
+                            div.attributes.direction.nodeValue = "down";
+                        }
+                    }
+                    else if (direction == "down") {
+                        x = endX;
+                        div.style.top = parseInt(div.style.top) - rectDirectionHelper + "px";
+                        div.style.left = x + "px";
+
+                        if (parseInt(div.style.top) == endY) {
+                            div.attributes.direction.nodeValue = "left";
+                        }
+                    }
+                    else if (direction == "left") {
+                        y = endY;
+                        div.style.top = y + "px";
+                        div.style.left = parseInt(div.style.left) - rectDirectionHelper + "px";
+
+                        if (parseInt(div.style.left) == rectangleX) {
+                            div.attributes.direction.nodeValue = "up";
+                        }
+                    }
+                    else if (direction == "up") {
+                        x = rectangleX;
+
+                        div.style.top = parseInt(div.style.top) + rectDirectionHelper + "px";
+                        div.style.left = x + "px";
+
+                        if (parseInt(div.style.top) == rectangleY) {
+                            div.attributes.direction.nodeValue = "right";
+                        }
+                    }
+                }
+            }
+
+            function addNewCircleDiv() {
+                var circleDiv = document.createElement("div");
+                circleDiv.setAttribute("class", "circle");
+                circleDiv.setAttribute("angleAttr", "0");
+                var angleInRadians = (circleDiv.getAttribute("angleAttr")) * (Math.PI / 180);
+                var left = radius * Math.cos(angleInRadians) + circleX;
+                var top = radius * Math.sin(angleInRadians) + circleY;
+                circleDiv.style.left = left + "px";
+                circleDiv.style.top = top + "px";
+                circleDiv.style.backgroundColor = getRandomColor();
+                circleDiv.style.color = getRandomColor();
+                var text = document.createTextNode("div");
+                circleDiv.appendChild(text);
+                document.body.appendChild(circleDiv);
+            }
+
+            function addNewRectangleDiv() {
+                var rectangleDiv = document.createElement("div");
+                rectangleDiv.setAttribute("class", "rectangle");
+                rectangleDiv.setAttribute("direction", "right");
+                rectangleDiv.style.top = rectangleY + "px";
+                rectangleDiv.style.left = rectangleX + "px";
+                rectangleDiv.style.backgroundColor = getRandomColor();
+                rectangleDiv.style.color = getRandomColor();
+                var text = document.createTextNode("div");
+                rectangleDiv.appendChild(text);
+                document.body.appendChild(rectangleDiv);
+            }
+
+
+            function getRandomColor() {
+                return '#' + (0x1000000 + (Math.random()) * 0xffffff).toString(16).substr(1, 6);
+            }
+
+            return {
+                startMoving: startMoving,
+                addNewCircleDiv: addNewCircleDiv,
+                addNewRectangleDiv: addNewRectangleDiv,
+            };
+        }
+
+        
+    </script>
+
+</body>
+</html>

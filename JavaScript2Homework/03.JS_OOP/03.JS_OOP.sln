@@ -4,6 +4,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BBD1AD19-4F94-4816-9F8F-5D253C73FA53}"
 	ProjectSection(SolutionItems) = preProject
 		01.Vehicles.html = 01.Vehicles.html
+		vehicleFactory.js = vehicleFactory.js
 	EndProjectSection
 EndProject
 Global

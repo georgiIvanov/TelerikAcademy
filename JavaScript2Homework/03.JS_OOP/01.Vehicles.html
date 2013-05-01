@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script src="vehicleFactory.js"></script>
+    <script>
+        var vehicleFactory = new createVehicleFactory();
+
+        var wheels = [
+            new vehicleFactory.Wheel(5),
+            new vehicleFactory.Wheel(5),
+            new vehicleFactory.Wheel(5),
+            new vehicleFactory.Wheel(5),
+        ];
+
+        var landVehicle = new vehicleFactory.LandVehicle(60, wheels);
+        jsConsole.writeLine("Land vehicle initial speed and acceleration: ");
+        jsConsole.writeLine(landVehicle.speed);
+        landVehicle.accelerate();
+        jsConsole.writeLine(landVehicle.speed);
+        jsConsole.writeLine();
+
+        var propellingNozzles = [
+            new vehicleFactory.PropellingNozzle(5, AfterburnerState.DEACTIVATED),
+        ];
+
+        var aircraft = new vehicleFactory.Aircraft(100, propellingNozzles);
+        jsConsole.writeLine("Aircraft initial speed and while accelerated and on afterburner");
+        jsConsole.writeLine(aircraft.speed);
+        aircraft.switchAfterburners(AfterburnerState.ACTIVATED);
+        aircraft.accelerate();
+        jsConsole.writeLine(aircraft.speed);
+        jsConsole.writeLine();
+
+        var propellers = [
+            new vehicleFactory.Propeller(5, RotationDirection.CLOCKWISE),
+            new vehicleFactory.Propeller(5, RotationDirection.CLOCKWISE),
+            new vehicleFactory.Propeller(5, RotationDirection.CLOCKWISE),
+            new vehicleFactory.Propeller(5, RotationDirection.CLOCKWISE),
+        ];
+
+        var watercraft = new vehicleFactory.Watercraft(20, propellers);
+        jsConsole.writeLine("Watercraft initial speed, acceleration and change of rotation direction.");
+        jsConsole.writeLine(watercraft.speed);
+        watercraft.accelerate();
+        jsConsole.writeLine(watercraft.speed);
+        watercraft.setPropellersRotationDirection(RotationDirection.COUNTERCLOCKWISE);
+        watercraft.accelerate();
+        jsConsole.writeLine(watercraft.speed);
+        jsConsole.writeLine();
+
+        var amphibianPropellers = [
+            new vehicleFactory.Propeller(5, RotationDirection.CLOCKWISE),
+            new vehicleFactory.Propeller(5, RotationDirection.CLOCKWISE),
+        ];
+
+        var amphibian = new vehicleFactory.Amphibian(10, amphibianPropellers, wheels, AmphibianMode.LAND);
+        jsConsole.writeLine("Amphibian speed and acceleration on land");
+        jsConsole.writeLine(amphibian.speed);
+        amphibian.accelerate();
+        jsConsole.writeLine(amphibian.speed);
+
+        jsConsole.writeLine("Amphibian speed and acceleration in water");
+        amphibian.mode = amphibian.setMode.WATER;
+        jsConsole.writeLine(amphibian.speed);
+        amphibian.accelerate();
+        jsConsole.writeLine(amphibian.speed);
+        jsConsole.writeLine("Changed roatation direction: ");
+        amphibian.setPropellersRotationDirection(amphibian.rotationDirection.COUNTERCLOCKWISE);
+        amphibian.accelerate();
+        jsConsole.writeLine(amphibian.speed);
+    </script>
+</body>
+</html>
+
+
+<!--function createVehicle() {
+            var speed;
+            var propulsionUnits = [];
+            function Accelerate() {
+                for (var i in propulsionUnits) {
+                    speed += propulsionUnits[i];
+                }
+            }
+
+            return {
+                speed: speed,
+                propulsionUnits: propulsionUnits,
+                Accelerate: Accelerate,
+            };
+        }-->

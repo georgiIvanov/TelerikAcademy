@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Original-Abstraction", "Original-Abstraction\Original-Abstraction.csproj", "{E2BD3DC8-7DD6-4349-BEAA-7A0BC38846DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Original-Cohesion-and-Coupling", "Original-Cohesion-and-Coupling\Original-Cohesion-and-Coupling.csproj", "{268AEC63-DABA-4607-8E60-997E09EB5F2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Original-Inheritance-and-Polymorphism", "Original-Inheritance-and-Polymorphism\Original-Inheritance-and-Polymorphism.csproj", "{CC40B053-CC90-4956-8591-01AC016C3188}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abstraction", "Abstraction\Abstraction.csproj", "{FA493FC8-E009-4538-A5ED-1ACB5CFA9567}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cohesion-and-Coupling", "Cohesion-and-Coupling\Cohesion-and-Coupling.csproj", "{D7AF3FB6-49AF-41AD-821B-A8894F41818B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inheritance-and-Polymorphism", "InheritanceAndPolymorphism\Inheritance-and-Polymorphism.csproj", "{B7FB2A54-774A-4299-8946-FD9855FAECBB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E2BD3DC8-7DD6-4349-BEAA-7A0BC38846DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2BD3DC8-7DD6-4349-BEAA-7A0BC38846DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2BD3DC8-7DD6-4349-BEAA-7A0BC38846DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2BD3DC8-7DD6-4349-BEAA-7A0BC38846DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{268AEC63-DABA-4607-8E60-997E09EB5F2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{268AEC63-DABA-4607-8E60-997E09EB5F2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{268AEC63-DABA-4607-8E60-997E09EB5F2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{268AEC63-DABA-4607-8E60-997E09EB5F2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC40B053-CC90-4956-8591-01AC016C3188}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC40B053-CC90-4956-8591-01AC016C3188}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC40B053-CC90-4956-8591-01AC016C3188}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC40B053-CC90-4956-8591-01AC016C3188}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA493FC8-E009-4538-A5ED-1ACB5CFA9567}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA493FC8-E009-4538-A5ED-1ACB5CFA9567}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA493FC8-E009-4538-A5ED-1ACB5CFA9567}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA493FC8-E009-4538-A5ED-1ACB5CFA9567}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7AF3FB6-49AF-41AD-821B-A8894F41818B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7AF3FB6-49AF-41AD-821B-A8894F41818B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7AF3FB6-49AF-41AD-821B-A8894F41818B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7AF3FB6-49AF-41AD-821B-A8894F41818B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7FB2A54-774A-4299-8946-FD9855FAECBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7FB2A54-774A-4299-8946-FD9855FAECBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7FB2A54-774A-4299-8946-FD9855FAECBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7FB2A54-774A-4299-8946-FD9855FAECBB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

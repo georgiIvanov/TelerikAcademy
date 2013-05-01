@@ -8,7 +8,7 @@ namespace Methods
         {
             if (a <= 0 || b <= 0 || c <= 0)
             {
-                throw new ArgumentOutOfRangeException("Sides should be positive.");
+                throw new ArgumentException("All sides should be positive.");
             }
             double halfPerimeter = (a + b + c) / 2;
             double area = Math.Sqrt(halfPerimeter * (halfPerimeter - a) * (halfPerimeter - b) * (halfPerimeter - c));
@@ -19,7 +19,7 @@ namespace Methods
         {
             if (number < 0 || number > 9)
             {
-                throw new ArgumentOutOfRangeException(number.ToString(), "Parameter must be between 0 and 9");
+                throw new ArgumentOutOfRangeException("number", "Parameter must be between 0 and 9");
             }
 
             string digitAsString = string.Empty;

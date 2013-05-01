@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq.Expressions;
 
 namespace Methods
 {
@@ -6,12 +7,16 @@ namespace Methods
     {
         string firstName, lastName, otherInfo;
 
-        public Student(string firstName, string lastName, string otherInfo = "")
+        public Student(string firstName, string lastName, string otherInfo = null)
         {
-            if (firstName == null || firstName == "" ||
-                lastName == null || lastName == "")
+            if (firstName == null || firstName == "")
             {
-                throw new ArgumentException("Names cannot be null or empty");
+                throw new ArgumentException("Names cannot be null or empty", "firstName");
+            }
+
+            if (lastName == null || lastName == "")
+            {
+                throw new ArgumentException("Names cannot be null or empty", "lastName");
             }
 
             this.firstName = firstName;
@@ -21,14 +26,34 @@ namespace Methods
 
         public string FirstName
         {
-            get { return firstName; }
-            set { firstName = value; }
+            get
+            {
+                return firstName;
+            }
+            set
+            {
+                if (value == null || value == "")
+                {
+                    throw new ArgumentException("Names cannot be null or empty", "firstName");
+                }
+                firstName = value;
+            }
         }
 
         public string LastName
         {
-            get { return lastName; }
-            set { lastName = value; }
+            get
+            {
+                return lastName;
+            }
+            set
+            {
+                if (value == null || value == "")
+                {
+                    throw new ArgumentException("Names cannot be null or empty", "lastName");
+                }
+                lastName = value;
+            }
         }
 
         public string OtherInfo

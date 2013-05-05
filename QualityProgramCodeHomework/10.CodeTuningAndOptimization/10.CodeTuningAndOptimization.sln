@@ -1,7 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolarSystem", "01.SolarSystem\SolarSystem.csproj", "{2F30E9AF-8256-40AF-B356-EA14E55CE9D7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.SolarSystem", "01.SolarSystem\01.SolarSystem.csproj", "{2F30E9AF-8256-40AF-B356-EA14E55CE9D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.ComparePerformance", "02.ComparePerformance\02.ComparePerformance.csproj", "{21E60D22-37F4-4C93-829D-B2EE60DD5F07}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Screenshots", "Screenshots", "{9ACDC9C2-2AD9-4CF9-9034-104FD3E80460}"
+	ProjectSection(SolutionItems) = preProject
+		Screenshots\AfterRefactorProfile.png = Screenshots\AfterRefactorProfile.png
+		Screenshots\BeforeRefactorProfile.png = Screenshots\BeforeRefactorProfile.png
+		Screenshots\RefactoredCode.png = Screenshots\RefactoredCode.png
+		Screenshots\SlowCode.png = Screenshots\SlowCode.png
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.CompareFunctionsPerf", "03.CompareFunctionsPerf\03.CompareFunctionsPerf.csproj", "{F0BF6125-54DA-4C26-8810-432403BD7C8B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +25,14 @@ Global
 		{2F30E9AF-8256-40AF-B356-EA14E55CE9D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F30E9AF-8256-40AF-B356-EA14E55CE9D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F30E9AF-8256-40AF-B356-EA14E55CE9D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21E60D22-37F4-4C93-829D-B2EE60DD5F07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21E60D22-37F4-4C93-829D-B2EE60DD5F07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21E60D22-37F4-4C93-829D-B2EE60DD5F07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21E60D22-37F4-4C93-829D-B2EE60DD5F07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0BF6125-54DA-4C26-8810-432403BD7C8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0BF6125-54DA-4C26-8810-432403BD7C8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0BF6125-54DA-4C26-8810-432403BD7C8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0BF6125-54DA-4C26-8810-432403BD7C8B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

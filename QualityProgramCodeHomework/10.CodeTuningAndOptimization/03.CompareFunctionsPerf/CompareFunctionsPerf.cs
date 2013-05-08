@@ -11,9 +11,6 @@ namespace _03.CompareFunctionsPerf
     {
         static Stopwatch stopwatch = new Stopwatch();
         const int loopLimit = 1000000;
-        const double power = 2;
-        const int addsubValue = 99;
-        const int divMultValue = 3;
 
         static void Main(string[] args)
         {

@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.Screenshots", "01.Screenshots", "{F057865D-6178-4DEA-8AA5-3B5FCA6A5FB1}"
+	ProjectSection(SolutionItems) = preProject
+		Screenshots\Eazfuscator.png = Screenshots\Eazfuscator.png
+		Screenshots\JustDecompile.png = Screenshots\JustDecompile.png
+		Screenshots\log4net.png = Screenshots\log4net.png
+		Screenshots\SandCastleDocumentation.png = Screenshots\SandCastleDocumentation.png
+		Screenshots\StyleCop.png = Screenshots\StyleCop.png
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.T4Template", "02.T4Template\02.T4Template.csproj", "{F621A3D5-1F3B-4E63-A277-9D3EB90FD24D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03.PublicRepository", "03.PublicRepository", "{65BE2CE1-A33E-4C54-9DC1-317D63520B19}"
+	ProjectSection(SolutionItems) = preProject
+		PublicRepostory.txt = PublicRepostory.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F621A3D5-1F3B-4E63-A277-9D3EB90FD24D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F621A3D5-1F3B-4E63-A277-9D3EB90FD24D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F621A3D5-1F3B-4E63-A277-9D3EB90FD24D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F621A3D5-1F3B-4E63-A277-9D3EB90FD24D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

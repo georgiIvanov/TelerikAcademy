@@ -1,6 +1,9 @@
+using log4net;
+using log4net.Config;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using Wintellect.PowerCollections;
 
@@ -59,6 +62,7 @@ class Event : IComparable
 class Program
 {
     static StringBuilder output = new StringBuilder();
+    private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
     static class Messages
     {
@@ -120,6 +124,7 @@ class Program
             byTitle.Remove(title);
             Messages.EventDeleted(removed);
         }
+
         public void ListEvents(DateTime date, int count)
         {
             OrderedBag<Event>.View eventsToShow = byDate.RangeFrom(new Event(date, "", ""), true);
@@ -127,7 +132,11 @@ class Program
 
             foreach (var eventToShow in eventsToShow)
             {
-                if (showed == count) break;
+                if (showed == count)
+                {
+                    break;
+                }
+
                 Messages.PrintEvent(eventToShow);
                 showed++;
             }
@@ -143,9 +152,11 @@ class Program
 
     static void Main(string[] args)
     {
+        XmlConfigurator.Configure();
+        Program.log.Debug ("Debug message");
+
         while (ExecuteNextCommand()) 
         {
-
         }
 
         Console.WriteLine(output);
@@ -153,6 +164,7 @@ class Program
 
     private static bool ExecuteNextCommand()
     {
+        Program.log.Debug("Debug message");
         string command = Console.ReadLine();
         
         if (command[0] == 'A')

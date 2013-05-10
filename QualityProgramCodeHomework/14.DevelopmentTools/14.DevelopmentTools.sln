@@ -4,6 +4,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.Screenshots", "01.Screenshots", "{F057865D-6178-4DEA-8AA5-3B5FCA6A5FB1}"
 	ProjectSection(SolutionItems) = preProject
 		Screenshots\Eazfuscator.png = Screenshots\Eazfuscator.png
+		Screenshots\GitHub.png = Screenshots\GitHub.png
 		Screenshots\JustDecompile.png = Screenshots\JustDecompile.png
 		Screenshots\log4net.png = Screenshots\log4net.png
 		Screenshots\SandCastleDocumentation.png = Screenshots\SandCastleDocumentation.png

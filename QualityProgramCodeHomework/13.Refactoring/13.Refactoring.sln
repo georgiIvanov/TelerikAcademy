@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RefactorMatrix", "RefactorMatrix\RefactorMatrix.csproj", "{74C420B5-F7B3-412A-833F-9A8DBB85CE79}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalkInMatrixTests", "WalkInMatrix.Tests\WalkInMatrixTests.csproj", "{FC1FFE83-4189-4829-8063-92C2945F3145}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{74C420B5-F7B3-412A-833F-9A8DBB85CE79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74C420B5-F7B3-412A-833F-9A8DBB85CE79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74C420B5-F7B3-412A-833F-9A8DBB85CE79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC1FFE83-4189-4829-8063-92C2945F3145}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC1FFE83-4189-4829-8063-92C2945F3145}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC1FFE83-4189-4829-8063-92C2945F3145}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC1FFE83-4189-4829-8063-92C2945F3145}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        #set-item {
+            margin-top:50px;
+        }
+        #bodyWrapper {
+            margin-left:50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="bodyWrapper">
+        <p>Note: Chrome ignores local cookie setters, use IE for test</p>
+      <form id="set-item" >
+        <input name="key" placeholder="key"/>
+        <input name="value" placeholder="value"/>
+        <button type="submit" >Set</button>
+      </form>
+
+      <form id="remove-item" >
+        <input name="key" placeholder="key"/>
+        <button type="submit" >Remove</button>
+      </form>
+
+      <form id="choose-storage" >
+        <label>
+          Local Storage
+          <input type="radio" name="storage_type" value="local" checked="checked" />
+        </label>
+
+        <label>
+          Session Storage
+          <input type="radio" name="storage_type" value="session" />
+        </label>
+      </form>
+
+      <table id="local-storage" >
+        <thead>
+          <tr>
+            <th>Key</th><th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+  <script src="storage.js"></script>
+</body>
+</html>

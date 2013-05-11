@@ -1,0 +1,340 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <canvas id="drawingCanvas">
+
+    </canvas>
+    <script>
+        var canvas = document.getElementById("drawingCanvas");
+        canvas.width = 1100;
+        canvas.height = 700;
+        var ctx = canvas.getContext("2d");
+
+        drawHead();
+        drawBike();
+        drawHouse();
+
+        function drawHead() {
+            // head form
+            ctx.beginPath();
+            ctx.arc(130, 200, 70, 0, Math.PI * 2, false);
+            ctx.fillStyle = "#90cad7";
+            ctx.fill();
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = "#1b4d58";
+            ctx.stroke();
+            ctx.closePath();
+
+            // hat surface
+            ctx.save();
+            ctx.scale(1, 0.2);
+            ctx.beginPath();
+            ctx.arc(130, 680, 80, 0, Math.PI * 2, false);
+            ctx.fillStyle = "#396693";
+            ctx.fill();
+            ctx.restore();
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = "#272523";
+            ctx.stroke();
+            ctx.restore();
+            ctx.closePath();
+
+            // hat top
+            ctx.save();
+            ctx.scale(1, 0.35);
+            ctx.beginPath();
+            ctx.arc(130, 110, 45, 0, Math.PI * 2, false);
+            ctx.fillStyle = "#396693";
+            ctx.fill();
+            ctx.restore();
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = "#272523";
+            ctx.stroke();
+            ctx.restore();
+            ctx.closePath();
+
+            // hat bottom
+            ctx.save();
+            ctx.scale(1, 0.35);
+            ctx.beginPath();
+            ctx.arc(130, 350, 45, 0, Math.PI, false);
+            ctx.restore();
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = "#272523";
+            ctx.stroke();
+            ctx.restore();
+            ctx.closePath();
+
+            // hat front
+            ctx.beginPath();
+            ctx.moveTo(85, 40);
+            ctx.lineTo(85, 125);
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = "#272523";
+            ctx.stroke();
+
+            // hat fill
+            ctx.moveTo(175, 40);
+            ctx.lineTo(175, 125);
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = "#272523";
+            ctx.stroke();
+            ctx.fillStyle = "#396693";
+            ctx.fillRect(86, 41, 88, 83);
+            ctx.closePath();
+
+            // hat top fix
+            ctx.save();
+            ctx.scale(1, 0.35);
+            ctx.beginPath();
+            ctx.arc(130, 110, 45, 0, Math.PI, false);
+            ctx.fillStyle = "#396693";
+            ctx.fill();
+            ctx.restore();
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = "#272523";
+            ctx.stroke();
+            ctx.restore();
+            ctx.closePath();
+
+            // left eye
+            ctx.save();
+            ctx.scale(1, 0.65);
+            ctx.beginPath();
+            ctx.arc(88, 265, 13, 0, Math.PI * 2, false);
+            ctx.fillStyle = "#90cad7";
+            ctx.fill();
+            ctx.restore();
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = "#1c4d58";
+            ctx.stroke();
+            ctx.restore();
+            ctx.closePath();
+
+            // inner part of left eye
+            ctx.save();
+            ctx.scale(0.6, 1);
+            ctx.beginPath();
+            ctx.arc(158, 172, 7, 0, Math.PI * 2, false);
+            ctx.fillStyle = "#1c4d58";
+            ctx.fill();
+            ctx.restore();
+            ctx.closePath();
+
+            // right eye
+            ctx.save();
+            ctx.scale(1, 0.65);
+            ctx.beginPath();
+            ctx.arc(145, 265, 13, 0, Math.PI * 2, false);
+            ctx.fillStyle = "#90cad7";
+            ctx.fill();
+            ctx.restore();
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = "#1c4d58";
+            ctx.stroke();
+            ctx.restore();
+            ctx.closePath();
+
+            // inner part of right eye
+            ctx.save();
+            ctx.scale(0.6, 1);
+            ctx.beginPath();
+            ctx.arc(233, 172, 7, 0, Math.PI * 2, false);
+            ctx.fillStyle = "#1c4d58";
+            ctx.fill();
+            ctx.restore();
+            ctx.closePath();
+
+            // nose
+            ctx.beginPath();
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = "#1c4d58";
+            ctx.moveTo(115, 175);
+            ctx.lineTo(100, 205);
+            ctx.lineTo(115, 205);
+            ctx.stroke();
+            ctx.closePath();
+
+            // mouth
+            ctx.save();
+            ctx.beginPath();
+            ctx.setTransform(1, 0.1, 0, 0.3, 0, 0);
+            ctx.arc(115, 758, 30, 0, Math.PI * 2, false);
+            ctx.fillStyle = "#90cad7";
+            ctx.fill();
+            ctx.lineWidth = 3;
+            ctx.strokeStyle = "#1c4d58";
+            ctx.stroke();
+            ctx.closePath();
+            ctx.restore();
+        }
+
+        function drawBike() {
+            // left wheel
+            ctx.beginPath();
+            ctx.arc(100, 500, 70, 0, Math.PI * 2, false);
+            ctx.fillStyle = "#90cad7";
+            ctx.fill();
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = "#1b4d58";
+            ctx.stroke();
+            ctx.closePath();
+
+            // right wheel
+            ctx.beginPath();
+            ctx.arc(410, 500, 70, 0, Math.PI * 2, false);
+            ctx.fillStyle = "#90cad7";
+            ctx.fill();
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = "#1b4d58";
+            ctx.stroke();
+            ctx.closePath();
+
+            // main frame
+            ctx.beginPath();
+            ctx.moveTo(100, 500);
+            ctx.lineTo(240, 497);
+            ctx.lineTo(387, 410);
+            ctx.lineTo(192, 410);
+            ctx.lineTo(100, 500);
+            ctx.stroke();
+            ctx.closePath();
+
+            // draw pedals
+            ctx.beginPath();
+            ctx.arc(240, 497, 20, 0, Math.PI * 2, false);
+            ctx.stroke();
+            ctx.moveTo(225, 485);
+            ctx.lineTo(208, 471);
+            ctx.moveTo(255, 508);
+            ctx.lineTo(273, 523);
+            ctx.stroke();
+            ctx.closePath();
+
+            // draw seat
+            ctx.beginPath();
+            ctx.moveTo(240, 497);
+            ctx.lineTo(160, 362);
+            ctx.moveTo(130, 362);
+            ctx.lineTo(192, 362);
+            ctx.stroke();
+            ctx.closePath();
+
+            // draw fron frame
+            ctx.beginPath();
+            ctx.moveTo(410, 500);
+            ctx.lineTo(375, 350);
+            ctx.lineTo(320, 370);
+            ctx.moveTo(375, 350);
+            ctx.lineTo(415, 305);
+            ctx.stroke();
+            ctx.closePath();
+        }
+
+        function drawHouse() {
+            // walls
+            ctx.beginPath();
+            ctx.lineWidth = 2;
+            ctx.fillStyle = "#975b5b";
+            ctx.strokeStyle = "#000000";
+            ctx.fillRect(700, 270, 305, 230);
+            ctx.strokeRect(700, 270, 305, 230);
+            ctx.closePath();
+
+            // roof
+            ctx.beginPath();
+            ctx.lineWidth = 4;
+            ctx.moveTo(700, 270);
+            ctx.lineTo(852, 105);
+            ctx.lineTo(1003, 270);
+            ctx.lineTo(700, 270);
+            ctx.stroke();
+            ctx.fill();
+            ctx.closePath();
+
+            // windows
+            // window 1
+            ctx.beginPath();
+            ctx.fillStyle = "#000000";
+            ctx.strokeStyle = "#975b5b";
+            ctx.lineWidth = 4;
+            ctx.fillRect(720, 295, 105, 70);
+            ctx.moveTo(772, 295);
+            ctx.lineTo(772, 365);
+            ctx.moveTo(720, 330);
+            ctx.lineTo(825, 330);
+            ctx.stroke();
+            ctx.closePath();
+
+            // window 2
+            ctx.beginPath();
+            ctx.fillRect(870, 295, 105, 70);
+            ctx.moveTo(922, 295);
+            ctx.lineTo(922, 365);
+            ctx.moveTo(870, 330);
+            ctx.lineTo(975, 330);
+            ctx.stroke();
+            ctx.closePath();
+
+            // window 3
+            ctx.beginPath();
+            ctx.fillRect(870, 395, 105, 70);
+            ctx.moveTo(922, 395);
+            ctx.lineTo(922, 465);
+            ctx.moveTo(870, 430);
+            ctx.lineTo(975, 430);
+            ctx.stroke();
+            ctx.closePath();
+
+            // door
+            ctx.beginPath();
+            ctx.strokeStyle = "#000000";
+            ctx.fillStyle = "#975b5b";
+            ctx.lineWidth = 2;
+            ctx.save();
+            ctx.scale(1, 0.6);
+            ctx.arc(773, 696, 40, Math.PI + 0.1, Math.PI * 2 - 0.1, false);
+            ctx.restore();
+            ctx.moveTo(733, 415);
+            ctx.lineTo(733, 501);
+            ctx.moveTo(813, 415);
+            ctx.lineTo(813, 501);
+            ctx.moveTo(773, 395);
+            ctx.lineTo(773, 501);
+            ctx.stroke();
+            ctx.closePath();
+
+            // left doorknob
+            ctx.beginPath();
+            ctx.arc(760, 465, 5, 0, Math.PI * 2, false);
+            ctx.stroke();
+            ctx.closePath();
+
+            // right doorknob
+            ctx.beginPath();
+            ctx.arc(785, 465, 5, 0, Math.PI * 2, false);
+            ctx.stroke();
+            ctx.closePath();
+
+            // chimney
+            ctx.fillRect(925, 150, 30, 85);
+            ctx.fill();
+            ctx.moveTo(925, 149);
+            ctx.lineTo(925, 235);
+            ctx.moveTo(955, 149);
+            ctx.lineTo(955, 235);
+            ctx.save();
+            ctx.scale(1, 0.3);
+            ctx.arc(940, 491, 15, 0, Math.PI * 2, false);
+            ctx.restore();
+            ctx.fill();
+            ctx.stroke();
+        }
+    </script>
+</body>
+</html>

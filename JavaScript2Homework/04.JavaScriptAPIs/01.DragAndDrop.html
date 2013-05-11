@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+    </style>
+    <script>
+
+        function changeCanState(state) {
+            var img = document.getElementById("TrashCanId");
+            img.src = "TrashCan" + state + ".png";
+        }
+
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("dragged-id", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("dragged-id");
+            var elementToRemove = document.getElementById(data);
+            container.removeChild(elementToRemove);
+        }
+
+        function LoadImages() {
+
+            var container = document.getElementById("container");
+            var docFrag = document.createDocumentFragment();
+
+            for (var i = 0; i < 5; i++) {
+                var img = document.createElement('img');
+                img.id = i.toString();
+                img.src = "Trash.png";
+                img.draggable = true;
+                img.ondragstart = function () {
+                    drag(event)
+                };
+                img.style.position = "absolute";
+                img.style.top = Math.floor(Math.random() * 300) + "px";
+                img.style.left = Math.floor(Math.random() * 900) + "px";
+                docFrag.appendChild(img);
+
+            }
+            container.appendChild(docFrag);
+        }
+    </script>
+</head>
+<body onload="LoadImages()">
+    <div id="TrashCanWrapper" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="changeCanState('Closed')">
+        <img id="TrashCanId" src="TrashCanClosed.png" ondragover="changeCanState('Opened')" onmouseout="changeCanState('Closed')"/>
+    </div>
+    <div id="container">
+    </div>
+</body>
+</html>

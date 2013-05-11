@@ -1,0 +1,19 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4D53BFB2-348E-4C2F-8978-1A875BF6FD60}"
+	ProjectSection(SolutionItems) = preProject
+		01.DragAndDrop.html = 01.DragAndDrop.html
+		02.LocalStorage.html = 02.LocalStorage.html
+		03.PolyfillLocalStorage.html = 03.PolyfillLocalStorage.html
+		04.DrawWithCanvas.html = 04.DrawWithCanvas.html
+		05.CircleInBox.html = 05.CircleInBox.html
+		StopWatch.js = StopWatch.js
+		storage.js = storage.js
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <script>
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+        canvas.height = 250;
+        canvas.width = 500;
+        canvas.style.background = "#66FF66";
+
+        var radius = 20;
+        var x = 30 + radius;
+        var y = 50;
+        
+        var moveX = 5;
+        var moveY = -5;
+
+        function AddBall() {
+            return {
+                radius:  20,
+                x : 30 + radius,
+                y : 50,
+                moveX : 5,
+                moveY : -5,
+
+            };
+        }
+
+        function draw() {
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            context.beginPath();
+            context.fillStyle = "#000000";
+            context.arc(x, y, radius, 0, 2 * Math.PI, false);
+            context.closePath();
+            context.stroke();
+            context.fill();
+            
+            if (x < radius + 5  || x > canvas.width - (radius +10)) {
+                moveX = -moveX;
+            } else if (y < 15 - radius + 30 || y > canvas.height - (radius )) {
+                moveY = -moveY;
+            };
+
+            x += moveX;
+            y += moveY;
+        }
+
+        setInterval(draw, 15);
+    </script>
+</body>
+</html>

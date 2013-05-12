@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="addItem">
+        <input type="text" id="addItemText" placeholder="TODO"/> <button onclick="AddItem()">Add</button>
+    </div>
+    <div id="deleteItem">
+        <input type="text" id="deleteItemText" placeholder="task to delete"/> 
+        <button onclick="DeleteItemByName()">Delete</button> 
+        <button onclick="DeleteFirst()">Delete First</button>
+        <button onclick="DeleteLast()">Delete Last</button>
+    </div>
+    <button onclick="ShowTODO()">Show</button> <button onclick="HideTODO()">Hide</button>
+    <div id="TODOwrapper">
+        <p>TODO</p>
+        <ul id="TODO">
+
+        </ul>
+    </div>
+
+    <script>
+        var todoList = document.getElementById("TODO");
+        function AddItem() {
+            var li = document.createElement("li");
+            var itemInput = document.getElementById("addItemText");
+            li.innerHTML = itemInput.value;
+            todoList.appendChild(li);
+            itemInput.value = "";
+        }
+
+        function DeleteItemByName() {
+            var itemName = document.getElementById("deleteItemText");
+            if (itemName.value == "") {
+                return;
+            }
+            for (var i = 0; i < todoList.childNodes.length; i++) {
+                if (itemName.value == todoList.childNodes[i].textContent) {
+                    todoList.removeChild(todoList.childNodes[i]);
+                }
+            }
+            itemName.value = "";
+        }
+
+        function DeleteFirst() {
+            if (todoList.childNodes.length >= 2) {
+                todoList.removeChild(todoList.childNodes[1]);
+            }
+        }
+
+        function DeleteLast() {
+            if (todoList.childNodes.length >= 2) {
+                todoList.removeChild(todoList.childNodes[todoList.childNodes.length - 1]);
+            }
+        }
+
+        function ShowTODO() {
+            var todoWrapper = document.getElementById("TODOwrapper");
+            todoWrapper.style.visibility = "visible";
+        }
+
+        function HideTODO() {
+            var todoWrapper = document.getElementById("TODOwrapper");
+            todoWrapper.style.visibility = "hidden";
+        }
+
+    </script>
+</body>
+</html>

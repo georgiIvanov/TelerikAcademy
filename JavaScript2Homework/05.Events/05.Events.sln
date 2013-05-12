@@ -1,0 +1,14 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E1C9D4AA-DA2A-4FAB-9652-BBA0DF5F793C}"
+	ProjectSection(SolutionItems) = preProject
+		01.Carousel.html = 01.Carousel.html
+		02.ToDoList.html = 02.ToDoList.html
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -21,34 +21,30 @@
         var images = [];
 
         function NextImage() {
-            if (numberOfImage >= 4) {
+            if (numberOfImage >= 5) {
                 numberOfImage = 0;
             }
-            do {
-                numberOfImage++;
-                img.src = images[numberOfImage - 1].src;
-                if (numberOfImage > 4) {
-                    numberOfImage = 1;
-                }
-            } while (images[numberOfImage - 1].src == undefined);
+            numberOfImage++;
+            img.src = images[numberOfImage - 1].src;
+            if (numberOfImage > 5) {
+                numberOfImage = 1;
+            }
         }
 
         function PreviousImage() {
             if (numberOfImage < 0) {
-                numberOfImage = 4;
+                numberOfImage = 5;
             }
-            do {
-                numberOfImage--;
-                if (numberOfImage <= 0 ) {
-                    numberOfImage = 4;
-                }
-                img.src = images[numberOfImage - 1].src;
-            } while (images[numberOfImage - 1].src == undefined);
+            numberOfImage--;
+            if (numberOfImage <= 0 ) {
+                numberOfImage = 5;
+            }
+            img.src = images[numberOfImage - 1].src;
         }
 
 
         function CreateCarousel() {
-            for (var i = 1; i <= 4; i++) {
+            for (var i = 1; i <= 5; i++) {
                 var im = document.createElement("img");
                 im.src = ("images/img" + i + ".jpg");
                 images.push(im);

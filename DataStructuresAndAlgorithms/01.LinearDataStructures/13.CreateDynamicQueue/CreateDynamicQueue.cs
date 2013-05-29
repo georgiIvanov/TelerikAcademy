@@ -9,7 +9,7 @@ namespace _13.CreateDynamicQueue
     {
         static void Main(string[] args)
         {
-            Queue<char> queue = new Queue<char>();
+            LinkedQueue<char> queue = new LinkedQueue<char>();
 
             for (int i = 65; i < 80; i++)
             {

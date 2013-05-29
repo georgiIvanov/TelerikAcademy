@@ -6,16 +6,11 @@ using System.Threading.Tasks;
 
 namespace _13.CreateDynamicQueue
 {
-    class Queue<T>
+    class LinkedQueue<T>
     {
         QueueItem<T> firstItem;
         QueueItem<T> lastItem;
         int count;
-
-        public Queue()
-        {
-
-        }
 
         public void Push(T value)
         {
@@ -46,6 +41,7 @@ namespace _13.CreateDynamicQueue
             }
             T valueToReturn = firstItem.Value;
             firstItem = firstItem.PreviousItem;
+            count--;
             return valueToReturn;
         }
 

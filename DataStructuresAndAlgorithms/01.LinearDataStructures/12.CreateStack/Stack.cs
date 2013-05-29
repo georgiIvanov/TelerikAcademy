@@ -8,6 +8,7 @@ namespace _12.CreateStack
     class Stack<T>
     {
         StackArray<T> array;
+        int count;
 
         public Stack()
         {
@@ -17,6 +18,7 @@ namespace _12.CreateStack
         public void Push(T value)
         {
             array.Push(value);
+            count++;
         }
 
         public T Peek()
@@ -26,7 +28,16 @@ namespace _12.CreateStack
 
         public T Pop()
         {
+            count--;
             return array.Pop();
+        }
+
+        public int Count
+        {
+            get
+            {
+                return this.count;
+            }
         }
 
     }

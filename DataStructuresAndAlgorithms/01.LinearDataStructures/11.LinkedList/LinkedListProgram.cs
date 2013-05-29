@@ -11,13 +11,21 @@ namespace _11.LinkedList
             LinkedList<int> list = new LinkedList<int>(0);
 
             ListItem<int> listItem = list.FirstItem;
+            ListItem<int> nextItem;
             
             for (int i = 1; i < 11; i++)
 			{
-                ListItem<int> nextItem = new ListItem<int>(i);
+                nextItem = new ListItem<int>(i);
                 listItem.NextItem = nextItem;
                 listItem = nextItem;
 			}
+
+            nextItem = list.FirstItem;
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine(nextItem.Value);
+                nextItem = nextItem.NextItem;
+            }
         }
     }
 }

@@ -14,12 +14,12 @@ namespace _12.CreateStack
         public StackArray()
             :this(8)
         {
-            top = 0;
+            this.top = 0;
         }
 
         public StackArray(int arraySize)
         {
-            array = new T[arraySize];
+            this.array = new T[arraySize];
         }
 
         public void Push(T value)

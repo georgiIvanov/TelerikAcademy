@@ -12,7 +12,8 @@ namespace _12.CreateStack
 
         public Stack()
         {
-            array = new StackArray<T>();
+            this.array = new StackArray<T>();
+            this.count = 0;
         }
 
         public void Push(T value)
@@ -28,7 +29,14 @@ namespace _12.CreateStack
 
         public T Pop()
         {
-            count--;
+            if (count > 0)
+            {
+                count--;
+            }
+            else
+            {
+                throw new InvalidOperationException("Cannot pop empty stack.");
+            }
             return array.Pop();
         }
 

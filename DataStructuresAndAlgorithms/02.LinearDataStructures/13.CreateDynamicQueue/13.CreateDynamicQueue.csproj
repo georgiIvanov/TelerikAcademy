@@ -43,7 +43,7 @@
   <ItemGroup>
     <Compile Include="CreateDynamicQueue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Queue.cs" />
+    <Compile Include="LinkedQueue.cs" />
     <Compile Include="QueueItem.cs" />
   </ItemGroup>
   <ItemGroup>

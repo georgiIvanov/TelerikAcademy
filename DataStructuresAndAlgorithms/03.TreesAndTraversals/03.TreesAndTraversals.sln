@@ -3,6 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.CreateTreeFromInput", "01.CreateTreeFromInput\01.CreateTreeFromInput.csproj", "{07AD989F-976F-4053-9A89-A09AB4E63DCA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.TraverseDirectory", "02.TraverseDirectory\02.TraverseDirectory.csproj", "{87DA8B01-CC2D-48E0-A330-90075876BCEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.CreateDirectoryTree", "03.CreateDirectoryTree\03.CreateDirectoryTree.csproj", "{7F6ED282-7168-4C18-9702-1E136FE3F020}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirTreeTests", "DirTreeTests\DirTreeTests.csproj", "{4FD3B431-A1CF-4FF0-B75B-1DAD0780EDF3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +19,18 @@ Global
 		{07AD989F-976F-4053-9A89-A09AB4E63DCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07AD989F-976F-4053-9A89-A09AB4E63DCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07AD989F-976F-4053-9A89-A09AB4E63DCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87DA8B01-CC2D-48E0-A330-90075876BCEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87DA8B01-CC2D-48E0-A330-90075876BCEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87DA8B01-CC2D-48E0-A330-90075876BCEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87DA8B01-CC2D-48E0-A330-90075876BCEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F6ED282-7168-4C18-9702-1E136FE3F020}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F6ED282-7168-4C18-9702-1E136FE3F020}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F6ED282-7168-4C18-9702-1E136FE3F020}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F6ED282-7168-4C18-9702-1E136FE3F020}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FD3B431-A1CF-4FF0-B75B-1DAD0780EDF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FD3B431-A1CF-4FF0-B75B-1DAD0780EDF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FD3B431-A1CF-4FF0-B75B-1DAD0780EDF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FD3B431-A1CF-4FF0-B75B-1DAD0780EDF3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

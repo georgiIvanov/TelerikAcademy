@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    
+</head>
+<body>
+    Check console.
+
+    <script src="oop-Implementation.js"></script>
+    <script src="repository.js"></script>
+    <script>
+        var student = Object.create(Student);
+        student.init("Pesho", "Pergela", 30, 2)
+        console.log(student.introduce());
+
+        var student1 = Object.create(Student);
+        student1.init("Ivan", "ivanov", 15, 3);
+        console.log(student1.introduce());
+
+        var student2 = Object.create(Student);
+        student2.init("Ala", "Bala", 18, 5);
+        console.log(student2.introduce());
+
+        var teacher = Object.create(Teacher);
+        teacher.init("Obi-Wan", "Kenobi", 60, "Jedi");
+        console.log(teacher.introduce());
+
+        var teacher1 = Object.create(Teacher);
+        teacher1.init("Darth", "Vader", 40, "Sith");
+        console.log(teacher1.introduce());
+
+        var course1 = Object.create(Course);
+        course1.init("Jedi Meditation", 3, [student1, student2], teacher);
+        console.log(course1.introduce());
+
+        var course2 = Object.create(Course);
+        course2.init("The Dark Side of the Force",
+            1, student, teacher1);
+        console.log(course2.introduce());
+
+
+    </script>
+</body>
+</html>

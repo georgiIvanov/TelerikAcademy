@@ -1,0 +1,7 @@
+Mimi Shmatkata          | Plovdiv  | 0888 12 34 56
+Kireto                  | Varna    | 052 23 45 67
+Daniela Ivanova Petrova | Karnobat | 0899 999 888
+Bat Gancho              | Sofia    | 02 946 946 946
+Gancho                  | Sofia    | 99 999 999 999
+Mara Bla-Bla Petrova    | Karnobat | 0899 999 888
+Mara Bla-Bla Petrova    | Lukovit  | 0899 999 888

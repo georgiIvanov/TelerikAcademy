@@ -1,0 +1,3 @@
+find("Gancho")
+find("Petrova", "Karnobat")
+find("Petrova")

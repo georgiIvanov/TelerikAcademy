@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    See console.
+
+    <script src="Inheritance.js"></script>
+    <script src ="repository.js"></script>
+    <script>
+        var stud = new Student("lala", "lol", 5, 3);
+        console.log(stud.introduce());
+
+        var stud2 = new Student("Liliqn", "Liliev", 45, 3);
+        console.log(stud2.introduce());
+
+        var stud3 = new Student("Minzuhar", "Shipkov", 18, 4);
+        console.log(stud3.introduce());
+
+        var stud4 = new Student("Temenujka", "Ivanova", 80, 2);
+        console.log(stud4.introduce());
+
+        var teacher = new Teacher("Marian", "Marianow", 88, "Herb collection");
+        console.log(teacher.introduce());
+
+        var teacher2 = new Teacher("Vladislav", "Shisharkov", 95, "Pine trees");
+        console.log(teacher2.introduce());
+
+        var firstCourse = new Course("Vsi4koznanie", 5, [stud, stud3, stud4], teacher);
+        console.log(firstCourse.introduce());
+
+    </script>
+</body>
+</html>

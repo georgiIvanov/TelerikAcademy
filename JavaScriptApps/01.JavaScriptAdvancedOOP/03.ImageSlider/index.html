@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    
+    <div id="enlargedImage"></div>
+    <div id="imagesBar"></div>
+    <a href="#" id="prevButton">Previous</a>
+    <a href="#" id="nextButton">Next</a>
+
+    <script src="imgslider.js"></script>
+    <script>
+        sliderController.init("#imagesBar", "#enlargedImage");
+        var lala = [];
+        
+        sliderController.loadImages("images/", imageNames);
+        sliderController.setClickEvents("#imagesBar", "#nextButton", "#prevButton");
+
+    </script>
+</body>
+</html>

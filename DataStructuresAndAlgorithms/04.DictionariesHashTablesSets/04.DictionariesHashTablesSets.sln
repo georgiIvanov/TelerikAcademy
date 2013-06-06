@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05.SetImplementation", "05.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06.PhonebookApp", "06.Phonebook\06.PhonebookApp.csproj", "{C8B9BA20-0CE2-4309-9F36-3B92789DD4F0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.HashTableImplementation", "04.HashTableImplementation\04.HashTableImplementation.csproj", "{93ADC039-27D6-462A-8CF1-B3C7BBCAFD67}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{C8B9BA20-0CE2-4309-9F36-3B92789DD4F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8B9BA20-0CE2-4309-9F36-3B92789DD4F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8B9BA20-0CE2-4309-9F36-3B92789DD4F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93ADC039-27D6-462A-8CF1-B3C7BBCAFD67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93ADC039-27D6-462A-8CF1-B3C7BBCAFD67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93ADC039-27D6-462A-8CF1-B3C7BBCAFD67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93ADC039-27D6-462A-8CF1-B3C7BBCAFD67}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

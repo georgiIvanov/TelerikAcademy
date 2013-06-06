@@ -9,27 +9,27 @@ namespace _05.SetImplementation
 {
     class HashSet<T>
     {
-        HashTable<string, T> hashTable;
+        HashTable<int, T> hashTable;
 
         public HashSet()
         {
-            hashTable = new HashTable<string, T>();
+            hashTable = new HashTable<int, T>();
 
         }
 
         public void Add(T value)
         {
-            hashTable.Add(value.ToString(), value);
+            hashTable.Add(value.GetHashCode(), value);
         }
 
         public T Find(T value)
         {
-            return hashTable.Find(value.ToString());
+            return hashTable.Find(value.GetHashCode());
         }
 
         public bool Remove(T value)
         {
-            return hashTable.Remove(value.ToString());
+            return hashTable.Remove(value.GetHashCode());
         }
 
         public int Count
@@ -57,11 +57,11 @@ namespace _05.SetImplementation
         {
             get
             {
-                return hashTable[index.ToString()];
+                return hashTable[index.GetHashCode()];
             }
             set
             {
-                hashTable[index.ToString()] = value;
+                hashTable[index.GetHashCode()] = value;
             }
         }
 

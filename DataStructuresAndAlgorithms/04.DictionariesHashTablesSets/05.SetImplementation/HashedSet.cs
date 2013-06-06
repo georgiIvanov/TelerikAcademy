@@ -65,5 +65,31 @@ namespace _05.SetImplementation
             }
         }
 
+        public HashSet<T> Union(HashSet<T> otherSet)
+        {
+            IEnumerable<T> union = this.Items.Union(otherSet.Items);
+            HashSet<T> newSet = new HashSet<T>();
+
+            foreach (var item in union)
+            {
+                newSet.Add(item);
+            }
+
+            return newSet;
+        }
+
+        public HashSet<T> Intersect(HashSet<T> otherSet)
+        {
+            IEnumerable<T> intersect = this.Items.Intersect(otherSet.Items);
+            HashSet<T> newSet = new HashSet<T>();
+
+            foreach (var item in intersect)
+            {
+                newSet.Add(item);
+            }
+
+            return newSet;
+        }
+
     }
 }

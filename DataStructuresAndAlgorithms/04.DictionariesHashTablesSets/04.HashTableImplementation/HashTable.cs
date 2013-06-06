@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HashImplementation
+namespace HashTableImplementation
 {
     public class HashTable<K, V> : IEnumerable<KeyValuePair<K,V>>, IEnumerable
     {

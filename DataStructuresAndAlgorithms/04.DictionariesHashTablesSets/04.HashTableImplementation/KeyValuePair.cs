@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HashImplementation
+namespace HashTableImplementation
 {
     public class KeyValuePair<K, V>
     {

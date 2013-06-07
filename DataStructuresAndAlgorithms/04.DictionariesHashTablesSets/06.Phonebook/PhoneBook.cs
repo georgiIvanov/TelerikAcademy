@@ -24,12 +24,15 @@ namespace _06.Phonebook
 
             foreach (var entry in entries)
             {
-                firstNames.Add(new KeyValuePair<string,
-                    ICollection<PhoneEntry>>(entry.FirstName, new PhoneEntry[] { entry }));
-                middleNames.Add(new KeyValuePair<string,
-                    ICollection<PhoneEntry>>(entry.MiddleName, new PhoneEntry[] { entry }));
-                lastNames.Add(new KeyValuePair<string,
-                    ICollection<PhoneEntry>>(entry.LastName, new PhoneEntry[] { entry }));
+                firstNames.Add(entry.FirstName, entry);
+                //firstNames.Add(new KeyValuePair<string,
+                //    ICollection<PhoneEntry>>(entry.FirstName, new PhoneEntry[] { entry }));
+                middleNames.Add(entry.MiddleName, entry);
+                //middleNames.Add(new KeyValuePair<string,
+                //    ICollection<PhoneEntry>>(entry.MiddleName, new PhoneEntry[] { entry }));
+                lastNames.Add(entry.LastName, entry);
+                //lastNames.Add(new KeyValuePair<string,
+                //    ICollection<PhoneEntry>>(entry.LastName, new PhoneEntry[] { entry }));
                 towns.Add(new KeyValuePair<string,
                     ICollection<PhoneEntry>>(entry.Town, new PhoneEntry[] { entry }));
             }

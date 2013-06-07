@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.PriorityQueue", "01.Prio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.ElementsInRange", "02.ElementsInRange\02.ElementsInRange.csproj", "{DEE03EC4-D27E-4A2F-8288-DE52585CC245}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.WordOccurance", "03.WordOccurance\03.WordOccurance.csproj", "{38444D8E-3310-4989-9BF6-C78D31141E22}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{DEE03EC4-D27E-4A2F-8288-DE52585CC245}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DEE03EC4-D27E-4A2F-8288-DE52585CC245}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DEE03EC4-D27E-4A2F-8288-DE52585CC245}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38444D8E-3310-4989-9BF6-C78D31141E22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38444D8E-3310-4989-9BF6-C78D31141E22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38444D8E-3310-4989-9BF6-C78D31141E22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38444D8E-3310-4989-9BF6-C78D31141E22}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -19,39 +19,59 @@ namespace _03.WordOccurance
             
             Stopwatch sw = new Stopwatch();
             TrieNode start = new TrieNode();
+            Dictionary<string, int> wordsInDictionary = new Dictionary<string, int>();
             var words = SetInputText();
             
-            //takes about 9 secs
-            SearchInTrie(sw, start, words, "again");
 
-            SearchInDictionary(sw, words, "again");
+            PopulateDictionary(sw, words, wordsInDictionary);
+            PopulateTrie(sw, start, words);
+
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine("Word: {0}", words[i].ToString());
+
+                //takes about 9 secs
+                SearchInTrie(sw, start, words, words[i].ToString());
+
+                SearchInDictionary(sw, wordsInDictionary, words, words[i].ToString());
+            }
         }
 
         private static void SearchInTrie(Stopwatch sw, TrieNode start, MatchCollection words, string searchedWord)
         {
             int wordCount = 0;
+            sw.Restart();
+            wordCount = start.CountWords(start, searchedWord);
+            sw.Stop();
+
+            Console.WriteLine("Times word found: {0}", wordCount);
+            Console.WriteLine("Time in searching trie: {0}", sw.Elapsed);
+        }
+
+        private static void PopulateTrie(Stopwatch sw, TrieNode start, MatchCollection words)
+        {
             sw.Start();
             foreach (var item in words)
             {
                 start.AddWord(start, item.ToString());
             }
             sw.Stop();
-            Console.WriteLine("Time to populate the trie: {0}", sw.Elapsed);
+            Console.WriteLine("Time to populate the trie: {0}\n", sw.Elapsed);
+        }
 
-
+        private static void SearchInDictionary(Stopwatch sw, Dictionary<string, int> wordsInDictionary, MatchCollection words, string searchedWord)
+        {
+            int wordCount = 0;
             sw.Restart();
-            wordCount = start.CountWords(start, searchedWord);
+            wordCount = wordsInDictionary[searchedWord];
             sw.Stop();
 
             Console.WriteLine("Times word found: {0}", wordCount);
-            Console.WriteLine("Elapsed time in searching: {0}", sw.Elapsed);
+            Console.WriteLine("Time in searching dictionary: {0}\n", sw.Elapsed);
         }
 
-        private static void SearchInDictionary(Stopwatch sw, MatchCollection words, string searchedWord)
+        private static void PopulateDictionary(Stopwatch sw, MatchCollection words, Dictionary<string, int> wordsInDictionary)
         {
-            int wordCount = 0;
-            Dictionary<string, int> wordsInDictionary = new Dictionary<string, int>();
-
             sw.Restart();
             foreach (var item in words)
             {
@@ -66,14 +86,7 @@ namespace _03.WordOccurance
                 }
             }
             sw.Stop();
-            Console.WriteLine("\n\nTime to populate dictionary: {0}", sw.Elapsed);
-
-            sw.Restart();
-            wordCount = wordsInDictionary[searchedWord];
-            sw.Stop();
-
-            Console.WriteLine("Times word found: {0}", wordCount);
-            Console.WriteLine("Elapsed time in searching: {0}", sw.Elapsed);
+            Console.WriteLine("Time to populate dictionary: {0}\n\n", sw.Elapsed);
         }
 
         static MatchCollection SetInputText()

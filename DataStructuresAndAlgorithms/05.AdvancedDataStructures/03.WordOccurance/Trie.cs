@@ -90,15 +90,15 @@ namespace _03.WordOccurance
             }
             else
             {
-                int k = word[indexInWord] - 'a';
+                int nextCharIndex = word[indexInWord] - 'a';
                 indexInWord++;
-                if (node.edges[k] == null)
+                if (node.edges[nextCharIndex] == null)
                 {
                     return 0;
                 }
                 else
                 {
-                    return CountWords(node.edges[k], word, indexInWord);
+                    return CountWords(node.edges[nextCharIndex], word, indexInWord);
                 }
             }
         }
@@ -111,15 +111,15 @@ namespace _03.WordOccurance
             }
             else
             {
-                int k = word[indexInWord] - 'a';
+                int nextCharIndex = word[indexInWord] - 'a';
                 indexInWord++;
-                if (node.edges[k] == null)
+                if (node.edges[nextCharIndex] == null)
                 {
                     return 0;
                 }
                 else
                 {
-                    return CountPrefix(node.edges[k], word, indexInWord);
+                    return CountPrefix(node.edges[nextCharIndex], word, indexInWord);
                 }
             }
         }

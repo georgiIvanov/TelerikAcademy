@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,11 +22,6 @@ namespace _03.WordOccurance
         public TrieNode AddWord(TrieNode node, string word)
         {
             return this.AddWord(node, word, 0);
-        }
-
-        public void AddOccuranceIfExists(TrieNode node, string word)
-        {
-            AddOccuranceIfExists(node, word, 0);
         }
 
         public int CountWords(TrieNode node, string word)
@@ -63,7 +58,7 @@ namespace _03.WordOccurance
             }
         }
 
-        private void AddOccuranceIfExists(TrieNode node, string word, int indexInWord)
+        private TrieNode AddWord(TrieNode node, string word, int indexInWord)
         {
             if (word.Length == indexInWord)
             {
@@ -71,27 +66,8 @@ namespace _03.WordOccurance
             }
             else
             {
-                int nextCharIndex = word[indexInWord] - 'a';
-                indexInWord++;
                 node.Prefixes += 1;
 
-                if (node.edges[nextCharIndex] == null)
-                {
-                    return;
-                }
-                else
-                {
-                    AddOccuranceIfExists(node.edges[nextCharIndex], word, indexInWord);
-                }
-            }
-        }
-
-        private TrieNode AddWord(TrieNode node, string word, int indexInWord)
-        {
-            if (word.Length != indexInWord)
-            {
-                node.Prefixes += 1;
-                
                 int index = word[indexInWord] - 'a';
                 indexInWord++;
 
@@ -147,5 +123,6 @@ namespace _03.WordOccurance
                 }
             }
         }
+
     }
 }

@@ -24,13 +24,15 @@ namespace _03.WordOccurance
             
 
             PopulateDictionary(sw, words, wordsInDictionary);
+
+            //takes about 9 secs
             PopulateTrie(sw, start, words);
 
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 10; i++)
             {
                 Console.WriteLine("Word: {0}", words[i].ToString());
 
-                //takes about 9 secs
+                
                 SearchInTrie(sw, start, words, words[i].ToString());
 
                 SearchInDictionary(sw, wordsInDictionary, words, words[i].ToString());

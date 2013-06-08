@@ -7,7 +7,7 @@ using System.IO;
 
 namespace _01.PrintInAlphabeticalOrder
 {
-    class Program
+    class PrintInAlphabeticalOrder
     {
         static void Main(string[] args)
         {

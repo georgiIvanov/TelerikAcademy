@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{03410E58-4045-485F-BEC5-C913FB7618CE}</ProjectGuid>
+    <ProjectGuid>{AEDC13C6-81AA-432F-8898-69976EA06DDF}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_01.PrintInAlphabeticalOrder</RootNamespace>
-    <AssemblyName>01.PrintInAlphabeticalOrder</AssemblyName>
+    <RootNamespace>BiDictionaryImplementation</RootNamespace>
+    <AssemblyName>BiDictionary</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PowerCollections">
+      <HintPath>..\..\..\QualityProgramCodeHomework\02.CodeFormatting\01.Events\PowerCollections.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,7 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PrintInAlphabeticalOrder.cs" />
+    <Compile Include="BiDictionary.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

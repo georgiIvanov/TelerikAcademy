@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.PrintInAlphabeticalOrder
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.PriceRange", "02.PriceRange\02.PriceRange.csproj", "{F3B7AC21-49FF-4334-9956-5CC2B0A8E32B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.BiDictionaryImplemetation", "03.BiDictionaryImplementation\03.BiDictionaryImplemetation.csproj", "{AEDC13C6-81AA-432F-8898-69976EA06DDF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{F3B7AC21-49FF-4334-9956-5CC2B0A8E32B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3B7AC21-49FF-4334-9956-5CC2B0A8E32B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3B7AC21-49FF-4334-9956-5CC2B0A8E32B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEDC13C6-81AA-432F-8898-69976EA06DDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEDC13C6-81AA-432F-8898-69976EA06DDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEDC13C6-81AA-432F-8898-69976EA06DDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEDC13C6-81AA-432F-8898-69976EA06DDF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

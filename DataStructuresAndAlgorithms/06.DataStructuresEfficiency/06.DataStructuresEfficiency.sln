@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.PrintInAlphabeticalOrder", "01.PrintInAlphabeticalOrder\01.PrintInAlphabeticalOrder.csproj", "{03410E58-4045-485F-BEC5-C913FB7618CE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.PriceRange", "02.PriceRange\02.PriceRange.csproj", "{F3B7AC21-49FF-4334-9956-5CC2B0A8E32B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{03410E58-4045-485F-BEC5-C913FB7618CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03410E58-4045-485F-BEC5-C913FB7618CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03410E58-4045-485F-BEC5-C913FB7618CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3B7AC21-49FF-4334-9956-5CC2B0A8E32B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3B7AC21-49FF-4334-9956-5CC2B0A8E32B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3B7AC21-49FF-4334-9956-5CC2B0A8E32B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3B7AC21-49FF-4334-9956-5CC2B0A8E32B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

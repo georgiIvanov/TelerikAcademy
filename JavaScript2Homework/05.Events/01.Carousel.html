@@ -4,66 +4,16 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
-    <style>
-        a {
-            margin-left:30px;
-        }
-    </style>
 </head>
-<body onload="CreateCarousel()">
-    <a href="#" id="previousButton">Previous</a><a href="#" id="nextButton">Next</a>
-    <div id="carousel">
-        
-    </div>
-
+<body>
+    <div id="img-slider"></div>
+    <script src="prototypalOOP.js"></script>
+    
     <script>
-        var img, numberOfImage;
-        var images = [];
+        
 
-        function NextImage() {
-            if (numberOfImage >= 5) {
-                numberOfImage = 0;
-            }
-            numberOfImage++;
-            img.src = images[numberOfImage - 1].src;
-            if (numberOfImage > 5) {
-                numberOfImage = 1;
-            }
-        }
-
-        function PreviousImage() {
-            if (numberOfImage < 0) {
-                numberOfImage = 5;
-            }
-            numberOfImage--;
-            if (numberOfImage <= 0 ) {
-                numberOfImage = 5;
-            }
-            img.src = images[numberOfImage - 1].src;
-        }
-
-
-        function CreateCarousel() {
-            for (var i = 1; i <= 5; i++) {
-                var im = document.createElement("img");
-                im.src = ("images/img" + i + ".jpg");
-                images.push(im);
-            }
-
-            var carousel = document.getElementById("carousel");
-            img = document.createElement("img");
-            numberOfImage = 1;
-            img.src = "images/img" + numberOfImage + ".jpg";
-            img.width = 700;
-            img.height = 600;
-            carousel.appendChild(img);
-
-            var button = document.getElementById("previousButton");
-            button.addEventListener("click", PreviousImage);
-            button = document.getElementById("nextButton");
-            button.addEventListener("click", NextImage);
-        };
         
     </script>
+    <script src="imgslider.js"></script>
 </body>
 </html>

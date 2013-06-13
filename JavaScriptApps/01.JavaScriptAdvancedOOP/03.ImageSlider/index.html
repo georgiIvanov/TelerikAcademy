@@ -2,22 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
+    <link href="sliderCSS.css" rel="stylesheet" />
 </head>
 <body>
     
     <div id="enlargedImage"></div>
-    <div id="imagesBar"></div>
-    <a href="#" id="prevButton">Previous</a>
-    <a href="#" id="nextButton">Next</a>
+    <div id="img-slider"></div>
 
+    <script src="prototypalOOP.js"></script>
     <script src="imgslider.js"></script>
-    <script>
-        sliderController.init("#imagesBar", "#enlargedImage");
-        var lala = [];
-        
-        sliderController.loadImages("images/", imageNames);
-        sliderController.setClickEvents("#imagesBar", "#nextButton", "#prevButton");
-
-    </script>
 </body>
 </html>

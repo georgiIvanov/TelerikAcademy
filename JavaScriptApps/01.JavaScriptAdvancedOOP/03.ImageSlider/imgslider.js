@@ -1,79 +1,110 @@
-﻿var sliderController = (function(){
-    var imageBarElement;
-
-    function init(selectorBar, imageSelector){
-        this.imagesSrc = [];
-        this.imagesContainer = [];
-        this.imageBarElement = document.querySelector(selectorBar);
-
-        var img = document.createElement("img");
-        img.style.height = "300px";
-        img.style.width = "300px";
-        this.enlarged = document.querySelector(imageSelector);
-        this.enlarged.appendChild(img);
-    }
-
-    function loadImages(path, names) {
-        for (var i = 0; i < names.length; i++) {
-
-            this.imagesSrc.push(path + names[i]);
+﻿var Slider = {
+    init: function (container, images) {
+        this.container = document.getElementById("img-slider");
+        this.imgs = images;
+        this.imageWrapper = document.createElement("div");
+        this.imageWrapper.id = "img-wrapper";
+        this.widthWrapper = 216;
+        this.imageWrapper.style.width = this.widthWrapper + "px";
+        this.nav = document.createElement("div");
+        this.nav.id = "nav";
+    },
+    prevButton: function (id) {
+        this.prevButton = Object.create(Button);
+        this.prevButton.init(id);
+    },
+    nextButton: function (id) {
+        this.nextButton = Object.create(Button);
+        this.prevButton.init(id);
+    },
+    render: function () {
+        this.initImages();
+        this.initButton(this.prevButton, this.previous, "Previous");
+        this.initButton(this.nextButton, this.next, "Next");
+    },
+    initButton: function (obj, func, text) {
+        var btn = document.createElement("button");
+        btn.textContent = text;
+        btn.id = obj.id;
+        btn.style.cursor = "pointer";
+        this.nav.appendChild(btn);
+        btn.onclick = func;
+    },
+    next: function () {
+        var slide = document.getElementById("img-slide");
+        var wrapper = document.getElementById("img-wrapper");
+        var position = parseInt(slide.style.left, 10);
+        var right = parseInt(slide.style.width, 10) + 100;
+        if (-position +300 < right) {
+            position = position - 100;
+            slide.style.left = position + "px";
         }
-
-        var img = document.createElement("img");
-        img.height = 90;
-        img.width = 90;
-        var imgContainer = document.createElement("span");
-        imgContainer.style.padding = "2px";
-        
-        for (var i = 0; i < 4; i++) {
-            img.src = this.imagesSrc[i];
-            imgContainer.appendChild(img);
-            this.imagesContainer.push(img.cloneNode(true));
-            this.imageBarElement.appendChild(imgContainer.cloneNode(true));
+    },
+    previous: function () {
+        var slide = document.getElementById("img-slide");
+        var position = parseInt(slide.style.left, 10);
+        if (position < 0) {
+            position = position + 100;
+            slide.style.left = position + "px";
         }
-        this.enlarged.firstChild.src = this.imagesSrc[0];
-    }
+    },
+    initImages: function () {
+        var imagePreview = document.createElement("div");
+        imagePreview.id = "img-preview";
 
-    function setClickEvents(slideSelector, nextSelector, prevSelector) {
+        var imageLarge = document.createElement("img");
+        imageLarge.src = this.imgs[0].url;
+        imageLarge.style.height = "400px";
+        imagePreview.appendChild(imageLarge);
 
-        var button = document.querySelector(slideSelector);
-        button.addEventListener("click", enlargeImage, false);
-
-        button = document.querySelector(nextSelector);
-        button.addEventListener("click", nextImage, false);
-    }
-
-    function enlargeImage(ev) {
-
-        var clickedItem = ev.target;
-        if (!(clickedItem instanceof HTMLImageElement)) {
-            return;
+        this.container.appendChild(imagePreview);
+        var imageSlide = document.createElement("div");
+        imageSlide.style.left = 0;
+        imageSlide.id = "img-slide";
+        var width = 0;
+        for (var i = 0; i < this.imgs.length; i++) {
+            var image = document.createElement("img");
+            image.src = this.imgs[i].url;
+            this.title = this.imgs[i].imgTitle;
+            image.data = this.imgs[i].url;
+            image.onclick = function (ev) {
+                imageLarge.src = this.data;
+                imagePreview.innerHTML = '';
+                imagePreview.appendChild(imageLarge);
+            };
+            image.height = 80;
+            width += 100;
+            imageSlide.style.width = width + "px";
+            imageSlide.appendChild(image);
         }
-
-        var enlargedImg = document.getElementById("enlargedImage").firstChild;
-        enlargedImg.src = clickedItem.src;
+        this.imageWrapper.appendChild(imageSlide);
+        this.nav.appendChild(this.imageWrapper);
+        this.container.appendChild(this.nav);
     }
+};
 
-    function nextImage(ev){
-        var clickedItem = ev.target;
-        if (!(clickedItem instanceof HTMLAnchorElement)) {
-            return;
-        }
-
-        sliderController.imagesContainer
-
-
+var SliderImage = {
+    init: function (imgTitle, ulr) {
+        this.imgTitle = imgTitle;
+        this.url = ulr;
     }
+};
 
-    return{
-        init: init,
-        loadImages: loadImages,
-        setClickEvents: setClickEvents,
+var Button = {
+    init: function (id) {
+        this.id = id;
     }
-})();
+};
 
-var imageNames = ["img1.jpg", "img2.jpg", "img3.jpg", "img4.jpg", "img5.jpg", "img6.jpg", "img7.jpg", "img8.jpg", ];
+var images = [];
+for (var i = 1; i < 8; i++) {
+    var img = Object.create(SliderImage);
+    img.init(i, "images/img" + i + ".jpg");
+    images.push(img);
+}
 
-
-
-var sliderController = Object.create(sliderController);
+var slider = Object.create(Slider);
+slider.init("img-slider", images);
+slider.prevButton("prevButton");
+slider.nextButton("nextButton");
+slider.render();

@@ -1,19 +1,19 @@
 ﻿if (!Object.create) {
     Object.create = function (obj) {
-        function createObj() { };
-        createObj.prototype = obj;
-        return new createObj;
+        function f() { };
+        f.prototype = obj;
+        return new f();
     }
 }
 
 if (!Object.prototype.extend) {
     Object.prototype.extend = function (properties) {
-        function createObj() { };
-        createObj.prototype = Object.create(this);
+        function f() { };
+        f.prototype = Object.create(this);
         for (var prop in properties) {
-            createObj.prototype[prop] = properties[prop];
+            f.prototype[prop] = properties[prop];
         }
-        createObj.prototype._super = this;
-        return new createObj();
+        f.prototype._super = this;
+        return new f();
     }
 }

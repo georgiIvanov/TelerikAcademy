@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{3CE6ADDC-BA8A-4F8B-B256-F48A4AD70654}</ProjectGuid>
+    <ProjectGuid>{D30DEF54-91B0-4831-BC4D-E20B8FEE922B}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_03.ImageSlider</RootNamespace>
-    <AssemblyName>03.ImageSlider</AssemblyName>
+    <RootNamespace>_04.FavoriteSitesBar</RootNamespace>
+    <AssemblyName>04.FavoriteSitesBar</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -57,10 +57,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="imgslider.js" />
+    <Content Include="classicInheritance.js" />
     <Content Include="index.html" />
-    <Content Include="prototypalOOP.js" />
-    <Content Include="sliderCSS.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -89,7 +87,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:2289/</IISUrl>
+          <IISUrl>http://localhost:60658/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

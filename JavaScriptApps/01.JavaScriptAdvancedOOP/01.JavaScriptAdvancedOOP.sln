@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.ClassicalOOP", "02.Class
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.ImageSlider", "03.ImageSlider\03.ImageSlider.csproj", "{3CE6ADDC-BA8A-4F8B-B256-F48A4AD70654}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.FavoriteSitesBar", "04.FavoriteSitesBar\04.FavoriteSitesBar.csproj", "{D30DEF54-91B0-4831-BC4D-E20B8FEE922B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{3CE6ADDC-BA8A-4F8B-B256-F48A4AD70654}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CE6ADDC-BA8A-4F8B-B256-F48A4AD70654}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CE6ADDC-BA8A-4F8B-B256-F48A4AD70654}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D30DEF54-91B0-4831-BC4D-E20B8FEE922B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D30DEF54-91B0-4831-BC4D-E20B8FEE922B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D30DEF54-91B0-4831-BC4D-E20B8FEE922B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D30DEF54-91B0-4831-BC4D-E20B8FEE922B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

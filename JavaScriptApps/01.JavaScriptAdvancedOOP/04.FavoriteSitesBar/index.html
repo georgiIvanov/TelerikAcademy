@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Favorite Sites</title>
+
+    <style>
+        .List {
+            list-style: none;
+        }
+
+            .List li {
+                margin: 15px 0px 0px -10px;
+            }
+
+        .Folder {
+            margin: 10px;
+            float: left;
+        }
+
+        p {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="Favorites">
+    </div>
+
+
+    <script src="classicInheritance.js"></script>
+    <script>
+        var URL = Class.create({
+            init: function (title, url) {
+                this.title = title;
+                this.url = url;
+            },
+        });
+
+        var Folder = Class.create({
+            init: function (title, urls) {
+                this.folders = [];
+                this.title = title;
+                this.urls = [];
+                for (var i in urls) {
+                    this.urls.push(urls[i]);
+                }
+            },
+            addFolder: function (folder) {
+                this.folders.push(folder);
+            },
+        });
+
+        var FavoriteSitesBar = Class.create({
+            init: function (folders, urls) {
+                this.folders = [];
+                for (var i in folders) {
+                    this.folders.push(folders[i]);
+                }
+                this.urls = urls;
+            },
+            render: function (selector) {
+                var container = document.querySelector(selector);
+                var documentFragment = document.createDocumentFragment();
+
+                for (var i = 0; i < this.folders.length; i++) {
+                    var node = document.createElement("span");
+                    node.className = "Folder";
+                    node.innerHTML += this.folders[i].title;
+
+                    var list = document.createElement("ul");
+                    list.className = "List";
+
+                    for (var j = 0; j < this.folders[i].urls.length; j++) {
+                        var li = document.createElement("li");
+                        var a = document.createElement("a");
+                        a.href = this.folders[i].urls[j].url;
+                        a.innerHTML = this.folders[i].urls[j].title;
+                        a.target = "_blank";
+                        li.appendChild(a);
+                        list.appendChild(li);
+                    }
+
+                    node.appendChild(list);
+                    documentFragment.appendChild(node);
+
+
+                    for (var j = 0; j < this.folders[i].folders.length; j++) {
+                        this._renderInnerFolder(list, this.folders[i].folders[j]);
+                    }
+
+                }
+
+
+
+                container.appendChild(documentFragment);
+            },
+            _renderInnerFolder: function (docFragment, folder) {
+                for (var i = 0; i <= folder.folders.length; i++) {
+                    var node = document.createElement("span");
+                    node.className = "Folder";
+                    node.innerHTML += folder.title;
+
+                    var list = document.createElement("ul");
+                    list.className = "List";
+
+                    for (var j = 0; j < folder.urls.length; j++) {
+                        var li = document.createElement("li");
+                        var a = document.createElement("a");
+                        a.href = folder.urls[j].url;
+                        a.innerHTML = folder.urls[j].title;
+                        a.target = "_blank";
+                        li.appendChild(a);
+                        list.appendChild(li);
+                    }
+
+                    node.appendChild(list);
+
+                    docFragment.appendChild(node);
+
+                    for (var j = 0; j < folder.folders.length; j++) {
+                        this._renderInnerFolder(docFragment, folders[i].folders[j]);
+                    }
+
+
+                }
+
+                for (var i = 0; i < folder.urls.length; i++) {
+
+                }
+            },
+        });
+
+        var url = new URL("gmail", "http://gmail.com");
+        var url2 = new URL("hotmail", "http://hotmail.com");
+        var folder = new Folder("Mail addresses", [url, url2]);
+        var folder2 = new Folder("Version Control",
+            [new URL("github", "http://github.com"),
+            new URL("TFS", "http://tfs.visualstudio.com"),
+            new URL("SVN", "http://tortoisesvn.net/"), ]);
+
+        folder.addFolder(folder2);
+
+        var bar = new FavoriteSitesBar([folder, folder2], "www.abv.bg");
+        bar.render("#Favorites");
+
+    </script>
+
+
+</body>
+</html>

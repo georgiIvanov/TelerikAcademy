@@ -15,12 +15,12 @@ namespace _02.PriceRange
             OrderedMultiDictionary<double, Article> articles = new OrderedMultiDictionary<double, Article>(true);
 
             //filling the dictionary takes a few seconds
-            for (int i = 0; i < 2000000; i++)
+            for (int i = 0; i <= 2000000; i++)
             {
                 double price = i / 100.3;
                 Article article = new Article(i * 971, Math.Round(price, 2), i.ToString(), i.ToString());
-                articles.Add(new KeyValuePair<double,
-                ICollection<Article>>(price, new Article[] { article }));
+                
+                articles.Add(price, article);
             }
 
             

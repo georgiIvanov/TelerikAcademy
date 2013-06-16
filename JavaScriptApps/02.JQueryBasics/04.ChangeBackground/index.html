@@ -1,0 +1,15 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/jquery-2.0.2.js"></script>
+</head>
+<body>
+    <input type="color" id="color-picker" />
+    <script>
+        $("#color-picker").on("change", function () {
+            $("body").css("background-color", $("#color-picker").val());
+        });
+    </script>
+</body>
+</html>

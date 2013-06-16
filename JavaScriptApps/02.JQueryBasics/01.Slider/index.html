@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/jquery-2.0.2.js"></script>
+    <link href="styles.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="slider"></div>
+    <script src="slider.js"></script>
+    <script>
+        var slider = Object.create(Slider);
+        slider.init(5000);
+
+        slider.addSlide("<p>task 1, <b>Slider<b><p>");
+        slider.addSlide('<img src="images/jquery.jpg">');
+        slider.addSlide('<p>Email providers</p><ul><li>Gmail</li><li>Hotmail</li></ul>');
+        slider.addSlide('<a href="http://forums.academy.telerik.com/" target="_blank"><h1>Telerik Academy Forums<h1></a>');
+
+        slider.render();
+    </script>
+</body>
+</html>

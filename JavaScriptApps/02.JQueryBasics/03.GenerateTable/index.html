@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/jquery-2.0.2.js"></script>
+    <link href="Scripts/style.css" rel="stylesheet" />
+</head>
+<body>
+    <table id="table"></table>
+    <script src="Student.js"></script>
+    <script>
+        var students = [];
+
+        var stud = Object.create(Student);
+        stud.init("Mitko", "Manafov", 2);
+        var stud1 = Object.create(Student);
+        stud1.init("Blagomir", "Peshkirov", 3);
+        var stud2 = Object.create(Student);
+        stud2.init("Kalinka", "To4kova", 6);
+
+        students.push(stud);
+        students.push(stud1);
+        students.push(stud2);
+
+        var table = $('#table');
+        table.append("<tr><td>First Name</td><td>Last Name</td><td>Grade</td></tr>");
+
+        for (var i = 0; i < students.length; i++) {
+            table.append("<tr><td>" + students[i].fname + "</td><td>"+
+                students[i].lname + "</td><td>" + students[i].grade + "</td></tr>");
+            }
+    </script>
+</body>
+</html>

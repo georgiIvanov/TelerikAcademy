@@ -1,0 +1,11 @@
+﻿#table {
+    border: 1px solid black;
+}
+
+#table td {
+    border: 1px solid black;
+}
+
+#table tr:first-child {
+    font-weight:bolder;
+}

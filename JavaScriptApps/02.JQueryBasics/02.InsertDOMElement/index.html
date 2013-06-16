@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/jquery-2.0.2.js"></script>
+</head>
+<body>
+
+
+    <span id="domElement"><b>Text</b></span>
+
+    <div id="btnWrapper">
+    </div>
+
+    <script>
+        domElement = $("#domElement");
+        var before = $("<button>Before</button>");
+        var after = $("<button>After</button>");
+
+
+        before.on("click", function () {
+            var node = document.createElement("span");
+            node.innerHTML = " Added before ";
+            domElement.before(node);
+        });
+
+        after.on("click", function () {
+            var node = document.createElement("span");
+            node.innerHTML = " Added after ";
+            domElement.after(node);
+        });
+
+        var btnWrapper = $("#btnWrapper");
+        btnWrapper.append(before);
+        btnWrapper.append(after);
+        
+    </script>
+
+</body>
+</html>

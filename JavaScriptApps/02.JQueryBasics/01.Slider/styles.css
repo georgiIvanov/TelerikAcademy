@@ -1,0 +1,22 @@
+﻿#slider button, #slides {
+	float: left;
+}
+#btn-next, #btn-prev {
+	border: 0;
+	background-repeat: no-repeat;
+	width: 50px;
+	height: 50px;
+	margin-top: 130px;
+}
+#btn-next {
+	background: url('images/btn-next.png');
+}
+#btn-prev {
+	background: url('images/btn-prev.png');
+}
+
+#slides {
+	width: 500px;
+	height: 300px;
+	overflow: auto;
+}

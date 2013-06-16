@@ -20,12 +20,6 @@ namespace _09.LargestArea
         static void Main(string[] args)
         {
 
-            //SetExit(0, 6);
-            //entry coords
-            int row = 4;
-            int col = 0;
-
-            // FindArea(row, col, 0);
             FindBiggestArea(labyrinth.GetLength(0), labyrinth.GetLength(1));
         }
 

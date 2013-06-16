@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _09.LargestArea
+namespace _10.AllAreasInLabyrinth
 {
-    class LargestArea
+    class AllAreasInLabyrinth
     {
         static string[,] labyrinth = 
         {
@@ -19,14 +19,16 @@ namespace _09.LargestArea
 
         static void Main(string[] args)
         {
-
             FindBiggestArea(labyrinth.GetLength(0), labyrinth.GetLength(1));
         }
 
         static void FindBiggestArea(int rows, int cols)
         {
             int step = 0;
-            int count = 0, maxCount = 0, number = 0;
+            int count = 0;
+
+            PrintLabyrint();
+
             for (int i = 0; i < rows; i++)
             {
                 for (int j = 0; j < cols; j++)
@@ -34,22 +36,12 @@ namespace _09.LargestArea
                     if (labyrinth[i, j] == " ")
                     {
                         FindArea(i, j, step, ref count);
-                        if (count >= maxCount)
-                        {
-                            maxCount = count;
-                            number = step;
-                        }
-                        count = 0;
                         step++;
+                        PrintLabyrint();
                     }
                 }
             }
-
-            PrintLabyrint(number.ToString());
-            Console.WriteLine("Biggest area is {0}'s", number);
-            Console.WriteLine("with count {0}", maxCount);
         }
-
 
         static void FindArea(int row, int col, int step, ref int count)
         {
@@ -73,20 +65,13 @@ namespace _09.LargestArea
             FindArea(row + 1, col, step, ref count);
         }
 
-        static void PrintLabyrint(string number)
+        static void PrintLabyrint()
         {
             for (int i = 0; i < labyrinth.GetLength(0); i++)
             {
                 for (int j = 0; j < labyrinth.GetLength(1); j++)
                 {
-                    if (labyrinth[i, j] == number || labyrinth[i, j] == "*")
-                    {
-                        Console.Write("{0, 2} ", labyrinth[i, j]);
-                    }
-                    else
-                    {
-                        Console.Write("{0, 2} ", " ");
-                    }
+                    Console.Write("{0, 2} ", labyrinth[i, j]);
                 }
                 Console.WriteLine();
             }

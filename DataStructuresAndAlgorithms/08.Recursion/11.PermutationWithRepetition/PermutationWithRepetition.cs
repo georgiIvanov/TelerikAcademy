@@ -10,7 +10,7 @@ namespace _11.PermutationWithRepetition
     {
         static void Main(string[] args)
         {
-            // int[] numbers = { 1, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5 };
+            //int[] numbers = { 1, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5 };
             int[] numbers = { 1, 3, 5, 5 };
             PermutationsWithRepetition(numbers);
         }
@@ -25,7 +25,7 @@ namespace _11.PermutationWithRepetition
         {
             PrintNumbers(numbersSet);
 
-            int tmp = 0;
+            int swapValue = 0;
 
             if (start < end)
             {
@@ -35,20 +35,20 @@ namespace _11.PermutationWithRepetition
                     {
                         if (numbersSet[i] != numbersSet[j])
                         {
-                            tmp = numbersSet[i];
+                            swapValue = numbersSet[i];
                             numbersSet[i] = numbersSet[j];
-                            numbersSet[j] = tmp;
+                            numbersSet[j] = swapValue;
 
                             Permute(numbersSet, i + 1, end);
                         }
                     }
 
-                    tmp = numbersSet[i];
-                    for (int k = i; k < end - 1;)
+                    swapValue = numbersSet[i];
+                    for (int k = i; k < end - 1; k++)
                     {
-                        numbersSet[k] = numbersSet[++k];
-                        numbersSet[end - 1] = tmp;
+                        numbersSet[k] = numbersSet[k + 1];
                     }
+                    numbersSet[end - 1] = swapValue;
                 }
             }
         }

@@ -25,7 +25,7 @@ namespace PathBetween2Cells
 
             string[,] emptyLabyrinth = InitEmptyLabyrinth(100, 100);
 
-            SetExit(emptyLabyrinth, 0, 6);
+            SetExit(emptyLabyrinth, 50, 69);
             bool found = false;
             FindExit(emptyLabyrinth, row, col, 0, ref found);
         }

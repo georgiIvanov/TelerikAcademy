@@ -20,7 +20,7 @@ namespace _12.EightQueenPuzzle
         {
             if (currentQueen == queensCount)
             {
-                PrintArr(positions, ref configurationsCount);
+                PrintField(positions, ref configurationsCount);
             }
             else
             {
@@ -48,7 +48,7 @@ namespace _12.EightQueenPuzzle
             return true;
         }
 
-        static void PrintArr(int[] arr, ref int configurationsCount)
+        static void PrintField(int[] arr, ref int configurationsCount)
         {
 
             char[,] field = new char[arr.Length, arr.Length];

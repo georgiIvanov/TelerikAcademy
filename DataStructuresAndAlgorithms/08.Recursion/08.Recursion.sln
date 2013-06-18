@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.AllAreasInLabyrinth", "1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11.PermutationWithRepetition", "11.PermutationWithRepetition\11.PermutationWithRepetition.csproj", "{54E499A1-13EC-4CE0-9A2E-EB10556D5837}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12.EightQueenPuzzle", "12.EightQueenPuzzle\12.EightQueenPuzzle.csproj", "{9FA522A4-DEC5-4DB4-98A0-75C352F4853A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,10 @@ Global
 		{54E499A1-13EC-4CE0-9A2E-EB10556D5837}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54E499A1-13EC-4CE0-9A2E-EB10556D5837}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54E499A1-13EC-4CE0-9A2E-EB10556D5837}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FA522A4-DEC5-4DB4-98A0-75C352F4853A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FA522A4-DEC5-4DB4-98A0-75C352F4853A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FA522A4-DEC5-4DB4-98A0-75C352F4853A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FA522A4-DEC5-4DB4-98A0-75C352F4853A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

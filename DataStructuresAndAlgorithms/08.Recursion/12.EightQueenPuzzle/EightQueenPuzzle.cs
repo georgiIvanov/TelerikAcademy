@@ -26,7 +26,7 @@ namespace _12.EightQueenPuzzle
             {
                 for (int pos = 0; pos < queensCount; pos++)
                 {
-                    if (isSafe(currentQueen, pos, positions))
+                    if (IsValid(currentQueen, pos, positions))
                     {
                         positions[currentQueen] = pos;
                         Solve(currentQueen + 1, queensCount, positions, ref configurationsCount);
@@ -35,7 +35,7 @@ namespace _12.EightQueenPuzzle
             }
         }
 
-        static bool isSafe(int currentQueens, int pos, int[] positions)
+        static bool IsValid(int currentQueens, int pos, int[] positions)
         {
             for (int i = 1; i <= currentQueens; i++)
             {

@@ -35,11 +35,11 @@ namespace _12.EightQueenPuzzle
             }
         }
 
-        static bool IsValid(int currentQueens, int pos, int[] positions)
+        static bool IsValid(int currentQueen, int pos, int[] positions)
         {
-            for (int i = 1; i <= currentQueens; i++)
+            for (int i = 1; i <= currentQueen; i++)
             {
-                int other = positions[currentQueens - i];
+                int other = positions[currentQueen - i];
                 if (other == pos || other == pos - i || other == pos + i)
                 {
                     return false;

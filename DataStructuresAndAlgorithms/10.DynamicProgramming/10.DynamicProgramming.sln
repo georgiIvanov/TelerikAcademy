@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.Knapsack", "1.Knapsack\01.Knapsack.csproj", "{92F70219-91D0-4223-B6CA-DD2545E7A7A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.EditDistance", "02.EditDistance\02.EditDistance.csproj", "{D37C8DD2-C626-4F26-9FDF-BBFBAC463F32}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{92F70219-91D0-4223-B6CA-DD2545E7A7A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92F70219-91D0-4223-B6CA-DD2545E7A7A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92F70219-91D0-4223-B6CA-DD2545E7A7A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92F70219-91D0-4223-B6CA-DD2545E7A7A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D37C8DD2-C626-4F26-9FDF-BBFBAC463F32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D37C8DD2-C626-4F26-9FDF-BBFBAC463F32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D37C8DD2-C626-4F26-9FDF-BBFBAC463F32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D37C8DD2-C626-4F26-9FDF-BBFBAC463F32}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

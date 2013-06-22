@@ -8,15 +8,22 @@ namespace _02.EditDistance
 {
     class Program
     {
-        const int MAX = 10;
         const decimal costDelete = 0.9m;
         const decimal costInsert = 0.8m;
+        static int costReplace(int i, int j)
+        {
+            return s1[i] == s2[j] ? 0 : 1;
+        }
 
-        static decimal[,] F = new decimal[MAX + 1, MAX + 1];
-        static int n1;
-        static int n2;
+
         static string s1 = "evelo2per";
         static string s2 = "enveloped";
+
+        static int length = Math.Max(s1.Length, s2.Length);
+        static decimal[,] F = new decimal[length + 1, length + 1];
+        static int n1;
+        static int n2;
+        
 
         static decimal EditDistance()
         {
@@ -44,10 +51,7 @@ namespace _02.EditDistance
             return F[n1, n2];
         }
 
-        static int costReplace(int i, int j)
-        {
-            return s1[i] == s2[j] ? 0 : 1;
-        }
+        
 
         static decimal Min(decimal replace, decimal insert, decimal delete)
         {

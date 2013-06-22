@@ -32,8 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Graph">
-      <HintPath>..\..\..\..\OnlineProjects\Graph\WeightedGraph\bin\Debug\Graph.dll</HintPath>
+    <Reference Include="Graph, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Graph.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -42,8 +43,9 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="WeightedGraph">
-      <HintPath>..\..\..\..\OnlineProjects\Graph\WeightedGraph\bin\Debug\WeightedGraph.dll</HintPath>
+    <Reference Include="WeightedGraph, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\WeightedGraph.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

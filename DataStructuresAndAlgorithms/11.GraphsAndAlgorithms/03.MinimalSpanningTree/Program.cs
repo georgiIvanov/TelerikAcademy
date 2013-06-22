@@ -25,7 +25,7 @@ namespace _03.MinimalSpanningTree
             graph.AttachEdge(1, 5, 5);
             graph.AttachEdge(3, 6, 6);
             graph.AttachEdge(3, 9, 5);
-            graph.AttachEdge(4, 8, 7);
+            graph.AttachEdge(4, 8, 5);
             graph.AttachEdge(5, 6, 1);
             graph.AttachEdge(7, 8, 2);
             graph.AttachEdge(8, 9, 2);

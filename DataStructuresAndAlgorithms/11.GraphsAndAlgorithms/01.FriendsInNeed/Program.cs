@@ -130,12 +130,12 @@ namespace _01.FriendsInNeed
 
                 foreach (var neighbour in graph[currentNode])
                 {
-                    int potentialDistance = currentNode.DijkstraDistance + neighbour.Distance;
+                    int potentialDistance = currentNode.DijkstraDistance + neighbour.dist;
 
-                    if (potentialDistance < neighbour.Node.DijkstraDistance)
+                    if (potentialDistance < neighbour.n.DijkstraDistance)
                     {
-                        neighbour.Node.DijkstraDistance = potentialDistance;
-                        Node next = new Node(neighbour.Node.PointID, potentialDistance);
+                        neighbour.n.DijkstraDistance = potentialDistance;
+                        Node next = new Node(neighbour.n.PointID, potentialDistance);
                         queue.Add(next);
                     }
                     
@@ -148,15 +148,16 @@ namespace _01.FriendsInNeed
         }
     }
 
-    class Connection
+    struct Connection
     {
+        public Node n;
+        public int dist;
+
         public Connection(Node node, int distance)
         {
-            this.Node = node;
-            this.Distance = distance;
+            n = node;
+            dist = distance;
         }
-        public Node Node { get; set; }
-        public int Distance { get; set; }
     }
 
     class Node : IComparable<Node>

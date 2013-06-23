@@ -10,16 +10,16 @@ namespace _01.Salaries
     {
         static int vertices;
         static bool[,] adjMatrix;
-        static ulong[] cache;
+        static long[] cache;
 
-        static ulong FindSalary(int employee)
+        static long FindSalary(int employee)
         {
             if (cache[employee] > 0)
             {
                 return cache[employee];
             }
 
-            ulong salary = 0;
+            long salary = 0;
             for (int i = 0; i < vertices; i++)
             {
                 if (adjMatrix[employee, i])
@@ -38,7 +38,7 @@ namespace _01.Salaries
         {
             vertices = int.Parse(Console.ReadLine());
             adjMatrix = new bool[vertices, vertices];
-            cache = new ulong[vertices];
+            cache = new long[vertices];
 
             for (int i = 0; i < vertices; i++)
             {
@@ -49,7 +49,7 @@ namespace _01.Salaries
                 }
             }
 
-            ulong sumOfSalaries = 0;
+            long sumOfSalaries = 0;
             for (int i = 0; i < vertices; i++)
             {
                 sumOfSalaries += FindSalary(i);

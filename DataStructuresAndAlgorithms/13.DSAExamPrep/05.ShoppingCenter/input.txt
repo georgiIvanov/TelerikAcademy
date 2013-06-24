@@ -1,0 +1,15 @@
+14
+AddProduct IdeaPad Z560;1536.50;Lenovo
+AddProduct ThinkPad T410;3000;Lenovo
+AddProduct VAIO Z13;4099.99;Sony
+AddProduct CLS 63 AMG;200000;Mercedes
+FindProductsByName CLS 63 AMG
+FindProductsByName CLS 63
+FindProductsByName cls 63 amg
+AddProduct 320i;10000;BMW
+FindProductsByName 320i
+AddProduct G560;999;Lenovo
+FindProductsByProducer Lenovo
+DeleteProducts CLS 63 AMG;Lenovo
+FindProductsByProducer Lenovo
+FindProductsByPriceRange 100000;200000

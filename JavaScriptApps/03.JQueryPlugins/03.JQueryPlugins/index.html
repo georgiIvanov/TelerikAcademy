@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/jquery-2.0.2.js"></script>
+    <style>
+        ul {
+            list-style:none;
+        }
+    </style>
+</head>
+<body>
+
+    <ul id="treeView">
+        <li>
+            <span>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span>
+            <ul>
+                <li>iiiii</li>
+                <li>eeeee</li>
+            </ul>
+        </li>
+        <li>
+            wwwwwwwwwwwww
+        </li>
+        <li>
+            <span>kkk</span>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>
+                    <span>3</span>
+                    <ul>
+                        <li>3.1</li>
+                        <li>3.2</li>
+                        <li>3.3</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <script>
+        (function ($) {
+            $.fn.treeView = function () {
+                $("#treeView span").on("click", function () {
+                    $(this).next("ul").toggle();
+                });
+                return $(this);
+            }
+        })(jQuery);
+
+        $(document).ready(function () {
+            $("#treeView ul").hide();
+            $("#treeView").treeView().show();
+            $("#treeView ul").parent().children("span").css("color", "blue");
+        });
+
+    </script>
+
+</body>
+</html>

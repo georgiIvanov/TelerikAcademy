@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.MovingGameObjTests", "01.MovingGameObjTests\01.MovingGameObjTests.csproj", "{3C1041D0-BEAA-4D7B-930A-0123A38116ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.SnakeTests", "02.SnakeTests\02.SnakeTests.csproj", "{D86DC2EA-0A16-41DD-BA0D-BDF412123529}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3C1041D0-BEAA-4D7B-930A-0123A38116ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C1041D0-BEAA-4D7B-930A-0123A38116ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C1041D0-BEAA-4D7B-930A-0123A38116ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C1041D0-BEAA-4D7B-930A-0123A38116ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D86DC2EA-0A16-41DD-BA0D-BDF412123529}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D86DC2EA-0A16-41DD-BA0D-BDF412123529}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D86DC2EA-0A16-41DD-BA0D-BDF412123529}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D86DC2EA-0A16-41DD-BA0D-BDF412123529}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

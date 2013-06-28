@@ -1,0 +1,30 @@
+<html>
+<head>
+  <title></title>
+  <script type="text/javascript" src="scripts/class.js"></script>
+  <script type="text/javascript" src="scripts/snake.js"></script>
+  <style type="text/css">
+    #snake-canvas{
+          border:1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <a href="#" id="btn-snake-start">Start Game</a>
+  <canvas id="snake-canvas" width="300" height="300"></canvas>
+  <script type="text/javascript">   
+    var oldLoad = window.onload;
+    window.onload = function() {
+      if(oldLoad){
+        oldLoad.apply(window, arguments);
+      }
+      var context = document.getElementById("snake-canvas").getContext("2d");
+      var game = new snakeGame.SnakeEngine(context, 300, 300); 
+      document.getElementById("btn-snake-start").addEventListener("click", function() {
+        game.start();
+      }, false);
+    }        
+  </script>
+
+</body>
+</html>

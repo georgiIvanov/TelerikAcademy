@@ -1,0 +1,68 @@
+﻿<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="style.css" type="text/css" rel="stylesheet">
+        <script src="jquery-2.0.2.min.js"></script>
+        
+        <script type="text/javascript">
+            (function () {
+                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                po.src = 'https://apis.google.com/js/client:plusone.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+            })();
+        </script>
+        <script src="https://apis.google.com/js/plusone.js"></script>
+        <script src="https://www.youtube.com/iframe_api"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="gPlus">
+                <div id="gshare">
+                    <g:plus action="share" href="#" id="share-tag"></g:plus>
+                <script type="text/javascript"> //put this after the last share tag
+                    (function () {
+                        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                        po.src = 'https://apis.google.com/js/plusone.js';
+                        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+                    })();
+                </script>
+                </div>
+                <span id="signinButton">
+                <span
+                class="g-signin"
+                data-callback="signinCallback"
+                data-clientid="815043462698-dafd8hku1oa4220f05uqj3erdi5s6lk1.apps.googleusercontent.com"
+                data-cookiepolicy="single_host_origin"
+                data-requestvisibleactions="http://schemas.google.com/AddActivity"
+                data-scope="https://www.googleapis.com/auth/plus.login">
+                </span>
+                </span>
+                <div id="profile"></div>
+                <button id="revokeButton">Disconnect</button>
+            </div>
+            <div id="player-border">
+                <div id="player">
+                    
+                </div>
+            </div>
+            
+        </div>
+        <div id="controls">
+                 <span>Playlist: </span><input type="text" id="playlist" value="GXCh9OhDiCI,TAqZb52sgpU,vgSn0SbQJQI">
+            <br />
+                <span>Single Video: </span><input type="text" id="load-video" value="Nco_kh8xJDs"/>
+            <br><br>
+                <button class="controls" id="pause">Pause video</button>
+                <button class="controls" id="play">Play video</button>
+                <button class="controls" id="single-video">Load video</button>
+                
+                <button class="controls" id="next">Next</button>
+                <button class="controls" id="previous">Previous</button>
+                <button class="controls" id="load-playlist">Load playlist</button>
+            
+               
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

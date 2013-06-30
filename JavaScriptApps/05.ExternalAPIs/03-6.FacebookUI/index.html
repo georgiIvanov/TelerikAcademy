@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Facebook Photos</title>
+    <script src="jquery-2.0.2.min.js"></script>
+    <script src="facebook.js"></script>
+</head>
+<body>
+
+   <!-- ///
+        Change(in facebook.js)
+        appId: '166748376839883',
+        channelUrl: '//http://localhost:21851/index.html',
+        to you corresponding fb app and local host
+    ///--> 
+
+    <div id="wrapper">
+        <div id="fb-root"></div>
+        <div id="fbLogout" onclick="fbLogout()"><a class="fb_button fb_button_medium"><span class="fb_button_text">Logout</span></a></div>
+        <div id="fbSend" class="fb-send" data-href="http://localhost:62958/03.Facebook.html" data-font="arial"></div>
+        <div id="profile"></div>
+        <div id="friends"></div>
+        <div id="large"></div>
+        <div id="background"></div>
+        <fb:login-button show-faces="true" width="200" max-rows="1" id="log"></fb:login-button>
+    </div>
+</body>
+</html>

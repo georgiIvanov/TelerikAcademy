@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.OnlineMapTourism", "01.O
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.GooglePlusAndYoutubeAPIs", "02.GooglePlusAndYoutubeAPIs\02.GooglePlusAndYoutubeAPIs.csproj", "{4992B6BC-4B46-43B4-81E4-A624A47655F7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03-6.FacebookUI", "03-6.FacebookUI\03-6.FacebookUI.csproj", "{00D9EBD1-15D8-4868-BF0E-B84B02959CE2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{4992B6BC-4B46-43B4-81E4-A624A47655F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4992B6BC-4B46-43B4-81E4-A624A47655F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4992B6BC-4B46-43B4-81E4-A624A47655F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00D9EBD1-15D8-4868-BF0E-B84B02959CE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00D9EBD1-15D8-4868-BF0E-B84B02959CE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00D9EBD1-15D8-4868-BF0E-B84B02959CE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00D9EBD1-15D8-4868-BF0E-B84B02959CE2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

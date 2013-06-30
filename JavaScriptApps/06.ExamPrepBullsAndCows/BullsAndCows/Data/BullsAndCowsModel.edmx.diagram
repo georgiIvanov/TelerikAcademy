@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="54492dec6ea5479abea6674518b18e58" Name="Diagram1">
+        <EntityTypeShape EntityType="BullsAndCowsDbModel.Game" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BullsAndCowsDbModel.GameStatus" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BullsAndCowsDbModel.Guess" Width="1.5" PointX="5.25" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BullsAndCowsDbModel.Message" Width="1.5" PointX="8.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BullsAndCowsDbModel.MessageState" Width="1.5" PointX="6" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BullsAndCowsDbModel.MessageType" Width="1.5" PointX="6" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="BullsAndCowsDbModel.Score" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BullsAndCowsDbModel.User" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <AssociationConnector Association="BullsAndCowsDbModel.FK_Games_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="BullsAndCowsDbModel.FK_Games_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="BullsAndCowsDbModel.FK_Games_2_0" ManuallyRouted="false" />
+        <AssociationConnector Association="BullsAndCowsDbModel.FK_Guesses_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="BullsAndCowsDbModel.FK_Messages_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="BullsAndCowsDbModel.FK_Guesses_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="BullsAndCowsDbModel.FK_Messages_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="BullsAndCowsDbModel.FK_Messages_2_0" ManuallyRouted="false" />
+        <AssociationConnector Association="BullsAndCowsDbModel.FK_Messages_3_0" ManuallyRouted="false" />
+        <AssociationConnector Association="BullsAndCowsDbModel.FK_Scores_0_0" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

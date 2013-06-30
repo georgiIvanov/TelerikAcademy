@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BullsAndCows", "BullsAndCows\BullsAndCows.csproj", "{12F6A098-A6B9-4C81-B239-346DDCF75F58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BullsAndCows.Client", "BullsAndCows.Client\BullsAndCows.Client.csproj", "{11498912-7D60-4B98-AAEA-7349BA5A8E24}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{12F6A098-A6B9-4C81-B239-346DDCF75F58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12F6A098-A6B9-4C81-B239-346DDCF75F58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12F6A098-A6B9-4C81-B239-346DDCF75F58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12F6A098-A6B9-4C81-B239-346DDCF75F58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11498912-7D60-4B98-AAEA-7349BA5A8E24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11498912-7D60-4B98-AAEA-7349BA5A8E24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11498912-7D60-4B98-AAEA-7349BA5A8E24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11498912-7D60-4B98-AAEA-7349BA5A8E24}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

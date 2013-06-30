@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>System.Spatial</id>
+    <version>5.5.0</version>
+    <title>System.Spatial</title>
+    <authors>Microsoft Corporation</authors>
+    <owners>Microsoft Corporation</owners>
+    <licenseUrl>http://go.microsoft.com/?linkid=9809688</licenseUrl>
+    <projectUrl>http://go.microsoft.com/fwlink/?LinkId=220868</projectUrl>
+    <iconUrl>http://static.tumblr.com/hgchgxz/9ualgdf98/icon.png</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Contains a number of classes and canonical methods that facilitate geography and geometry spatial operations. Targets .NET 4.0 or Silverlight 4.0. Localized for CHS, CHT, DEU, ESN, FRA, ITA, JPN, KOR and RUS.</description>
+    <releaseNotes>------------------------------New Features------------------------------
+
+URI Parser
+
+With this release, the URI Parser in ODataLib is nearly complete. The URI Parser is now capable of parsing nearly every URI supported by the current OData stacks at Microsoft (Web API and WCF Data Services).
+
+Public Data Source Providers
+
+We frequently get requests to make the data source providers in WCF Data Services public. Making these providers public enables a number of profoundly interesting scenarios ranging from changing the behavior of an existing provider to adding support for features we don't currently support. The work completed in this release will allow limited modifications of the existing providers. We plan to enable more scenarios here in the future.
+
+Performance Improvements
+
+We constantly strive to improve performance and reliability with every release. In this release, we have increased performance by double digit percentages for service authors that want to respond with JSON but are not able to (or don't want to) provide a data model to ODataLib.
+
+Improved Developer Experience
+
+In this release we have caught up with some missing IntelliSense guidance and we are uploading symbols and source to SymbolSource.org. We will upload symbols for many of our past releases as well.
+
+------------------------------Bug fixes------------------------------
+
+In addition to the features above, we have included fixes for the following notable bugs:
+- Fixes an issue where the reflection provider would not work properly if the generic parameter provided to DataService&lt;T&gt; was an interface
+- Fixes an issue where some system headers were not being set when a client called BuildingRequest
+- Fixes an issue where setting InstanceContextMode to Single on DataService would result in cache result being returned for subsequent requests
+- Fixes an issue where ODataLib would sometimes allow null to be written whether or not the expected type was nullable
+- Fixes a regression in 5.4 where ODataLib started writing unnecessary type information in certain instances
+- Fixes an issue where the WCF DS client would sometimes not dispose the response if the response had no content
+- Improves a number of errors and error messages</releaseNotes>
+    <copyright />
+    <language />
+    <tags>wcf data services odata odatalib edmlib spatial ado.net ef entity framework open protocol wcfds wcfdataservices dataservices</tags>
+  </metadata>
+</package>

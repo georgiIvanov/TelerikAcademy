@@ -210,12 +210,63 @@ ORDER BY COUNT(1) DESC
 
 28. Write a SQL query to display the number of managers from each town.
 
-SELECT t.Name, COUNT(DISTINCT manag.EmployeeID) AS Managers
+SELECT tow.Name, COUNT(DISTINCT manag.EmployeeID) AS Managers
 FROM Employees emp 
 JOIN Employees manag
 ON emp.ManagerID = manag.EmployeeID
 JOIN Addresses addr
 ON manag.AddressID = addr.AddressID
-JOIN Towns t
-ON addr.TownID = t.TownID
-GROUP BY t.Name
+JOIN Towns tow
+ON addr.TownID = tow.TownID
+WHERE emp.ManagerID IS NOT NULL
+GROUP BY tow.TownID, tow.Name
+
+29. Write a SQL to create table WorkHours to store work reports for each employee (employee id, date, task, hours, comments). Don't forget to define  identity, primary key and appropriate foreign key. 
+	Issue few SQL statements to insert, update and delete of some data in the table.
+	Define a table WorkHoursLogs to track all changes in the WorkHours table with triggers. For each change keep the old record data, the new record data and the command (insert / update / delete).
+	
+CREATE TABLE WorkHours
+(
+Id int PRIMARY KEY
+IDENTITY(1, 1),
+EmployeeId int NOT NULL 
+FOREIGN KEY REFERENCES Employees(EmployeeId),
+[Date] date NOT NULL,
+Task nvarchar(20) NOT NULL,
+[Hours] int NOT NULL,
+Comments text
+)
+
+INSERT INTO WorkHours(EmployeeId, Date, Task, Hours, Comments)
+VALUES (111, GETDATE(), 'mow the garden', 2, 'FASTERRR')
+	
+30. Start a database transaction, delete all employees from the 'Sales' department along with all dependent records from the pother tables. At the end rollback the transaction.
+
+-- need to drop the constraints before deletion
+BEGIN TRAN
+DELETE FROM Employees 
+WHERE DepartmentId IN 
+(SELECT DepartmentId 
+FROM Departments WHERE Name = 'Sales')
+ROLLBACK TRAN
+GO
+
+31. Start a database transaction and drop the table EmployeesProjects. Now how you could restore back the lost table data?
+
+BEGIN TRAN
+DROP TABLE EmployeesProjects
+-- ROLLBACK TRAN -- uncomment and run after deletion to recover table
+GO
+
+32. Find how to use temporary tables in SQL Server. Using temporary tables backup all records from EmployeesProjects and restore them back after dropping and re-creating the table.
+
+BEGIN TRAN
+SELECT * INTO #TempTable 
+FROM EmployeesProjects
+
+DROP TABLE EmployeesProjects
+
+SELECT * INTO EmployeesProjects
+FROM #TempTable
+
+GO

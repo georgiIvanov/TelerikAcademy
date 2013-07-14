@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07.AddRowToExcel", "07.AddR
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08.SearchProducts", "08.SearchProducts\08.SearchProducts.csproj", "{D1AE3AC5-402C-448A-A361-3388DD238FFA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.SQLLite", "10.SQLLite\10.SQLLite.csproj", "{CAC0875D-43E4-45E7-BCD6-73BB258B4BBD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{D1AE3AC5-402C-448A-A361-3388DD238FFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1AE3AC5-402C-448A-A361-3388DD238FFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1AE3AC5-402C-448A-A361-3388DD238FFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAC0875D-43E4-45E7-BCD6-73BB258B4BBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAC0875D-43E4-45E7-BCD6-73BB258B4BBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAC0875D-43E4-45E7-BCD6-73BB258B4BBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAC0875D-43E4-45E7-BCD6-73BB258B4BBD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

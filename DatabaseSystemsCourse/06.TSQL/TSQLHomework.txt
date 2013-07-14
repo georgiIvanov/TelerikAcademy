@@ -236,6 +236,18 @@ DEALLOCATE @employeesInTowns
 		Sofia -> Svetlin Nakov, Martin Kulov, George Denchev
 		Ottawa -> Jose Saraiva
 		…
+		
+SELECT Towns.Name AS Town,
+dbo.STRCONCAT(emp.FirstName + ' ' + emp.LastName) AS Employees  
+FROM Towns
+JOIN Addresses AS addr
+ON Towns.TownID = addr.TownID
+JOIN Employees AS emp
+ON emp.AddressID = addr.AddressID
+GROUP BY Towns.Name
+ ORDER BY Towns.Name
+
+		
 10. Define a .NET aggregate function StrConcat that takes as input a sequence of strings and return a single string that consists of the input strings separated by ','. For example the following SQL statement should return a single string:
 		SELECT StrConcat(FirstName + ' ' + LastName)
 		FROM Employees

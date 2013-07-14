@@ -246,6 +246,7 @@ GO
 RECONFIGURE
 GO
 
+-- Compile the solution in CLRFunctions
 -- Go to TelerikAcademy -> Programmability -> Assemblies
 -- Right click Assemblies -> New Assembly
 -- Browse path to CLRFunctions\ConcatenationFunction\bin\Release and choose the DLL file there

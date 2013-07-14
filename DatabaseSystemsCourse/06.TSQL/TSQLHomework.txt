@@ -191,6 +191,47 @@ GO
 SELECT * FROM dbo.NamesAndTowns('oistmiahf')
 
 8. Using database cursor write a T-SQL script that scans all employees and their addresses and prints all pairs of employees that live in the same town.
+
+CREATE PROCEDURE uspEmployeesInTown @results CURSOR VARYING OUTPUT
+AS
+BEGIN
+
+	SET @results = CURSOR FOR
+
+	SELECT emp.LastName, towns.Name FROM Employees emp
+	JOIN Addresses addr
+	ON emp.AddressID = addr.AddressID
+	JOIN Towns towns
+	ON addr.TownID = towns.TownID
+	GROUP BY towns.TownID, towns.Name, emp.LastName
+
+	OPEN @results
+END
+
+GO
+
+DECLARE @employeesInTowns CURSOR
+DECLARE @LastName varchar(20), @TownName varchar(20)
+
+EXEC uspEmployeesInTown @results = @employeesInTowns OUTPUT
+
+-----------------------
+-- If no messages are shown, debug it and click on the messages tab
+-- sometimes they get bugged and don't show when code is run normally
+-- probably because they are too much.
+-- Alternatively replace PRINT with SELECT, but the result won't be pretty.
+-----------------------
+WHILE @@FETCH_STATUS = 0
+BEGIN
+	PRINT @LastName + ' ' + @TownName
+	FETCH NEXT FROM @employeesInTowns
+	INTO @LastName, @TownName
+END
+
+CLOSE @employeesInTowns
+DEALLOCATE @employeesInTowns
+
+
 9. * Write a T-SQL script that shows for each town a list of all employees that live in it. Sample output:
 		Sofia -> Svetlin Nakov, Martin Kulov, George Denchev
 		Ottawa -> Jose Saraiva
@@ -198,3 +239,21 @@ SELECT * FROM dbo.NamesAndTowns('oistmiahf')
 10. Define a .NET aggregate function StrConcat that takes as input a sequence of strings and return a single string that consists of the input strings separated by ','. For example the following SQL statement should return a single string:
 		SELECT StrConcat(FirstName + ' ' + LastName)
 		FROM Employees
+
+-- Enable CLR for SQL Server
+sp_configure 'clr enabled', 1
+GO
+RECONFIGURE
+GO
+
+-- Go to TelerikAcademy -> Programmability -> Assemblies
+-- Right click Assemblies -> New Assembly
+-- Browse path to CLRFunctions\ConcatenationFunction\bin\Release and choose the DLL file there
+-- this path is in my homework directory, after this is done - proceed with the next batch
+
+CREATE AGGREGATE STRCONCAT (@input nvarchar(200))
+RETURNS nvarchar(max)
+EXTERNAL NAME ConcatenationFunction.Concat;
+GO
+SELECT dbo.STRCONCAT(FirstName + ' ' + LastName) FROM Employees
+

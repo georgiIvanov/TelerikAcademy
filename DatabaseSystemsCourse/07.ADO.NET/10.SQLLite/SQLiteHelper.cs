@@ -9,7 +9,7 @@ class SQLiteDatabase
 
     public SQLiteDatabase(String inputFile)
     {
-        dbConnection = String.Format("Data Source={0}", inputFile);
+        dbConnection = String.Format("Data Source=..\\..\\{0}", inputFile);
     }
 
     public DataTable GetDataTable(string sql)

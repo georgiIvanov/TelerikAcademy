@@ -20,11 +20,12 @@ namespace _10.SQLLite
             db = new SQLiteDatabase("Books");
 
             // Method used only once to create books table
-            // CreateBooksTable();
+            //CreateBooksTable();
 
 
             // Uncomment methods to test
 
+            //AddBook("A Game Of Thrones", "George R.R. Martin", DateTime.Parse("7/14/1996"), 1111111111);
             //AddBook("SQLite For Professionals", "Homer Simpson", DateTime.Parse("7/14/2013"), 666);
 
             //ListBooks();
@@ -32,7 +33,7 @@ namespace _10.SQLLite
             SearchBook("A Game Of Thrones");
         }
 
-        
+
 
         public static void AddBook(string title, string author, DateTime pubDate, int ISBN)
         {
@@ -55,7 +56,7 @@ namespace _10.SQLLite
             foreach (DataRow r in books.Rows)
             {
 
-                Console.WriteLine("{0}, {1}, {2}, {3}",r["Title"].ToString(), 
+                Console.WriteLine("{0}, {1}, {2}, {3}", r["Title"].ToString(),
                     r["Author"].ToString(),
                     r["Publish Date"].ToString(),
                     r["ISBN"].ToString());

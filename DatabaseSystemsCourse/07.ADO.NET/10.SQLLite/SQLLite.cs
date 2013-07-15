@@ -24,7 +24,6 @@ namespace _10.SQLLite
 
 
             // Uncomment methods to test
-
             //AddBook("A Game Of Thrones", "George R.R. Martin", DateTime.Parse("7/14/1996"), 1111111111);
             //AddBook("SQLite For Professionals", "Homer Simpson", DateTime.Parse("7/14/2013"), 666);
 

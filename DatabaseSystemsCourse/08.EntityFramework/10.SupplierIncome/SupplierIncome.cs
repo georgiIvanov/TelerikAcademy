@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using EntityFramework.Library;
 
+// Create procedure in sql server, code below
 namespace _10.SupplierIncome
 {
     class SupplierIncome
@@ -23,3 +24,16 @@ namespace _10.SupplierIncome
         }
     }
 }
+
+// Create procedure in sql server
+//CREATE PROCEDURE uspSupplierIncome @supplierName nvarchar(50), @startDate smalldatetime, @endDate smalldatetime
+//AS
+//BEGIN TRAN
+//SELECT SUM(inv.ExtendedPrice) AS Income FROM Products prod
+//JOIN Invoices inv
+//ON inv.ProductID = prod.ProductID
+//JOIN  Suppliers sup
+//ON sup.SupplierID = prod.SupplierID AND sup.CompanyName = @supplierName
+//WHERE inv.OrderDate > @startDate AND inv.OrderDate < @endDate
+//GROUP BY sup.SupplierID
+//COMMIT

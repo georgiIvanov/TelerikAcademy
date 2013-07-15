@@ -284,5 +284,39 @@ namespace EntityFramework.Library
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Whole_Or_Partial_Customers_Set_Result>("Whole_Or_Partial_Customers_Set", param1Parameter);
         }
+    
+        public virtual ObjectResult<Nullable<decimal>> uspSupplierIncome(string supplierName, Nullable<System.DateTime> startDate, Nullable<System.DateTime> endDate)
+        {
+            var supplierNameParameter = supplierName != null ?
+                new ObjectParameter("supplierName", supplierName) :
+                new ObjectParameter("supplierName", typeof(string));
+    
+            var startDateParameter = startDate.HasValue ?
+                new ObjectParameter("startDate", startDate) :
+                new ObjectParameter("startDate", typeof(System.DateTime));
+    
+            var endDateParameter = endDate.HasValue ?
+                new ObjectParameter("endDate", endDate) :
+                new ObjectParameter("endDate", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<decimal>>("uspSupplierIncome", supplierNameParameter, startDateParameter, endDateParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<decimal>> GetSupplierIncome(string supplierName, Nullable<System.DateTime> startDate, Nullable<System.DateTime> endDate)
+        {
+            var supplierNameParameter = supplierName != null ?
+                new ObjectParameter("supplierName", supplierName) :
+                new ObjectParameter("supplierName", typeof(string));
+    
+            var startDateParameter = startDate.HasValue ?
+                new ObjectParameter("startDate", startDate) :
+                new ObjectParameter("startDate", typeof(System.DateTime));
+    
+            var endDateParameter = endDate.HasValue ?
+                new ObjectParameter("endDate", endDate) :
+                new ObjectParameter("endDate", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<decimal>>("GetSupplierIncome", supplierNameParameter, startDateParameter, endDateParameter);
+        }
     }
 }

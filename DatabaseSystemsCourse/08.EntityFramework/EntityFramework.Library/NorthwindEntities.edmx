@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="northwindModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="northwindModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="northwindModelStoreContainer">
           <EntitySet Name="Categories" EntityType="northwindModel.Store.Categories" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Contacts" EntityType="northwindModel.Store.Contacts" store:Type="Tables" Schema="dbo" />
@@ -898,20 +898,15 @@
         <Function Name="TotalProductUnitPriceByCategory" ReturnType="money" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="categoryID" Type="int" Mode="In" />
         </Function>
+        <Function Name="uspSupplierIncome" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="supplierName" Type="nvarchar" Mode="In" />
+          <Parameter Name="startDate" Type="smalldatetime" Mode="In" />
+          <Parameter Name="endDate" Type="smalldatetime" Mode="In" />
+        </Function>
         <Function Name="Whole_Or_Partial_Customers_Set" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" StoreFunctionName="Whole Or Partial Customers Set" Schema="dbo">
           <Parameter Name="param1" Type="int" Mode="In" />
         </Function>
-        <!--Errors Found During Generation:
-      warning 6013: The table/view 'northwind.dbo.Quarterly Orders' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-      
-      <EntityType Name="Quarterly Orders">
-        <Property Name="CustomerID" Type="nchar" MaxLength="5" />
-        <Property Name="CompanyName" Type="nvarchar" MaxLength="40" />
-        <Property Name="City" Type="nvarchar" MaxLength="15" />
-        <Property Name="Country" Type="nvarchar" MaxLength="15" />
-      </EntityType>-->
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="northwindModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -988,22 +983,22 @@
             <End Role="Territories" EntitySet="Territories" />
           </AssociationSet>
           <FunctionImport Name="ProductsUnderThisUnitPrice" ReturnType="Collection(northwindModel.ProductsUnderThisUnitPrice_Result)" IsComposable="true">
-            <Parameter Name="price" Type="Decimal" />
+          <Parameter Name="price" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="Customers_By_City" ReturnType="Collection(northwindModel.Customers_By_City_Result)">
-            <Parameter Name="param1" Mode="In" Type="String" />
+          <Parameter Name="param1" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Customers_Count_By_Region">
-            <Parameter Name="param1" Mode="In" Type="String" />
+          <Parameter Name="param1" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="CustOrderHist" ReturnType="Collection(northwindModel.CustOrderHist_Result)">
-            <Parameter Name="CustomerID" Mode="In" Type="String" />
+          <Parameter Name="CustomerID" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="CustOrdersDetail" ReturnType="Collection(northwindModel.CustOrdersDetail_Result)">
-            <Parameter Name="OrderID" Mode="In" Type="Int32" />
+          <Parameter Name="OrderID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="CustOrdersOrders" ReturnType="Collection(northwindModel.CustOrdersOrders_Result)">
-            <Parameter Name="CustomerID" Mode="In" Type="String" />
+          <Parameter Name="CustomerID" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="CustOrderTotal">
             <Parameter Name="CustomerID" Mode="In" Type="String" />
@@ -1014,7 +1009,7 @@
             <Parameter Name="Ending_Date" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="Get_Customer_And_Orders" ReturnType="Collection(northwindModel.Get_Customer_And_Orders_Result)">
-            <Parameter Name="CustomerID" Mode="In" Type="String" />
+          <Parameter Name="CustomerID" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Sales_by_Year" ReturnType="Collection(northwindModel.Sales_by_Year_Result)">
             <Parameter Name="Beginning_Date" Mode="In" Type="DateTime" />
@@ -1056,7 +1051,17 @@
           <FunctionImport Name="sp_upgraddiagrams" />
           <FunctionImport Name="Ten_Most_Expensive_Products" ReturnType="Collection(northwindModel.Ten_Most_Expensive_Products_Result)" />
           <FunctionImport Name="Whole_Or_Partial_Customers_Set" ReturnType="Collection(northwindModel.Whole_Or_Partial_Customers_Set_Result)">
-            <Parameter Name="param1" Mode="In" Type="Int32" />
+          <Parameter Name="param1" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="uspSupplierIncome" ReturnType="Collection(Decimal)">
+            <Parameter Name="supplierName" Mode="In" Type="String" />
+            <Parameter Name="startDate" Mode="In" Type="DateTime" />
+            <Parameter Name="endDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="GetSupplierIncome" ReturnType="Collection(Decimal)">
+            <Parameter Name="supplierName" Mode="In" Type="String" />
+            <Parameter Name="startDate" Mode="In" Type="DateTime" />
+            <Parameter Name="endDate" Mode="In" Type="DateTime" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="ProductsUnderThisUnitPrice_Result">
@@ -2185,6 +2190,8 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="uspSupplierIncome" FunctionName="northwindModel.Store.uspSupplierIncome" />
+          <FunctionImportMapping FunctionImportName="GetSupplierIncome" FunctionName="northwindModel.Store.uspSupplierIncome" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

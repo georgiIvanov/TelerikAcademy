@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08.SearchProducts", "08.Sea
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.SQLLite", "10.SQLLite\10.SQLLite.csproj", "{CAC0875D-43E4-45E7-BCD6-73BB258B4BBD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09.MySqlBooks", "09.MySqlBooks\09.MySqlBooks.csproj", "{BA74558D-B5B3-47E4-9857-443AEDA92803}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,10 @@ Global
 		{CAC0875D-43E4-45E7-BCD6-73BB258B4BBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAC0875D-43E4-45E7-BCD6-73BB258B4BBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAC0875D-43E4-45E7-BCD6-73BB258B4BBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA74558D-B5B3-47E4-9857-443AEDA92803}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA74558D-B5B3-47E4-9857-443AEDA92803}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA74558D-B5B3-47E4-9857-443AEDA92803}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA74558D-B5B3-47E4-9857-443AEDA92803}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

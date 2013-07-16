@@ -28,7 +28,7 @@ namespace _06.NorthwindTwin
             }
 
             SqlConnection dbConForCreatingDB = new SqlConnection(
-            "Server=LOCALHOST; " +
+            "Server=.; " +
             "Database=NorthwindTwin; " +
             "Integrated Security=true");
 

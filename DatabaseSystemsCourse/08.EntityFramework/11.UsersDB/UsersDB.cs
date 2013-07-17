@@ -10,6 +10,9 @@ namespace _11.UsersDB
 {
     class UsersDB
     {
+        /// <summary>
+        /// a local db should be created on the computer, use SQL Server Object Explorer to see it
+        /// </summary>
         static void Main(string[] args)
         {
             using (var db = new UsersContext())

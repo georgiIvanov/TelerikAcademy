@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateDB", "01.CreateDB\CreateDB.csproj", "{AF977129-4FE4-497D-B8AB-584D0081586F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateDB", "CreateDB\CreateDB.csproj", "{AF977129-4FE4-497D-B8AB-584D0081586F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateDB.Models", "01.CreateDB.Models\CreateDB.Models.csproj", "{12BCA168-048E-45EF-A6E7-FB88A428C540}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateDB.Models", "CreateDB.Models\CreateDB.Models.csproj", "{12BCA168-048E-45EF-A6E7-FB88A428C540}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateDB.Data", "01.CreateDB.Data\CreateDB.Data.csproj", "{0F11C5C7-1A2C-44AC-A130-A7C832C4F2CD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateDB.Data", "CreateDB.Data\CreateDB.Data.csproj", "{0F11C5C7-1A2C-44AC-A130-A7C832C4F2CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

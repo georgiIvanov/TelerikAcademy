@@ -1,0 +1,47 @@
+CREATE TABLE Logs(
+  Id int NOT NULL 
+  IDENTITY,
+  [Text] nvarchar(300),
+  LogDate datetime
+)
+GO
+
+CREATE PROCEDURE uspAddLogs
+AS
+DECLARE @counter int
+SET @counter = 1;
+WHILE(@counter < 10000000)
+BEGIN
+	INSERT INTO Logs (LogDate, [Text])
+	VALUES(DATEADD(month, CONVERT(varbinary, newid()) % (50 * 12), getdate()), 'this is texxxt')
+	SET @counter = @counter + 1;
+END
+
+
+EXEC uspAddLogs
+
+--This clears the cache
+CHECKPOINT; 
+GO 
+DBCC DROPCLEANBUFFERS; 
+GO
+
+--Task 1
+SELECT l.LogDate
+FROM Logs l
+WHERE YEAR(l.LogDate) > 2002 AND YEAR(l.LogDate) < 2015
+
+--Task 2
+--creates index
+CREATE INDEX IDX_Logs_LogDate ON Logs(LogDate)
+
+SELECT l.LogDate
+FROM Logs l
+WHERE YEAR(l.LogDate) > 2002 AND YEAR(l.LogDate) < 2015
+
+--Task 3
+CREATE INDEX IDX_Logs_MsgText ON Logs([Text])
+
+SELECT l.[Text]
+FROM Logs l
+WHERE YEAR(l.LogDate) > 2002 AND YEAR(l.LogDate) < 2015

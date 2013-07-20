@@ -1,0 +1,38 @@
+CREATE DATABASE Performance_Partitioning_DB;
+
+USE Performance_Partitioning_DB;
+
+CREATE TABLE Logs(
+	LogId int NOT NULL AUTO_INCREMENT,
+	LogDate datetime,
+	LogText nvarchar(100),
+	CONSTRAINT PK_Logs_LogId PRIMARY KEY(LogId, LogDate)
+) PARTITION BY RANGE(YEAR(LogDate))(
+	PARTITION p0 VALUES LESS THAN (1990),
+    PARTITION p1 VALUES LESS THAN (2000),
+	PARTITION p2 VALUES LESS THAN (2010),
+	PARTITION p3 VALUES LESS THAN MAXVALUE
+);
+
+--------------------
+
+DELIMITER $$
+DROP PROCEDURE IF EXISTS insert_million_rows $$
+
+CREATE PROCEDURE InsertMilionRowsInDB () 
+BEGIN
+DECLARE counter INT DEFAULT 0;
+	START TRANSACTION;
+	WHILE counter < 1000000 DO
+		INSERT INTO Logs(LogDate, LogText)
+		VALUES(TIMESTAMPADD(DAY, FLOOR(1 + RAND() * 10000), '1990-01-01'),
+		CONCAT('Sample text ', counter));
+SET counter = counter + 1;
+END WHILE;
+END $$
+
+CALL InsertMilionRowsInDB ();
+
+SELECT * FROM logs PARTITION(p2);
+
+SELECT * FROM logs WHERE YEAR(LogDate) = 1995;

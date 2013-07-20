@@ -53,7 +53,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\01.CreateDB.Models\CreateDB.Models.csproj">
+    <ProjectReference Include="..\CreateDB.Models\CreateDB.Models.csproj">
       <Project>{12bca168-048e-45ef-a6e7-fb88a428c540}</Project>
       <Name>CreateDB.Models</Name>
     </ProjectReference>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contacts>
+  <contact>
+    <name>George Smith</name>
+    <address>USA, New York, Green str. 8</address>
+    <phone>+9999999999</phone>
+  </contact>
+  <contact>
+    <name>Gerasim Ivanov</name>
+    <address>Bulgaria, Sofia, bul. Aleksandar Malinov 5</address>
+    <phone>+3591121212</phone>
+  </contact>
+</contacts>

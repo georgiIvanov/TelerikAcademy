@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<catalogue>
+  <album>
+    <name>Reign In Blood</name>
+    <artist>Slayer</artist>
+    <year>1986</year>
+    <producer>Rick Rubin</producer>
+    <price>11.54</price>
+    <trackListing>
+      <song>
+        <name>Angel of Death</name>
+        <length>4:51</length>
+      </song>
+      <song>
+        <name>Piece by Piece</name>
+        <length>2:03</length>
+      </song>
+      <song>
+        <name>Necrophobic</name>
+        <length>1:40</length>
+      </song>
+      <song>
+        <name>Altar of Sacrifice</name>
+        <length>2:50</length>
+      </song>
+      <song>
+        <name>Jesus Saves</name>
+        <length>2:54</length>
+      </song>
+      <song>
+        <name>Criminally Insane</name>
+        <length>2:23</length>
+      </song>
+      <song>
+        <name>Reborn</name>
+        <length>2:12</length>
+      </song>
+      <song>
+        <name>Epidemic</name>
+        <length>2:23</length>
+      </song>
+      <song>
+        <name>Postmortem</name>
+        <length>3:27</length>
+      </song>
+      <song>
+        <name>Raining Blood</name>
+        <length>4:17</length>
+      </song>
+    </trackListing>
+  </album>
+  <album>
+    <name>Sounds of Violence</name>
+    <artist>Onslaught</artist>
+    <year>2011</year>
+    <producer>Jacob Hansen</producer>
+    <price>16.59</price>
+    <trackListing>
+      <song>
+        <name>Into the Abyss</name>
+        <length>1:01</length>
+      </song>
+      <song>
+        <name>Born for War</name>
+        <length>5:56</length>
+      </song>
+      <song>
+        <name>The Sound of Violence</name>
+        <length>4:05</length>
+      </song>
+      <song>
+        <name>Code Black</name>
+        <length>6:23</length>
+      </song>
+      <song>
+        <name>Rest in Pieces</name>
+        <length>4:43</length>
+      </song>
+      <song>
+        <name>Godhead</name>
+        <length>4:51</length>
+      </song>
+      <song>
+        <name>Hatebox</name>
+        <length>4:52</length>
+      </song>
+      <song>
+        <name>Antitheist</name>
+        <length>6:33</length>
+      </song>
+      <song>
+        <name>Suicideology</name>
+        <length>5:13</length>
+      </song>
+      <song>
+        <name>End of the Storm (outro)</name>
+        <length>1:31</length>
+      </song>
+      <song>
+        <name>Bomber (Motörhead cover, feat. Phil Campbell and Tom Angelripper)</name>
+        <length>2:51</length>
+      </song>
+    </trackListing>
+  </album>
+  <album>
+    <name>South of Heaven</name>
+    <artist>Slayer</artist>
+    <year>1988</year>
+    <producer>Rick Rubin</producer>
+    <price>16.39</price>
+    <trackListing>
+      <song>
+        <name>South of Heaven</name>
+        <length>4:58</length>
+      </song>
+      <song>
+        <name>Silent Scream</name>
+        <length>3:07</length>
+      </song>
+      <song>
+        <name>Live Undead</name>
+        <length>3:50</length>
+      </song>
+      <song>
+        <name>Behind the Crooked Cross</name>
+        <length>3:15</length>
+      </song>
+      <song>
+        <name>Mandatory Suicide</name>
+        <length>4:05</length>
+      </song>
+      <song>
+        <name>Ghosts of War</name>
+        <length>3:53</length>
+      </song>
+      <song>
+        <name>Read Between the Lies</name>
+        <length>3:20</length>
+      </song>
+      <song>
+        <name>Cleanse the Soul</name>
+        <length>3:02</length>
+      </song>
+      <song>
+        <name>Dissident Aggressor (Judas Priest cover)</name>
+        <length>2:35</length>
+      </song>
+      <song>
+        <name>Spill the Blood</name>
+        <length>4:48</length>
+      </song>
+    </trackListing>
+  </album>
+</catalogue>

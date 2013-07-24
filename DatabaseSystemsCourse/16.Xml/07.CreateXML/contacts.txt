@@ -1,0 +1,6 @@
+George Smith
+USA, New York, Green str. 8
++9999999999
+Gerasim Ivanov
+Bulgaria, Sofia, bul. Aleksandar Malinov 5
++3591121212

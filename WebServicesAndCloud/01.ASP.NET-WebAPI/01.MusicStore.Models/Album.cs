@@ -8,6 +8,11 @@ namespace _01.MusicStoreModels
 {
     public class Album
     {
+        public Album()
+        {
+            this.Artists = new HashSet<Artist>();
+            this.Songs = new HashSet<Song>();
+        }
         [Key]
         public int AlbumId { get; set; }
 
@@ -16,7 +21,7 @@ namespace _01.MusicStoreModels
         public virtual DateTime? ReleaseDate { get; set; }
         public string Producer { get; set; }
 
-        public virtual IList<Artist> Artists { get; set; }
-        public virtual IList<Song> Songs { get; set; }
+        public virtual ICollection<Artist> Artists { get; set; }
+        public virtual ICollection<Song> Songs { get; set; }
     }
 }

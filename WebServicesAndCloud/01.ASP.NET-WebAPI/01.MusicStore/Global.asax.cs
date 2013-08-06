@@ -8,6 +8,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace _01.MusicStore
 {
@@ -25,7 +26,7 @@ namespace _01.MusicStore
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             Database.SetInitializer(new CreateDatabaseIfNotExists<MusicStoreContext>());
-
+            
             //Database.SetInitializer(new DropCreateDatabaseAlways<MusicStoreContext>());
         }
     }

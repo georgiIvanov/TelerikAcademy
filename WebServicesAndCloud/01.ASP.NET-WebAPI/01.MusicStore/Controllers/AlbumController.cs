@@ -20,7 +20,7 @@ namespace _01.MusicStore.Controllers
         // GET api/Album
         public IEnumerable<Album> GetAlbums()
         {
-            return db.Albums.AsEnumerable();
+            return db.Albums.Include("Artists").Include("Songs").AsEnumerable();
         }
 
         // GET api/Album/5

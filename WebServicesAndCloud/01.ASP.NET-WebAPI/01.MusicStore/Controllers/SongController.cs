@@ -17,10 +17,17 @@ namespace _01.MusicStore.Controllers
     {
         private MusicStoreContext db = new MusicStoreContext();
 
+        public SongController()
+        {
+            db.Configuration.ProxyCreationEnabled = false;
+        }
+
+
         // GET api/Song
         public IEnumerable<Song> GetSongs()
         {
-            return db.Songs.AsEnumerable();
+            return db.Songs.Include("Artist").AsEnumerable();
+            
         }
 
         // GET api/Song/5
@@ -52,7 +59,7 @@ namespace _01.MusicStore.Controllers
             //"Year": "2001.06.16",
             //"Genre": "Suicidal Death Metal"
             //}
-
+            
             if (!ModelState.IsValid)
             {
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);

@@ -50,12 +50,6 @@
     <None Include="App.config" />
     <None Include="output.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\01.DateTimeServices\01.DateTimeServicesLib.csproj">
-      <Project>{15b3e0d2-6217-493a-a690-158c497f5318}</Project>
-      <Name>01.DateTimeServicesLib</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

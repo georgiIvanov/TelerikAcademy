@@ -1,27 +1,25 @@
-﻿using System;
+﻿using _03.StringSearchCountLib;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using _01.DateTimeServicesLib;
 using System.ServiceModel;
 using System.ServiceModel.Description;
-using System.Threading;
-using System.Globalization;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace _02.ConsoleHost
+namespace _03.ConsoleHost
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Uri baseAddress = new Uri("http://localhost:8733/Design_Time_Addresses/GetDate/");
+            Uri baseAddress = new Uri("http://localhost:8733/Design_Time_Addresses/_03.StringSearchCountLib/Service1/");
 
-            ServiceHost selfHost = new ServiceHost(typeof(DateService), baseAddress);
+            ServiceHost selfHost = new ServiceHost(typeof(StringSearchCount), baseAddress);
 
             try
             {
-                selfHost.AddServiceEndpoint(typeof(IDateService), new WSHttpBinding(), "Date Service");
+                selfHost.AddServiceEndpoint(typeof(IStringSearchCount), new WSHttpBinding(), "StringSearchCount Service");
                 ServiceMetadataBehavior smb = new ServiceMetadataBehavior();
                 smb.HttpGetEnabled = true;
                 selfHost.Description.Behaviors.Add(smb);

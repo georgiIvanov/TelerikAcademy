@@ -23,6 +23,8 @@ namespace _02.ConsoleClient
 
             result = client.GetDayOfWeek(DateTime.Now);
             Console.WriteLine("\nTodays day: {0}", result);
+
+            client.Close();
         }
     }
 }

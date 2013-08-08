@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.50727</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{15B3E0D2-6217-493A-A690-158C497F5318}</ProjectGuid>
+    <ProjectGuid>{59FF3980-37C7-40CE-95BC-F099C202CAD0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GetDate</RootNamespace>
-    <AssemblyName>GetDate</AssemblyName>
+    <RootNamespace>_03.StringSearchCountLib</RootNamespace>
+    <AssemblyName>03.StringSearchCountLib</AssemblyName>
     <ProjectTypeGuids>{3D9AD99F-2412-4246-B90B-4EAA41C64699};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <StartArguments>/client:"WcfTestClient.exe"</StartArguments>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -44,9 +44,9 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IDateServices.cs" />
+    <Compile Include="IStringSearchCount.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="DateServices.cs" />
+    <Compile Include="StringSearchCount.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

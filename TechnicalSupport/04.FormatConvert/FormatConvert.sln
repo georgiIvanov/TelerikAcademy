@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormatConvert", "FormatConvert\FormatConvert.csproj", "{549E7744-7568-4AF3-8199-0B3788E27816}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTestingApp", "ConsoleTestingApp\ConsoleTestingApp.csproj", "{361F40E6-1634-43E3-AA4F-F9A5F28E9C6F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{549E7744-7568-4AF3-8199-0B3788E27816}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{549E7744-7568-4AF3-8199-0B3788E27816}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{549E7744-7568-4AF3-8199-0B3788E27816}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{549E7744-7568-4AF3-8199-0B3788E27816}.Release|Any CPU.Build.0 = Release|Any CPU
+		{361F40E6-1634-43E3-AA4F-F9A5F28E9C6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{361F40E6-1634-43E3-AA4F-F9A5F28E9C6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{361F40E6-1634-43E3-AA4F-F9A5F28E9C6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{361F40E6-1634-43E3-AA4F-F9A5F28E9C6F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

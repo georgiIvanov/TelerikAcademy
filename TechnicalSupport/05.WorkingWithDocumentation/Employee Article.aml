@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="8737405a-a5a1-48cf-bd88-f13a9b6d361c" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!--
+    <summary>
+      <para>Optional summary abstract</para>
+    </summary>
+    -->
+    <introduction>
+      <para>All required information is in the subarticles</para>
+    </introduction>
+    <section address="Lala">
+      <title>LOL</title>
+      
+    </section>
+  </developerConceptualDocument>
+</topic>

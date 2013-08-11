@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="69959c96-ceec-4afc-a113-22e5d3505547" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+   
+    <introduction>
+      <para>Winter is comming.</para>
+    </introduction>
+    <section address="Section1">
+      <title>This Help File Will Help You Very Much</title>
+      <content>
+        <para>
+        	<legacyBold>
+ 			All articles are very helpful and have very important information in them. You will become 
+ 			a genius if you read them all.
+        	</legacyBold>
+        </para>
+      </content>
+     
+     
+    </section>
+    <relatedTopics>
+      
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

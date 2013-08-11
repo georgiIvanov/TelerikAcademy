@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="e60d6bdb-7cc7-4d21-a143-a4128d58e001" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!--
+    <summary>
+      <para>Optional summary abstract</para>
+    </summary>
+    -->
+    <introduction>
+      <para>
+      	<literal>Employees are great</literal> 
+      </para>
+    </introduction>
+    
+    <sections>
+	    <section address="Section">
+	      <title>
+	      	<legacyBold>All Employees Must Wear Protective Costumes When Entering In Space</legacyBold>
+	      </title>
+	      <content>
+	        <para>
+	        <alert class="important">
+	        	<legacyItalic>Warning: All Unsaved Changes Will Be Lost</legacyItalic> 
+	    	</alert>
+	        </para>
+	      </content>
+	    </section>
+    
+    <section address="EmployeesSection">
+    	<content>
+				  <mediaLink>
+				      	<image xlink:href="fry" placement="center" />
+				  </mediaLink>
+				  <mediaLink>
+			      	<image xlink:href="images (4)" placement="center" />
+			</mediaLink>
+			<mediaLink>
+			      	<image xlink:href="images" placement="center" />
+			</mediaLink>
+			<mediaLink>
+			      	<image xlink:href="zoidberg" placement="center" />
+			</mediaLink>
+		</content>
+		<list class="ordered">
+		  <listItem>
+			  <content>
+				 <!-- <mediaLink>
+				      	<image xlink:href="fry" placement="center" />
+				  </mediaLink>-->
+			  </content>
+      	  </listItem>
+		  <!--<listItem><para>
+		  	<mediaLink>
+			      	<image xlink:href="images (4)" placement="center" />
+			</mediaLink>
+		  </para></listItem>
+		  <listItem><para>
+		  	<mediaLink>
+			      	<image xlink:href="images" placement="center" />
+			</mediaLink>
+		  </para></listItem>
+		  <listItem><para>
+		  	<mediaLink>
+			      	<image xlink:href="zoidberg" placement="center" />
+			</mediaLink>
+		  </para></listItem>-->
+		</list>
+
+    	</section>
+    </sections>
+  </developerConceptualDocument>
+</topic>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOC>
+
+  <HelpTOCNode Title="Main Help Page" Url="html/69959c96-ceec-4afc-a113-22e5d3505547.htm" />
+  <HelpTOCNode Id="5a9a8f15-5062-49f1-9ddd-20da8607a14f" Title="Employee Article" Url="html/8737405a-a5a1-48cf-bd88-f13a9b6d361c.htm">
+    <HelpTOCNode Title="Employee Sub Article" Url="html/e60d6bdb-7cc7-4d21-a143-a4128d58e001.htm" />
+    <HelpTOCNode Title="Very Important Article" Url="html/b5d4495f-632f-4e15-af00-07c7d875d5f4.htm" />
+    <HelpTOCNode Title="More Important Information" Url="html/daa5e249-b562-42f1-bc40-e73ff075c3c0.htm" />
+  </HelpTOCNode>
+  <HelpTOCNode Id="13d6fe83-03b9-4b7a-a9cc-886de54adfcc" Title="TestSandcastleAPIDocumentation Namespace" Url="html/252c0553-3cc2-edd3-9a11-b7321f4c1641.htm">
+    <HelpTOCNode Id="396e2d7f-b35e-463d-9076-e387fe08a8f7" Title="Employee Class" Url="html/79a4b180-2aba-daaa-53a4-b23ec69bcf5a.htm">
+      <HelpTOCNode Title="Employee Members" Url="html/1520ec08-75f4-aa6c-9bb1-21cc04082686.htm" />
+      <HelpTOCNode Title="Employee Constructor " Url="html/1db16329-b2ea-8612-0ce4-9deaa660ccc0.htm" />
+      <HelpTOCNode Id="f06466b8-bab0-43d0-aa42-ea0db8a9f9de" Title="Employee Methods" Url="html/1daa0f40-0c66-36da-d4d2-8f7a808e707f.htm">
+        <HelpTOCNode Title="GetAge Method " Url="html/51271a1d-9176-6ecb-aad1-4ae0f270d3e5.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="711204c4-fcec-47c6-906f-70cbc3ca5de1" Title="Employee Properties" Url="html/764eafe0-25af-05eb-8ee9-02a8e42da39a.htm">
+        <HelpTOCNode Title="BirthDate Property " Url="html/b3b4b7d9-e438-9b9b-950d-047c2f4ae30d.htm" />
+        <HelpTOCNode Title="Name Property " Url="html/456b02d3-6fbd-435e-2c23-8fe246fcb6c1.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+</HelpTOC>

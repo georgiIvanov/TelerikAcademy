@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="daa5e249-b562-42f1-bc40-e73ff075c3c0" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <summary>
+      <para>Everything here is very important.</para>
+    </summary>
+   
+    <introduction>
+      <para>Read All The Important Articles.</para>
+    </introduction>
+    
+    <sections>
+	    <section address="FirsdtImportantSection">
+	      <title>Really important stuff starts here</title>
+	      <content>
+	        <para>
+	        	<list class="bullet">
+	        		<listItem>First Important Item</listItem>
+	        		<listItem>Second Important Item</listItem>
+	        		<listItem>Third Important Item</listItem>
+	        	</list>
+	        </para>
+	      </content>
+	     </section>
+      
+          <section address="AnotherImportantSection">
+              <title>Another Important Section</title>
+              <content>
+                  <para>
+                  	<alert class="important">
+                  		Most important thing
+                  	</alert>
+                  </para>
+                  <para>
+                  	<externalLink>
+						 <linkText>Most important link</linkText> 
+						<linkAlternateText>Visit the link</linkAlternateText> 
+						<linkUri>http://www.imgbase.info/images/safe-wallpapers/cartoons/futurama/5339_futurama_hd_wallpapers_fry.jpg</linkUri>
+						<linkTarget>_new</linkTarget> 
+					</externalLink> 
+                  </para>
+              </content>
+          </section>
+          
+          <section address="ThirdSection">
+              <title>Least Important Section</title>
+              <content>>
+              </content>
+          </section>
+      </sections>
+    <relatedTopics>
+      <!-- One or more of the following:
+           - A local link
+           - An external link
+           - A code entity reference
+
+      <link xlink:href="Other Topic's ID"/>
+      <link xlink:href="Other Topic's ID">Link inner text</link>
+
+      <externalLink>
+          <linkText>Link text</linkText>
+          <linkAlternateText>Optional alternate link text</linkAlternateText>
+          <linkUri>URI</linkUri>
+      </externalLink>
+
+      <codeEntityReference>API member ID</codeEntityReference>
+
+      Examples:
+
+      <link xlink:href="00e97994-e9e6-46e0-b420-5be86b2f8270" />
+      <link xlink:href="00e97994-e9e6-46e0-b420-5be86b2f8278">Some other topic</link>
+
+      <externalLink>
+          <linkText>SHFB on CodePlex</linkText>
+          <linkAlternateText>Go to CodePlex</linkAlternateText>
+          <linkUri>http://shfb.codeplex.com</linkUri>
+      </externalLink>
+
+      <codeEntityReference>T:TestDoc.TestClass</codeEntityReference>
+      <codeEntityReference>P:TestDoc.TestClass.SomeProperty</codeEntityReference>
+      <codeEntityReference>M:TestDoc.TestClass.#ctor</codeEntityReference>
+      <codeEntityReference>M:TestDoc.TestClass.#ctor(System.String,System.Int32)</codeEntityReference>
+      <codeEntityReference>M:TestDoc.TestClass.ToString</codeEntityReference>
+      <codeEntityReference>M:TestDoc.TestClass.FirstMethod</codeEntityReference>
+      <codeEntityReference>M:TestDoc.TestClass.SecondMethod(System.Int32,System.String)</codeEntityReference>
+      -->
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

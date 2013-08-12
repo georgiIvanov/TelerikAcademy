@@ -44,13 +44,42 @@ namespace StudentsDatabase.Controllers
         }
 
         // PUT api/student/5
-        public void Put(int id, [FromBody]string value)
+        public HttpResponseMessage Put(int id, Student value)
         {
+            if (id != value.Id || value == null)
+            {
+                return new HttpResponseMessage(HttpStatusCode.BadRequest);
+            }
+
+            var updated = this.studentsRepository.Update(id, value);
+
+            var responce = Request.CreateResponse<Student>(HttpStatusCode.Created, updated);
+            var resourceLink = Url.Link("DefaultApi", new { id = updated.Id });
+
+            responce.Headers.Location = new Uri(resourceLink);
+
+            return responce;
+
         }
 
         // DELETE api/student/5
-        public void Delete(int id)
+        public HttpResponseMessage Delete(int id)
         {
+            var found = this.studentsRepository.Get(id);
+            if (found != null)
+            {
+                var responce = Request.CreateResponse<Student>(HttpStatusCode.OK, found);
+                var resourceLink = Url.Link("DefaultApi", new { id = found.Id });
+
+                responce.Headers.Location = new Uri(resourceLink);
+                this.studentsRepository.Delete(id);
+
+                return responce;
+            }
+            else
+            {
+                return Request.CreateResponse(HttpStatusCode.NotFound);
+            }
         }
     }
 }

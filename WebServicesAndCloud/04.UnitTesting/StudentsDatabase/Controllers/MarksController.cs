@@ -1,4 +1,6 @@
-﻿using System;
+﻿using StudentsDatabase.Models;
+using StudentsDatabase.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -9,10 +11,17 @@ namespace StudentsDatabase.Controllers
 {
     public class MarksController : ApiController
     {
-        // GET api/marks
-        public IEnumerable<string> Get()
+        IRepository<Mark> markRepository;
+
+        public MarksController(IRepository<Mark> markRepository)
         {
-            return new string[] { "value1", "value2" };
+            this.markRepository = markRepository;
+        }
+
+        // GET api/marks
+        public IEnumerable<Mark> Get()
+        {
+            return this.markRepository.All();
         }
 
         // GET api/marks/5
@@ -22,8 +31,16 @@ namespace StudentsDatabase.Controllers
         }
 
         // POST api/marks
-        public void Post([FromBody]string value)
+        public HttpResponseMessage Post(Mark value)
         {
+            var created = this.markRepository.Add(value);
+
+            var responce = Request.CreateResponse<Mark>(HttpStatusCode.Created, created);
+            var resourceLink = Url.Link("DefaultApi", new { id = created.Id });
+
+            responce.Headers.Location = new Uri(resourceLink);
+
+            return responce;
         }
 
         // PUT api/marks/5

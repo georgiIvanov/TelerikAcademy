@@ -8,52 +8,27 @@ using System.Threading.Tasks;
 
 namespace StudentsDatabase.Repositories
 {
-    class DbMarkRepository : IRepository<Mark>
+    public class DbMarkRepository : AbstractRepository<Mark>
     {
-        DbContext dbContext;
-        DbSet<Mark> entitySet;
-
         public DbMarkRepository(DbContext dbContext)
+            : base(dbContext)
         {
-            if (dbContext == null)
+
+        }
+
+        public override Mark Update(int id, Mark entity)
+        {
+            var found = base.entitySet.Find(id);
+            if (found != null)
             {
-                throw new ArgumentException("An instance of DbContext is required to use this repository.", "context");
+                found.StudentId = entity.StudentId;
+                found.Subject = entity.Subject;
+                found.Value = entity.Value;
+
+                base.dbContext.SaveChanges();
             }
 
-            this.dbContext = dbContext;
-            this.entitySet = this.dbContext.Set<Mark>();
-        }
-
-        public Mark Add(Mark entity)
-        {
-            this.entitySet.Add(entity);
-            this.dbContext.SaveChanges();
-            return entity;
-        }
-
-        public Mark Update(int id, Mark entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Mark Get(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IQueryable<Mark> All()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IQueryable<Mark> Find(System.Linq.Expressions.Expression<Func<Mark, int, bool>> predicate)
-        {
-            return this.entitySet.Where(predicate);
+            return found;
         }
     }
 }

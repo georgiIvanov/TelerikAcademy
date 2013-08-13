@@ -17,6 +17,8 @@ namespace StudentsDatabase.Resolvers
 
         private static IRepository<Student> studentRepository = new DbStudentRepository(studentsDatabaseContext);
 
+        private static IRepository<Mark> markRepository = new DbMarkRepository(studentsDatabaseContext);
+
         public IDependencyScope BeginScope()
         {
             return this;
@@ -27,6 +29,10 @@ namespace StudentsDatabase.Resolvers
             if (serviceType == typeof(StudentsController))
             {
                 return new StudentsController(studentRepository);
+            }
+            else if (serviceType == typeof(MarksController))
+            {
+                return new MarksController(markRepository);
             }
             else
             {

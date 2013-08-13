@@ -1,4 +1,5 @@
-﻿using StudentsDatabase.Models;
+﻿using StudentsDatabase.Helpers;
+using StudentsDatabase.Models;
 using StudentsDatabase.Repositories;
 using System;
 using System.Collections.Generic;
@@ -11,11 +12,11 @@ namespace StudentsDatabase.Controllers
 {
     public class StudentsController : ApiController
     {
-        IRepository<Student> studentsRepository;
+        DbStudentRepository studentsRepository;
 
         public StudentsController(IRepository<Student> studentsRepository)
         {
-            this.studentsRepository = studentsRepository;
+            this.studentsRepository = (DbStudentRepository)studentsRepository;
         }
 
         // GET api/student
@@ -24,7 +25,7 @@ namespace StudentsDatabase.Controllers
             var studentEntities =  this.studentsRepository.All().ToList();
 
 
-            return GetEntities(studentEntities);
+            return Serializer.GetEntities(studentEntities);
         }
 
         // GET api/student/5
@@ -32,7 +33,7 @@ namespace StudentsDatabase.Controllers
         {
             var found = this.studentsRepository.Get(id);
 
-            var student = CreateStudentToReturn(found);
+            var student = Serializer.CreateStudentToReturn(found);
 
             return student;
         }
@@ -91,26 +92,14 @@ namespace StudentsDatabase.Controllers
             }
         }
 
-        private static Student CreateStudentToReturn(Student found)
+        public IEnumerable<Student> Get(string subject, double value)
         {
-            var student = new Student()
-            {
-                Id = found.Id,
-                FirstName = found.FirstName,
-                LastName = found.LastName,
-                Age = found.Age,
-                Grade = found.Grade,
-                Marks = found.Marks
-            };
-            return student;
+            var studentEntities = this.studentsRepository.GetStudentsWithMarkGreaterThan(subject, value);
+
+
+            return Serializer.GetEntities(studentEntities);
         }
 
-        IEnumerable<Student> GetEntities(List<Student> students)
-        {
-            foreach (var stud in students)
-            {
-                yield return CreateStudentToReturn(stud);
-            }
-        }
+        
     }
 }

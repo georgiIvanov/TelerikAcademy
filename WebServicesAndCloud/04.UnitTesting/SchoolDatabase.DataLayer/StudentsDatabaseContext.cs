@@ -21,6 +21,15 @@ namespace SchoolDatabase.DataLayer
         DbSet<School> Schools { get; set; }
         DbSet<Student> Students { get; set; }
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<School>()
+                .HasOptional(p => p.Students)
+                .WithMany()
+                .WillCascadeOnDelete(true);
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 
 }

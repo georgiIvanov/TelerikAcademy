@@ -18,6 +18,17 @@ namespace StudentsDatabase.Repositories
 
         }
 
+        public IEnumerable<Student> GetStudentsWithMarkGreaterThan(string subject, double value)
+        {
+            var found = (from st in base.entitySet
+                        from m in st.Marks
+                        where m.Value >= value
+                        where m.Subject == subject
+                        select st).ToList();
+
+            return found;
+        }
+
         public override Student Update(int id, Student entity)
         {
             var found = base.entitySet.Find(id);
@@ -28,7 +39,7 @@ namespace StudentsDatabase.Repositories
                 found.Age = entity.Age;
                 found.Grade = entity.Grade;
                 found.Marks = entity.Marks;
-                
+                found.SchoolId = entity.SchoolId;
 
                 base.dbContext.SaveChanges();
             }

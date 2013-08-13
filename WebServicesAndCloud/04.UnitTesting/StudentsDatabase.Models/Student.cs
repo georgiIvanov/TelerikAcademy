@@ -11,7 +11,7 @@ namespace StudentsDatabase.Models
     {
         public Student()
         {
-            this.Marks = new HashSet<Mark>();
+            //this.Marks = new HashSet<Mark>();
         }
 
         [Key]
@@ -25,6 +25,8 @@ namespace StudentsDatabase.Models
         public int? Age { get; set; }
 
         public int? Grade { get; set; }
+
+        public int? SchoolId { get; set; }
 
         public virtual ICollection<Mark> Marks { get; set; }
     }

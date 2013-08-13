@@ -25,9 +25,9 @@ namespace StudentsDatabase.Controllers
         }
 
         // GET api/marks/5
-        public string Get(int id)
+        public Mark Get(int id)
         {
-            return "value";
+            return this.markRepository.Get(id);
         }
 
         // POST api/marks
@@ -44,13 +44,41 @@ namespace StudentsDatabase.Controllers
         }
 
         // PUT api/marks/5
-        public void Put(int id, [FromBody]string value)
+        public HttpResponseMessage Put(int id, Mark value)
         {
+            if (id != value.Id || value == null)
+            {
+                return new HttpResponseMessage(HttpStatusCode.BadRequest);
+            }
+
+            var updated = this.markRepository.Update(id, value);
+
+            var responce = Request.CreateResponse<Mark>(HttpStatusCode.Created, updated);
+            var resourceLink = Url.Link("DefaultApi", new { id = updated.Id });
+
+            responce.Headers.Location = new Uri(resourceLink);
+
+            return responce;
         }
 
         // DELETE api/marks/5
-        public void Delete(int id)
+        public HttpResponseMessage Delete(int id)
         {
+            var found = this.markRepository.Get(id);
+            if (found != null)
+            {
+                var responce = Request.CreateResponse<Mark>(HttpStatusCode.OK, found);
+                var resourceLink = Url.Link("DefaultApi", new { id = found.Id });
+
+                responce.Headers.Location = new Uri(resourceLink);
+                this.markRepository.Delete(id);
+
+                return responce;
+            }
+            else
+            {
+                return Request.CreateResponse(HttpStatusCode.NotFound);
+            }
         }
     }
 }

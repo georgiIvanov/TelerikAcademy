@@ -21,7 +21,20 @@ namespace StudentsDatabase.Controllers
         // GET api/student
         public IEnumerable<Student> Get()
         {
-            return this.studentsRepository.All();
+            var studentEntities =  this.studentsRepository.All().ToList();
+            var students =
+                                from stud in studentEntities
+                                select new Student()
+                                {
+                                    Id = stud.Id,
+                                    FirstName = stud.FirstName,
+                                    LastName = stud.LastName,
+                                    Age = stud.Age,
+                                    Grade = stud.Grade,
+                                    Marks = stud.Marks
+                                };
+
+            return students;
         }
 
         // GET api/student/5

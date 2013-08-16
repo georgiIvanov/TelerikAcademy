@@ -15,7 +15,7 @@ namespace StudentsDatabase.Resolvers
     {
         private static DbContext studentsDatabaseContext = new StudentsDatabaseContext();
 
-        private static IRepository<Student> studentRepository = new DbStudentRepository(studentsDatabaseContext);
+        private static DbStudentRepository studentRepository = new DbStudentRepository(studentsDatabaseContext);
 
         private static IRepository<Mark> markRepository = new DbMarkRepository(studentsDatabaseContext);
 

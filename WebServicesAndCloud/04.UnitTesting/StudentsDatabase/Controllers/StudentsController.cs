@@ -14,9 +14,9 @@ namespace StudentsDatabase.Controllers
     {
         DbStudentRepository studentsRepository;
 
-        public StudentsController(IRepository<Student> studentsRepository)
+        public StudentsController(DbStudentRepository studentsRepository)
         {
-            this.studentsRepository = (DbStudentRepository)studentsRepository;
+            this.studentsRepository = studentsRepository;
         }
 
         // GET api/student

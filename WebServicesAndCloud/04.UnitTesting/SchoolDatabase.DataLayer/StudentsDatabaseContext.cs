@@ -17,9 +17,9 @@ namespace SchoolDatabase.DataLayer
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<StudentsDatabaseContext, SchoolDatabase.DataLayer.Migrations.Configuration>());
         }
 
-        DbSet<Mark> Marks { get; set; }
-        DbSet<School> Schools { get; set; }
-        DbSet<Student> Students { get; set; }
+        public DbSet<Mark> Marks { get; set; }
+        public DbSet<School> Schools { get; set; }
+        public DbSet<Student> Students { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

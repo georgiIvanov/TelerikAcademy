@@ -20,6 +20,8 @@ namespace StudentsDatabase.Models
         [Required]
         public string Name { get; set; }
 
+        public string Location { get; set; }
+
         public ICollection<Student> Students { get; set; }
     }
 }

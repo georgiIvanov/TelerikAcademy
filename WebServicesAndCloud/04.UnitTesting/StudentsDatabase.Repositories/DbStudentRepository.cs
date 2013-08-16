@@ -18,7 +18,7 @@ namespace StudentsDatabase.Repositories
 
         }
 
-        public IEnumerable<Student> GetStudentsWithMarkGreaterThan(string subject, double value)
+        public virtual IEnumerable<Student> GetStudentsWithMarkGreaterThan(string subject, double value)
         {
             var found = (from st in base.entitySet
                         from m in st.Marks

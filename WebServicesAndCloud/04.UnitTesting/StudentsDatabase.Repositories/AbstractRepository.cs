@@ -23,7 +23,7 @@ namespace StudentsDatabase.Repositories
             this.entitySet = this.dbContext.Set<T>();
         }
 
-        public T Add(T entity)
+        public virtual T Add(T entity)
         {
             this.entitySet.Add(entity);
             this.dbContext.SaveChanges();
@@ -32,7 +32,7 @@ namespace StudentsDatabase.Repositories
 
         public abstract T Update(int id, T entity);
 
-        public void Delete(int id)
+        public virtual void Delete(int id)
         {
             var entity = this.entitySet.Find(id);
             if (entity != null)
@@ -42,17 +42,17 @@ namespace StudentsDatabase.Repositories
             }
         }
 
-        public T Get(int id)
+        public virtual T Get(int id)
         {
             return this.entitySet.Find(id);
         }
 
-        public IQueryable<T> All()
+        public virtual IQueryable<T> All()
         {
             return this.entitySet;
         }
 
-        public IQueryable<T> Find(System.Linq.Expressions.Expression<Func<T, int, bool>> predicate)
+        public virtual IQueryable<T> Find(System.Linq.Expressions.Expression<Func<T, int, bool>> predicate)
         {
             return this.entitySet.Where(predicate);
         }

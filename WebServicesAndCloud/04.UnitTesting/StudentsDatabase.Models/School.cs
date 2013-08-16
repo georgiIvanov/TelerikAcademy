@@ -11,7 +11,7 @@ namespace StudentsDatabase.Models
     {
         public School()
         {
-            //this.Students = new HashSet<Student>();
+            this.Students = new HashSet<Student>();
         }
 
         [Key]

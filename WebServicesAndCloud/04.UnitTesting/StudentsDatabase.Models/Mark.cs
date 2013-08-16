@@ -20,6 +20,8 @@ namespace StudentsDatabase.Models
         [DataMember(IsRequired = true)]
         public int StudentId { get; set; }
 
+        public virtual Student Student { get; set; }
+
         [DataMember]
         public string Subject { get; set; }
 

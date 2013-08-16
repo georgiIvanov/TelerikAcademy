@@ -14,7 +14,7 @@ namespace SchoolDatabase.DataLayer
         public StudentsDatabaseContext()
             : base("SchoolDatabase")
         {
-            Database.SetInitializer<StudentsDatabaseContext>(new DropCreateDatabaseIfModelChanges<StudentsDatabaseContext>());
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<StudentsDatabaseContext, SchoolDatabase.DataLayer.Migrations.Configuration>());
         }
 
         DbSet<Mark> Marks { get; set; }
@@ -23,10 +23,10 @@ namespace SchoolDatabase.DataLayer
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<School>()
-                .HasOptional(p => p.Students)
-                .WithMany()
-                .WillCascadeOnDelete(true);
+            //modelBuilder.Entity<School>()
+            //    .HasOptional(p => p.Students)
+            //    .WithMany()
+            //    .WillCascadeOnDelete(true);
 
             base.OnModelCreating(modelBuilder);
         }

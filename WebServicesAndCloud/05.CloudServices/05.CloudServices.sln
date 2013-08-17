@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.IronMQReciever", "01.Iro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.PubNub", "02.PubNub\02.PubNub.csproj", "{44B34179-D071-4449-A41C-AFDB7D609F42}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.SharePhotoAlbum", "03.SharePhotoAlbum\03.SharePhotoAlbum.csproj", "{6EF2DD59-F385-4F2C-AF54-44EE0188D8D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{44B34179-D071-4449-A41C-AFDB7D609F42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44B34179-D071-4449-A41C-AFDB7D609F42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44B34179-D071-4449-A41C-AFDB7D609F42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EF2DD59-F385-4F2C-AF54-44EE0188D8D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EF2DD59-F385-4F2C-AF54-44EE0188D8D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EF2DD59-F385-4F2C-AF54-44EE0188D8D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EF2DD59-F385-4F2C-AF54-44EE0188D8D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace StudentsDatabase.Tests
 {
-    static class SchoolExtensions
+    public static class SchoolExtensions
     {
         public static School AddName(this School sc, string name)
         {

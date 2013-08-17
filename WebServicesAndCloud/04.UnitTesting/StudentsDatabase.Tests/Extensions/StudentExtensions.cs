@@ -1,14 +1,26 @@
 ﻿using StudentsDatabase.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace StudentsDatabase.Tests
 {
-    static class StudentExtensions
+    public static class StudentExtensions
     {
+
+        public static School AddSchoolToDatabase(this School school, DbContext dbContext, string name = "TVU", string location = "gorata")
+        {
+            school = dbContext.Set<School>().Add(
+                new School()
+                .AddName(name)
+                .AddLocation(location));
+
+            return school;
+        }
+
         public static Student AddFirstName(this Student student, string firstName)
         {
             student.FirstName = firstName;
@@ -44,5 +56,21 @@ namespace StudentsDatabase.Tests
             student.Id = id;
             return student;
         }
+
+        public static Student AddMarks(this Student student, string subject, double value, int count, int studentId = 0)
+        {
+            var marks = new HashSet<Mark>(Enumerable.Repeat<Mark>(new Mark()
+            {
+                Subject = subject,
+                Value = value,
+                StudentId = 0
+            }, count));
+
+            student.Marks = marks;
+
+            return student;
+        }
+
+        
     }
 }

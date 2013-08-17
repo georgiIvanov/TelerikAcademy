@@ -5,6 +5,7 @@ using StudentsDatabase.Repositories;
 using System.Transactions;
 using SchoolDatabase.DataLayer;
 using StudentsDatabase.Models;
+using StudentsDatabase.Tests;
 
 namespace StudentsDatabase.Tests.Controllers
 {
@@ -24,16 +25,6 @@ namespace StudentsDatabase.Tests.Controllers
             
         }
 
-        public School AddSchool(string name = "TVU", string location = "gorata")
-        {
-            var school = this.dbContext.Set<School>().Add(
-                new School()
-                .AddName(name)
-                .AddLocation(location));
-
-            return school;
-        }
-
         [TestInitialize]
         public void TestInit()
         {
@@ -49,7 +40,7 @@ namespace StudentsDatabase.Tests.Controllers
         [TestMethod]
         public void InsertBasicStudent()
         {
-            var school = AddSchool();
+            var school = new School().AddSchoolToDatabase(dbContext);
 
             var student = new Student()
                 .AddFirstName("Pesho")
@@ -69,7 +60,7 @@ namespace StudentsDatabase.Tests.Controllers
         [TestMethod]
         public void InsertStudentAge()
         {
-            var school = AddSchool();
+            var school = new School().AddSchoolToDatabase(dbContext);
 
             var student = new Student()
                 .AddFirstName("Pesho")
@@ -86,7 +77,7 @@ namespace StudentsDatabase.Tests.Controllers
         [TestMethod]
         public void InsertStudentGrade()
         {
-            var school = AddSchool();
+            var school = new School().AddSchoolToDatabase(dbContext);
 
             var student = new Student()
                 .AddFirstName("Pesho")
@@ -103,7 +94,7 @@ namespace StudentsDatabase.Tests.Controllers
         [TestMethod]
         public void InsertStudentSchoolCheck()
         {
-            var school = AddSchool("Mrete", "mladost");
+            var school = new School().AddSchoolToDatabase(dbContext, "Mrete", "mladost");
 
             var student = new Student()
                 .AddFirstName("Pesho")

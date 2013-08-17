@@ -109,12 +109,12 @@ namespace StudentsDatabase.Tests.Controllers
 
             repository.students.Add(new Student()
             {
-                 Marks = new HashSet<Mark>(Enumerable.Repeat<Mark>(new Mark()
-                    {
-                        Subject = "math",
-                        Value = 3,
-                        StudentId = 4
-                    }, 1))
+                Marks = new HashSet<Mark>(Enumerable.Repeat<Mark>(new Mark()
+                   {
+                       Subject = "math",
+                       Value = 3,
+                       StudentId = 4
+                   }, 1))
             }.AddId(4));
 
             var controller = new StudentsController(repository);
@@ -124,5 +124,62 @@ namespace StudentsDatabase.Tests.Controllers
 
             Assert.IsTrue(returned.Count() == 3);
         }
+
+        [TestMethod]
+        public void PostStudentWithMock()
+        {
+            var repository = Mock.Create<DbStudentRepository>();
+            bool itemIsAdded = false;
+
+            var student = new Student()
+                .AddFirstName("I")
+                .AddLastName("Mock")
+                .AddId(0);
+
+            var returned = new Student()
+                .AddFirstName("I")
+                .AddLastName("Mock")
+                .AddId(1);
+
+
+            Mock.Arrange(() => repository.Add(Arg.IsAny<Student>()))
+                .DoInstead(() => { itemIsAdded = true; })
+                .Returns(returned);
+
+            var controller = new StudentsController(repository);
+            SetupController(controller);
+
+            controller.Post(student);
+
+            Assert.IsTrue(itemIsAdded == true);
+        }
+
+        [TestMethod]
+        public void GetMarkWithMock()
+        {
+            var repository = Mock.Create<DbStudentRepository>();
+            bool itemIsAdded = false;
+
+            var student = new Student()
+                .AddFirstName("I")
+                .AddLastName("Mock")
+                .AddId(0).AddMarks("math", 5.5, 3) ;
+
+
+
+
+            Mock.Arrange(() => repository.Add(Arg.IsAny<Student>()))
+                .DoInstead(() => { itemIsAdded = true; })
+                .Returns(student);
+
+            var controller = new StudentsController(repository);
+            SetupController(controller);
+
+            controller.Post(student);
+
+            Assert.IsTrue(itemIsAdded == true);
+        }
+
+        
     }
 }

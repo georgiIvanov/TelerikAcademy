@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Reciever</title>
+</head>
+
+<body>
+	<div 
+        pub-key="pub-c-d9aadadf-abba-443c-a767-62023d43411a" 
+        sub-key="sub-c-102d0358-073f-11e3-916b-02ee2ddab7fe" 
+        ssl="off" origin="pubsub.pubnub.com" id="pubnub"></div>
+    <script src=http://cdn.pubnub.com/pubnub-3.5.3.min.js></script>
+    <h1>Listening for messages from Pubnub...</h1>
+    <textarea id="messagesArea" style="width:300px; height:300px"></textarea>
+    <script>
+        (function () {
+            document.write("")
+            PUBNUB.subscribe({
+                channel: "PublishApp",
+                callback: function (message) {
+                    // Received a message --> print it in the page
+                    document.getElementById('messagesArea').innerHTML += message + '\n';
+                }
+            });
+        })();
+    </script>
+</body>
+
+</html>

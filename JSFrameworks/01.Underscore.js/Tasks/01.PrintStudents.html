@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="underscore.js"></script>
+</head>
+<body>
+	<script>
+	    function Person(firstName, lastName) {
+	        this.firstName = firstName;
+	        this.lastName = lastName;
+	    };
+
+	    var people = [
+            new Person("Doncho", "Minkov"),
+            new Person("Joro", "Georgiev"),
+            new Person("Zdrawko", "Ailqkov"),
+            new Person("Svetlin", "Nakov"),
+            new Person("AA", "ZZ")  
+	    ];
+
+        
+
+	    var filtered = _.filter(people, function (p) {
+	        return p.firstName < p.lastName;
+	    });
+
+	    filtered.forEach(function (ob) {
+	        console.log(ob);
+	    });
+
+
+	</script>
+</body>
+</html>

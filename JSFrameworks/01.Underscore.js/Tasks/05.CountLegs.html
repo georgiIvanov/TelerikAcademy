@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="underscore.js"></script>
+</head>
+<body>
+    <script src="Animals.js"></script>
+    <script>
+        function Counter() {
+            var legs = 0;
+            this.getLegs = function (animal) {
+                legs += animal.legCount;
+
+            }
+            this.showLegs = function () {
+                return legs;
+            }
+        };
+
+        var counter = new Counter();
+
+        _.each(animals, counter.getLegs);
+
+        console.log(counter.showLegs());
+    </script>
+</body>
+</html>

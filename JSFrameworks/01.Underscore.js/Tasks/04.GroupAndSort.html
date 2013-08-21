@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="underscore.js"></script>
+</head>
+<body>
+    <script src="Animals.js"></script>
+    <script>
+        
+
+        var grouped = _.groupBy(animals, function (a) {
+            return a.species;
+        });
+
+        for (var array in grouped) {
+            grouped[array] = _.sortBy(grouped[array], function (a) {
+                return a.legCount;
+            });
+        }
+
+        for (var array in grouped) {
+            grouped[array].forEach(function (ob) {
+                console.log(ob);
+                
+            });
+        }
+
+    </script>
+</body>
+</html>

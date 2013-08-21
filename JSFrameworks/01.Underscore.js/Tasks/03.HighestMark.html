@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="underscore.js"></script>
+</head>
+<body>
+    <script>
+
+        function Student(name, mark) {
+            this.name = name;
+            this.mark = mark;
+        };
+
+        var students = [
+            new Student("Ivan", 2),
+            new Student("Mariika", 3.4),
+            new Student("Onufri", 5.9),
+            new Student("Giorgi", 4)
+        ];
+
+        var highest = _.max(students, function (s) {
+            return s.mark;
+        });
+
+        console.log(highest);
+
+
+
+
+    </script>
+</body>
+</html>

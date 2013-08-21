@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="underscore.js"></script>
+</head>
+<body>
+    <script>
+        function Person(firstName, lastName, age) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.age = age;
+        };
+
+        var people = [
+            new Person("Doncho", "Minkov", 17),
+            new Person("Joro", "Georgiev", 21),
+            new Person("Zdrawko", "Ailqkov", 24),
+            new Person("Svetlin", "Nakov", 23),
+            new Person("AA", "ZZ", 40)
+        ];
+
+        var found = _.filter(people, function (p) {
+            return p.age > 18 && p.age < 24;
+        });
+
+        found.forEach(function (ob) {
+            console.log(ob);
+        });
+    </script>
+</body>
+</html>

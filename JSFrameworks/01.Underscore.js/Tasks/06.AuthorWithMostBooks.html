@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="underscore.js"></script>
+</head>
+<body>
+    <script>
+        function Book(name, author) {
+            this.name = name;
+            this.author = author;
+        };
+
+        var books = [
+            new Book("Hidden Faces", "Salvador Dali"),
+            new Book("Salem's Lot", "Stephen King"),
+            new Book("Diary Of a Genius", "Salvador Dali"),
+            new Book("A Game Of Thrones", "George R.R. Martin"),
+            new Book("Dali's Mustache", "Salvador Dali"),
+            new Book("IT", "Stephen King"),
+            new Book("The Metamorphosis", "Franz Kafka")
+        ];
+
+        var authors = _.countBy(books, function (b) {
+            return b.author;
+        });
+
+        var max = _.max(authors, function (o) {
+            return o;
+        });
+
+
+        for (var prop in authors) {
+            if (authors[prop] == max) {
+                console.log(prop + " " + max);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -2,18 +2,87 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
+    <script src="Scripts/class.js"></script>
+    <script src="Scripts/jquery-2.0.3.js"></script>
+    <script src="Scripts/mustache.js"></script>
+    <link href="style.css" rel="stylesheet" />
 </head>
 <body>
+
+    <div id="content">
+
+    </div>
+
+    <script type="x-student-template" id="student-template">
+        <div class="student">{{fullname}}</div>
+        
+    </script>
+
+    <script type="x-student-template" id="mark-template">
+        <div class="mark" style="display:none">
+        {{#marks}}
+        <div>{{subject}}: {{score}}</div>
+        {{/marks}}
+        {{^marks}}
+        <div>This student has no marks, yet</div>
+        {{/marks}}
+        </div>
+    </script>
+
     <script>
-        //var people = [
-        //	new Student("Doncho", "Minkov", [new Mark("Math", 4), new Mark("JavaScript", 6)]),
-        //	new Student("Nikolay", "Kostov", [new Mark("MVC", 6), new Mark("JavaScript", 5), new Mark("C++", 4)]),
-        //	new Student("Ivaylo", "Kendov", [new Mark("OOP", 4), new Mark("C#", 6)]),
-        //	new Student("Svetlin", "Nakov", [new Mark("Unit Testing", 5), new Mark("WPF", 6)]),
-        //	new Student("Asya", "Georgieva", [new Mark("Automation Testing", 6), new Mark("Manual Testing", 4)]),
-        //    new Student("Asen", "Georgiev", [new Mark("Automation Testing", 6)]),
-        //	new Student("Georgi", "Georgiev")
-        //];
+        var Student = Class.create({
+            init: function (fname, lname, marks) {
+                this.fname = fname;
+                this.lname = lname
+                this.marks = marks;
+            },
+            fullname: function () {
+                return this.fname + " " + this.lname;
+            },
+            render: function () {
+                return function (text, render) {
+                    return "<strong>" + render(text) + "</strong>";
+                }
+            }
+        });
+
+        var Mark = Class.create({
+            init: function (subject, score) {
+                this.subject = subject;
+                this.score = score;
+            }
+        });
+
+        var people = [
+        	new Student("Doncho", "Minkov", [new Mark("Math", 4), new Mark("JavaScript", 6)]),
+        	new Student("Nikolay", "Kostov", [new Mark("MVC", 6), new Mark("JavaScript", 5), new Mark("C++", 4)]),
+        	new Student("Ivaylo", "Kendov", [new Mark("OOP", 4), new Mark("C#", 6)]),
+        	new Student("Svetlin", "Nakov", [new Mark("Unit Testing", 5), new Mark("WPF", 6)]),
+        	new Student("Asya", "Georgieva", [new Mark("Automation Testing", 6), new Mark("Manual Testing", 4)]),
+            new Student("Asen", "Georgiev", [new Mark("Automation Testing", 6)]),
+        	new Student("Georgi", "Georgiev")
+        ];
+
+        var studentTemplate = document.getElementById("student-template").innerHTML;
+        var markTemplate = document.getElementById("mark-template").innerHTML;
+
+        var output ="";
+        for (var p in people) {
+            output += Mustache.render(studentTemplate, people[p]);
+            output += Mustache.render(markTemplate, people[p]);
+
+        }
+
+
+        document.getElementById("content").innerHTML = output;
+
+        $(".student").bind("click", function () {
+            var nextElement = $(this).next();
+            if(nextElement.hasClass("mark")){
+                nextElement.toggle();
+            }
+        });
+
     </script>
 </body>
 </html>

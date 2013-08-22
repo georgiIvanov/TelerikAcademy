@@ -76,6 +76,27 @@ namespace Students.Services.Controllers
                     LastName = "Marinov",
                     
                 },
+                 new StudentModel()
+                {
+                    FirstName = "Minko",
+                    LastName = "Donchov",
+                    Marks =  new MarkModel[] {
+                        new MarkModel()
+                        {
+                            Subject = "Math",
+                            Score = 5.9
+                        }, new MarkModel()
+                        {
+                            Subject = "BG",
+                            Score = 3
+                        },
+                        new MarkModel()
+                        {
+                            Subject = "JavaScript",
+                            Score = 6
+                        },
+                    }
+                }
             };
 
             var responce = Request.CreateResponse(HttpStatusCode.OK, students, "application/json");

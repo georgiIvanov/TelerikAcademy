@@ -65,6 +65,7 @@
     <Content Include="Scripts\jquery-2.0.3.min.js" />
     <Content Include="Scripts\mustache.js" />
     <Content Include="Scripts\TableView.js" />
+    <Content Include="style.css" />
     <Content Include="Web.config" />
     <Content Include="Scripts\jquery-2.0.3.min.map" />
   </ItemGroup>

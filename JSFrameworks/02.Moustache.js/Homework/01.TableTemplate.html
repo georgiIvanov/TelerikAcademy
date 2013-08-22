@@ -48,18 +48,22 @@
         });
 
         var people;
+
+        function RenderData(data) {
+            people = data;
+            var personTemplate = Mustache.compile(document.getElementById("table-template").innerHTML);
+
+            var tableView = controls.getTableView(people);
+
+            var tableViewHtml = tableView.render(personTemplate);
+
+            document.getElementById("content").innerHTML = tableViewHtml;
+        };
+
+        
         $.ajax({
             url: "http://localhost:35339/api/students",
-            success: function (data) {
-                people = data;
-                var personTemplate = Mustache.compile(document.getElementById("table-template").innerHTML);
-
-                var tableView = controls.getTableView(people);
-
-                var tableViewHtml = tableView.render(personTemplate);
-
-                document.getElementById("content").innerHTML = tableViewHtml;
-            }
+            success: RenderData
         });
 
     </script>

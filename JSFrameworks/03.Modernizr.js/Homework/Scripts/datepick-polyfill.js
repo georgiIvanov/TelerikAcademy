@@ -2,15 +2,10 @@
 
 var datePickerFallback = (function () {
     function fallback() {
-        //var wrapper = document.getElementById("dateTimePicker");
-
-        //var image = document.createElement("img");
-        //image.src = "../Scripts/sadpanda.jpg"
         $(function () {
             $("#dateTimePicker").datepicker();
         });
         
-        //wrapper.appendChild(image);
     }
 
     return {

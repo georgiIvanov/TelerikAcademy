@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework", "Homework\Homework.csproj", "{DB2A6D5C-E04F-4912-9E09-09B111CF4D82}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Students.Services", "Students.Services\Students.Services.csproj", "{C3C5A4ED-2BF9-4F72-911D-DB0607EF18DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{DB2A6D5C-E04F-4912-9E09-09B111CF4D82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB2A6D5C-E04F-4912-9E09-09B111CF4D82}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB2A6D5C-E04F-4912-9E09-09B111CF4D82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3C5A4ED-2BF9-4F72-911D-DB0607EF18DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3C5A4ED-2BF9-4F72-911D-DB0607EF18DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3C5A4ED-2BF9-4F72-911D-DB0607EF18DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3C5A4ED-2BF9-4F72-911D-DB0607EF18DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -5,6 +5,7 @@
     <script src="Scripts/mustache.js"></script>
     <script src="Scripts/class.js"></script>
     <script src="Scripts/TableView.js"></script>
+    <script src="Scripts/jquery-2.0.3.js"></script>
     <style>
         td 
         {
@@ -46,24 +47,20 @@
             }
         });
 
-        var people = [
-			new Student("Doncho", "Minkov", [new Mark("Math", 4), new Mark("JavaScript", 6)]),
-			new Student("Nikolay", "Kostov", [new Mark("MVC", 6), new Mark("JavaScript", 5), new Mark("C++", 4)]),
-			new Student("Ivaylo", "Kendov", [new Mark("OOP", 4), new Mark("C#", 6)]),
-			new Student("Svetlin", "Nakov", [new Mark("Unit Testing", 5), new Mark("WPF", 6)]),
-			new Student("Asya", "Georgieva", [new Mark("Automation Testing", 6), new Mark("Manual Testing", 4)]),
-            new Student("Asen", "Georgiev", [new Mark("Automation Testing", 6)]),
-			new Student("Georgi", "Georgiev")
-        ];
+        var people;
+        $.ajax({
+            url: "http://localhost:35339/api/students",
+            success: function (data) {
+                people = data;
+                var personTemplate = Mustache.compile(document.getElementById("table-template").innerHTML);
 
-        var personTemplate = Mustache.compile(document.getElementById("table-template").innerHTML);
+                var tableView = controls.getTableView(people);
 
-        var tableView = controls.getTableView(people);
+                var tableViewHtml = tableView.render(personTemplate);
 
-        var tableViewHtml = tableView.render(personTemplate);
-
-        document.getElementById("content").innerHTML = tableViewHtml;
-        
+                document.getElementById("content").innerHTML = tableViewHtml;
+            }
+        });
 
     </script>
 </body>

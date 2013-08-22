@@ -58,10 +58,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="01.TableTemplate.html" />
+    <Content Include="02.StudentDetails.html" />
     <Content Include="Scripts\class.js" />
+    <None Include="Scripts\jquery-2.0.3.intellisense.js" />
+    <Content Include="Scripts\jquery-2.0.3.js" />
+    <Content Include="Scripts\jquery-2.0.3.min.js" />
     <Content Include="Scripts\mustache.js" />
     <Content Include="Scripts\TableView.js" />
     <Content Include="Web.config" />
+    <Content Include="Scripts\jquery-2.0.3.min.map" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />

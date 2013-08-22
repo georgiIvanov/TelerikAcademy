@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/modernizr-2.6.2.js"></script>
+    <script src="Scripts/jquery-2.0.3.js"></script>
+    <style>
+        div {
+            margin: 15px;
+            font-family:'Segoe UI', Arial;
+            font-weight:600;
+        }
+    </style>
+</head>
+<body>
+    <div id="content"></div>
+
+    <script type='text/javascript'>
+        $(function ($) {
+            var target = $('#content');
+
+            var traverse = function (object, prefix) {
+                prefix = prefix ? prefix + '.' : '';
+
+                for (property in object) {
+                    if (typeof object[property] == 'object') {
+                        traverse(object[property], prefix + property);
+                    } else if (typeof object[property] == 'boolean') {
+                        var el = document.createElement('div');
+                        var div = $(el);
+                        var name = prefix + property + " -> ",
+                            value = object[property] ? 'Yes' : 'Nope';
+
+                        target.append(div.append(name).append(value));
+                    }
+                }
+            };
+
+            traverse(Modernizr, 'Modernizr');
+        });
+
+        //]]>  
+
+    </script>
+
+</body>
+</html>

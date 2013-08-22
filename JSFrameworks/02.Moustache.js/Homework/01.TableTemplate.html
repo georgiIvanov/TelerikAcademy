@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/mustache.js"></script>
+    <script src="Scripts/class.js"></script>
+    <script src="Scripts/TableView.js"></script>
+    <style>
+        td 
+        {
+            padding: 10px;
+            background-color: rgba(235, 42, 42, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        
+    </div>
+
+    <script type="x-table-template" id="table-template">
+            <td>{{fullname}}</td>
+            {{#marks}}
+            <td>{{subject}}: <strong>{{score}}</strong></td>
+            {{/marks}}
+            {{^marks}}
+            <td>No marks yet.</td>
+            {{/marks}}
+    </script>
+    <script>
+        var Student = Class.create({
+            init: function (fname, lname, marks) {
+                this.fname = fname;
+                this.lname = lname
+                this.marks = marks;
+            },
+            fullname: function () {
+                return this.fname + " " + this.lname;
+            }
+        });
+
+        var Mark = Class.create({
+            init: function (subject, score) {
+                this.subject = subject;
+                this.score = score;
+            }
+        });
+
+        var people = [
+			new Student("Doncho", "Minkov", [new Mark("Math", 4), new Mark("JavaScript", 6)]),
+			new Student("Nikolay", "Kostov", [new Mark("MVC", 6), new Mark("JavaScript", 5), new Mark("C++", 4)]),
+			new Student("Ivaylo", "Kendov", [new Mark("OOP", 4), new Mark("C#", 6)]),
+			new Student("Svetlin", "Nakov", [new Mark("Unit Testing", 5), new Mark("WPF", 6)]),
+			new Student("Asya", "Georgieva", [new Mark("Automation Testing", 6), new Mark("Manual Testing", 4)]),
+            new Student("Asen", "Georgiev", [new Mark("Automation Testing", 6)]),
+			new Student("Georgi", "Georgiev")
+        ];
+
+        var personTemplate = Mustache.compile(document.getElementById("table-template").innerHTML);
+
+        var tableView = controls.getTableView(people);
+
+        var tableViewHtml = tableView.render(personTemplate);
+
+        document.getElementById("content").innerHTML = tableViewHtml;
+        
+
+    </script>
+</body>
+</html>

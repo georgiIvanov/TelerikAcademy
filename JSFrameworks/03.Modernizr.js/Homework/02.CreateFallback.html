@@ -2,14 +2,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
-    <script src="../Scripts/modernizr-2.6.2.js"></script>
     <script src="../Scripts/jquery-2.0.3.js"></script>
-    
+    <script src="../Scripts/modernizr-2.6.2.js"></script>
+    <script src="Scripts/excanvas.js"></script>
+
 </head>
 <body>
     <div id="content">
-
     </div>
+
+    <div>
+        <canvas id="canvas"></canvas>
+    </div>
+
+    <div id="localstorage"></div>
+
     <script>
         Modernizr.load({
             test: Modernizr.geolocation,
@@ -17,9 +24,18 @@
             nope: 'Scripts/geo-polyfill.js'
         });
 
-        
-        
-        
+        Modernizr.load({
+            test: Modernizr.canvas,
+            yep: 'Scripts/canvas.js',
+            nope: ['Scripts/excanvas.js', 'Scripts/canvas-polyfill.js']
+            });
+
+        Modernizr.load({
+            test: Modernizr.localstorage,
+            yep: "Scripts/localstorage.js",
+            nope: "Scripts/localstorage-polyfill.js"
+        });
+
     </script>
 </body>
 </html>

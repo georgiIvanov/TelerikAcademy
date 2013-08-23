@@ -4,13 +4,17 @@ var geolocatorFallback = (function () {
         var image = document.createElement("img");
         image.src = "../Scripts/sadpanda.jpg"
 
+       
+
         var wrapper = document.getElementById("content");
         wrapper.appendChild(image);
     }
 
+   
     return {
         fallback: fallback
     }
 })();
 
 geolocatorFallback.fallback();
+

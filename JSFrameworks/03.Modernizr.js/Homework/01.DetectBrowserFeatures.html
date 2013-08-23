@@ -4,6 +4,7 @@
     <title></title>
     <script src="Scripts/modernizr-2.6.2.js"></script>
     <script src="Scripts/jquery-2.0.3.js"></script>
+    <script src="Scripts/ua-parser.js"></script>
     <style>
         div {
             margin: 15px;
@@ -18,6 +19,14 @@
     <script type='text/javascript'>
         $(function ($) {
             var target = $('#content');
+
+            var parser = new UAParser();
+            var result = parser.getResult();
+            var browserInfo = result.browser;
+
+            var browser = document.createElement("div");
+            browser.innerHTML = "Browser: " + browserInfo.name + "<br/> Version: " + browserInfo.version + " Major: " + browserInfo.major + "<br/><br/>";
+            target.append(browser);
 
             var traverse = function (object, prefix) {
                 prefix = prefix ? prefix + '.' : '';

@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/libs/require.js" data-main="Scripts/app-config"></script>
+    <style>
+        .studentContainer {
+            margin:30px;
+        }
+        .student {
+            margin:10px;
+        }
+        .marksContainer {
+            margin:30px;
+        }
+    </style>
+</head>
+
+<body>
+    <script type="x-mustache-template" id="student-template">
+        <div class="student" data-id="{{id}}">
+          Name: {{name}}, Grade: {{grade}}
+        </div>
+    </script>
+    <script type="x-mustache-template" id="mark-template">
+        <p>
+            <strong>{{subject}}</strong> {{value}}
+        </p>
+    </script>
+    <div id="container">
+
+    </div>
+    <div class="marksContainer" style="display:none">
+        <p>a</p>
+    </div>
+</body>
+</html>

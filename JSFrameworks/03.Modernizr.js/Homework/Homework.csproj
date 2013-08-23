@@ -129,6 +129,7 @@
     <Content Include="Scripts\excanvas.js" />
     <Content Include="Scripts\geo-polyfill.js" />
     <Content Include="Scripts\geo.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-2.0.3.js" />
     <Content Include="Scripts\jquery-2.0.3.min.js" />
     <Content Include="Scripts\jquery-ui-1.10.3.js" />

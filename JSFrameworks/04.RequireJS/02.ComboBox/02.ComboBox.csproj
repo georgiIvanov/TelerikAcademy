@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{0B2A3E6A-0D78-478C-83D7-82F9A54F365B}</ProjectGuid>
+    <ProjectGuid>{017A1735-A770-4F9F-BB14-07603E0000E5}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_01.ClientApp</RootNamespace>
-    <AssemblyName>01.ClientApp</AssemblyName>
+    <RootNamespace>_02.ComboBox</RootNamespace>
+    <AssemblyName>02.ComboBox</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -62,14 +62,11 @@
     <None Include="Scripts\libs\jquery-2.0.3.intellisense.js" />
     <Content Include="Scripts\app-config.js" />
     <Content Include="Scripts\app\controller.js" />
-    <Content Include="Scripts\app\data-persister.js" />
     <Content Include="Scripts\libs\class.js" />
-    <Content Include="Scripts\libs\http-requester.js" />
     <Content Include="Scripts\libs\jquery-2.0.3.js" />
     <Content Include="Scripts\libs\jquery-2.0.3.min.js" />
-    <Content Include="Scripts\libs\mustache.js" />
-    <Content Include="Scripts\libs\rsvp.js" />
     <Content Include="Scripts\libs\require.js" />
+    <Content Include="Scripts\libs\mustache.js" />
     <Content Include="Web.config" />
     <Content Include="Scripts\libs\jquery-2.0.3.min.map" />
   </ItemGroup>
@@ -84,7 +81,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Images\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -100,7 +99,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:3517/</IISUrl>
+          <IISUrl>http://localhost:54435/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

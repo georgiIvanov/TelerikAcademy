@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8aa583b1029f426ba627426db3668cde" Name="Diagram1">
+        <EntityTypeShape EntityType="BattleGameModel.Game" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BattleGameModel.MessageState" Width="1.5" PointX="6" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BattleGameModel.Mode" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BattleGameModel.Score" Width="1.5" PointX="3" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BattleGameModel.Status" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BattleGameModel.Unit" Width="1.5" PointX="5.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BattleGameModel.UnitType" Width="1.5" PointX="3" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BattleGameModel.UserMessage" Width="1.5" PointX="8.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BattleGameModel.UserMessagesType" Width="1.5" PointX="6" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BattleGameModel.User" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <AssociationConnector Association="BattleGameModel.FK_Games_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="BattleGameModel.FK_Games_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="BattleGameModel.FK_Games_2_0" ManuallyRouted="false" />
+        <AssociationConnector Association="BattleGameModel.FK_Units_2_0" ManuallyRouted="false" />
+        <AssociationConnector Association="BattleGameModel.FK_UserMessages_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="BattleGameModel.FK_UserMessages_2_0" ManuallyRouted="false" />
+        <AssociationConnector Association="BattleGameModel.FK_Units_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="BattleGameModel.FK_Scores_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="BattleGameModel.FK_Units_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="BattleGameModel.FK_Units_3_0" ManuallyRouted="false" />
+        <AssociationConnector Association="BattleGameModel.FK_UserMessages_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="BattleGameModel.FK_UserMessages_3_0" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

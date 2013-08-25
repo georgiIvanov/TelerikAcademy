@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/libs/require.js" data-main="Scripts/app-config.js"></script>
+</head>
+<body>
+    <div id="test"></div>
+    <div id="wrapper">
+    </div>
+    <script type="x-mustache-login" id="loginOrRegister">
+        <a href="#/login" id="loginForm">Login</a>
+        <br/>
+        <a href="#/register" id="registerForm">Register</a>
+    </script>
+    <script type="x-mustache-login" id="login-template">
+        <form>
+            <label for="tb-login-username">Username: </label>
+            <input type="text" id="tb-login-username">
+            <label for="tb-login-password">Password: </label>
+            <input type="text" id="tb-login-password">
+            <button id="btn-login">login</button><br/>
+        </form>
+    </script>
+    <script type="x-mustache-register" id="register-template">
+        <form>
+            <label for="tb-register-username">Username: </label>
+            <input type="text" id="tb-register-username">
+            <label for="tb-register-nickname">Nickname: </label>
+            <input type="text" id="tb-register-nickname">
+            <label for="tb-register-password">Password: </label>
+            <input type="text" id="tb-register-password">
+
+            <button id="btn-register">register</button>
+        </form>
+    </script>
+</body>
+</html>

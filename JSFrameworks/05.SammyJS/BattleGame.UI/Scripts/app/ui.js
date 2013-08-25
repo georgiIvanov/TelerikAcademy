@@ -6,11 +6,11 @@
         function buildGameUI(persister) {
             myNickname = persister.nickname();
             this.persister = persister;
-
+            
             var uiHTML = '<span id="user-nickname">' +
                         myNickname +
                     '</span>' +
-                    '<button id="btn-logout">Logout</button>' +
+                    '<br/>'+'<a href="#/" id="btn-logout">Logout</a>'+
                     '<br/>Title: <input type="text" id="tb-create-title" />' +
                     'Password: <input type="text" id="tb-create-password" />' +
                     '<button id="btn-create-game">Create</button>' +

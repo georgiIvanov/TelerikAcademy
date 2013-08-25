@@ -25,7 +25,7 @@ require(["jquery", "mustache", "underscore", "sammy", "class", "sha1", "persiste
 
     var controller;
 
-    var app = sammy("#main", function () {
+    var app = sammy("#wrapper", function () {
 
         this.get("#/", function () {
             //this.redirect("#/login");
@@ -36,14 +36,18 @@ require(["jquery", "mustache", "underscore", "sammy", "class", "sha1", "persiste
         });
 
         this.get("#/login", function () {
-            alert("in login");
+
             //this.redirect("#/");
         });
         
         
-
+        var FU = 4;
         this.get("#/register", function () {
+            alert("r");
+        });
 
+        this.get("#/join-game", function () {
+            alert("j");
         });
         
     });

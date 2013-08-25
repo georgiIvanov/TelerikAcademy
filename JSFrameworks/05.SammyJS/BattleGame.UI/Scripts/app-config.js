@@ -41,9 +41,8 @@ require(["jquery", "mustache", "underscore", "sammy", "class", "sha1", "persiste
         });
         
         
-        var FU = 4;
         this.get("#/register", function () {
-            alert("r");
+
         });
 
         this.get("#/join-game", function () {

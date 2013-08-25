@@ -1,44 +1,21 @@
-﻿define(function () {
+﻿define(["mustache"], function (mustache) {
     var ui = (function () {
         var myNickname;
         var persister;
 
         function buildGameUI(persister) {
-            myNickname = persister.nickname();
             this.persister = persister;
+            var user ={
+                nickname: persister.nickname()
+            };
             
-            var uiHTML = '<span id="user-nickname">' +
-                        myNickname +
-                    '</span>' +
-                    '<br/>'+'<a href="#/" id="btn-logout">Logout</a>'+
-                    '<br/>Title: <input type="text" id="tb-create-title" />' +
-                    'Password: <input type="text" id="tb-create-password" />' +
-                    '<button id="btn-create-game">Create</button>' +
-                    '<h2>Open</h2>' +
-                    '<div id="open-games-container"></div>' +
-                    '<h2>Active</h2>' +
-                    '<div id="active-games-container"></div>';
-            uiHTML += '<div id="messagesWrapper">' +
-            '<button id="btn-all-messages">Get All</button> <-(Try refreshing the page if messages dont appear<br/>' +
-            'Unread messages appear after user clicks on a game in progress)' +
-            '<p>Messages:</p>' +
-            '<div id="messages">' +
-            '</div>' +
-            '</div>';
-            return uiHTML;
+            var rendered = mustache.render(document.getElementById("userMenuTemplate").innerHTML, user);
+            return rendered;
         }
 
         function buildOpenGamesList(games) {
-            var list = "<ul>";
 
-            for (var i = 0; i < games.length; i++) {
-                var game = games[i];
-                list += '<li data-game-id="' + game.id + '">' +
-                    '<a href="#">' +
-                        $("<div />").html(game.title).text() +
-                    '</a>' + " -> " + game.creator + '</li>';
-            }
-            list += "</ul>";
+            var list = mustache.render(document.getElementById("gamesListTemplate").innerHTML, games);
             return list;
         }
 

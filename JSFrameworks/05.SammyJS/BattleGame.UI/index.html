@@ -8,6 +8,43 @@
     <div id="test"></div>
     <div id="wrapper">
     </div>
+    <script type="x-mustache" id="gamesListTemplate">
+        <ul id="gamesList">
+            {{#games}}
+            <li data-game-id="{{id}}">
+            <a href="#">
+            {{title}}   
+            </a>
+            -> {{creator}}
+            {{/games}}
+            {{^games}}
+                No games.
+            {{/games}}
+        </ul>
+    </script>
+    <script type="x-mustache" id="userMenuTemplate">
+        <span id="user-nickname">
+            {{nickname}}
+        </span>
+        <br/>
+        <a href="#/" id="btn-logout">Logout</a>
+        <div id="create-game">
+            Title: <input type="text" id="tb-create-title" />
+            Password: <input type="text" id="tb-create-password" />
+            <button id="btn-create-game">Create</button>
+        </div>
+        <h2>Open</h2>
+        <div id="open-games-container"></div>
+        <h2>Active</h2>
+        <div id="active-games-container"></div>
+        <div id="messagesWrapper">
+            <button id="btn-all-messages">Get All</button> <-(Try refreshing the page if messages dont appear<br/>
+        Unread messages appear after user clicks on a game in progress)
+        <p>Messages:</p>
+        <div id="messages">
+        </div>
+        </div>
+    </script>
     <script type="x-mustache-login" id="loginOrRegister">
         <a href="#/login" id="loginForm">Login</a>
         <br/>

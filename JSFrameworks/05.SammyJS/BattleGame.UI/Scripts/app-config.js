@@ -21,14 +21,14 @@ require.config({
     }
 });
 
-require(["jquery", "mustache", "underscore", "sammy", "class", "sha1", "persisters", "controller"], function ($, mustache, underscore, sammy, Class, sha1, persisters, controllers) {
+require(["jquery", "mustache", "underscore", "sammy", "class", "sha1", "persisters", "controller", "ui"], function ($, mustache, underscore, sammy, Class, sha1, persisters, controllers, ui) {
 
     var controller;
 
     var app = sammy("#wrapper", function () {
 
         this.get("#/", function () {
-            //this.redirect("#/login");
+
             controller = controllers.get();
             $(document).ready(function () {
                 controller.loadUI("#wrapper");
@@ -37,7 +37,6 @@ require(["jquery", "mustache", "underscore", "sammy", "class", "sha1", "persiste
 
         this.get("#/login", function () {
 
-            //this.redirect("#/");
         });
         
         
@@ -46,7 +45,29 @@ require(["jquery", "mustache", "underscore", "sammy", "class", "sha1", "persiste
         });
 
         this.get("#/join-game", function () {
-            alert("j");
+            controller.persister.game.open(function (games) {
+
+                var foundGames = {};
+                foundGames.games = games;
+
+                var list = ui.openGamesList(foundGames);
+                $(controller.selector + " #open-games-container").html(list);
+            }, function (err) {
+                //alert(err.responseText);
+            });
+        });
+
+        this.get("#/my-games", function () {
+            controller.persister.game.myActive(function (games) {
+                var list = ui.activeGamesList(games);
+                $(controller.selector + " #active-games-container").html(list);
+            }, function (err) {
+                //alert(err.responseText);
+            });
+        });
+
+        this.get("#/battle-in-game", function () {
+
         });
         
     });

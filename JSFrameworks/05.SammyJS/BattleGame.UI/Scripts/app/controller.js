@@ -13,10 +13,11 @@ define(["class", "jquery", "mustache", "persisters", "sammy", "ui"], function (C
         var Controller = Class.create({
             init: function () {
                 this.persister = persisters.get(rootUrl);
-
+                this.selector = "";
             },
             loadUI:
                 function (selector) {
+                    this.selector = selector;
                     if (this.persister.isUserLoggedIn()) {
                         this.loadGameUI(selector);
                     }
@@ -46,30 +47,11 @@ define(["class", "jquery", "mustache", "persisters", "sammy", "ui"], function (C
                         //alert(err.responseText);
                     });
 
-                    this.persister.game.open(function (games) {
-
-                        var foundGames = {};
-                        foundGames.games = games;
-
-                        var list = ui.openGamesList(foundGames);
-                        $(selector + " #open-games-container").html(list);
-                    }, function (err) {
-                        //alert(err.responseText);
-                    });
-
-                    this.persister.game.myActive(function (games) {
-                        var list = ui.activeGamesList(games);
-                        $(selector + " #active-games-container").html(list);
-                    }, function (err) {
-                        //alert(err.responseText);
-                    });
+                    
                 },
             attachUIEventHandlers: function (selector) {
                 var wrapper = $(selector);
                 var self = this;
-
-
-
 
                 wrapper.on("click", "#loginForm", function () {
                     var loginForm = mustache.render($("#login-template")[0].innerHTML, "");

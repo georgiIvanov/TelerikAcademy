@@ -8,6 +8,7 @@
             var user ={
                 nickname: persister.nickname()
             };
+            myNickname = user.nickname;
             
             var rendered = mustache.render(document.getElementById("userMenuTemplate").innerHTML, user);
             return rendered;
@@ -24,7 +25,7 @@
 
             for (var i = 0; i < games.length; i++) {
                 var game = games[i];
-                list += '<li data-game-id="' + game.id + '" data-game-status="' + game.status + '"><a href="#">'
+                list += '<li data-game-id="' + game.id + '" data-game-status="' + game.status + '"><a href="#/battle-in-game">'
                     + game.title + '</a>' + " -> id - " +
                     game.id + " status - " + game.status +
                     ', creator - ' + game.creator;

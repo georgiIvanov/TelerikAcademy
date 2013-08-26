@@ -119,7 +119,7 @@ define(["class", "http-requester", "sha1"], function (Class, httpRequester, Cryp
             },
             start: function (gameId, success, error) {
                 var url = this.rootUrl + gameId.id + "/start/" + sessionkey;
-                httpRequester.getJSON(url, success, error);
+                httpRequester.putJSON(url, success, error);
             },
             myActive: function (success, error) {
                 var url = this.rootUrl + "my-active/" + sessionkey;

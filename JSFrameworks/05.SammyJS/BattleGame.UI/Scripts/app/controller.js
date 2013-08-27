@@ -96,6 +96,7 @@ define(["class", "jquery", "mustache", "persisters", "sammy", "ui"], function (C
                     self.persister.user.logout(function () {
                         self.loadUI(selector);
                     }, function (err) {
+                        self.persister.clearUserData();
                     });
                 });
 

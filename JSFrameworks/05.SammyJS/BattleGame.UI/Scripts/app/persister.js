@@ -30,6 +30,7 @@ define(["class", "http-requester", "sha1"], function (Class, httpRequester, Cryp
                 this.game = new GamePersister(this.rootUrl);
                 this.battle = new BattlePersister(this.rootUrl);
                 this.messages = new MessagesPersister(this.rootUrl);
+                this.clearUserData = clearUserData;
             },
             isUserLoggedIn: function () {
                 nickname = localStorage["nickname"];
@@ -81,6 +82,7 @@ define(["class", "http-requester", "sha1"], function (Class, httpRequester, Cryp
                     clearUserData();
                     success();
                 }, function () {
+                    error();
                 });
             },
             scores: function (success, error) {

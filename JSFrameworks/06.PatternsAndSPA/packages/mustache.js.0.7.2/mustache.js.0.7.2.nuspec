@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>mustache.js</id>
+    <version>0.7.2</version>
+    <title>mustache.js</title>
+    <authors>Jan Lehnardt</authors>
+    <owners>Jan Lehnardt</owners>
+    <licenseUrl>https://github.com/janl/mustache.js/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/janl/mustache.js</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Logic-less templates in JavaScript.</description>
+    <summary>For more information, see
+https://github.com/janl/mustache.js
+http://mustache.github.com/</summary>
+    <releaseNotes />
+    <copyright />
+    <language>en-US</language>
+    <tags>mustache template templates javascript</tags>
+  </metadata>
+</package>

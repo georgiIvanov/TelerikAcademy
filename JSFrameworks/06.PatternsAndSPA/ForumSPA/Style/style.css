@@ -22,3 +22,8 @@
     border-top:1px solid black;
     margin:20px;
 }
+
+.leave-comment-button {
+    float:right;
+    margin: -10px 10px -10px 10px;
+}

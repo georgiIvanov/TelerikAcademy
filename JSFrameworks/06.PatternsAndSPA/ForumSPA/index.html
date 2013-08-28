@@ -23,8 +23,8 @@
         <a href="#/home">#/home</a>
         <a href="#/posts">#/posts   </a>
         <a href="#/posts/tags=test,more">#/posts/:tags</a>
-        <a href="#/posts/c1f5fd40-0fe8-11e3-a802-0f19d88765d1">#/posts/:id</a>
-        <a href="#/posts/cab95330-0f45-11e3-b42f-6f414efc4817/comment">post(with get verb) a comment</a>
+        <a href="#/posts/6864be40-0fef-11e3-8680-7f26e48bec8f">#/posts/:id</a>
+        <a href="#/posts/6864be40-0fef-11e3-8680-7f26e48bec8f/comment">post(with get verb) a comment</a>
     </nav>
     <div id="wrapper"></div>
 
@@ -37,6 +37,15 @@
             <p class="post-content">
                 {{Content}}
             </p>
+            <span class="post-tags">
+                {{#AllTags}}
+                    <a href="#/posts/tags={{tag}}">{{tag}}</a>
+                {{/AllTags}}
+                {{^AllTags}}
+                    No tags
+                {{/AllTags}}
+            </span>
+            <button class="leave-comment-button">Comment</button>
             </div>
             {{/result}}
         <div>
@@ -47,6 +56,8 @@
             <input type="text" id="post-title" /> <br/>
             <label for="post-content">Content: </label>
             <input type="text" id="post-content" /> <br/>
+            <label for="post-tags">Tags: </label>
+            <input type="text" id="post-tags" /> <br/>
             <button id="submit-post-button">Submit</button>
         </div>
     </script>

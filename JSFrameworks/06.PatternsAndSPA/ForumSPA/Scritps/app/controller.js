@@ -27,10 +27,48 @@ var controller = (function () {
         }
     }
 
+    function renderPostById() {
+        var tokens = window.location.href.split('/');
+
+        persister.getPostById(tokens[tokens.length - 1], function (data) {
+            createPosts(data);
+        }, function (err) {
+
+        });
+    }
+
+    function createPosts(data) {
+        if (data.result.length !== void 0) {
+            for (var i = 0; i < data.result.length; i++) {
+                if (data.result[i].AllTags !== void 0) {
+                    var splitTags = data.result[i].AllTags.split(' ');
+                    data.result[i].AllTags = [];
+                    for (var j = 0; j < splitTags.length; j++) {
+                        data.result[i].AllTags.push({
+                            tag: splitTags[j]
+                        });
+                    }
+                }
+            }
+        }
+        else {
+            if (data.result.AllTags !== void 0) {
+                var splitTags = data.result.AllTags.split(' ');
+                data.result.AllTags = [];
+                for (var j = 0; j < splitTags.length; j++) {
+                    data.result.AllTags.push({
+                        tag: splitTags[j]
+                    });
+                }
+            }
+        }
+        var postsTemplate = Mustache.render($("#posts-template").html(), data);
+        $(wrapperId).html(postsTemplate);
+    }
+
     function renderPosts() {
         persister.getPosts(function (data) {
-            var postsTemplate = Mustache.render($("#posts-template").html(), data);
-            $(wrapperId).html(postsTemplate);
+            createPosts(data);
         }, function (err) {
         });
     }
@@ -94,9 +132,11 @@ var controller = (function () {
         wrapper.on("click", "#submit-post-button", function () {
             var title = $('#post-title').val();
             var content = $('#post-content').val();
-            persister.submitPost(title, content, function (data) {
+            var tags = $("#post-tags").val().split(' ', 10);
+            persister.submitPost(title, content, tags, function (data) {
                 $('#post-title').val("");
                 $('#post-content').val("");
+                $("#post-tags").val("");
             }, function (err) {
                 alert(err);
             });
@@ -107,5 +147,6 @@ var controller = (function () {
         renderHomePage: renderHomePage,
         renderPosts: renderPosts,
         registerEvents: registerEvents,
+        renderPostById: renderPostById
     };
 })();

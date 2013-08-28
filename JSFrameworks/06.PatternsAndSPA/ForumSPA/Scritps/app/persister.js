@@ -72,7 +72,7 @@ var persister = (function () {
         });
     }
 
-    function submitPost(title, content, success, fail) {
+    function submitPost(title, content, tags, success, fail) {
         var data = Everlive.$.data('Post');
         assignTokenIfMissing();
 
@@ -80,7 +80,8 @@ var persister = (function () {
             'Title': title,
             'Content': content,
             'CreatedBy': principal_id,
-            'PostedBy': nickname
+            'PostedBy': nickname,
+            'AllTags': tags.join(' ')
         }, function (data) {
             success(data);
         }, function (err) {
@@ -106,6 +107,18 @@ var persister = (function () {
         });
     }
 
+    function getPostById(id, success, fail) {
+        var data = Everlive.$.data('Post');
+        assignTokenIfMissing();
+
+        data.getById(id)
+        .then(function (data) {
+            success(data);
+        }, function (err) {
+            fail(err);
+        });
+    }
+
     return {
         isUserLoggedIn: isUserLoggedIn,
         loginUser: loginUser,
@@ -113,6 +126,7 @@ var persister = (function () {
         clearUserData: clearUserData,
         registerUser: registerUser,
         submitPost: submitPost,
-        getPosts: getPosts
+        getPosts: getPosts,
+        getPostById: getPostById
     }
 })();

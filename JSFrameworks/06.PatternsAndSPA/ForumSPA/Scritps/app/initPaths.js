@@ -38,14 +38,12 @@
         });
 
         this.get("#/posts/:id", function () {
-            $("#wrapper").append("posts by id <br/>   ");
             controller.renderPostById();
 
         });
 
         this.get("#/posts/:id/comment", function (data) {
-
-            $("#wrapper").append("post a comment<br/>   ");
+            controller.renderSubmitComment();
         });
 
     });

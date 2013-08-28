@@ -6,14 +6,15 @@
 /// <reference path="../everlive-SDK/rsvp.js" />
 /// <reference path="persister.js" />
 /// <reference path="../everlive-SDK/underscore.js" />
+/// <reference path="../libs/jquery-2.0.3.js" />
 
 var persister = (function () {
     var nickname = localStorage.getItem("nickname");
     var sessionkey = localStorage.getItem("sessionkey");
     var principal_id = localStorage.getItem("principal_id");
-
-    var el = new Everlive('DcCELJaGutj8x1f5');
-
+    var appKey = 'DcCELJaGutj8x1f5';
+    var el = new Everlive(appKey);
+    
     function assignTokenIfMissing() {
         if (el.setup.token == null) {
             el.setup.token = sessionkey;
@@ -39,6 +40,9 @@ var persister = (function () {
         nickname = "";
         sessionkey = "";
         principal_id = "";
+        el.Users.logout(function (data) {
+        }, function (err) {
+        });
     }
 
     function isUserLoggedIn() {
@@ -87,8 +91,21 @@ var persister = (function () {
         }, function (err) {
             fail(err);
         });
+    }
 
-        
+    function submitComment(postId, content, success, fail) {
+        var data = Everlive.$.data('Comment');
+        assignTokenIfMissing();
+
+        data.create({
+            'CommentBy': nickname,
+            'OnPost': postId,
+            'Content': content
+        }, function (data) {
+            success(data);
+        }, function (err) {
+            fail(err);
+        });
     }
 
     function getPosts(success, fail) {
@@ -104,6 +121,32 @@ var persister = (function () {
         },
         function (err) {
             fail(err);
+        });
+    }
+
+    function getComments(postId, success, fail) {
+        var powerFieldsExp = {
+            "Comments": {
+                "queryType": "get",
+                "filter": { "OnPost": postId },
+                "contentType": "Comment",
+                
+            }
+        };
+
+        $.ajax({
+            url: "https://api.everlive.com/v1/" + el.setup.apiKey + "/Comment",
+            type: "GET",
+            headers: {
+                "Authorization": "Bearer " + el.setup.token,
+                "X-Everlive-Power-Fields": JSON.stringify(powerFieldsExp)
+            },
+            success: function (data) {
+                success(data);
+            },
+            error: function (err) {
+                fail(err);
+            }
         });
     }
 
@@ -142,6 +185,8 @@ var persister = (function () {
         submitPost: submitPost,
         getPosts: getPosts,
         getPostById: getPostById,
-        searchByTags: searchByTags
+        searchByTags: searchByTags,
+        submitComment: submitComment,
+        getComments: getComments
     }
 })();

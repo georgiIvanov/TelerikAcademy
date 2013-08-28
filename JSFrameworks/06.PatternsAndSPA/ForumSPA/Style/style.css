@@ -23,7 +23,22 @@
     margin:20px;
 }
 
-.leave-comment-button {
+.comment-buttons {
     float:right;
     margin: -10px 10px -10px 10px;
+}
+
+.show-comments {
+    margin:0px 0px 0px 100px;
+}
+
+#submit-comment-text {
+    position:relative;
+    left:30%;
+}
+
+#submit-comment-button {
+    display:block;
+    position:relative;
+    left:40%;
 }

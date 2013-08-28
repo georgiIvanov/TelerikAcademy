@@ -27,7 +27,30 @@
         <a href="#/posts/6864be40-0fef-11e3-8680-7f26e48bec8f/comment">post(with get verb) a comment</a>
     </nav>
     <div id="wrapper"></div>
+    
+    <script type="x-mustache" id="comments-template">
+        <div class="comments-for-post">
+            {{#Result}}
+                <div class="comment">
+                    <strong>{{CommentBy}}</strong>, Created At {{CreatedAt}}
+                    <p class="comment-content">
+                        {{Content}}
+                    </p>
+                </div>
+            {{/Result}}
+            {{^Result}}
+                No comments yet.
+            {{/Result}}
+        </div>
+    </script>
+    <script type="x-mustache" id="submit-comment-template">
+        <div id="submit-comment" class="post">
+            <textarea id="submit-comment-text">
 
+            </textarea>
+            <button id="submit-comment-button">Submit</button>
+        </div>
+    </script>
     <script type="x-mustache" id="posts-template">
         <div id="posts">
             {{#result}}
@@ -45,7 +68,12 @@
                     No tags
                 {{/ArrayOfTags}}
             </span>
-            <button class="leave-comment-button">Comment</button>
+            <a class="comment-buttons show-comments-button">
+            <button>Show Comments</button>
+            </a>
+            <a href="#/posts/{{Id}}/comment" class="leave-comment-button comment-buttons">
+                <button>Comment</button>
+            </a>
             </div>
             {{/result}}
         <div>

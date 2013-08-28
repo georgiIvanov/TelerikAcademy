@@ -12,7 +12,7 @@
 
 var controller = (function () {
     var wrapperId = "#wrapper";
-
+    var commentedPost;
 
     function renderHomePage() {
         if (persister.isUserLoggedIn()) {
@@ -83,6 +83,13 @@ var controller = (function () {
         });
     }
 
+    function renderSubmitComment() {
+        var submitCommentTemp = Mustache.render($('#submit-comment-template').html());
+
+        commentedPost.after(submitCommentTemp);
+        $('#submit-comment-text').val("");
+    }
+
     function createUserMenuBar(wrapper) {
         var obj = { nickname: persister.nickname() }
         var userTemplate = Mustache.render($('#user-menubar-template').html(), obj);
@@ -99,7 +106,7 @@ var controller = (function () {
         wrapper.append(userTemplate);
     }
 
-    
+
 
     function registerEvents() {
         var self = this;
@@ -151,6 +158,36 @@ var controller = (function () {
                 alert(err);
             });
         });
+
+        wrapper.on("click", ".leave-comment-button", function () {
+            $('#submit-comment').remove();
+            commentedPost = $(this).parent();
+        });
+
+        wrapper.on("click", "#submit-comment-button", function () {
+            var postId = commentedPost.data('post-id');
+            var content = $('#submit-comment-text').val();
+            persister.submitComment(postId, content, function (data) {
+                $('#submit-comment').remove();
+            }, function (err) {
+
+            });
+        });
+
+        wrapper.on("click", ".show-comments-button", function () {
+            commentedPost = $(this).parent();
+            var postId = commentedPost.data('post-id');
+            persister.getComments(postId, function (data) {
+                if (commentedPost.next().hasClass("comments-for-post")) {
+                    commentedPost.next().remove();
+                }
+                var commentsHtml = Mustache.render($('#comments-template').html
+(), data);
+                commentedPost.after(commentsHtml);
+            }, function (err) {
+
+            });
+        });
     }
 
     return {
@@ -159,5 +196,6 @@ var controller = (function () {
         registerEvents: registerEvents,
         renderPostById: renderPostById,
         searchByTags: searchByTags,
+        renderSubmitComment: renderSubmitComment
     };
 })();

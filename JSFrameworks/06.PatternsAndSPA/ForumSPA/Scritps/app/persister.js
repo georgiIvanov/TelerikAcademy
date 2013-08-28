@@ -81,7 +81,7 @@ var persister = (function () {
             'Content': content,
             'CreatedBy': principal_id,
             'PostedBy': nickname,
-            'AllTags': tags.join(' ')
+            'ArrayOfTags': tags
         }, function (data) {
             success(data);
         }, function (err) {
@@ -119,6 +119,20 @@ var persister = (function () {
         });
     }
 
+    function searchByTags(tags, success, fail) {
+        var data = Everlive.$.data('Post');
+        assignTokenIfMissing();
+
+        var query = new Everlive.Query();
+        query.where().isin('ArrayOfTags', tags);
+        data.get(query)
+        .then(function (data) {
+            success(data);
+        }, function (err) {
+            fail(err);
+        });
+    }
+
     return {
         isUserLoggedIn: isUserLoggedIn,
         loginUser: loginUser,
@@ -127,6 +141,7 @@ var persister = (function () {
         registerUser: registerUser,
         submitPost: submitPost,
         getPosts: getPosts,
-        getPostById: getPostById
+        getPostById: getPostById,
+        searchByTags: searchByTags
     }
 })();

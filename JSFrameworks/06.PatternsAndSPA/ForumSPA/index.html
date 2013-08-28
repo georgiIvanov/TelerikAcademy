@@ -38,12 +38,12 @@
                 {{Content}}
             </p>
             <span class="post-tags">
-                {{#AllTags}}
+                {{#ArrayOfTags}}
                     <a href="#/posts/tags={{tag}}">{{tag}}</a>
-                {{/AllTags}}
-                {{^AllTags}}
+                {{/ArrayOfTags}}
+                {{^ArrayOfTags}}
                     No tags
-                {{/AllTags}}
+                {{/ArrayOfTags}}
             </span>
             <button class="leave-comment-button">Comment</button>
             </div>

@@ -37,14 +37,24 @@ var controller = (function () {
         });
     }
 
+    function searchByTags() {
+        var tokens = window.location.href.split('=')[1].split(',');
+
+        persister.searchByTags(tokens, function (data) {
+            createPosts(data);
+        }, function (err) {
+
+        });
+    }
+
     function createPosts(data) {
         if (data.result.length !== void 0) {
             for (var i = 0; i < data.result.length; i++) {
-                if (data.result[i].AllTags !== void 0) {
-                    var splitTags = data.result[i].AllTags.split(' ');
-                    data.result[i].AllTags = [];
+                if (data.result[i].ArrayOfTags !== void 0) {
+                    var splitTags = data.result[i].ArrayOfTags;
+                    data.result[i].ArrayOfTags = [];
                     for (var j = 0; j < splitTags.length; j++) {
-                        data.result[i].AllTags.push({
+                        data.result[i].ArrayOfTags.push({
                             tag: splitTags[j]
                         });
                     }
@@ -147,6 +157,7 @@ var controller = (function () {
         renderHomePage: renderHomePage,
         renderPosts: renderPosts,
         registerEvents: registerEvents,
-        renderPostById: renderPostById
+        renderPostById: renderPostById,
+        searchByTags: searchByTags,
     };
 })();

@@ -33,8 +33,8 @@
         });
 
         this.get("#/posts/tags=:tags", function () {
-            $("#wrapper").append("posts with tags <br/>   ");
-
+            
+            controller.searchByTags();
         });
 
         this.get("#/posts/:id", function () {

@@ -1,41 +1,42 @@
-﻿define(["jquery"], function ($) {
-    function getJSON(url, success, error) {
-        $.ajax({
-            url: url,
-            type: "GET",
-            timeout: 5000,
-            contentType: "application/json",
-            success: success,
-            error: error
+﻿var httpRequester = (function () {
+    function getJSON(serviceUrl) {
+        var promise = new RSVP.Promise(function (resolve, reject) {
+            jQuery.ajax({
+                url: serviceUrl,
+                type: "GET",
+                dataType: "json",
+                success: function (data) {
+                    resolve(data);
+                },
+                error: function (err) {
+                    reject(err);
+                }
+            });
         });
-    };
+        return promise;
+    }
 
-    function postJSON(url, data, success, error) {
-        $.ajax({
-            url: url,
-            type: "POST",
-            data: JSON.stringify(data),
-            timeout: 5000,
-            contentType: "application/json",
-            success: success,
-            error: error
+    function postJSON(serviceUrl, data) {
+        var promise = new RSVP.Promise(function (resolve, reject) {
+            jQuery.ajax({
+                url: serviceUrl,
+                dataType: "json",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify(data),
+                success: function (data) {
+                    resolve(data);
+                },
+                error: function (err) {
+                    reject(err);
+                }
+            });
         });
-    };
-
-    function putJSON(url, success, error) {
-        $.ajax({
-            url: url,
-            type: "PUT",
-            timeout: 5000,
-            contentType: "application/json",
-            success: success,
-            error: error
-        });
-    };
+        return promise;
+    }
 
     return {
         getJSON: getJSON,
-        postJSON: postJSON,
-        putJSON: putJSON
+        postJSON: postJSON
     }
-});
+})();

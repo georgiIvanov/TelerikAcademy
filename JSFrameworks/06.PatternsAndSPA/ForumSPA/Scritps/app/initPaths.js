@@ -3,16 +3,22 @@
 /// <reference path="../libs/sammy-0.7.4.js" />
 /// <reference path="../libs/sha1.js" />
 /// <reference path="../libs/class.js" />
+/// <reference path="controller.js" />
 /// <reference path="../libs/http-requester.js" />
+/// <reference path="persister.js" />
 
 
 (function () {
 
     function goHome() {
         $("#wrapper").append("home <br/>   ");
+        controller.renderHomePage();
+        
     };
-   
+
     var app = Sammy("#wrapper", function () {
+
+        controller.registerEvents();
         
         this.get("#/", goHome);
 

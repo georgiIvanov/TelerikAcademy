@@ -60,6 +60,15 @@
     <Content Include="index.html" />
     <Content Include="packages.config" />
     <None Include="Scritps\libs\jquery-2.0.3.intellisense.js" />
+    <Content Include="Scritps\app\controller.js" />
+    <Content Include="Scritps\app\persister.js" />
+    <Content Include="Scritps\everlive-SDK\everlive.all.js" />
+    <Content Include="Scritps\everlive-SDK\everlive.js" />
+    <Content Include="Scritps\everlive-SDK\jstz.js" />
+    <Content Include="Scritps\everlive-SDK\kendo.data.everlive.js" />
+    <Content Include="Scritps\everlive-SDK\reqwest.js" />
+    <Content Include="Scritps\everlive-SDK\rsvp.js" />
+    <Content Include="Scritps\everlive-SDK\underscore.js" />
     <Content Include="Scritps\libs\jquery-2.0.3.js" />
     <Content Include="Scritps\libs\jquery-2.0.3.min.js" />
     <Content Include="Scritps\app\initPaths.js" />

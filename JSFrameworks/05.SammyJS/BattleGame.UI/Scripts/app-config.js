@@ -25,6 +25,9 @@ require(["jquery", "mustache", "underscore", "sammy", "class", "sha1", "persiste
 
     var controller;
 
+    var arr = [1, 2, 3, ];
+    var max = _.max(arr);
+
     var app = sammy("#wrapper", function () {
 
         this.get("#/", function () {

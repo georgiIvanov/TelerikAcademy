@@ -4,9 +4,17 @@
     <script src="Scritps/libs/class.js"></script>
     <script src="Scritps/libs/jquery-2.0.3.js"></script>
     <script src="Scritps/libs/sammy-0.7.4.js"></script>
+    <script src="Scritps/libs/mustache.js"></script>
     <script src="Scritps/libs/sha1.js"></script>
+    <script src="Scritps/libs/http-requester.js"></script>
+    
 
+    <script src="Scritps/everlive-SDK/everlive.all.js"></script>
+    <script src="Scritps/app/persister.js"></script>
+    <script src="Scritps/app/controller.js"></script>
+    
     <link href="Style/style.css" rel="stylesheet" />
+    
     <title></title>
 </head>
 <body>
@@ -20,6 +28,34 @@
     </nav>
     <div id="wrapper"></div>
 
+    <script type="x-mustache" id="submit-post-template">
+        <div id="submit-post">
+            <label for="post-title">Title: </label>
+            <input type="text" id="post-title" /> <br/>
+            <label for="post-content">Content: </label>
+            <input type="text" id="post-content" /> <br/>
+            <button id="submit-post-button">Submit</button>
+        </div>
+    </script>
+    <script type="x-mustache" id="user-menubar-template">
+        <div id="user-menubar">
+            Hello, {{nickname}}
+            <a href='#/' id='logout-user'>Logout</a>
+        </div>
+    </script>
+    <script type="x-mustache" id="login-register-template">
+        <div id="login-register-form">
+            <input type="text" id="username-field" /> <br/>
+            <input type="password" id="password-field" /> <br/>
+            <button id="login-button">Login</button>
+            <button id="register-button">Register</button>
+        </div>
+        
+    </script>
     <script src="Scritps/app/initPaths.js"></script>
+
+    
+
+    
 </body>
 </html>

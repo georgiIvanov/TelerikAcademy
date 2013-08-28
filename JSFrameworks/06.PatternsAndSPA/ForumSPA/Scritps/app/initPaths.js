@@ -11,7 +11,8 @@
 (function () {
 
     function goHome() {
-        $("#wrapper").append("home <br/>   ");
+        $("#wrapper").html("");
+
         controller.renderHomePage();
         
     };
@@ -28,7 +29,7 @@
         
 
         this.get("#/posts", function () {
-            $("#wrapper").append("posts <br/>   ");
+            controller.renderPosts();
         });
 
         this.get("#/posts/tags=:tags", function () {

@@ -14,6 +14,12 @@ var persister = (function () {
 
     var el = new Everlive('DcCELJaGutj8x1f5');
 
+    function assignTokenIfMissing() {
+        if (el.setup.token == null) {
+            el.setup.token = sessionkey;
+        }
+    }
+
     function getNickname() {
         return nickname;
     }
@@ -47,6 +53,7 @@ var persister = (function () {
     function loginUser(username, password, success, fail) {
         el.Users.login(username, password).then(function (data) {
             saveUserData(data, username);
+            el.setup.token = data.result.access_token;
             success(data);
             
         }, function (err) {
@@ -57,6 +64,7 @@ var persister = (function () {
     function registerUser(username, password, success, fail) {
         el.Users.register(username, password).then(function (data) {
             saveUserData(data, username);
+            
             success(data);
 
         }, function (err) {
@@ -64,9 +72,38 @@ var persister = (function () {
         });
     }
 
-    function submitPost(success, fail) {
+    function submitPost(title, content, success, fail) {
         var data = Everlive.$.data('Post');
-        data.create(
+        assignTokenIfMissing();
+
+        data.create({
+            'Title': title,
+            'Content': content,
+            'CreatedBy': principal_id,
+            'PostedBy': nickname
+        }, function (data) {
+            success(data);
+        }, function (err) {
+            fail(err);
+        });
+
+        
+    }
+
+    function getPosts(success, fail) {
+        var data = Everlive.$.data('Post');
+        assignTokenIfMissing();
+
+        var query = new Everlive.Query();
+        query.orderDesc('CreatedAt');
+
+        data.get(query)
+        .then(function (data) {
+            success(data);
+        },
+        function (err) {
+            fail(err);
+        });
     }
 
     return {
@@ -74,6 +111,8 @@ var persister = (function () {
         loginUser: loginUser,
         nickname: getNickname,
         clearUserData: clearUserData,
-        registerUser: registerUser
+        registerUser: registerUser,
+        submitPost: submitPost,
+        getPosts: getPosts
     }
 })();

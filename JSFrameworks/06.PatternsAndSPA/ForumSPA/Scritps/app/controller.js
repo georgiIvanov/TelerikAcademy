@@ -14,16 +14,25 @@ var controller = (function () {
     var wrapperId = "#wrapper";
 
 
-
     function renderHomePage() {
         if (persister.isUserLoggedIn()) {
-            createUserMenuBar($(wrapperId));
-            createPostBar($(wrapperId));
+            if ($('#user-menubar').length == 0) {
+                createUserMenuBar($(wrapperId));
+                createPostBar($(wrapperId));
+            }
         }
         else {
             var loginTemplate = Mustache.render($("#login-register-template").html());
             $(wrapperId).html(loginTemplate);
         }
+    }
+
+    function renderPosts() {
+        persister.getPosts(function (data) {
+            var postsTemplate = Mustache.render($("#posts-template").html(), data);
+            $(wrapperId).html(postsTemplate);
+        }, function (err) {
+        });
     }
 
     function createUserMenuBar(wrapper) {
@@ -32,10 +41,17 @@ var controller = (function () {
         wrapper.append(userTemplate);
     }
 
+    function createPostsDiv(wrapper) {
+        var posts = Mustache.render($('#posts-template').html());
+
+    }
+
     function createPostBar(wrapper) {
         var userTemplate = Mustache.render($('#submit-post-template').html());
         wrapper.append(userTemplate);
     }
+
+    
 
     function registerEvents() {
         var self = this;
@@ -76,12 +92,20 @@ var controller = (function () {
         });
 
         wrapper.on("click", "#submit-post-button", function () {
-
+            var title = $('#post-title').val();
+            var content = $('#post-content').val();
+            persister.submitPost(title, content, function (data) {
+                $('#post-title').val("");
+                $('#post-content').val("");
+            }, function (err) {
+                alert(err);
+            });
         });
     }
 
     return {
         renderHomePage: renderHomePage,
+        renderPosts: renderPosts,
         registerEvents: registerEvents,
     };
 })();

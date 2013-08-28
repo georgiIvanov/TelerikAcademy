@@ -23,11 +23,24 @@
         <a href="#/home">#/home</a>
         <a href="#/posts">#/posts   </a>
         <a href="#/posts/tags=test,more">#/posts/:tags</a>
-        <a href="#/posts/cab95330-0f45-11e3-b42f-6f414efc4817">#/posts/:id</a>
+        <a href="#/posts/c1f5fd40-0fe8-11e3-a802-0f19d88765d1">#/posts/:id</a>
         <a href="#/posts/cab95330-0f45-11e3-b42f-6f414efc4817/comment">post(with get verb) a comment</a>
     </nav>
     <div id="wrapper"></div>
 
+    <script type="x-mustache" id="posts-template">
+        <div id="posts">
+            {{#result}}
+            <div class="post" data-post-id={{Id}}>
+            <strong>{{PostedBy}}</strong>, Created At: {{CreatedAt}}
+            <h3 class="post-title">{{Title}}</h3>
+            <p class="post-content">
+                {{Content}}
+            </p>
+            </div>
+            {{/result}}
+        <div>
+    </script>
     <script type="x-mustache" id="submit-post-template">
         <div id="submit-post">
             <label for="post-title">Title: </label>

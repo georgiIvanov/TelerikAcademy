@@ -157,7 +157,7 @@ var persister = (function () {
         assignTokenIfMissing();
 
         var query = new Everlive.Query();
-        query.where().isin('ArrayOfTags', tags);
+        query.where().all('ArrayOfTags', tags);
         data.get(query)
         .then(function (data) {
             success(data);

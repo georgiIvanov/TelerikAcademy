@@ -67,7 +67,9 @@ var persister = (function () {
 
     function registerUser(username, password, success, fail) {
         el.Users.register(username, password).then(function (data) {
-            saveUserData(data, username);
+            loginUser(username, password,
+            saveUserData(data, username), function () {
+            });
             
             success(data);
 

@@ -30,17 +30,17 @@
     
     <script type="x-mustache" id="comments-template">
         <div class="comments-for-post">
-            {{#Result}}
-                <div class="comment">
-                    <strong>{{CommentBy}}</strong>, Created At {{CreatedAt}}
-                    <p class="comment-content">
-                        {{Content}}
-                    </p>
-                </div>
-            {{/Result}}
-            {{^Result}}
-                No comments yet.
-            {{/Result}}
+            {{#result}}
+               <div class="comment">
+                   <strong>{{CommentBy}}</strong>, Created At {{CreatedAt}}
+                   <p class="comment-content">
+                       {{Content}}
+                   </p>
+               </div>
+            {{/result}}
+            {{^result}}
+               No comments yet.
+            {{/result}}
         </div>
     </script>
     <script type="x-mustache" id="submit-comment-template">

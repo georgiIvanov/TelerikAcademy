@@ -125,28 +125,18 @@ var persister = (function () {
     }
 
     function getComments(postId, success, fail) {
-        var powerFieldsExp = {
-            "Comments": {
-                "queryType": "get",
-                "filter": { "OnPost": postId },
-                "contentType": "Comment",
-                
-            }
-        };
+       
+        var data = Everlive.$.data('Comment');
+        assignTokenIfMissing();
 
-        $.ajax({
-            url: "https://api.everlive.com/v1/" + el.setup.apiKey + "/Comment",
-            type: "GET",
-            headers: {
-                "Authorization": "Bearer " + el.setup.token,
-                "X-Everlive-Power-Fields": JSON.stringify(powerFieldsExp)
-            },
-            success: function (data) {
-                success(data);
-            },
-            error: function (err) {
-                fail(err);
-            }
+        var query = new Everlive.Query();
+        query.where().eq('OnPost', postId);
+
+        data.get(query)
+        .then(function (data) {
+            success(data);
+        }, function (err) {
+            fail(err);
         });
     }
 

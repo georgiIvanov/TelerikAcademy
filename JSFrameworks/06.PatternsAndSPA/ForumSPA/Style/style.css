@@ -14,6 +14,17 @@
     left:10%;
 }
 
+.comments-for-post {
+    
+    position: relative;
+    width:300px;
+    left:15%;
+}
+
+.comment {
+    border-bottom: 1px dashed black;
+}
+
 .post-title {
     margin: 10px 20px 0px 20px;
 }

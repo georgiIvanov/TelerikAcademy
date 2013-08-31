@@ -1,0 +1,11 @@
+﻿<div>
+	<h2>{{post.title}}</h2>
+	<a href="#/category/{{post.category}}">{{post.category}}</a>
+	<p>{{post.content}}</p>
+	<ul>
+		<li ng-repeat="comment in post.comments">
+			<strong>{{comment.from}}</strong>
+			<p>{{comment.text}}</p>
+		</li>
+	</ul>
+</div>

@@ -1,0 +1,22 @@
+﻿<select ng-model="selectedCategory">
+	<option ng-repeat="category in categories" value="{{category}}">{{category}}
+	</option>
+</select>
+<ul class="posts-list">
+	<li class="post-item" ng-repeat="post in posts | filter:selectedCategory">
+		<a href="#/post/{{post.Id}}">By: {{post.PostedByUser}}<br />{{post.Content}}</a>
+	</li>
+</ul>			
+<fieldset>
+	<legend>Leave a post</legend>
+	<label for="tb-username">Username:</label>
+	<input type="text" id="tb-username" ng-model="newPost.username" />
+	<br />
+	<label for="tb-content">Content:</label>
+	<input type="text" id="tb-content" ng-model="newPost.content" />
+	<br />
+	<label for="tb-category">category:</label>
+	<input type="text" id="tb-category" ng-model="newPost.category" />
+	<br />
+	<a ng-click="addPost()">Add New</a>
+</fieldset>

@@ -12,20 +12,21 @@
     <script src="Scripts/everlive/everlive.all.js"></script>
     <script src="Scripts/app/persister.js"></script>
     <link href="Styles/style.css" rel="stylesheet" />
-    
+
 </head>
 <body>
     <a href="#/home">Home</a>
     <a href="#/about">About</a>
-     
+
     <div id="wrapper">
-
     </div>
-
-    <script type="text/x-kendo-template" id="transactions-operations-template">
+    <div id='transactions-operations'>
+    </div>
+    <!--<script type="text/x-kendo-template" id="transactions-operations-template">
         <div id='transactions-operations'>
+            
         </div>
-    </script>
+    </script>-->
     <script type="text/x-kendo-template" id="banking-operations-template">
         <a href=#/home id=logout>Logout</a>
         <div id='banking-operations'>
@@ -52,9 +53,9 @@
     <script type="text/x-kendo-template" id="login-register-template">
         <div id='login-register'>
             <label for="username-field">Username: </label>
-            <input type='text' id='username-field'/> <br/>
+            <input type='text' id='username-field' required /> <br/>
             <label for="password-field">Password: </label>
-            <input type="password" id="password-field" /> <br/>
+            <input type="password" id="password-field" required /> <br/>
             <button id='login-button'>Login</button>
             <button id='register-button'>Register</button>
         </div>

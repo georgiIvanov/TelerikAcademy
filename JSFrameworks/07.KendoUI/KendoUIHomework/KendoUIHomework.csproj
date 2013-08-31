@@ -78,6 +78,7 @@
     <Content Include="Scripts\kendoUI\kendo.combobox.js" />
     <Content Include="Scripts\kendoUI\kendo.core.js" />
     <Content Include="Scripts\kendoUI\kendo.data.js" />
+    <Content Include="Scripts\kendoUI\kendo.data.localstoragedatasource.js" />
     <Content Include="Scripts\kendoUI\kendo.data.odata.js" />
     <Content Include="Scripts\kendoUI\kendo.data.xml.js" />
     <Content Include="Scripts\kendoUI\kendo.datepicker.js" />
@@ -141,6 +142,7 @@
     <Content Include="Styles\kendoStyles\kendo.rtl.min.css" />
     <Content Include="Styles\kendoStyles\kendo.silver.min.css" />
     <Content Include="Styles\kendoStyles\kendo.uniform.min.css" />
+    <Content Include="Styles\style.css" />
     <Content Include="Web.config" />
     <Content Include="Scripts\libs\jquery-2.0.3.min.map" />
   </ItemGroup>

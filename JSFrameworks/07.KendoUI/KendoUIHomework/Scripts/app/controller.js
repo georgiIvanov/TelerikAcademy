@@ -6,12 +6,14 @@
 window.controller = (function () {
 
     var wrapper = $('#wrapper');
-    
+
     function renderLoginRegister() {
         $('#user-menu').remove();
         var template = $('#login-register-template').html();
 
         wrapper.html(template);
+
+        $('#login-register').kendoValidator();
     }
 
     function renderAbout() {
@@ -27,12 +29,39 @@ window.controller = (function () {
         kendo.bind($('#user-menu'), persister.userViewModel);
         wrapper.html($('#banking-operations-template').html());
 
-        $('#banking-operations').kendoValidator().data('kendoValidator');
+        $('#banking-operations').kendoValidator();
+
+        var a = persister.transactionsViewModel.data;
+
+        var dta = [{ name: "lol", age: 7 }, { name: "fu", age: 5 }];
+
+        var kendoDS = new kendo.data.DataSource({
+            data: persister.transactionsViewModel.data
+        });
+
+        kendoDS.read();
 
 
+        $('#transactions-operations').kendoGrid({
+            dataSource: kendoDS,
+            columns:[
+                {
+                    field: 'CreatedAt',
+                    title: 'Transacted At'
+                },
+                {
+                    field: 'moneyTransacted',
+                    title: 'Money transfered'
+                },
+                {
+                    field: 'Id',
+                    title: 'Transaction Id'
+                }
+            ]
+        });
 
     }
-
+    
     function preformLogin() {
 
 
@@ -42,6 +71,7 @@ window.controller = (function () {
         else {
 
             persister.user.getRestOfUserInformation(function (data) {
+
                 renderHome();
             }, function (err) {
                 controller.renderLoginRegister();
@@ -113,7 +143,7 @@ window.controller = (function () {
             }
         });
     }
-    
+
     return {
         renderLoginRegister: renderLoginRegister,
         renderAbout: renderAbout,

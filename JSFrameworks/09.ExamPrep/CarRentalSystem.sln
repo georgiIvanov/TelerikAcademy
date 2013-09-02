@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRentalSystem.Data", "CarRentalSystem.Data\CarRentalSystem.Data.csproj", "{69F375DC-3B8F-4698-B979-052C34C0C1B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRentalSystem.API", "CarRentalSystem.API\CarRentalSystem.API.csproj", "{E7BAA891-C26F-44C9-B295-A089B048F172}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRentalSystem.Models", "CarRentalSystem.Models\CarRentalSystem.Models.csproj", "{16D16CCF-FC08-4FA4-BBC6-0823C6CE826A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{69F375DC-3B8F-4698-B979-052C34C0C1B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69F375DC-3B8F-4698-B979-052C34C0C1B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69F375DC-3B8F-4698-B979-052C34C0C1B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69F375DC-3B8F-4698-B979-052C34C0C1B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7BAA891-C26F-44C9-B295-A089B048F172}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7BAA891-C26F-44C9-B295-A089B048F172}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7BAA891-C26F-44C9-B295-A089B048F172}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7BAA891-C26F-44C9-B295-A089B048F172}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16D16CCF-FC08-4FA4-BBC6-0823C6CE826A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16D16CCF-FC08-4FA4-BBC6-0823C6CE826A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16D16CCF-FC08-4FA4-BBC6-0823C6CE826A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16D16CCF-FC08-4FA4-BBC6-0823C6CE826A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

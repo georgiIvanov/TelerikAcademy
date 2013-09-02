@@ -50,7 +50,7 @@ var persister = (function () {
             || nickname == "null" || nickname == "") {
             return false;
         }
-
+        
         return true;
     }
 

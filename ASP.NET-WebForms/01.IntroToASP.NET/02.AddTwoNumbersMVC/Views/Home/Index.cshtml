@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Home Page";  
+}
+
+<div>
+    <h1>Adds two numbers :></h1>
+
+    <form action="/Home/AddTwoNumbers" method="post">
+        <input type="number" name="firstNumber" /> <br />
+        <input type="number" name="secondNumber" /> <br />
+
+        <button type="submit">Submit</button>
+    </form>
+    <label> @ViewBag.Result</label>
+</div>

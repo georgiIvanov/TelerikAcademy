@@ -20,21 +20,23 @@ namespace _03.ReturnTextAsImage
         {
             var requestURL = context.Request.Url;
 
-            var bitmap = new Bitmap(context.Server.MapPath("Images/newImage.jpg"));
-            
+            var path = context.Server.MapPath("Data/blank.png");
 
-                var graphics = Graphics.FromImage(bitmap);
-                var brush = new SolidBrush(Color.BlueViolet);
-                graphics.FillRectangle(brush, 0, 0, 5000, 150);
-                graphics.DrawString(
-                    requestURL + "\n\nis where you come from",
-                    new Font("Segoe UI", 15),
-                    new SolidBrush(Color.BlanchedAlmond),
-                    new PointF(25, 40));
-                context.Response.ContentType = "image/png";
-                bitmap.Save(context.Response.OutputStream, ImageFormat.Png);
-            
-            
+            var bitmap = new Bitmap(path);
+
+
+            var graphics = Graphics.FromImage(bitmap);
+            var brush = new SolidBrush(Color.BlueViolet);
+            graphics.FillRectangle(brush, 0, 0, 5000, 150);
+            graphics.DrawString(
+                context.Request.FilePath.Substring(1, context.Request.FilePath.Length - 5),
+                new Font("Segoe UI", 25),
+                new SolidBrush(Color.BlanchedAlmond),
+                new PointF(25, 40));
+            context.Response.ContentType = "image/png";
+            bitmap.Save(context.Response.OutputStream, ImageFormat.Png);
+
+
 
         }
     }

@@ -5,7 +5,7 @@ using System.Security.Claims;
 using System.Security.Principal;
 using System.Threading.Tasks;
 using System.Web;
-using System.Web.Helpers;
+//using System.Web.Helpers;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using _02.AddTwoNumbersMVC;
@@ -38,7 +38,7 @@ namespace _02.AddTwoNumbersMVC
             UserIdClaimType = "http://schemas.microsoft.com/aspnet/userid";
             UserNameClaimType = "http://schemas.microsoft.com/aspnet/username";
             ClaimsIssuer = ClaimsIdentity.DefaultIssuer;
-            AntiForgeryConfig.UniqueClaimTypeIdentifier = IdentityConfig.UserIdClaimType;
+            //AntiForgeryConfig.UniqueClaimTypeIdentifier = IdentityConfig.UserIdClaimType;
         }
 
         public static IList<Claim> RemoveUserIdentityClaims(IEnumerable<Claim> claims) 

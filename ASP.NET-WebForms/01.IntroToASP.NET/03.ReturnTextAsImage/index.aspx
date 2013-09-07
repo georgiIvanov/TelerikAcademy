@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    
+    Enter a url that finishes with .img
     </div>
     </form>
 </body>

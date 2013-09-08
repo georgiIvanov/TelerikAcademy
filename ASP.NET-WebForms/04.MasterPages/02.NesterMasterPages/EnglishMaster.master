@@ -1,0 +1,13 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Default.Master" AutoEventWireup="true" CodeBehind="EnglishMaster.master.cs" Inherits="_02.NestedMasterPages.EnglishMaster" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="siteWrapper" runat="server">
+    <div>
+        <asp:HyperLink ID="hl_english" runat="server" NavigateUrl="~/englishHome.aspx">home</asp:HyperLink>
+        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/englishContent.aspx">secret english content</asp:HyperLink>
+        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/englishContacts.aspx">Contacts</asp:HyperLink>
+    </div>
+    <asp:ContentPlaceHolder ID="englishWrapper" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>

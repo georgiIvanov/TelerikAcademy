@@ -1,0 +1,27 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Default.master.cs" Inherits="_02.NestedMasterPages.Default" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="style.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <h1>Welcome to the site</h1>
+    <h4>this is the main master page</h4>
+    <form id="form1" runat="server">
+        <nav>
+            <asp:HyperLink ID="hl_english" runat="server" NavigateUrl="~/englishHome.aspx">English Version</asp:HyperLink>
+            <asp:HyperLink ID="hl_friends" runat="server" NavigateUrl="~/germanHome.aspx">German Version</asp:HyperLink>
+        </nav>
+
+        <div>
+            <asp:ContentPlaceHolder ID="siteWrapper" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

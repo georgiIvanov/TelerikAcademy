@@ -1,0 +1,31 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="_01.MasterPages.MasterPage.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Master Page</title>
+    <link href="style.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <h2>Master page</h2>
+    <form id="form1" runat="server">
+        
+    <div id="masterWrapper">
+        <nav>
+            <asp:HyperLink ID="hl_home" runat="server" NavigateUrl="~/PersonalInfo.aspx">Personal Info</asp:HyperLink>
+            <asp:HyperLink ID="hl_friends" runat="server" NavigateUrl="~/Friends.aspx">Friends</asp:HyperLink>   
+             <asp:HyperLink ID="hl_additionalInfo" runat="server" NavigateUrl="~/AdditionalInfo.aspx">Additional Info</asp:HyperLink>   
+        </nav>
+        <asp:ContentPlaceHolder ID="contentHolder" runat="server">
+            
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+    <footer>
+        <strong>footer here</strong>
+    </footer>
+</body>
+</html>

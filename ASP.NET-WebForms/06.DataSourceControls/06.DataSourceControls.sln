@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.20623.1 VSUPREVIEW
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SettlementsApp", "SettlementsApp\SettlementsApp.csproj", "{C4642A23-A668-40B1-83C3-9E302080DA82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Settlements.Data", "Settlements.Data\Settlements.Data.csproj", "{02578719-7E2F-4113-BABC-08D1561F5CC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Settlements.Models", "Settlements.Model\Settlements.Models.csproj", "{8623B452-3021-4DE2-8205-7EF339B9D372}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C4642A23-A668-40B1-83C3-9E302080DA82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4642A23-A668-40B1-83C3-9E302080DA82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4642A23-A668-40B1-83C3-9E302080DA82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4642A23-A668-40B1-83C3-9E302080DA82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02578719-7E2F-4113-BABC-08D1561F5CC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02578719-7E2F-4113-BABC-08D1561F5CC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02578719-7E2F-4113-BABC-08D1561F5CC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02578719-7E2F-4113-BABC-08D1561F5CC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8623B452-3021-4DE2-8205-7EF339B9D372}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8623B452-3021-4DE2-8205-7EF339B9D372}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8623B452-3021-4DE2-8205-7EF339B9D372}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8623B452-3021-4DE2-8205-7EF339B9D372}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

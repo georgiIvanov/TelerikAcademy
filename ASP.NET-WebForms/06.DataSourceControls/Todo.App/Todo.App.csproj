@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{C4642A23-A668-40B1-83C3-9E302080DA82}</ProjectGuid>
+    <ProjectGuid>{9978F6AE-EA8F-45D6-BCF4-73E6855FB5A8}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SettlementsApp</RootNamespace>
-    <AssemblyName>SettlementsApp</AssemblyName>
+    <RootNamespace>Todo.App</RootNamespace>
+    <AssemblyName>Todo.App</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -43,8 +43,6 @@
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data.Entity" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -64,24 +62,25 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="index.aspx" />
     <Content Include="style.css" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="TodoIndex.aspx" />
+    <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CategoriesRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="index.aspx.cs">
-      <DependentUpon>index.aspx</DependentUpon>
+    <Compile Include="Models\TodoModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TodoIndex.aspx.cs">
+      <DependentUpon>TodoIndex.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="index.aspx.designer.cs">
-      <DependentUpon>index.aspx</DependentUpon>
+    <Compile Include="TodoIndex.aspx.designer.cs">
+      <DependentUpon>TodoIndex.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TodosRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -94,21 +93,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="ModelData\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Settlements.Data\Settlements.Data.csproj">
-      <Project>{02578719-7e2f-4113-babc-08d1561f5cc9}</Project>
-      <Name>Settlements.Data</Name>
+    <ProjectReference Include="..\Todo.Data\Todo.Data.csproj">
+      <Project>{71709f74-f1e6-4ea6-82c6-e6fca65b7f01}</Project>
+      <Name>Todo.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Settlements.Model\Settlements.Models.csproj">
-      <Project>{8623b452-3021-4de2-8205-7ef339b9d372}</Project>
-      <Name>Settlements.Models</Name>
+    <ProjectReference Include="..\Todo.Models\Todo.Models.csproj">
+      <Project>{a1797c17-b6de-44d0-8d27-1620dd848e16}</Project>
+      <Name>Todo.Models</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -123,9 +117,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>58134</DevelopmentServerPort>
+          <DevelopmentServerPort>1903</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:58134/</IISUrl>
+          <IISUrl>http://localhost:1903/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

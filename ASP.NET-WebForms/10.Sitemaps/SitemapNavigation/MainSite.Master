@@ -1,0 +1,35 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainSite.master.cs" Inherits="SitemapNavigation.MainSite" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="Site.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <h3>Welcome to the site</h3>
+    <form id="form1" runat="server">
+        <div class="clear hideSkiplink">
+            <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu"
+                EnableViewState="false" IncludeStyleBlock="false"
+                Orientation="Horizontal" DataSourceID="SiteMapDataSource"
+                StaticDisplayLevels="2">
+            </asp:Menu>
+            <asp:SiteMapPath ID="SiteMapPathBreadcrump" runat="server"></asp:SiteMapPath>
+        </div>
+        
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <asp:SiteMapDataSource ID="SiteMapDataSource" runat="server" />
+    </form>
+    <footer class="footer">
+        <p>All rights reserved.</p>
+    </footer>
+</body>
+</html>

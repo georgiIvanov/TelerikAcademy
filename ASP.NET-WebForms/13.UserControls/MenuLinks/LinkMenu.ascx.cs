@@ -38,13 +38,12 @@ namespace MenuLinks
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            MenuList.Style.Add("color", this.FontColor);
+
         }
 
         protected void Page_PreRender(object sender, EventArgs e)
         {
             MenuList.Style.Add("font-family", this.FontFamily);
-            MenuList.Style.Add("color", this.FontColor);
         }
 
         public override void DataBind()

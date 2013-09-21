@@ -52,5 +52,6 @@ namespace Poker.Tests
 
             Assert.AreEqual(expected, hand.ToString());
         }
+
     }
 }

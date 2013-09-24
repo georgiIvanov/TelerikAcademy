@@ -1,0 +1,16 @@
+﻿@model _03.InformationalApp.Models.Book
+
+<div>
+    @if (ViewData.ContainsKey("Username"))
+    {
+        <div>Hello, @ViewData["Username"]</div>
+    }
+    else
+    {
+        <div>You need to login :<</div>
+        <div>Or you won't be able to see the admin link in Books</div>
+    }
+</div>
+<div>
+    this is the greatest partial view ev4r
+</div>

@@ -1,0 +1,9 @@
+They both share API's related to http and user authentication.
+Have the same startup events in Global.asax.
+Both can be developed through the same IDE 
+and use the same NuGet packages for development.
+
+Webforms relies heavily on controls, postback(event driven) and has less control over HTML.
+MVC provides more control over the HTML output and it looks a lot cleaner.
+They use different View Engines.
+MVC imposes better separation of concerns.

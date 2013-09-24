@@ -10,6 +10,10 @@ namespace _03.InformationalApp.Controllers
     {
         public ActionResult Index()
         {
+            if (this.User.Identity.IsAuthenticated)
+            {
+                this.ViewData.Add("Username", this.User.Identity.Name);
+            }
             return View();
         }
 

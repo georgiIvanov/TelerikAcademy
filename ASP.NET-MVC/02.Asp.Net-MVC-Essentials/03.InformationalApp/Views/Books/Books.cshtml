@@ -1,0 +1,49 @@
+﻿@model List<_03.InformationalApp.Models.Book>
+@{
+    ViewBag.Title = "Books";
+}
+
+<h2>Books</h2>
+
+<table class="table table-bordered table-condensed">
+    <thead>
+        <tr>
+            <th>Book Name</th>
+            <th>Author/s</th>
+            <th>Description</th>
+            <th>Rating</th>
+        </tr>
+    </thead>
+    <tbody >
+        @for (int i = 0; i < Model.Count; i++)
+        {
+
+            <tr>
+                <td>
+                    @*@Html.ActionLink(Model[i].Name, "GetBook", "Book");*@
+                    <a href="/Books/GetBook?Id=@i">@Model[i].Name </a>
+                </td>
+                <td>
+                    @Model[i].Author
+                </td>
+                <td>
+                    @Model[i].Description
+                </td>
+                <td>
+                    @Model[i].Rating
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@section SideBar{
+    <p>This is side bar!</p>
+    <ul>
+        <li><a href="/home">Go Home</a></li>
+        @if(User.Identity.IsAuthenticated)
+        {
+            <li><a href="/AdminArea/Admin">Go Admin</a></li>
+        }
+
+    </ul>
+}

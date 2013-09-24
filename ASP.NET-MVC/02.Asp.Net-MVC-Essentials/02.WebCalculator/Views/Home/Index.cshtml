@@ -1,0 +1,42 @@
+﻿<link href="~/style.css" rel="stylesheet" />
+
+@model _02.WebCalculator.Models.DataSize
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+
+    <div>
+        @Html.Label("Quantity", "Quantity: ")
+        @Html.TextBox("Quantity")
+    </div>
+
+    <div>
+        @Html.Label("Types", "Type: ")
+        @Html.DropDownList("Types")
+    </div>
+
+    <div>
+        @Html.Label("Kilo", "Kilo: ")
+        @Html.DropDownList("Kilo")
+    </div>
+
+    <input type="submit" value="GO" class="btn" />
+}
+
+@if (ViewBag.Results != null)
+{
+    <table class="table table-hover table-condensed">
+        @for (int i = 0; i < ViewBag.Results.Count; i++)
+        {
+            <tr>
+                <td>@ViewBag.Results[i].Name</td>
+                <td>@ViewBag.Results[i].Size</td>
+            </tr>
+        }
+
+    </table>
+}
+

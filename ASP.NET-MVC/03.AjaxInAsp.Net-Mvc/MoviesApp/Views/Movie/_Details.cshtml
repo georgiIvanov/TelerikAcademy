@@ -1,0 +1,105 @@
+﻿@model MoviesApp.Models.Movie
+
+@{
+    ViewBag.Title = "Details";
+}
+<div id="details-form">
+    <h2>Details</h2>
+
+    <fieldset>
+        <legend>Movie</legend>
+        <dl>
+            <dt>
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Director)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Director)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Studio)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Studio)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.StudioAddress)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.StudioAddress)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Year)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Year)
+            </dd>
+
+        </dl>
+        <legend>Cast</legend>
+        <dl>
+            @if (Model.LeadFemaleActor != null)
+            {
+                <dt>
+                    @Html.DisplayNameFor(model => model.LeadFemaleActor.Name)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.LeadFemaleActor.Name)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.LeadFemaleActor.Age)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.LeadFemaleActor.Age)
+                </dd>
+            }
+            else
+            {
+                <dt>No female actor</dt>
+            }
+
+            @if (Model.LeadMaleActor != null)
+            {
+                <dt>
+                    @Html.DisplayNameFor(model => model.LeadMaleActor.Name)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.LeadMaleActor.Name)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.LeadMaleActor.Age)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.LeadMaleActor.Age)
+                </dd>
+            }
+            else
+            {
+                <dt>No male actor</dt>
+            }
+        </dl>
+    </fieldset>
+    <div class="form-actions no-color">
+        <input type="button" value="Close" class="btn" onclick="closeDetailsForm()" />
+    </div>
+
+    <script>
+        function closeDetailsForm() {
+            $("#details-form").remove("#details-form");
+        };
+    </script>
+</div>

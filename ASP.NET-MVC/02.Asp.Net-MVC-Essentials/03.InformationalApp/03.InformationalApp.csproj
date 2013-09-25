@@ -225,7 +225,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\AdminArea\Models\" />
     <Folder Include="Areas\AdminArea\Views\Shared\" />
-    <Folder Include="Views\Admin\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

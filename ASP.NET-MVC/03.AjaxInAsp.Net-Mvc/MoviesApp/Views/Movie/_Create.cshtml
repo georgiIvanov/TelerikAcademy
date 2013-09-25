@@ -1,0 +1,112 @@
+﻿@model MoviesApp.Models.Movie
+
+<div id="create-form">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <fieldset class="form-horizontal">
+            <legend>Movie</legend>
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.Title, new { @class = "control-label" })
+                <div class="controls">
+                    @Html.EditorFor(model => model.Title)
+                    @Html.ValidationMessageFor(model => model.Title, null, new { @class = "help-inline" })
+                </div>
+            </div>
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.Director, new { @class = "control-label" })
+                <div class="controls">
+                    @Html.EditorFor(model => model.Director)
+                    @Html.ValidationMessageFor(model => model.Director, null, new { @class = "help-inline" })
+                </div>
+            </div>
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.Studio, new { @class = "control-label" })
+                <div class="controls">
+                    @Html.EditorFor(model => model.Studio)
+                    @Html.ValidationMessageFor(model => model.Studio, null, new { @class = "help-inline" })
+                </div>
+            </div>
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.StudioAddress, new { @class = "control-label" })
+                <div class="controls">
+                    @Html.EditorFor(model => model.StudioAddress)
+                    @Html.ValidationMessageFor(model => model.StudioAddress, null, new { @class = "help-inline" })
+                </div>
+            </div>
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.Year, new { @class = "control-label" })
+                <div class="controls">
+                    @Html.EditorFor(model => model.Year)
+                    @Html.ValidationMessageFor(model => model.Year, null, new { @class = "help-inline" })
+                </div>
+            </div>
+
+            <fieldset >
+                <legend>Lead Male Actor</legend>
+                <div class="control-group">
+                    @Html.LabelFor(model => model.LeadMaleActor.Name, new { @class = "control-label" })
+                    <div class="controls">
+                        @Html.EditorFor(model => model.LeadMaleActor.Name)
+                        @Html.ValidationMessageFor(model => model.LeadMaleActor.Name, null, new { @class = "help-inline" })
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    @Html.LabelFor(model => model.LeadMaleActor.Age, new { @class = "control-label" })
+                    <div class="controls">
+                        @Html.EditorFor(model => model.LeadMaleActor.Age)
+                        @Html.ValidationMessageFor(model => model.LeadMaleActor.Age, null, new { @class = "help-inline" })
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Lead Female Actor</legend>
+                <div class="control-group">
+                    @Html.LabelFor(model => model.LeadFemaleActor.Name, new { @class = "control-label" })
+                    <div class="controls">
+                        @Html.EditorFor(model => model.LeadFemaleActor.Name)
+                        @Html.ValidationMessageFor(model => model.LeadFemaleActor.Name, null, new { @class = "help-inline" })
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    @Html.LabelFor(model => model.LeadFemaleActor.Age, new { @class = "control-label" })
+                    <div class="controls">
+                        @Html.EditorFor(model => model.LeadFemaleActor.Age)
+                        @Html.ValidationMessageFor(model => model.LeadFemaleActor.Age, null, new { @class = "help-inline" })
+                    </div>
+                </div>
+            </fieldset>
+
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Create" class="btn" />
+                <input type="button" value="Close" class="btn" onclick="closeCreateForm()" />
+            </div>
+        </fieldset>
+    }
+
+    <div>
+        @*@Html.ActionLink("Back to List", "Index")*@
+
+    </div>
+
+    <script>
+        //$("#close-create").on("click", "#close-create",  function (e) {
+        //    alert(e);
+        //});
+        function closeCreateForm() {
+            $("#create-form").remove("#create-form");
+        };
+    </script>
+
+</div>

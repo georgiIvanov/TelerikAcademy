@@ -68,7 +68,11 @@ namespace LibrarySystem.Controllers
                 }).ToList()
             }).ToList();
 
-            return View(treeNodes);
+            IndexViewModel indexVm = new IndexViewModel();
+            indexVm.TreeViewItems = treeNodes;
+            indexVm.Books = db.Books;
+
+            return View(indexVm);
         }
 
         public ActionResult BookDetails(int? Id)

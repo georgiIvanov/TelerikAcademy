@@ -16,7 +16,5 @@ namespace LibrarySystem.Models
         public virtual string ISBN { get; set; }
         public virtual string Website { get; set; }
         public virtual string Description { get; set; }
-        // public virtual Category Category { get; set; }
-        public virtual string haha { get; set; }
     }
 }

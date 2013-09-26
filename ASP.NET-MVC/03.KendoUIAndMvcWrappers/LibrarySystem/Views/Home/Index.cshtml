@@ -1,11 +1,37 @@
-﻿@model IEnumerable<TreeViewItemModel>
+﻿@model LibrarySystem.ViewModels.IndexViewModel
 @{
     ViewBag.Title = "Home Page";
 }
 
+<div id="search">
+    @(Html.Kendo().AutoComplete()
+    .Name("SearchAutocomplete")
+    .DataTextField("Title")
+    .BindTo(Model.Books)
+    .Filter("contains")
+    )
+    <button type="submit" id="btn-search" >Search</button>
+</div>
+
 <div class="row">
     @(Html.Kendo().TreeView()
     .Name("BooksTreeView")
-            .BindTo(Model)
+    .BindTo(this.Model.TreeViewItems)
     )
 </div>
+
+<script>
+    $("#search").on("click", "#btn-search", function (e) {
+        var a = e;
+        var autocomplete = $("#SearchAutocomplete").data("kendoAutoComplete");
+        if (autocomplete.dataSource._view.length >= 1) {
+            var queryT = autocomplete.element[0].value
+            for (var i in autocomplete.dataSource._view) {
+                if(autocomplete.dataSource._view[i].Title == queryT){
+                    window.location.href = "/Home/BookDetails/" + autocomplete.dataSource._view[i].Id;
+                }
+            }
+
+        }
+    });
+</script>

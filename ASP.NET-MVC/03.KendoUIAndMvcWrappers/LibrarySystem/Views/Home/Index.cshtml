@@ -1,0 +1,11 @@
+﻿@model IEnumerable<TreeViewItemModel>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="row">
+    @(Html.Kendo().TreeView()
+    .Name("BooksTreeView")
+            .BindTo(Model)
+    )
+</div>

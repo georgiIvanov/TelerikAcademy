@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Categories";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Categories</h2>
+
+@(Html.Kendo().Grid<LibrarySystem.ViewModels.CategoryViewModel>()
+.Name("Grid")
+.Columns(columns =>
+    {
+        columns.Bound(b => b.Id);
+        columns.Bound(b => b.Name);
+        columns.Command(commands =>
+        {
+            commands.Edit();
+            commands.Destroy();
+        }).Title("Commands").Width(200);
+    })
+.ToolBar(toolbar => toolbar.Create())
+.Editable(editable => editable.Mode(GridEditMode.InLine))
+.DataSource(datasource => datasource
+.Ajax()
+.Model(model =>
+{
+    model.Id(book => book.Id);
+    model.Field(book => book.Id).Editable(false);
+})
+.ServerOperation(false)
+    .Read(read => read.Action("CategoriesRead", "Categories"))
+    .Create(create => create.Action("CategoriesCreate", "Categories"))
+        .Update(update => update.Action("CategoriesUpdate", "Categories"))
+        .Destroy(destroy => destroy.Action("CategoriesDelete", "Categories"))
+)
+.Pageable()
+.Sortable()
+
+)

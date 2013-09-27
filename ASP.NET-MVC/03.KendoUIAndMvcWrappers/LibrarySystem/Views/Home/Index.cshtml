@@ -25,6 +25,9 @@
         var a = e;
         var autocomplete = $("#SearchAutocomplete").data("kendoAutoComplete");
         if (autocomplete.dataSource._view.length >= 1) {
+            if (autocomplete.dataSource._view.length == 1) {
+                window.location.href = "/Home/BookDetails/" + autocomplete.dataSource._view[0].Id;
+            }
             var queryT = autocomplete.element[0].value
             for (var i in autocomplete.dataSource._view) {
                 if(autocomplete.dataSource._view[i].Title == queryT){

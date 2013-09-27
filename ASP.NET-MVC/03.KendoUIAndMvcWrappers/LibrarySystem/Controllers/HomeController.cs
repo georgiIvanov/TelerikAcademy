@@ -1,5 +1,6 @@
 ﻿using Kendo.Mvc.UI;
 using LibrarySystem.Models;
+using LibrarySystem.Utilities;
 using LibrarySystem.ViewModels;
 using Newtonsoft.Json;
 using System;
@@ -70,7 +71,8 @@ namespace LibrarySystem.Controllers
 
             IndexViewModel indexVm = new IndexViewModel();
             indexVm.TreeViewItems = treeNodes;
-            indexVm.Books = db.Books;
+            indexVm.Books = db.Books.ConvertToBookViewModel();
+            
 
             return View(indexVm);
         }

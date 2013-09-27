@@ -10,6 +10,6 @@ namespace LibrarySystem.ViewModels
     public class IndexViewModel
     {
         public IEnumerable<TreeViewItemModel> TreeViewItems { get; set; }
-        public IQueryable<Book> Books { get; set; }
+        public IEnumerable<BookViewModel> Books { get; set; }
     }
 }

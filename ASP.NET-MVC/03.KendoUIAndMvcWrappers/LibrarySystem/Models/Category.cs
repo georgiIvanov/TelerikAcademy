@@ -8,6 +8,9 @@ namespace LibrarySystem.Models
 {
     public class Category
     {
+        public Category()
+        {
+        }
         public virtual int Id { get; set; }
         [Required]
         public virtual string Name { get; set; }

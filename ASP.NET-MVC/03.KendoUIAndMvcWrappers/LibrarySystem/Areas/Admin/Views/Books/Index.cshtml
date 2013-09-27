@@ -1,0 +1,45 @@
+﻿
+
+@{
+    ViewBag.Title = "Books";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Books</h2>
+
+@(Html.Kendo().Grid<LibrarySystem.ViewModels.BookViewModel>()
+.Name("Grid")
+.Columns(columns =>
+    {
+        columns.Bound(b => b.Id);
+        columns.Bound(b => b.Title);
+        columns.Bound(b => b.Author);
+        columns.Bound(b => b.ISBN);
+        columns.Bound(b => b.Website);
+        columns.Bound(b => b.Description);
+        columns.Bound(b => b.CategoryName);
+        columns.Command(commands =>
+        {
+            commands.Edit();
+            commands.Destroy();
+        }).Title("Commands").Width(200);
+    })
+.ToolBar(toolbar => toolbar.Create())
+.Editable(editable => editable.Mode(GridEditMode.InLine))
+.DataSource(datasource => datasource
+.Ajax()
+.Model(model =>
+{
+    model.Id(book => book.Id);
+    model.Field(book => book.Id).Editable(false);
+})
+.ServerOperation(false)
+.Read(read => read.Action("BooksRead", "Books"))
+.Create(create => create.Action("BooksCreate", "Books"))
+.Update(update => update.Action("BooksUpdate", "Books"))
+.Destroy(destroy => destroy.Action("BooksDelete", "Books"))
+)
+.Pageable()
+.Sortable()
+
+)

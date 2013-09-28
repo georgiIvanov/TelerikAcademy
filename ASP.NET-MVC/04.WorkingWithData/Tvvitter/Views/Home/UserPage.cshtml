@@ -1,0 +1,22 @@
+﻿@model Tvvitter.ViewModels.UserPageViewModel
+
+@{
+    ViewBag.Title = Model.Username;
+}
+
+<h2>@Model.Username</h2>
+
+@if (User.Identity.Name == Model.Username)
+{
+    @Html.Partial("_CreateTweet", Model.Tweet)
+}
+
+<div class="tweets-userpage">
+    @foreach (var tweet in Model.Tweets)
+    {
+        <div class="row">
+           <i>@tweet.DateCreated</i> - @tweet.Message
+        </div>
+    }
+</div>
+

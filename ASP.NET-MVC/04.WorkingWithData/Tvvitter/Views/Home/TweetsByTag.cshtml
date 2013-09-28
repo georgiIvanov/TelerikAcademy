@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Tvvitter.ViewModels.TweetViewModel>
+@{
+    ViewBag.Title = "TweetsByTag";
+}
+
+<h2>TweetsByTag</h2>
+<h4>Last Cached @DateTime.Now</h4>
+<ul>
+    @foreach (var tweet in Model)
+    {
+        <li>
+            
+            <span>@tweet.DateCreated </span>
+            <span>@tweet.Message</span>
+        </li>
+    }
+</ul>

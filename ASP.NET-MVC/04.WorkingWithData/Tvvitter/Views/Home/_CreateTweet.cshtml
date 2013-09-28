@@ -1,0 +1,29 @@
+﻿@model Tvvitter.Models.Tweet
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset class="form-horizontal">
+        <legend>Tweet</legend>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.Message, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.Message)
+                @Html.ValidationMessageFor(model => model.Message, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Create" class="btn" />
+        </div>
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

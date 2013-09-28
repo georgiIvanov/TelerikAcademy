@@ -9,8 +9,8 @@ namespace Tvvitter.Data
 
     public class TvvitterContext :  IdentityDbContextWithCustomUser<ApplicationUser>
     {
-        public DbSet<Tweet> Tweets { get; set; }
-        public DbSet<Tag> Tags { get; set; }
+        public virtual IDbSet<Tweet> Tweets { get; set; }
+        public virtual IDbSet<Tag> Tags { get; set; }
 
     }
 }

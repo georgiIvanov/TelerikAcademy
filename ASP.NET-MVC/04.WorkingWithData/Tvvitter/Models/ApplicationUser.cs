@@ -11,11 +11,4 @@ namespace Tvvitter.Models
     {
         public virtual ICollection<Tweet> Tweets { get; set; }
     }
-    
-    //public class TweetsForUsers
-    //{
-        
-    //    public virtual ICollection<Tweet> Tweets { get; set; }
-
-    //}
 }

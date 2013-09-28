@@ -42,6 +42,7 @@ namespace Tvvitter.Controllers
             return View(vm);
         }
 
+        [Authorize]
         public ActionResult MyProfile()
         {
             var id = User.Identity.GetUserId();
@@ -118,7 +119,7 @@ namespace Tvvitter.Controllers
 
         }
 
-        [OutputCacheAttribute(VaryByParam = "name", Duration = 3)]
+        [OutputCacheAttribute(VaryByParam = "name", Duration = 900)]
         public ActionResult TweetsByTag(string name)
         {
             var tag = this.Data.Tags.GetById(name);

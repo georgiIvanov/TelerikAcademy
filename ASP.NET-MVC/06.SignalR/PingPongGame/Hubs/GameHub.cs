@@ -19,12 +19,6 @@ namespace PingPongGame.Hubs
             return base.OnDisconnected();
         }
 
-        public void SendCoordinates(string coords)
-        {
-
-            Clients.All.updateCoordinates(coords);
-        }
-
         public void DrawOpponent(int y)
         {
             Clients.Others.drawOpponent(y);
@@ -38,8 +32,6 @@ namespace PingPongGame.Hubs
 
         public bool CheckForUser(bool a)
         {
-            //Clients.All.checkForUser(otherUser);
-
             if (!otherUser)
             {
                 otherUser = true;

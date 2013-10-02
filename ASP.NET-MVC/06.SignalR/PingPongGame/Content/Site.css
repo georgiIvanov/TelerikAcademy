@@ -1,0 +1,37 @@
+﻿body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+#player1 {
+    background-color:red;
+    height:100px;
+    width:10px;
+    position:absolute;
+    
+    margin-left:20px;
+}
+
+#player2 {
+    background-color:blue;
+    height:100px;
+    width:10px;
+    position:absolute;
+    left:783px;
+}
+
+#field {
+    border:1px solid black;
+    height: 400px;
+    width:600px;
+}
+
+#ball {
+    width:10px;
+    height:10px;
+    position:absolute;
+    left:510px;
+    top:250px;
+    border: 1px solid black;
+    border-radius: 10px 10px;
+}

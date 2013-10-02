@@ -1,0 +1,199 @@
+﻿@{
+    ViewBag.Title = "PingPong";
+}
+<button onclick="checkForGame()">Click to Connect</button>
+
+<div id="field">
+    <div id="player1">
+
+    </div>
+    <div id="ball"></div>
+    <div id="player2">
+
+    </div>
+</div>
+
+<div id="score">
+    red :<span id="redScore"></span>
+    <br/>
+    blue:<span id="blueScore"></span>
+</div>
+<script src="~/Scripts/rsvp.js"></script>
+<script>
+    var game = $.connection.game;
+    $.connection.hub.start();
+
+    var inGame = false;
+
+    originalValues = {
+        p1x: 240,
+        p2x: 765,
+        py: 50,
+        bx: 510,
+        by: 150
+    };
+
+    $field = $("#field");
+
+    $player1 = {
+        jquery: $("#player1"),
+        y: 50,
+        x: 240
+    };
+
+    $player2 = {
+        jquery: $("#player2"),
+        y: 50,
+        x: 765
+    };
+
+    $ball = {
+        jquery: $("#ball"),
+        y: 150,
+        x: 510,
+        moveLeft: 0,
+        move: function () {
+            if (this.moveLeft) {
+                this.x -= 15;
+            }
+            else {
+                this.x += 15;
+            }
+
+        },
+        changeDirection: function () {
+            this.moveLeft = !this.moveLeft;
+        }
+    }
+
+    $thisPlayer = null;
+    $otherPlayer = null;
+
+    $(document).keydown(function (e) {
+        if (!inGame) {
+            return;
+        }
+
+        if (e.keyCode == 83 || e.keyCode == 40) {
+            $thisPlayer.y += 15;
+
+
+        }
+        else if (e.keyCode == 87 || e.keyCode == 38) {
+            $thisPlayer.y -= 15;
+        }
+
+        if ($thisPlayer.y >= 365) {
+            $thisPlayer.y = 362;
+        }
+
+        if ($thisPlayer.y <= 63) {
+            $thisPlayer.y = 61;
+        }
+
+        game.server.drawOpponent($thisPlayer.y);
+
+    });
+
+
+
+    $(document).ready(function () {
+
+        game.client.gameStarts = gameStarts;
+        game.client.drawOpponent = drawOpponent;
+        game.client.resetGame = resetGame;
+    });
+
+    function drawOpponent(y) {
+        if ($thisPlayer.y != y) {
+            $otherPlayer.y = y;
+            $otherPlayer.jquery.css({ top: $otherPlayer.y });
+        }
+    }
+
+    function drawGame() {
+        $thisPlayer.jquery.css({ top: $thisPlayer.y });
+        $ball.jquery.css({ left: $ball.x });
+    }
+
+    function checkForUser(u) {
+        return u;
+    }
+
+    function checkForGame() {
+        game.server.checkForUser(false).done(function (a) {
+            if (a == true) {
+                $thisPlayer = $player2;
+                $otherPlayer = $player1;
+                inGame = true;
+            }
+            else {
+                $thisPlayer = $player1;
+                $otherPlayer = $player2;
+
+            }
+        })
+    }
+
+    function gameStarts(ballLeft) {
+        $ball.moveLeft = ballLeft == true ? true : false;
+        inGame = true;
+
+        //game loop
+        setInterval(function () {
+            
+            $ball.move();
+            checkCollisions();
+            drawGame();
+            gameWinConditions();
+        }, 100);
+    }
+
+    function checkCollisions() {
+        if ($ball.moveLeft) {
+            if ($ball.x <= $player1.x &&
+                $ball.y < $player1.y + 50 &&
+                $ball.y > $player1.y - 100) {
+                $ball.moveLeft = false;
+            }
+        }
+        else {
+            if ($ball.x >= $player2.x &&
+                $ball.y < $player2.y + 50 &&
+                $ball.y > $player2.y - 100 ) {
+                $ball.moveLeft = true;
+            }
+        }
+    }
+
+    function gameWinConditions() {
+        if ($ball.x < 240 || $ball.x > 765) {
+            if ($ball.moveLeft) {
+                game.server.gameWon(0); // redwins
+            }
+            else {
+                game.server.gameWon(1); // blue  wins
+            }
+        }
+    }
+
+    function resetGame(player) {
+        if (player == 0) {
+            $('#blueScore').append("Win! ");
+        }
+        else {
+            $('#redScore').append("Win! ");
+        }
+
+        $player1.x = originalValues.p1x;
+        $player2.x = originalValues.p2x;
+        $player1.y = originalValues.py;
+        $player2.y = originalValues.py;
+
+        $ball.x = originalValues.bx;
+        $thisPlayer.jquery.css({ top: $thisPlayer.y });
+        $otherPlayer.jquery.css({ top: $otherPlayer.y });
+
+    }
+
+</script>

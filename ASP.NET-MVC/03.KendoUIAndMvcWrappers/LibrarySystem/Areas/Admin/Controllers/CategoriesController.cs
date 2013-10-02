@@ -32,7 +32,7 @@ namespace LibrarySystem.Areas.Admin.Controllers
 
 
             DataSourceResult result = viewModelCategories.ToDataSourceResult(request);
-
+            
             return Json(result);
         }
 

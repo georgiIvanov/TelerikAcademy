@@ -1,0 +1,38 @@
+﻿@model LaptopSystem.ViewModels.PostComment
+
+@{
+    AjaxOptions commentOptions = new AjaxOptions
+    {
+        UpdateTargetId = "comments-section",
+        InsertionMode = System.Web.Mvc.Ajax.InsertionMode.Replace,
+        OnSuccess="clearTb"
+    };
+
+    AjaxOptions voteOptions = new AjaxOptions
+    {
+        UpdateTargetId = "laptop-votes",
+        InsertionMode = System.Web.Mvc.Ajax.InsertionMode.Replace
+    };
+}
+
+@using (Ajax.BeginForm("PostComment", "Home", commentOptions))
+{
+    @Html.HiddenFor(x => x.LaptopId, new { LaptopId = Model.LaptopId })
+    @Html.EditorFor(x => x.Content)
+    @Html.ValidationMessageFor(x => x.Content)
+    <input type="submit" value="Submit" class="btn btn-info" />
+}
+
+@using (Ajax.BeginForm("VoteForLaptop", "Home", voteOptions))
+{
+    @Html.HiddenFor(x => x.LaptopId, new { LaptopId = Model.LaptopId })
+    <input type="submit" value="Vote" class="btn btn-info" />
+}
+
+
+
+<script>
+    function clearTb(){
+        $("#Content").val("");
+    }
+</script>

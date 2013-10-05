@@ -1,0 +1,50 @@
+﻿@using LaptopSystem.ViewModels
+@model LaptopSystem.ViewModels.ListPageViewModel
+
+@{
+    ViewBag.Title = "ListPage";
+}
+
+<h2>ListPage</h2>
+
+@(Html.Kendo().ListView<LaptopIndexViewModel>()
+.Name("LaptopsListView")
+.TagName("div")
+.ClientTemplateId("laptops-template")
+.DataSource(dataSource =>
+    dataSource.Read(read => read.Action("LaptopsRead", "Home")).PageSize(5)
+    )
+    
+.Pageable(
+    page =>
+    {
+        page.PageSizes(true);
+        page.ButtonCount(5);
+    }
+
+)
+
+)
+
+<script type="text/x-kendo-tmpl" id="laptops-template">
+    
+    <div class="row-fluid pagination-centered product">
+        <img class="span3" src="${ImageUrl}" />
+        <div class="span5">
+            <a href="/Home/ViewDetails?Id=${Id}" class="btn btn-default listPage-btn">${ManufacturerName} ${Model}</a>
+        </div>
+        <div class="span2">
+            <a class="btn btn-default listPage-btn">${kendo.toString(Price, "c")}</a>
+        </div>
+    </div>
+</script>
+
+
+@*@if (Model.IsSearch)
+        {
+
+        }
+        else
+        {
+            @Html.Partial("_AllLaptops", Model.Laptops)
+    }*@

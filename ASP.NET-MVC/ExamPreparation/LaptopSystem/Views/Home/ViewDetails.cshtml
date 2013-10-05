@@ -1,0 +1,46 @@
+﻿@model LaptopSystem.ViewModels.LaptopDetailsViewModel
+@{
+    ViewBag.Title = "ViewDetails";
+}
+
+<h2>ViewDetails</h2>
+
+<div class="container-fluid">
+    <h2>@Model.Model</h2>
+    <div class="container-fluid">
+        <div class="span4">
+            <img src="@Model.ImageUrl" />
+        </div>
+        <div class="span6">
+            <div class="row-fluid laptop-detail">@Model.ManufacturerName Manufacturer</div>
+            <div class="row-fluid laptop-detail">@Model.Inches Inches</div>
+            <div class="row-fluid laptop-detail">@Model.Ram GB RAM</div>
+            <div class="row-fluid laptop-detail">@Model.Harddisk GB HDD</div>
+            <div class="row-fluid laptop-detail">@Model.Weight KG Weight</div>
+            <div class="row-fluid laptop-detail">@Model.Price.ToString("0.00") CNY</div>
+            <div class="row-fluid laptop-detail">Additional Parts: <p>@Model.AdditionalParts</p></div>
+        </div>
+    </div>
+    <div>
+        <p>
+            @Model.Description
+        </p>
+    </div>
+    <div class="row-fluid">
+        <h4 class="span2">Comments</h4><h4 class="span6">Votes: <span id="laptop-votes">@Model.Votes</span></h4>
+    </div>
+    <div class="row-fluid">
+        @{Html.RenderPartial("_Comments", Model.Comments);}
+        <div class="span2">
+            @if (User.Identity.IsAuthenticated)
+            {
+                Html.RenderPartial("_PostCommentOrVote", 
+                    new LaptopSystem.ViewModels.PostComment { LaptopId = Model.Id });
+            }
+        </div>
+    </div>
+
+
+
+
+</div>

@@ -1,0 +1,17 @@
+﻿@model IEnumerable<LaptopSystem.ViewModels.LaptopIndexViewModel>
+
+<div class="row-fluid">
+    @foreach (var item in Model)
+    {
+        <div class="row-fluid pagination-centered">
+            <img class="span2" src="@item.ImageUrl" />
+            <div class="span5">
+                <a href="/Home/ViewDetails?Id=@item.Id" class="btn btn-default">@item.ManufacturerName @item.Model</a>
+            </div>
+            <div class="span2">
+                <a class="btn btn-default">@item.Price.ToString("0.00")</a>
+            </div>
+        </div>
+    }
+</div>
+

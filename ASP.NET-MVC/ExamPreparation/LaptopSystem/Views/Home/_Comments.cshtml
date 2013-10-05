@@ -1,0 +1,27 @@
+﻿@using System.Linq;
+@model IEnumerable<LaptopSystem.ViewModels.CommentViewModel>
+
+<div id="comments-section" class="span2">
+    @if (Model.FirstOrDefault() == null)
+    {
+        <dl class="row-fluid">
+            <dt>
+                No comments
+            </dt>
+        </dl>
+    }
+    else
+    {
+        <dl class="row-fluid">
+            @foreach (var comment in Model)
+            {
+                <dt>
+                    @comment.Username
+                </dt>
+                <dd>
+                    @comment.Content
+                </dd>
+            }
+        </dl>
+    }
+</div>

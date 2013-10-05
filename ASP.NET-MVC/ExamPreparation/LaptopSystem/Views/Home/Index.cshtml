@@ -1,0 +1,18 @@
+﻿@model  LaptopSystem.ViewModels.HomeIndexViewModel
+@{
+    ViewBag.Title = "Home Page";  
+}
+
+<div class="container-fluid">        
+        @foreach (var item in Model.Laptops)
+        {
+            <div class="span3 laptopindex">
+                <p class="pagination-centered">
+                    <a href="/Home/ViewDetails?Id=@item.Id" class="btn btn-default">@item.Model</a>
+                </p>
+                <img class="span2 imageindex" src="@item.ImageUrl" />
+                <p>@item.Price.ToString("0.00")</p>
+                <p>@item.ManufacturerName</p>
+            </div>
+        }
+</div>

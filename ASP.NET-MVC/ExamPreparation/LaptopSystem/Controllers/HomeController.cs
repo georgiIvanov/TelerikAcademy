@@ -21,10 +21,9 @@ namespace LaptopSystem.Controllers
             this.db = db;
         }
 
-        //[OutputCache(Duration=3600)]
+        [OutputCache(Duration=3600)]
         public ActionResult Index()
         {
-
             var topLaptops = db.Laptops.All("Manufacturer").OrderByDescending(x => x.Votes.Count).Take(6).ToList();
 
             HomeIndexViewModel vm = new HomeIndexViewModel();

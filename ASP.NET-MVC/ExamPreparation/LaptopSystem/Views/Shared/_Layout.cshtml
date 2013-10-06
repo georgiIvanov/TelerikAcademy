@@ -18,8 +18,15 @@
                 .Name("kendomenu")
                 .Items(items =>
                 {
-                    items.Add().Text("Home").Action("Index", "Home");
-                    items.Add().Text("List Page").Action("ListPage", "Home");
+                    items.Add().Text("Home").Action("Index", "Home", new { area = "" });
+                    items.Add().Text("List Page").Action("ListPage", "Home", new { area = "" });
+                    items.Add().Text("Laptops").Action("Index", "Laptops", new { area = "Administration" });
+                    if (User.IsInRole("Admin"))
+                    {
+                        items.Add().Text("Manufacturers").Action("Index", "Manufacturers", new { area = "Administration" });
+                        items.Add().Text("Comments").Action("Index", "Comments", new { area = "Administration" });
+                        
+                    }
                 })
                 .HtmlAttributes(new { id = "kendo-menu" })
                 )

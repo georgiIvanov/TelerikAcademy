@@ -169,6 +169,13 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
+    <Compile Include="Areas\Administration\Controllers\CommentsController.cs" />
+    <Compile Include="Areas\Administration\Controllers\LaptopsController.cs" />
+    <Compile Include="Areas\Administration\Controllers\ManufacturersController.cs" />
+    <Compile Include="Areas\Administration\Models\CommentsViewModel.cs" />
+    <Compile Include="Areas\Administration\Models\ConvertToViewModel.cs" />
+    <Compile Include="Areas\Administration\Models\LaptopCreateViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -208,6 +215,19 @@
     <Content Include="img\glyphicons-halflings.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Administration\Views\web.config" />
+    <Content Include="Areas\Administration\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Administration\Views\Manufacturers\Create.cshtml" />
+    <Content Include="Areas\Administration\Views\Manufacturers\Delete.cshtml" />
+    <Content Include="Areas\Administration\Views\Manufacturers\Details.cshtml" />
+    <Content Include="Areas\Administration\Views\Manufacturers\Edit.cshtml" />
+    <Content Include="Areas\Administration\Views\Manufacturers\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\Laptops\Create.cshtml" />
+    <Content Include="Areas\Administration\Views\Laptops\Delete.cshtml" />
+    <Content Include="Areas\Administration\Views\Laptops\Details.cshtml" />
+    <Content Include="Areas\Administration\Views\Laptops\Edit.cshtml" />
+    <Content Include="Areas\Administration\Views\Laptops\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\Comments\Index.cshtml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
@@ -337,9 +357,11 @@
     <Content Include="Views\Home\_AllLaptops.cshtml" />
     <Content Include="Views\Home\_PostCommentOrVote.cshtml" />
     <Content Include="Views\Home\_Comments.cshtml" />
+    <Content Include="Views\Home\_SearchResult.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Administration\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

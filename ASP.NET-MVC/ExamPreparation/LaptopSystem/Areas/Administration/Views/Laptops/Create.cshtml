@@ -1,0 +1,113 @@
+﻿@model LaptopSystem.Areas.Administration.Models.LaptopCreateViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset class="form-horizontal">
+        <legend>Laptop</legend>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.Laptop.Model, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.Laptop.Model)
+                @Html.ValidationMessageFor(model => model.Laptop.Model, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.Laptop.Inches, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.Laptop.Inches)
+                @Html.ValidationMessageFor(model => model.Laptop.Inches, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.Laptop.Harddisk, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.Laptop.Harddisk)
+                @Html.ValidationMessageFor(model => model.Laptop.Harddisk, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.Laptop.Ram, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.Laptop.Ram)
+                @Html.ValidationMessageFor(model => model.Laptop.Ram, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.Laptop.Image, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.Laptop.Image)
+                @Html.ValidationMessageFor(model => model.Laptop.Image, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.Laptop.Price, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.Laptop.Price)
+                @Html.ValidationMessageFor(model => model.Laptop.Price, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.Laptop.Weight, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.Laptop.Weight)
+                @Html.ValidationMessageFor(model => model.Laptop.Weight, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @(Html.Kendo().DropDownList().Name("manufacturer")
+            .Items(items =>
+            {
+                foreach (var item in Model.Manufacturers)
+                {
+                    items.Add().Text(item.Name).Value(item.Name);
+                }
+
+            })
+            )
+        </div>
+        <div class="control-group">
+
+            @Html.LabelFor(model => model.Laptop.AdditionalParts, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.Laptop.AdditionalParts)
+                @Html.ValidationMessageFor(model => model.Laptop.AdditionalParts, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="control-group">
+
+            @Html.LabelFor(model => model.Laptop.Description, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.Laptop.Description)
+                @Html.ValidationMessageFor(model => model.Laptop.Description, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Create" class="btn" />
+        </div>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+

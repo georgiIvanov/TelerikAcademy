@@ -7,14 +7,67 @@
 
 <h2>ListPage</h2>
 
-@(Html.Kendo().ListView<LaptopIndexViewModel>()
+
+
+<div class="row-fluid">
+    @{AjaxOptions options = new AjaxOptions()
+      {
+          UpdateTargetId = "search-results",
+          InsertionMode = InsertionMode.Replace,
+          HttpMethod = "POST"
+      };}
+    @using (Ajax.BeginForm("Search", "Home", options))
+    {
+        @(Html.Kendo().AutoComplete()
+        .Name("modelInput")
+        .DataTextField("Model")
+        .Filter("contains")
+        .DataSource(
+            dataSource => dataSource.Read(read =>
+                read.Action("GetLaptopModels", "Home")
+                .Data("onAdditionalData"))
+                .ServerFiltering(true)
+        )
+
+        )
+
+        @(Html.Kendo().DropDownList()
+        .Name("manufacturerInput")
+        .Items(items =>
+        {
+            items.Add().Text("Select Value").Value("");
+            foreach (var item in Model.Manufacturers)
+            {
+                items.Add().Text(item.Name).Value(item.Name);
+            }
+        })
+        )
+        
+        @(Html.Kendo().NumericTextBox()
+        .Name("priceInput")
+        )
+        <input type="submit" value="Search" class="btn btn-info" />
+    }
+
+</div>
+
+<script>
+    function onAdditionalData() {
+        return {
+            text: $("#modelInput").val()
+        };
+    }
+</script>
+
+<div id="search-results">
+    @(Html.Kendo().ListView<LaptopIndexViewModel>()
 .Name("LaptopsListView")
 .TagName("div")
 .ClientTemplateId("laptops-template")
 .DataSource(dataSource =>
     dataSource.Read(read => read.Action("LaptopsRead", "Home")).PageSize(5)
     )
-    
+
 .Pageable(
     page =>
     {
@@ -24,10 +77,11 @@
 
 )
 
-)
+    )
+</div>
 
 <script type="text/x-kendo-tmpl" id="laptops-template">
-    
+
     <div class="row-fluid pagination-centered product">
         <img class="span3" src="${ImageUrl}" />
         <div class="span5">
@@ -38,13 +92,3 @@
         </div>
     </div>
 </script>
-
-
-@*@if (Model.IsSearch)
-        {
-
-        }
-        else
-        {
-            @Html.Partial("_AllLaptops", Model.Laptops)
-    }*@

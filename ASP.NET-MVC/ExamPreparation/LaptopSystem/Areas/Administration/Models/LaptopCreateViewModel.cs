@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace LaptopSystem.ViewModels
+namespace LaptopSystem.Areas.Administration.Models
 {
-    public class ListPageViewModel
+    public class LaptopCreateViewModel
     {
-        public IEnumerable<LaptopIndexViewModel> Laptops { get; set; }
+        public Laptop Laptop { get; set; }
         public IEnumerable<Manufacturer> Manufacturers { get; set; }
-        public bool IsSearch { get; set; }
     }
 }

@@ -1,0 +1,17 @@
+﻿@model IEnumerable<LaptopSystem.ViewModels.LaptopIndexViewModel>
+
+@(Html.Kendo().ListView<LaptopSystem.ViewModels.LaptopIndexViewModel>()
+.Name("LaptopsListView")
+.TagName("div")
+.ClientTemplateId("laptops-template")
+.BindTo(Model)
+.Pageable(
+    page =>
+    {
+        page.PageSizes(true);
+        page.ButtonCount(5);
+    }
+
+)
+
+)

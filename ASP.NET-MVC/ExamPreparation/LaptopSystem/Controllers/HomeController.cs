@@ -125,9 +125,12 @@ namespace LaptopSystem.Controllers
         {
             var allLaptops = db.Laptops.All("Manufacturer").ToList();
 
+            var allManufacturers = db.Manufacturers.All().ToList();
+
             ListPageViewModel vm = new ListPageViewModel()
             {
                 Laptops = allLaptops.ToViewModel(),
+                Manufacturers = allManufacturers,
                 IsSearch = false
             };
 
@@ -141,6 +144,39 @@ namespace LaptopSystem.Controllers
             DataSourceResult result = laptops.ToDataSourceResult(request);
 
             return Json(result);
+        }
+
+        [Authorize]
+        [HttpPost]
+        public ActionResult Search(string modelInput, string manufacturerInput, decimal? priceInput)
+        {
+            var laptops = db.Laptops.All("Manufacturer");
+
+            if (!string.IsNullOrWhiteSpace(modelInput))
+            {
+                laptops = laptops.Where(x => x.Model.ToLower().Contains(modelInput.ToLower()));
+            }
+
+            if (!string.IsNullOrWhiteSpace(manufacturerInput))
+            {
+                laptops = laptops.Where(x => x.Manufacturer.Name == manufacturerInput);
+            }
+
+            if (priceInput != null)
+            {
+                laptops = laptops.Where(x => x.Price == priceInput);
+            }
+
+            var found = laptops.ToList().ToViewModel();
+
+            return PartialView("_SearchResult", found);
+        }
+
+        public JsonResult GetLaptopModels(string text)
+        {
+            var laptops = db.Laptops.All().Where(x => x.Model.ToLower().Contains( text.ToLower())).ToList().ToViewModel();
+
+            return Json(laptops, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult About()

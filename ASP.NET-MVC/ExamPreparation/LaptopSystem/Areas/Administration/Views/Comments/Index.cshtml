@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Comments";
+}
+
+<h2>Comments</h2>
+
+@(Html.Kendo().Grid<LaptopSystem.Areas.Administration.Models.CommentsViewModel>()
+.Name("Comments")
+.Columns(columns =>
+{
+    columns.Bound(b => b.Id);
+    columns.Bound(b => b.ByUser);
+    columns.Bound(b => b.OnLaptop);
+    columns.Bound(b => b.Content);
+    columns.Command(commands =>
+    {
+        commands.Edit();
+        commands.Destroy();
+    }).Title("Commands").Width(200);
+})
+.ToolBar(toolbar => toolbar.Create())
+.Editable(editable => editable.Mode(GridEditMode.InLine))
+.DataSource(datasource => datasource
+.Ajax()
+.Model(model =>
+{
+    model.Id(comment => comment.Id);
+    model.Field(comment => comment.Id).Editable(false);
+})
+.Read(read => read.Action("CommentsRead", "Comments"))
+.Create(create => create.Action("CommentsCreate", "Comments"))
+.Update(update => update.Action("CommentsUpdate", "Comments"))
+.Destroy(destroy => destroy.Action("CommentsDelete", "Comments"))
+)
+.Pageable()
+.Sortable()
+.Filterable()
+)

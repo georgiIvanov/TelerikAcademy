@@ -23,6 +23,8 @@ namespace LaptopSystem.Models
         [Required]
         public virtual double Ram { get; set; }
         [Required]
+        [DataType(DataType.ImageUrl)]
+        [RegularExpression(@"https?:\/\/.*\.(?:png|jpg)")]
         public virtual string Image { get; set; }
         [Required]
         [Column(TypeName="money")]

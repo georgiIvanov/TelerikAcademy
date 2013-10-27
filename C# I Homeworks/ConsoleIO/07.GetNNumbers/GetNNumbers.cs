@@ -17,6 +17,7 @@ namespace _07.GetNNumbers
                 sum += int.Parse(Console.ReadLine());
             }
 
+
             Console.WriteLine(sum);
         }
     }
